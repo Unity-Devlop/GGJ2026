@@ -17,25 +17,6 @@ namespace GGJ2026
             {
                 GlobalLogger.LogEditor("没有找到本地存档，创建默认存档");
                 gameData = new GameData();
-
-                foreach (var gameMapConfig in Global.tables.GameMapTable.DataList)
-                {
-#if DEVELOPMENT
-                    if (gameMapConfig.Id == GameMapEnum.Developer)
-                    {
-                        continue;
-                    }   
-#endif
-                    gameData.totalMaps.Add(gameMapConfig.Id);
-                }
-
-                gameData.unlockedMaps.Add(GameMapEnum.Started);
-#if DEVELOPMENT
-                gameData.unlockedMaps.Add(GameMapEnum.Developer);
-#endif
-                gameData.lastPlayedMap = GameMapEnum.None; // 表示没有玩过任何地图
-                gameData.lastPlayedLevelIndex = -1; // 表示没有玩过任何关卡
-
                 LocalSaveSystem.Write(GameData.defaultDataFileName, gameData);
             }
 

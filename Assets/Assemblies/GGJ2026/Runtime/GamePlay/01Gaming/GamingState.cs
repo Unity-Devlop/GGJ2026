@@ -9,23 +9,27 @@ namespace GGJ2026.GamePlay
             // throw new System.NotImplementedException();
         }
 
-        public async void OnEnter(GameMgr owner, IStateMachine<GameMgr> stateMachine)
+        public void OnEnter(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
+            GamingMgr.Singleton.StartGame();
         }
 
         public void Transition(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
+            if (GamingMgr.Singleton.isGameOver)
+            {
+                stateMachine.Run<GameEndState>();
+            }
         }
 
 
         public void OnUpdate(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
-            // throw new System.NotImplementedException();
         }
 
         public void OnExit(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
-            // throw new System.NotImplementedException();
+            GamingMgr.Singleton.EndGame();
         }
     }
 }

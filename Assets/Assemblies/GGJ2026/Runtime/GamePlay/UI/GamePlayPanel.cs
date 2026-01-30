@@ -7,12 +7,14 @@ namespace GGJ2026.GamePlay
 {
     public class GamePlayPanel : UIPanel
     {
-        private void Awake()
-        {
-        }
+        [SerializeField] private UICardContainer cardContainer;
 
-        private void OnBackHomeButtonClicked()
+        private PlayerData _playerData;
+
+        public void Bind(PlayerData playerData)
         {
+            _playerData = playerData;
+            cardContainer.Bind(playerData);
         }
     }
 }

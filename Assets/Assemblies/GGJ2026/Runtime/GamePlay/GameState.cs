@@ -21,13 +21,6 @@ namespace GGJ2026
             loading = true;
             GlobalLogger.LogEditor("进入游戏场景");
             Global.localSave.Get<GameData>(out var data);
-
-            if (data.lastPlayedMap == GameMapEnum.None)
-            {
-                data.lastPlayedMap = GameMapEnum.Started;
-                data.lastPlayedLevelIndex = -1;
-            }
-
             // TODO 根据游戏模式切换不同场景
             await Addressables.LoadSceneAsync(Global.refHolder.gameScene);
             await UIRoot.Singleton.OpenPanelAsync<GamePlayPanel>();
