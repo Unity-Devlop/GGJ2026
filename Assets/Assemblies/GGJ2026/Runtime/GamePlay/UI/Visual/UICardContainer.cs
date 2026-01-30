@@ -19,9 +19,9 @@ namespace GGJ2026
         private List<UICard> _cards = new();
         private List<UICardVisual> _visuals = new();
 
-        // 技能卡一直有4张
         public void Bind(PlayerData playerData)
         {
+            Debug.Log("Bind Card Container");
             Assert.IsTrue(_slots.Count == 0);
             Assert.IsTrue(_cards.Count == 0);
             Assert.IsTrue(_visuals.Count == 0);

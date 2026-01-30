@@ -24,7 +24,7 @@ namespace GGJ2026.Home
 
         private void OnStartButtonClicked()
         {
-            Global.gameFlow.stateMachine.Change<GameState>();
+            Global.gameFlow.stateMachine.Change<GamePlayState>();
         }
     }
 }

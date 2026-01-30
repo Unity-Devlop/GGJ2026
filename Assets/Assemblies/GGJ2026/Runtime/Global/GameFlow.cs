@@ -32,7 +32,7 @@ namespace GGJ2026
             stateMachine = new StateMachine<GameFlow>(this);
             stateMachine.Add<EntryState>();
             stateMachine.Add<HomeState>();
-            stateMachine.Add<GameState>();
+            stateMachine.Add<GamePlayState>();
         }
 
         public void Run()

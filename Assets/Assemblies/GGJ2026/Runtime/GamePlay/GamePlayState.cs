@@ -6,7 +6,7 @@ using UnityToolkit;
 
 namespace GGJ2026
 {
-    public class GameState : IState<GameFlow>
+    public class GamePlayState : IState<GameFlow>
     {
         private bool loading;
 
@@ -23,7 +23,6 @@ namespace GGJ2026
             Global.localSave.Get<GameData>(out var data);
             // TODO 根据游戏模式切换不同场景
             await Addressables.LoadSceneAsync(Global.refHolder.gameScene);
-            await UIRoot.Singleton.OpenPanelAsync<GamePlayPanel>();
             loading = false;
         }
 
@@ -39,7 +38,6 @@ namespace GGJ2026
 
         public void OnExit(GameFlow owner, IStateMachine<GameFlow> stateMachine)
         {
-            UIRoot.Singleton.ClosePanel<GamePlayPanel>();
         }
     }
 }

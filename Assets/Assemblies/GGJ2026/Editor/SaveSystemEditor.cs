@@ -17,5 +17,11 @@ namespace Jump.Editor
                 LocalSaveSystem.Write(GameData.defaultDataFileName, data);
             }
         }
+
+        [Sirenix.OdinInspector.Button]
+        private void Save()
+        {
+            LocalSaveSystem.Write(GameData.defaultDataFileName, data);
+        }
     }
 }
