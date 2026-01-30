@@ -9,14 +9,8 @@ namespace GGJ2026.GamePlay
             // throw new System.NotImplementedException();
         }
 
-        public async void OnEnter(GameMgr owner, IStateMachine<GameMgr> stateMachine)
+        public void OnEnter(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
-            Global.localSave.Get<GameData>(out var gameData);
-            if (gameData == null)
-            {
-                gameData = new GameData();
-            }
-            Global.localSave.Add(gameData);
         }
 
         public void Transition(GameMgr owner, IStateMachine<GameMgr> stateMachine)

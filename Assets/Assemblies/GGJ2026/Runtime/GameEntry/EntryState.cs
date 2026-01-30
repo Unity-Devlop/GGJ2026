@@ -20,6 +20,7 @@ namespace GGJ2026
                 LocalSaveSystem.Write(GameData.defaultDataFileName, gameData);
             }
 
+            GlobalLogger.LogEditor("加载本地存档完成");
             Global.localSave.Add(gameData);
         }
 

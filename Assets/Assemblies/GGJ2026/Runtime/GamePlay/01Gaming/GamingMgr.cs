@@ -18,15 +18,11 @@ namespace GGJ2026.GamePlay
         public void StartGame()
         {
             var gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
-            Global.localSave.Get<PlayerData>(out var playerData);
-            gamePlayPanel.Bind(playerData);
+            Global.localSave.Get<GameData>(out var gameData);
+            gamePlayPanel.Bind(gameData.playerData);
         }
 
-
-        private async UniTask X()
-        {
-        }
-
+        
         public void EndGame()
         {
             UIRoot.Singleton.ClosePanel<GamePlayPanel>();

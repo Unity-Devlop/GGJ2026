@@ -32,6 +32,11 @@ namespace GGJ2026.GamePlay
 
         }
 
+        private void Update()
+        {
+            stateMachine.OnUpdate();
+        }
+
 
         protected override void OnDispose()
         {
