@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityToolkit;
 
 namespace GGJ2026.GamePlay
 {
-    public class GamePlayPanel : UIPanel
+    public class GamePlayPanel : UIPanel, IDropHandler
     {
         [SerializeField] private UICardContainer cardContainer;
         [SerializeField] private RectTransform useCardArea;
@@ -31,12 +32,18 @@ namespace GGJ2026.GamePlay
 
         private void OnUICardVisualEndDrag(in OnUICardVisualEndDrag args)
         {
-            Debug.Log("OnUICardVisualEndDrag");
-            // 看看是否在使用区域
-            if (RectTransformUtility.RectangleContainsScreenPoint(useCardArea, Pointer.current.position.value))
+            Vector3 screenPoint = UIRoot.Singleton.UICamera.WorldToScreenPoint(args.visual.transform.position);
+            Debug.Log("OnUICardVisualEndDrag: screenPoint " + screenPoint);
+            if (RectTransformUtility.RectangleContainsScreenPoint(useCardArea, 
+                    new Vector2(screenPoint.x, screenPoint.y), UIRoot.Singleton.UICamera))
             {
-                Debug.Log($"Use Card: {args.data}");
+                Debug.Log("OnUICardVisualEndDrag: use card " + args.data);
+                cardContainer.RemoveCard(args.data);
             }
+        }
+
+        public void OnDrop(PointerEventData eventData)
+        {
         }
     }
 }
