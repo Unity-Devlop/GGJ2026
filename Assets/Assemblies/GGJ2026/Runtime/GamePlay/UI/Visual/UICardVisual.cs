@@ -42,6 +42,8 @@ namespace GGJ2026.GamePlay
         [SerializeField] private Transform tiltContainer;
         // public ActiveSkillTypeEnum id { get; private set; }
 
+        
+        
         private void Awake()
         {
             _canvas = GetComponentInParent<Canvas>();
@@ -243,6 +245,7 @@ namespace GGJ2026.GamePlay
         [SerializeField] private float tiltSpeed = 20;
 
         private int _savedIndex;
+
         //
         // protected virtual void CardTilt()
         // {

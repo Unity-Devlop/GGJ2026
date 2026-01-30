@@ -28,11 +28,60 @@ namespace GGJ2026.GamePlay
         private List<UICard> _cards = new();
         private List<UICardVisual> _visuals = new();
 
+        public struct UICardInfo
+        {
+            public UICardSlot slot;
+            public UICard card;
+            public UICardVisual visual;
+        }
+
+        private Dictionary<CardData, UICardInfo> _cardInfos = new();
+
         private PlayerData _playerData;
 
         private void Awake()
         {
             rectTransform = GetComponent<RectTransform>();
+        }
+
+
+        public void AddCard(CardData data)
+        {
+            var slot = slotPool.Get().GetComponent<UICardSlot>();
+            var card = cardPool.Get().GetComponent<UICard>();
+            var visual = visualPool.Get().GetComponent<UICardVisual>();
+            slot.transform.SetParent(slotRoot, false);
+            card.transform.SetParent(slot.transform, false);
+
+            card.Bind(slot, visual);
+            visual.Bind(card);
+
+
+            _slots.Add(slot);
+            _cards.Add(card);
+            _visuals.Add(visual);
+
+            _cardInfos[data] = new UICardInfo
+            {
+                slot = slot,
+                card = card,
+                visual = visual
+            };
+        }
+
+        public void RemoveCard(CardData data)
+        {
+            var info = _cardInfos[data];
+
+            _slots.Remove(info.slot);
+            _cards.Remove(info.card);
+            _visuals.Remove(info.visual);
+
+            slotPool.Release(info.slot.gameObject);
+            cardPool.Release(info.card.gameObject);
+            visualPool.Release(info.visual.gameObject);
+
+            _cardInfos.Remove(data);
         }
 
         public void Bind(PlayerData playerData)
@@ -42,21 +91,9 @@ namespace GGJ2026.GamePlay
             Assert.IsTrue(_slots.Count == 0);
             Assert.IsTrue(_cards.Count == 0);
             Assert.IsTrue(_visuals.Count == 0);
-            foreach (var skillData in playerData.cards)
+            foreach (var cardData in playerData.cards)
             {
-                var slot = slotPool.Get().GetComponent<UICardSlot>();
-                var card = cardPool.Get().GetComponent<UICard>();
-                var visual = visualPool.Get().GetComponent<UICardVisual>();
-                slot.transform.SetParent(slotRoot, false);
-                card.transform.SetParent(slot.transform, false);
-
-                card.Bind(slot, visual);
-                visual.Bind(card);
-
-
-                _slots.Add(slot);
-                _cards.Add(card);
-                _visuals.Add(visual);
+                AddCard(cardData);
             }
         }
 
@@ -79,26 +116,14 @@ namespace GGJ2026.GamePlay
         [Sirenix.OdinInspector.Button]
         public void UnBind()
         {
-            foreach (var slot in _slots)
+            var allCards = new List<CardData>(_cardInfos.Keys);
+            foreach (var data in allCards)
             {
-                slotPool.Release(slot.gameObject);
+                RemoveCard(data);
             }
 
-            _slots.Clear();
-
-            foreach (var card in _cards)
-            {
-                cardPool.Release(card.gameObject);
-            }
-
-            _cards.Clear();
-
-            foreach (var visual in _visuals)
-            {
-                visualPool.Release(visual.gameObject);
-            }
-
-            _visuals.Clear();
+            _cardInfos.Clear();
+            _playerData = null;
         }
     }
 }
