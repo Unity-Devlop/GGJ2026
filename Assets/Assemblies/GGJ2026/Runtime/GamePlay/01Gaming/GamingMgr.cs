@@ -22,7 +22,8 @@ namespace GGJ2026.GamePlay
             gamePlayPanel.Bind(gameData.playerData);
         }
 
-        
+
+
         public void EndGame()
         {
             UIRoot.Singleton.ClosePanel<GamePlayPanel>();

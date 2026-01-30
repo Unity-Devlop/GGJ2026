@@ -154,7 +154,6 @@ namespace GGJ2026.GamePlay
         {
             EndDragEvent.Invoke(this);
             isDragging = false;
-            // Debug.Log("OnEndDrag, isDragging: " + isDragging);
             _canvas.GetComponent<GraphicRaycaster>().enabled = true;
             img.raycastTarget = true;
             await UniTask.Yield();

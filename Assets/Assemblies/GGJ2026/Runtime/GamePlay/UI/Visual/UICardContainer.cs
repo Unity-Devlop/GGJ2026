@@ -54,7 +54,7 @@ namespace GGJ2026.GamePlay
             card.transform.SetParent(slot.transform, false);
 
             card.Bind(slot, visual);
-            visual.Bind(card);
+            visual.Bind(card, data);
 
 
             _slots.Add(slot);

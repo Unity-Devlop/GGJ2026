@@ -42,6 +42,7 @@ namespace GGJ2026.GamePlay
         [SerializeField] private Transform tiltContainer;
         // public ActiveSkillTypeEnum id { get; private set; }
 
+        public CardData cardData { get; private set; }
         
         
         private void Awake()
@@ -49,8 +50,9 @@ namespace GGJ2026.GamePlay
             _canvas = GetComponentInParent<Canvas>();
         }
 
-        public virtual void Bind(UICard card)
+        public virtual void Bind(UICard card,CardData cardData)
         {
+            this.cardData = cardData;
             if (this.card != null)
             {
                 this.card.PointerEnterEvent -= PointerEnter;
@@ -107,7 +109,11 @@ namespace GGJ2026.GamePlay
         {
             _canvas.overrideSorting = false;
             // transform.DOScale(1, scaleTransition).SetEase(scaleEase);
+            
+            Global.Event.Invoke(new OnUICardVisualEndDrag(this));
         }
+        
+
 
         [Header("Hober Parameters")] [SerializeField]
         private float hoverPunchAngle = 5;
