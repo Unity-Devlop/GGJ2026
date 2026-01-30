@@ -1,7 +1,7 @@
-namespace GGJ2026
+namespace GGJ2026.GamePlay
 {
     public interface ICardVisual
     {
-        UICard card { get; }
+        // UICard card { get; }
     }
 }

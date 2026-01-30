@@ -1,26 +1,20 @@
-using System;
-using cfg;
 using DG.Tweening;
-using GGJ2026;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
-using UnityToolkit;
 
 namespace GGJ2026.GamePlay
 {
-    public class UICardVisual : MonoBehaviour,ICardVisual
+    public class UICardVisual : MonoBehaviour, ICardVisual
     {
         [Sirenix.OdinInspector.ShowInInspector]
         public UICard card { get; private set; }
-     
+
 
         private float _curveYOffset;
         private float _curveRotationOffset;
-        
-     
+
+
         [Header("Follow Parameters")] [SerializeField]
         private float followSpeed = 30;
 
@@ -112,9 +106,12 @@ namespace GGJ2026.GamePlay
             _canvas.overrideSorting = false;
             // transform.DOScale(1, scaleTransition).SetEase(scaleEase);
         }
-        [Header("Hober Parameters")]
-        [SerializeField] private float hoverPunchAngle = 5;
+
+        [Header("Hober Parameters")] [SerializeField]
+        private float hoverPunchAngle = 5;
+
         [SerializeField] private float hoverTransition = .15f;
+
         protected virtual void PointerEnter(UICard card)
         {
             DOTween.Kill(2, true);
@@ -199,7 +196,6 @@ namespace GGJ2026.GamePlay
         //     _curveYOffset = _target.SlotAmount() < 5 ? 0 : _curveYOffset;
         //     _curveRotationOffset = curve.rotation.Evaluate(_target.NormalizedPosition());
         // }
-
         protected virtual void SmoothFollow()
         {
             Vector3 verticalOffset = (Vector3.up * (card.isDragging ? 0 : _curveYOffset));

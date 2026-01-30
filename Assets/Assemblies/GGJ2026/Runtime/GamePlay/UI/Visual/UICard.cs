@@ -1,80 +1,125 @@
 using System;
-using System.Runtime.CompilerServices;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements.InputSystem;
+using UnityEngine.UI;  
 using UnityToolkit;
 
-namespace GGJ2026
+namespace GGJ2026.GamePlay
 {
-    // Slot不会改变位置
-    // Card会改变位置
-    // Visual会跟着Card改变位置
-
-    [RequireComponent(typeof(CanvasGroup))]
-    [RequireComponent(typeof(RectTransform))]
-    public class UICard : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler,
-        IEndDragHandler, IPointerDownHandler, IPointerUpHandler, ISelectHandler , IDeselectHandler
+    [RequireComponent(typeof(Image))]
+    public class UICard : Selectable, IDragHandler, IBeginDragHandler, IEndDragHandler, IPoolObject
     {
-        private CanvasGroup _canvasGroup;
-        public bool isHovering;
-        public RectTransform rectTransform { get; private set; }
-        public UICardSlot slot { get; private set; }
-        public ICardVisual visual { get; private set; }
-        // public float moveSpeedLimit = 20f; // 每秒移动的最大速度
+        // Events
+        public event Action<UICard> PointerEnterEvent = delegate { };
+        public event Action<UICard> PointerExitEvent = delegate { };
+        public event Action<UICard, bool> PointerUpEvent = delegate { };
+        public event Action<UICard> PointerDownEvent = delegate { };
+        public event Action<UICard> BeginDragEvent = delegate { };
+        public event Action<UICard> EndDragEvent = delegate { };
 
-        // 
+        public event Action<UICard, bool> SelectEvent = delegate { };
+
+        public event Action<UICard, bool> HoverEvent = delegate { };
+
+        // States
         public bool isDragging { get; private set; }
-        public event Action<UICard> BeginDragEvent;
-        public event Action<UICard> EndDragEvent;
-        public event Action<UICard> PointerDownEvent;
-        public event Action<UICard, bool> PointerUpEvent;
-        public event Action<UICard, bool> SelectEvent;
-        public event Action<UICard, bool> HoverEvent;
-        public event Action<UICard> PointerEnterEvent;
-        public event Action<UICard> PointerExitEvent;
 
-        private void Awake()
+
+        public bool isHovering { get; private set; }
+
+        public bool selected { get; private set; }
+
+        /// <summary>
+        /// 是否可以自己回到原来的位置
+        /// </summary>
+        [NonSerialized] public bool canReset = true;
+
+        // Config
+        public Vector3 offset;
+        public float moveSpeedLimit = 20f;
+
+        public float selectionOffset = 50;
+        public float biggerScale = 2f;
+
+        public Vector3 originScale = Vector3.one;
+
+        // components
+        public UICardVisual visual { get; private set; }
+
+        // private CardVisualPool _cardVisualPool;
+        public Image img { get; private set; }
+        private Canvas _canvas;
+
+
+        protected override void Awake()
         {
-            rectTransform = GetComponent<RectTransform>();
-            _canvasGroup = GetComponent<CanvasGroup>();
+            base.Awake();
+            img = GetComponent<Image>();
+            _canvas = GetComponent<Canvas>();
         }
 
-        public void Bind(UICardSlot uiCardSlot, ICardVisual uiCardSkillVisual)
+        public void Bind(UICardSlot slot, UICardVisual uiCardVisual)
         {
-            slot = uiCardSlot;
-            visual = uiCardSkillVisual;
+        }
+        public void OnGet()
+        {
+            gameObject.SetActive(true);
         }
 
-        public void UnBind()
+        public void OnRelease()
         {
-            slot = null;
+            originScale = Vector3.one;
+            transform.localScale = originScale;
+            gameObject.SetActive(false);
+            // Reste Events
+            PointerEnterEvent = delegate { };
+            PointerExitEvent = delegate { };
+            PointerUpEvent = delegate { };
+            PointerDownEvent = delegate { };
+            BeginDragEvent = delegate { };
+            EndDragEvent = delegate { };
+            SelectEvent = delegate { };
+            // Reset States
+            isDragging = false;
+            isHovering = false;
+            selected = false;
+
             visual = null;
         }
 
         private void Update()
         {
-            // TODO 必须在自己的回合才可以拖拽移动
+            if (!Application.isPlaying) return;
             if (isDragging)
             {
-                Vector3 mousePos = Mouse.current.position.ReadValue();
-                Vector2 targetPos = UIRoot.Singleton.UICamera.ScreenToWorldPoint(mousePos);
-                // TODO 做平滑跟随移动效果
-                // Vector2 direction = (targetPos - (Vector2)transform.position).normalized;
-                // float distance = Vector2.Distance(transform.position, targetPos);
-                // Vector2 velocity = direction * Mathf.Min(moveSpeedLimit, distance / Time.deltaTime);
-                // transform.Translate(velocity * Time.deltaTime);
-                transform.position = new Vector3(targetPos.x, targetPos.y, transform.position.z);
+                Vector3 mousePosition = Pointer.current.position.value;
+                Vector2 targetPosition = UIRoot.Singleton.UICamera.ScreenToWorldPoint(mousePosition) - offset;
+                Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+                Vector2 velocity = direction * Mathf.Min(moveSpeedLimit, Vector2.Distance(transform.position, targetPosition) / Time.deltaTime);
+                transform.Translate(velocity * Time.deltaTime);
+                
                 ClampPosition(); // 限制位置 不能超出屏幕
             }
-            else
+            else if (canReset)
             {
-                rectTransform.anchoredPosition3D = new Vector3(0, 0, 0);
+                RectTransform rectTransform = transform as RectTransform;
+                rectTransform.anchoredPosition = Vector2.zero;
+            }
+
+            if (isDragging || isHovering)
+            {
+                transform.localScale = originScale * biggerScale;
+            }
+            else if (canReset)
+            {
+                transform.localScale = originScale;
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
         private void ClampPosition()
         {
             Vector2 screenBounds =
@@ -84,55 +129,119 @@ namespace GGJ2026
             clampedPosition.y = Mathf.Clamp(clampedPosition.y, -screenBounds.y, screenBounds.y);
             float z = transform.position.z;
             transform.position = new Vector3(clampedPosition.x, clampedPosition.y, z);
+            // Debug.Log("ClampPosition, transform.position: " + transform.position);
         }
 
-        public void OnDrag(PointerEventData eventData)
-        {
-        }
 
-        public void OnBeginDrag(PointerEventData eventData)
+        public virtual void OnBeginDrag(PointerEventData eventData)
         {
+            // Debug.Log("OnBeginDrag");
+            transform.DOScale(Vector3.one * biggerScale, 0.1f);
+            BeginDragEvent(this);
+            Vector2 mousePosition = UIRoot.Singleton.UICamera.ScreenToWorldPoint(eventData.position);
+            offset = mousePosition - (Vector2)transform.position;
             isDragging = true;
-            BeginDragEvent?.Invoke(this);
+            // Debug.Log("OnBeginDrag, isDragging: " + isDragging);
+            _canvas.GetComponent<GraphicRaycaster>().enabled = false;
+            img.raycastTarget = false;
         }
 
-        public void OnEndDrag(PointerEventData eventData)
+        public virtual void OnDrag(PointerEventData eventData)
         {
+        }
+
+        public virtual async void OnEndDrag(PointerEventData eventData)
+        {
+            EndDragEvent.Invoke(this);
             isDragging = false;
-            EndDragEvent?.Invoke(this);
+            // Debug.Log("OnEndDrag, isDragging: " + isDragging);
+            _canvas.GetComponent<GraphicRaycaster>().enabled = true;
+            img.raycastTarget = true;
+            await UniTask.Yield();
         }
 
-
-        public void OnPointerEnter(PointerEventData eventData)
+        public override void OnPointerEnter(PointerEventData eventData)
         {
+            base.OnPointerEnter(eventData);
+            PointerEnterEvent.Invoke(this);
             isHovering = true;
-            PointerEnterEvent?.Invoke(this);
+
+            HoverEvent.Invoke(this, isHovering);
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        public override void OnPointerExit(PointerEventData eventData)
         {
+            base.OnPointerExit(eventData);
+            PointerExitEvent.Invoke(this);
             isHovering = false;
-            PointerExitEvent?.Invoke(this);
+            HoverEvent.Invoke(this, isHovering);
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+
+        public override void OnPointerDown(PointerEventData eventData)
         {
-            PointerDownEvent?.Invoke(this);
+            base.OnPointerDown(eventData);
+            if (eventData.button != PointerEventData.InputButton.Left)
+                return;
+
+            PointerDownEvent.Invoke(this);
         }
 
-        public void OnPointerUp(PointerEventData eventData)
+        public override void OnPointerUp(PointerEventData eventData)
         {
-            PointerUpEvent?.Invoke(this, isHovering);
+            base.OnPointerUp(eventData);
+            if (eventData.button != PointerEventData.InputButton.Left)
+                return;
+            PointerUpEvent.Invoke(this, selected);
         }
 
-        public void OnSelect(BaseEventData eventData)
+        public override void OnSelect(BaseEventData eventData)
         {
-            SelectEvent?.Invoke(this, true);
+            base.OnSelect(eventData);
+            // TODO 感觉不好听 不如不要
+            // Global.Get<AudioSystem>().PlayOneShot(FMODName.Event.SFX_SFX_UI_选择卡牌);
+            selected = true;
+            SelectEvent.Invoke(this, selected);
         }
 
-        public void OnDeselect(BaseEventData eventData)
+        public override void OnDeselect(BaseEventData eventData)
         {
-            SelectEvent?.Invoke(this, false);
+            base.OnDeselect(eventData);
+            selected = false;
+
+            SelectEvent.Invoke(this, selected);
+            transform.DOKill();
         }
+
+
+        public int SlotAmount()
+        {
+            if (transform.parent.TryGetComponent(out UICardSlot slot))
+            {
+                return slot.transform.parent.childCount - 1;
+            }
+
+            return 0;
+        }
+
+        public int SlotIndex()
+        {
+            if (transform.parent.TryGetComponent(out UICardSlot slot))
+            {
+                return slot.transform.GetSiblingIndex();
+            }
+
+            return 0;
+        }
+
+        // public float NormalizedPosition()
+        // {
+        //     if (transform.TryGetComponent(out UICardSlot slot))
+        //     {
+        //         return CardMathExtensions.Remap(SlotIndex(), 0, SlotAmount(), 0, 1);
+        //     }
+        //
+        //     return 0;
+        // }
     }
 }
