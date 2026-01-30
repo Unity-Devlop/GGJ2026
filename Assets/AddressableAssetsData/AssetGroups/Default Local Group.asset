@@ -15,8 +15,18 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 263af9bebad594d9099bf01d5c9bda97
   m_SerializeEntries:
+  - m_GUID: 93f1716d135b2489e9e8e9bfa3a2ff2a
+    m_Address: UI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e12b25a725859426aafa168f4fb0de7a
+    m_Address: Config
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fc60f4596e11d448f8402f76a7e147fc
-    m_Address: Assets/Assembiles/GGJ2026/Resource
+    m_Address: Resource
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

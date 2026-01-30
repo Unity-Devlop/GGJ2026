@@ -1,0 +1,14 @@
+[
+  {
+    "id": -1,
+    "addressable_path": "Scene/DeveloperMap.unity"
+  },
+  {
+    "id": 1,
+    "addressable_path": "Scene/StartedMap.unity"
+  },
+  {
+    "id": 2,
+    "addressable_path": "Scene/ForsakenCity.unity"
+  }
+]
