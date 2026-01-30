@@ -76,6 +76,7 @@ namespace GGJ2026.GamePlay
             }
         }
 
+        [Sirenix.OdinInspector.Button]
         public void UnBind()
         {
             foreach (var slot in _slots)
