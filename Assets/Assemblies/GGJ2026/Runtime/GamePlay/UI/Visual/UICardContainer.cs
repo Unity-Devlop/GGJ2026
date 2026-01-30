@@ -4,7 +4,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityToolkit;
 
-namespace GGJ2026
+namespace GGJ2026.GamePlay
 {
     public class UICardContainer : MonoBehaviour
     {

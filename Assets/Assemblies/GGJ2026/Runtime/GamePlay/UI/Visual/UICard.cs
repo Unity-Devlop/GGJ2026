@@ -15,9 +15,10 @@ namespace GGJ2026
     [RequireComponent(typeof(CanvasGroup))]
     [RequireComponent(typeof(RectTransform))]
     public class UICard : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler,
-        IEndDragHandler
+        IEndDragHandler, IPointerDownHandler, IPointerUpHandler, ISelectHandler , IDeselectHandler
     {
         private CanvasGroup _canvasGroup;
+        public bool isHovering;
         public RectTransform rectTransform { get; private set; }
         public UICardSlot slot { get; private set; }
         public ICardVisual visual { get; private set; }
@@ -25,6 +26,14 @@ namespace GGJ2026
 
         // 
         public bool isDragging { get; private set; }
+        public event Action<UICard> BeginDragEvent;
+        public event Action<UICard> EndDragEvent;
+        public event Action<UICard> PointerDownEvent;
+        public event Action<UICard, bool> PointerUpEvent;
+        public event Action<UICard, bool> SelectEvent;
+        public event Action<UICard, bool> HoverEvent;
+        public event Action<UICard> PointerEnterEvent;
+        public event Action<UICard> PointerExitEvent;
 
         private void Awake()
         {
@@ -37,7 +46,7 @@ namespace GGJ2026
             slot = uiCardSlot;
             visual = uiCardSkillVisual;
         }
-        
+
         public void UnBind()
         {
             slot = null;
@@ -84,21 +93,46 @@ namespace GGJ2026
         public void OnBeginDrag(PointerEventData eventData)
         {
             isDragging = true;
+            BeginDragEvent?.Invoke(this);
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
             isDragging = false;
+            EndDragEvent?.Invoke(this);
         }
 
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            isHovering = true;
+            PointerEnterEvent?.Invoke(this);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            isHovering = false;
+            PointerExitEvent?.Invoke(this);
         }
 
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            PointerDownEvent?.Invoke(this);
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            PointerUpEvent?.Invoke(this, isHovering);
+        }
+
+        public void OnSelect(BaseEventData eventData)
+        {
+            SelectEvent?.Invoke(this, true);
+        }
+
+        public void OnDeselect(BaseEventData eventData)
+        {
+            SelectEvent?.Invoke(this, false);
+        }
     }
 }

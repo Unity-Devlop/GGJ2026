@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6603266208258900438}
   - component: {fileID: 5120229630031715509}
   - component: {fileID: -6060054818741611025}
+  - component: {fileID: 8966732058568486723}
+  - component: {fileID: 74311094498402051}
   m_Layer: 5
   m_Name: 02UICardVisual
   m_TagString: Untagged
@@ -88,4 +90,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784d0afb00b74a72ae2bef8caf6a671d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GGJ2026::GGJ2026.UICardVisual
+  followSpeed: 30
+  scaleSpeed: 20
+  rotationAmount: 20
+  rotationSpeed: 20
+  background: {fileID: 0}
   nameText: {fileID: 0}
+  shakeContainer: {fileID: 0}
+  tiltContainer: {fileID: 0}
+  hoverPunchAngle: 5
+  hoverTransition: 0.15
+  followRotationSpeed: 25
+  rotationLimits: {x: -60, y: 60}
+  autoTiltAmount: 30
+  manualTiltAmount: 20
+  tiltSpeed: 20
+--- !u!223 &8966732058568486723
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6895093681895773195}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &74311094498402051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6895093681895773195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 55
