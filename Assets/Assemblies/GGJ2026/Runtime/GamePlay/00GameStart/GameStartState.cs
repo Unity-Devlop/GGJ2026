@@ -15,6 +15,7 @@ namespace GGJ2026.GamePlay
 
         public void Transition(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
+            stateMachine.Change<GamingState>();
         }
 
 
