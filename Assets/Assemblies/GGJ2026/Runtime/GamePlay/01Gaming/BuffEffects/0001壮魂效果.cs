@@ -20,5 +20,10 @@ namespace GGJ2026.GamePlay
         {
             return UniTask.CompletedTask;
         }
+
+        public UniTask OnReduceBuff(IEntityController entity, BuffInfo buff, object parmaters)
+        {
+            return UniTask.CompletedTask;
+        }
     }
 }

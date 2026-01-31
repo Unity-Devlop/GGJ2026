@@ -155,5 +155,18 @@ namespace GGJ2026.GamePlay
             maskText.text = id.ToString();
             data.currentMask = id;
         }
+
+        public UniTask ReduceBuff(BuffEnum id, object parmaters)
+        {
+            foreach (var buff in _buffs)
+            {
+                if (buff.buffEnum == id)
+                {
+                    return BuffEffects.ReduceBuff(this, buff.buffEnum, parmaters);
+                }
+            }
+            return UniTask.CompletedTask;
+        }
+
     }
 }

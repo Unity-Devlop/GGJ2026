@@ -34,6 +34,7 @@ namespace GGJ2026.GamePlay
         void RemoveBuff(BuffInfo buff);
         UniTask OnApplyDamageTo(IEntityController tar, int value);
         UniTask SwitchMask(MaskEnum id);
+        UniTask ReduceBuff(BuffEnum id, object parmaters);
     }
 
     public interface IBuffEffectExecutor
@@ -44,6 +45,7 @@ namespace GGJ2026.GamePlay
             BuffInfo buff);
 
         UniTask OnTurnEnd(IEntityController entity, BuffInfo buff);
+        UniTask OnReduceBuff(IEntityController entity, BuffInfo buff, object parmaters);
     }
 
 

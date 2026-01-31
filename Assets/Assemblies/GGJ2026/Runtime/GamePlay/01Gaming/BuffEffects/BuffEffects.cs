@@ -66,5 +66,20 @@ namespace GGJ2026.GamePlay
                 }
             }
         }
+
+        public static async UniTask ReduceBuff(IEntityController entity, BuffEnum id, object parmaters)
+        {
+            entity.GetBuffs(out var buffs);
+            foreach (var buff in buffs)
+            {
+                if (buff.buffEnum == id)
+                {
+                    if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
+                    {
+                        await executor.OnReduceBuff(entity, buff, parmaters);
+                    }
+                }
+            }
+        }
     }
 }

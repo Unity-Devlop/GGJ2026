@@ -97,6 +97,11 @@ namespace GGJ2026.GamePlay
             return UniTask.CompletedTask;
         }
 
+        public async UniTask ReduceBuff(BuffEnum id, object parmaters)
+        {
+            await BuffEffects.ReduceBuff(this, id, parmaters);
+        }
+
         public void UnBind()
         {
             data = null;
@@ -133,7 +138,7 @@ namespace GGJ2026.GamePlay
         {
             lastUsedCardThisRound = CardEnum.None;
             await BuffEffects.OnTurnEnd(this);
-            
+
             // 拿到下一次会出的牌
             if (data.candidateCards.Count > 0)
             {
