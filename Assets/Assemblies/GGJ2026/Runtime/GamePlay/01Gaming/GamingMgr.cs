@@ -62,24 +62,28 @@ namespace GGJ2026.GamePlay
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
 
 
-            gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
             Global.localSave.Get<GameData>(out var gameData);
 
             var currentLevel = gameData.lastCompletedLevel;
             playerData = Global.refHolder.levelConfig.levelPlayerData[currentLevel].DeepCopy();
             enemyData = Global.refHolder.levelConfig.levelEnemyData[currentLevel].DeepCopy();
 
-            gamePlayPanel.Bind(playerData);
 
             playerController.Bind(playerData);
             enemyController.Bind(enemyData);
 
 
+            gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
+
+            gamePlayPanel.Bind(playerData);
+
             // await UniTask.Delay(TimeSpan.FromSeconds(1));
             currentGamingState = GamingState.PlayerRound;
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
+
             await playerController.TurnStart();
             await playerController.SwitchMask(MaskEnum.本我);
+
 
             isGameOver = enemyController.IsDead() || playerController.IsDead();
             isGameWin = enemyController.IsDead() && !playerController.IsDead();
@@ -93,6 +97,7 @@ namespace GGJ2026.GamePlay
 
                 if (currentGamingState == GamingState.PlayerRound)
                 {
+                    bool endPlayerRound = false;
                     while (playerOperationQueue.Count > 0)
                     {
                         var operation = playerOperationQueue.Dequeue();
@@ -106,12 +111,7 @@ namespace GGJ2026.GamePlay
 
                             if (endRound)
                             {
-                                currentGamingState = GamingState.EnemyRound;
-                                await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
-                                await playerController.TurnEnd();
-                                await enemyController.TurnStart();
-                                Assert.IsTrue(playerOperationQueue.Count == 0,
-                                    "结束回合操作执行时，玩家操作队列不为空");
+                                endPlayerRound = true;
                                 break;
                             }
                         }
@@ -120,25 +120,25 @@ namespace GGJ2026.GamePlay
                             await playerController.SwitchMask(switchMask.id);
                             if (switchMask.endRoundRightAfter)
                             {
-                                currentGamingState = GamingState.EnemyRound;
-                                await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
-                                Assert.IsTrue(playerOperationQueue.Count == 0,
-                                    "结束回合操作执行时，玩家操作队列不为空");
-                                await playerController.TurnEnd();
-                                await enemyController.TurnStart();
+                                endPlayerRound = true;
                                 break;
                             }
                         }
                         else if (operation is EndTurnOperation)
                         {
-                            currentGamingState = GamingState.EnemyRound;
-                            await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
-                            Assert.IsTrue(playerOperationQueue.Count == 0,
-                                "结束回合操作执行时，玩家操作队列不为空");
-                            await playerController.TurnEnd();
-                            await enemyController.TurnStart();
+                            endPlayerRound = true;
                             break;
                         }
+                    }
+
+                    if (endPlayerRound)
+                    {
+                        currentGamingState = GamingState.EnemyRound;
+                        await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
+                        Assert.IsTrue(playerOperationQueue.Count == 0,
+                            "结束回合操作执行时，玩家操作队列不为空");
+                        await playerController.TurnEnd();
+                        await enemyController.TurnStart();
                     }
                 }
                 else if (currentGamingState == GamingState.EnemyRound)
@@ -158,10 +158,6 @@ namespace GGJ2026.GamePlay
                                 playerController);
                             if (endRound)
                             {
-                                currentGamingState = GamingState.PlayerRound;
-                                await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
-                                await enemyController.TurnEnd();
-                                await playerController.TurnStart();
                                 break;
                             }
                         }
@@ -169,6 +165,8 @@ namespace GGJ2026.GamePlay
 
                     currentGamingState = GamingState.PlayerRound;
                     await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
+                    await enemyController.TurnEnd();
+                    await playerController.TurnStart();
                 }
 
                 await UniTask.Yield();

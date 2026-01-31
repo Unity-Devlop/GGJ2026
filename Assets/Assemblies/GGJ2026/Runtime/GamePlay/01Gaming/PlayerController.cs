@@ -71,6 +71,7 @@ namespace GGJ2026.GamePlay
                 Debug.Log("玩家可抽的牌组为空，无法抽牌");
                 return;
             }
+
             await GamingMgr.Singleton.LocalPlayerDrawCards(count);
         }
 
@@ -162,6 +163,7 @@ namespace GGJ2026.GamePlay
 
         public async UniTask SwitchMask(MaskEnum id)
         {
+            Global.Event.Invoke(new OnLocalPlayerWearMaskEvent(id));
             await Global.Event.Invoke<OnLocalPlayerWearMaskEvent, UniTask>(
                 new OnLocalPlayerWearMaskEvent(id));
             Debug.Log("玩家切换面具: " + id);
