@@ -1,17 +1,14 @@
 using cfg;
 using Cysharp.Threading.Tasks;
-using UnityEngine.Assertions;
 
 namespace GGJ2026.GamePlay
 {
-    [BuffExecutor(BuffEnum.碎魂效果)]
-    public class 碎魂效果 : IBuffEffectExecutor
+    [BuffExecutor(BuffEnum.返回本我效果)]
+    public class 傩戏开场效果 : IBuffEffectExecutor
     {
         public void ProcessTakeDamageBuff(IEntityController enity, BuffInfo buff, ref int damageValue)
         {
-            Assert.IsTrue(buff.buffEnum == BuffEnum.碎魂效果);
-            damageValue = 1;
-            enity.RemoveBuff(buff);
+            
         }
 
         public UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value, BuffInfo buff)
@@ -21,6 +18,8 @@ namespace GGJ2026.GamePlay
 
         public UniTask OnTurnEnd(IEntityController entity, BuffInfo buff)
         {
+            entity.SwitchMask(MaskEnum.本我);
+            entity.RemoveBuff(buff);
             return UniTask.CompletedTask;
         }
     }

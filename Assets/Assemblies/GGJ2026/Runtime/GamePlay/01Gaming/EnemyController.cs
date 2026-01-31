@@ -92,6 +92,11 @@ namespace GGJ2026.GamePlay
             await BuffEffects.ProcessWhenApplyDamageTo(this, tar, value);
         }
 
+        public UniTask SwitchMask(MaskEnum id)
+        {
+            return UniTask.CompletedTask;
+        }
+
         public void UnBind()
         {
             data = null;
@@ -124,10 +129,17 @@ namespace GGJ2026.GamePlay
             return UniTask.CompletedTask;
         }
 
-        public UniTask TurnEnd()
+        public async UniTask TurnEnd()
         {
             lastUsedCardThisRound = CardEnum.None;
-            return UniTask.CompletedTask;
+            await BuffEffects.OnTurnEnd(this);
+            
+            // 拿到下一次会出的牌
+            if (data.candidateCards.Count > 0)
+            {
+                var nextCard = data.candidateCards[currentOperationIndex % data.candidateCards.Count];
+                _enemyIntent.SetIntent(nextCard.config.Intent);
+            }
         }
 
         public int GetUseCardCount(CardEnum cardEnum)

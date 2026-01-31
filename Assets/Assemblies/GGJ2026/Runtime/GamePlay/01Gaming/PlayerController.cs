@@ -87,7 +87,7 @@ namespace GGJ2026.GamePlay
 
         public async UniTask OnApplyDamageTo(IEntityController tar, int value)
         {
-            await BuffEffects.ProcessWhenApplyDamageTo(this,tar, value);
+            await BuffEffects.ProcessWhenApplyDamageTo(this, tar, value);
         }
 
         public void UnBind()
@@ -114,17 +114,17 @@ namespace GGJ2026.GamePlay
             thisRoundUseCardCount[cardData.id]++;
         }
 
-        public UniTask TurnStart()
+        public async UniTask TurnStart()
         {
             lastUsedCardThisRound = CardEnum.None;
             thisRoundUseCardCount.Clear();
-            return UniTask.CompletedTask;
+            await UniTask.CompletedTask;
         }
 
-        public UniTask TurnEnd()
+        public async UniTask TurnEnd()
         {
+            await BuffEffects.OnTurnEnd(this);
             lastUsedCardThisRound = CardEnum.None;
-            return UniTask.CompletedTask;
         }
 
         public int GetUseCardCount(CardEnum cardEnum)
@@ -150,6 +150,8 @@ namespace GGJ2026.GamePlay
 
         public async UniTask SwitchMask(MaskEnum id)
         {
+            await Global.Event.Invoke<OnLocalPlayerWearMaskEvent, UniTask>(
+                new OnLocalPlayerWearMaskEvent(id));
             maskText.text = id.ToString();
             data.currentMask = id;
         }
