@@ -7,6 +7,8 @@ namespace GGJ2026.GamePlay
     [RequireComponent(typeof(EntityPropertyShower))]
     public class PlayerController : MonoBehaviour,IEntityController
     {
+        
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
         public PlayerData playerData { get; private set; }
         private EntityPropertyShower _propertyShower;
         private void Awake()

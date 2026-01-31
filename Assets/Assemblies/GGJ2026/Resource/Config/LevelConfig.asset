@@ -28,9 +28,40 @@ MonoBehaviour:
             _minValue: 0
             _value: 10
           shield: 0
+    - key: 2
+      value:
+        cards:
+        - id: 0
+        - id: 0
+        - id: 0
+        - id: 0
+        - id: 0
+        property:
+          health:
+            _maxValue: 10
+            _minValue: 0
+            _value: 10
+          shield: 0
   levelEnemyData:
     list:
     - key: 1
+      value:
+        propertyData:
+          health:
+            _maxValue: 1
+            _minValue: 0
+            _value: 1
+          shield: 0
+        candidateCards:
+        - id: 0
+        - id: 0
+        - id: 0
+        - id: 0
+        - id: 0
+        - id: 0
+        - id: 0
+        - id: 0
+    - key: 2
       value:
         propertyData:
           health:

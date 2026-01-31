@@ -8,6 +8,7 @@ namespace GGJ2026.GamePlay
     [RequireComponent(typeof(EntityPropertyShower))]
     public class EnemyController : MonoBehaviour, IEntityController
     {
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
         public EnemyData enemyData { get; private set; }
         private EntityPropertyShower _propertyShower;
         private DoTweenHitEffect _doTweenHitEffect;

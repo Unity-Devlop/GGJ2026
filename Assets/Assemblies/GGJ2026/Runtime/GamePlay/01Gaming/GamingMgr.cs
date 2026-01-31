@@ -47,6 +47,13 @@ namespace GGJ2026.GamePlay
         private bool playerOperationInProgress = false;
         public bool isGameWin => enemyController.IsDead() && !playerController.IsDead();
 
+
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        private PlayerData playerData;
+
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        private EnemyData enemyData;
+
         private async UniTask GameFlow()
         {
             currentGamingState = GamingState.GameStart;
@@ -57,8 +64,8 @@ namespace GGJ2026.GamePlay
             Global.localSave.Get<GameData>(out var gameData);
 
             var currentLevel = gameData.lastCompletedLevel;
-            var playerData = Global.refHolder.levelConfig.levelPlayerData[currentLevel].DeepCopy();
-            var enemyData = Global.refHolder.levelConfig.levelEnemyData[currentLevel].DeepCopy();
+            playerData = Global.refHolder.levelConfig.levelPlayerData[currentLevel].DeepCopy();
+            enemyData = Global.refHolder.levelConfig.levelEnemyData[currentLevel].DeepCopy();
 
             gamePlayPanel.Bind(playerData);
 
@@ -121,8 +128,6 @@ namespace GGJ2026.GamePlay
                 await UniTask.Yield();
             }
 
-            playerController.UnBind();
-            enemyController.UnBind();
             currentGamingState = GamingState.GameOver;
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
         }
@@ -130,7 +135,8 @@ namespace GGJ2026.GamePlay
         public void ExitGame()
         {
             Global.localSave.Get<GameData>(out var gameData);
-
+            playerController.UnBind();
+            enemyController.UnBind();
 
             if (playerController.IsDead())
             {
