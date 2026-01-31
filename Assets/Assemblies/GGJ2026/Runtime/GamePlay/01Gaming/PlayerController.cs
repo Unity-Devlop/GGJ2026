@@ -150,15 +150,30 @@ namespace GGJ2026.GamePlay
         {
         }
 
-        public async UniTask TakeDamage(int value)
+        public async UniTask TakeDamage(int damageValue)
         {
-            data.property.health.Value -= value;
+            BuffEffects.ProcessTakeDamageBuffs(this, ref damageValue);
+
+            if (data.property.shield > 0)
+            {
+                // 先扣护甲 扣完护甲如果还有伤害再扣血量
+                int shieldDamage = Math.Min(data.property.shield, damageValue);
+                int damageToHealth = damageValue - shieldDamage;
+                data.property.shield -= shieldDamage;
+                data.property.health.Value -= damageToHealth;
+            }
+            else
+            {
+                data.property.health.Value -= damageValue;
+            }
+
             // DOTween
             await _doTweenHitEffect.PlayHitEffect();
         }
 
         public async UniTask GainShield(int value)
         {
+            data.property.shield += value;
         }
 
         public async UniTask SwitchMask(MaskEnum id)
@@ -180,6 +195,10 @@ namespace GGJ2026.GamePlay
                     break;
                 case MaskEnum.无常面具:
                     // TODO 默认黑 点自己切白
+                    RemoveBuff(BuffEnum.黑无常);
+                    RemoveBuff(BuffEnum.白无常);
+
+                    await AddBuff(BuffEnum.白无常, null);
                     break;
                 case MaskEnum.阎罗面具:
                     BuffEnum[] laws =

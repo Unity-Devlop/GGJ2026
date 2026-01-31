@@ -183,7 +183,20 @@ namespace GGJ2026.GamePlay
         public async UniTask TakeDamage(int damageValue)
         {
             BuffEffects.ProcessTakeDamageBuffs(this, ref damageValue);
-            data.property.health.Value -= damageValue;
+
+            if (data.property.shield > 0)
+            {
+                // 先扣护甲 扣完护甲如果还有伤害再扣血量
+                int shieldDamage = Math.Min(data.property.shield, damageValue);
+                int damageToHealth = damageValue - shieldDamage;
+                data.property.shield -= shieldDamage;
+                data.property.health.Value -= damageToHealth;
+            }
+            else
+            {
+                data.property.health.Value -= damageValue;
+            }
+
             // DOTween
             await _doTweenHitEffect.PlayHitEffect();
         }
@@ -196,7 +209,8 @@ namespace GGJ2026.GamePlay
 
         public UniTask GainShield(int value)
         {
-            throw new NotImplementedException();
+            data.property.shield += value;
+            return UniTask.CompletedTask;
         }
     }
 }
