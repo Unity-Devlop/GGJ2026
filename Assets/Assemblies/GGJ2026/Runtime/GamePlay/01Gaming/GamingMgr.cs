@@ -58,6 +58,7 @@ namespace GGJ2026.GamePlay
             enemyController.Bind(enemyData);
 
 
+            currentGamingState = GamingState.PlayerRound;
             while (true)
             {
                 isGameOver = playerController.IsDead() || enemyController.IsDead();
@@ -72,7 +73,7 @@ namespace GGJ2026.GamePlay
                         {
                             await playerController.UseCard(useCardOperation.cardData);
                             // 结算伤害
-                            CardEffects.ExecuteCardEffects(useCardOperation.cardData, playerController,
+                            await CardEffects.ExecuteCardEffects(useCardOperation.cardData, playerController,
                                 enemyController);
                         }
                     }

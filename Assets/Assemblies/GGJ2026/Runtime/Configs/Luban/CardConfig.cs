@@ -19,6 +19,10 @@ public sealed partial class CardConfig : Luban.BeanBase
     {
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = (CardEnum)_buf["id"].AsInt; }
         { if(!_buf["desc"].IsString) { throw new SerializationException(); }  Desc = _buf["desc"]; }
+        { if(!_buf["damage_value"].IsNumber) { throw new SerializationException(); }  DamageValue = _buf["damage_value"]; }
+        { if(!_buf["shield_value"].IsNumber) { throw new SerializationException(); }  ShieldValue = _buf["shield_value"]; }
+        { if(!_buf["health_value"].IsNumber) { throw new SerializationException(); }  HealthValue = _buf["health_value"]; }
+        { if(!_buf["health_limit_value"].IsNumber) { throw new SerializationException(); }  HealthLimitValue = _buf["health_limit_value"]; }
     }
 
     public static CardConfig DeserializeCardConfig(JSONNode _buf)
@@ -31,6 +35,10 @@ public sealed partial class CardConfig : Luban.BeanBase
     /// 描述
     /// </summary>
     public readonly string Desc;
+    public readonly int DamageValue;
+    public readonly int ShieldValue;
+    public readonly int HealthValue;
+    public readonly int HealthLimitValue;
    
     public const int __ID__ = -2113914222;
     public override int GetTypeId() => __ID__;
@@ -44,6 +52,10 @@ public sealed partial class CardConfig : Luban.BeanBase
         return "{ "
         + "id:" + Id + ","
         + "desc:" + Desc + ","
+        + "damageValue:" + DamageValue + ","
+        + "shieldValue:" + ShieldValue + ","
+        + "healthValue:" + HealthValue + ","
+        + "healthLimitValue:" + HealthLimitValue + ","
         + "}";
     }
 }

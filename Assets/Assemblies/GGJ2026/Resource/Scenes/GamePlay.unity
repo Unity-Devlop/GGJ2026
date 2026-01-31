@@ -617,9 +617,9 @@ MonoBehaviour:
   enemyData:
     propertyData:
       health:
-        _maxValue: 0
+        _maxValue: 100
         _minValue: 0
-        _value: 1
+        _value: 100
       shield: 0
   playerController: {fileID: 2008996154}
   enemyController: {fileID: 114005679}
@@ -717,8 +717,9 @@ GameObject:
   m_Component:
   - component: {fileID: 662470872}
   - component: {fileID: 662470873}
+  - component: {fileID: 662470874}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,6 +799,29 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &662470874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662470871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f2e3d603a849fb9710b16ee2ffbb04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.DoTweenHitEffect
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.15
+  flashLoops: 1
+  enablePunchScale: 1
+  punchStrength: {x: 0.2, y: 0.2, z: 0}
+  punchDuration: 0.2
+  vibrato: 10
+  elasticity: 1
+  enableShake: 1
+  shakeDuration: 0.2
+  shakeStrength: 0.3
 --- !u!1 &760881955
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,8 +832,9 @@ GameObject:
   m_Component:
   - component: {fileID: 760881956}
   - component: {fileID: 760881957}
+  - component: {fileID: 760881958}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -889,6 +914,29 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &760881958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760881955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f2e3d603a849fb9710b16ee2ffbb04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.DoTweenHitEffect
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashDuration: 0.15
+  flashLoops: 1
+  enablePunchScale: 1
+  punchStrength: {x: 0.2, y: 0.2, z: 0}
+  punchDuration: 0.2
+  vibrato: 10
+  elasticity: 1
+  enableShake: 1
+  shakeDuration: 0.2
+  shakeStrength: 0.3
 --- !u!1 &865007109
 GameObject:
   m_ObjectHideFlags: 0

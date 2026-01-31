@@ -7,5 +7,6 @@ namespace GGJ2026.GamePlay
     public class CardData
     {
         public CardEnum id;
+        public CardConfig config => Global.tables.CardTable.Get(id);
     }
 }
