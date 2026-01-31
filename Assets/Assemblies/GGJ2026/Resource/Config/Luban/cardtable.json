@@ -448,7 +448,7 @@
     "mask_to_card_effect": []
   },
   {
-    "id": 36,
+    "id": 35,
     "type": 0,
     "intent": 0,
     "name": "",
@@ -458,7 +458,7 @@
     "mask_to_card_effect": []
   },
   {
-    "id": 37,
+    "id": 36,
     "type": 0,
     "intent": 3,
     "name": "",
@@ -468,11 +468,21 @@
     "mask_to_card_effect": []
   },
   {
-    "id": 38,
+    "id": 37,
     "type": 0,
     "intent": 1,
     "name": "",
     "desc": "获得{0}点护甲。打出后有{1}%几率结束回合。",
+    "value": [],
+    "can_end_round": true,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 38,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
     "value": [],
     "can_end_round": true,
     "mask_to_card_effect": []
@@ -510,16 +520,6 @@
   {
     "id": 42,
     "type": 0,
-    "intent": 0,
-    "name": "",
-    "desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
-    "value": [],
-    "can_end_round": true,
-    "mask_to_card_effect": []
-  },
-  {
-    "id": 43,
-    "type": 0,
     "intent": 2,
     "name": "",
     "desc": "无事发生。打出后有{1}%几率结束回合。",
@@ -528,7 +528,7 @@
     "mask_to_card_effect": []
   },
   {
-    "id": 44,
+    "id": 43,
     "type": 0,
     "intent": 1,
     "name": "",
@@ -538,7 +538,7 @@
     "mask_to_card_effect": []
   },
   {
-    "id": 45,
+    "id": 44,
     "type": 0,
     "intent": 2,
     "name": "",
@@ -548,7 +548,7 @@
     "mask_to_card_effect": []
   },
   {
-    "id": 46,
+    "id": 45,
     "type": 0,
     "intent": 2,
     "name": "",
@@ -558,7 +558,7 @@
     "mask_to_card_effect": []
   },
   {
-    "id": 47,
+    "id": 46,
     "type": 0,
     "intent": 0,
     "name": "",
@@ -568,7 +568,7 @@
     "mask_to_card_effect": []
   },
   {
-    "id": 48,
+    "id": 47,
     "type": 0,
     "intent": 0,
     "name": "",
@@ -578,11 +578,31 @@
     "mask_to_card_effect": []
   },
   {
-    "id": 49,
+    "id": 48,
     "type": 0,
     "intent": 1,
     "name": "",
     "desc": "获得{0}点护甲。打出后有{1}%几率结束回合。",
+    "value": [],
+    "can_end_round": true,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 49,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": true,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 0,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
     "value": [],
     "can_end_round": true,
     "mask_to_card_effect": []

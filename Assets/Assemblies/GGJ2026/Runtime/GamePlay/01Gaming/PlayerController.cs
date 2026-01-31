@@ -44,6 +44,7 @@ namespace GGJ2026.GamePlay
         public bool TryGetMask(out MaskEnum id)
         {
             id = data.currentMask;
+            if (id == MaskEnum.本我) return false;
             return true;
         }
 

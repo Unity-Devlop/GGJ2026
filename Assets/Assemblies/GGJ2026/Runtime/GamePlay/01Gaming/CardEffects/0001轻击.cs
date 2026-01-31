@@ -13,7 +13,11 @@ namespace GGJ2026.GamePlay
             //无常面具: 造成{0}点伤害。
             //孟婆面具: 孟婆汤中的攻击牌+1。
             //二郎神面具: 获得{0}点护甲。
-            
+
+            if (atk.TryGetMask(out var mask))
+            {
+                
+            }
                         
             await atk.UseCard(cardData);
             await tar.TakeCard(cardData);
