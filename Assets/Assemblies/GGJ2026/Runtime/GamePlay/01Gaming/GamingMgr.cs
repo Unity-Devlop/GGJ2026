@@ -58,6 +58,9 @@ namespace GGJ2026.GamePlay
 
         private async UniTask GameFlow()
         {
+            isGameOver = false;
+            isGameWin = false;
+            Debug.Log("游戏开始".Color(Color.aquamarine));
             currentGamingState = GamingState.GameStart;
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
 
@@ -179,7 +182,9 @@ namespace GGJ2026.GamePlay
 
         public void ExitGame()
         {
+            isGameOver = false;
             Global.localSave.Get<GameData>(out var gameData);
+            currentGamingState = GamingState.GameOver;
 
 
             if (playerController.IsDead())

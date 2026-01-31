@@ -38,8 +38,19 @@ namespace GGJ2026.GamePlay
             stateMachine.Run<GameStartState>();
         }
 
+        // private float tickRate = 1f / 30f;
+        // private float timer = 0f;
+
         private void Update()
         {
+            // timer += Time.deltaTime;
+            // if (timer < tickRate)
+            // {
+            //     return;
+            // }
+            //
+            // timer -= tickRate;
+
             stateMachine.OnUpdate();
         }
 
