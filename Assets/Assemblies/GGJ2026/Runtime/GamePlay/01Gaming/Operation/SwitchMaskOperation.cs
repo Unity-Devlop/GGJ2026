@@ -12,5 +12,13 @@ namespace GGJ2026.GamePlay
             this.id = id;
             this.endRoundRightAfter = endRoundRightAfter;
         }
+
+        public override int GetHashCode()
+        {
+            int hash = 17;
+            hash = hash * 31 + id.GetHashCode();
+            hash = hash * 31 + endRoundRightAfter.GetHashCode();
+            return hash;
+        }
     }
 }

@@ -54,13 +54,7 @@ MonoBehaviour:
           shield: 0
         candidateCards:
         - id: 0
-        - id: 0
-        - id: 0
-        - id: 0
-        - id: 0
-        - id: 0
-        - id: 0
-        - id: 0
+        - id: 34
     - key: 2
       value:
         property:
@@ -71,10 +65,4 @@ MonoBehaviour:
           shield: 0
         candidateCards:
         - id: 0
-        - id: 0
-        - id: 0
-        - id: 0
-        - id: 0
-        - id: 0
-        - id: 0
-        - id: 0
+        - id: 34

@@ -9,7 +9,7 @@ namespace GGJ2026.GamePlay
         public async UniTask<bool> Execute(CardData cardData, IEntityController playerController, IEntityController enemyController)
         {
             // 结束回合
-            return false;
+            return true;
         }
     }
 }
