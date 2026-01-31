@@ -85,6 +85,7 @@ namespace GGJ2026.GamePlay
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
 
             await playerController.TurnStart();
+            await enemyController.TurnEnd();
             await playerController.SwitchMask(MaskEnum.本我);
 
 
