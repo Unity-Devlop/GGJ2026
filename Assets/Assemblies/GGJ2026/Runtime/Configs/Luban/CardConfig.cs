@@ -18,12 +18,16 @@ public sealed partial class CardConfig : Luban.BeanBase
     public CardConfig(JSONNode _buf) 
     {
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = (CardEnum)_buf["id"].AsInt; }
+        { if(!_buf["type"].IsNumber) { throw new SerializationException(); }  Type = (CardTypeEnum)_buf["type"].AsInt; }
+        { if(!_buf["name"].IsString) { throw new SerializationException(); }  Name = _buf["name"]; }
         { if(!_buf["desc"].IsString) { throw new SerializationException(); }  Desc = _buf["desc"]; }
-        { if(!_buf["damage_value"].IsNumber) { throw new SerializationException(); }  DamageValue = _buf["damage_value"]; }
-        { if(!_buf["shield_value"].IsNumber) { throw new SerializationException(); }  ShieldValue = _buf["shield_value"]; }
-        { if(!_buf["health_value"].IsNumber) { throw new SerializationException(); }  HealthValue = _buf["health_value"]; }
-        { if(!_buf["health_limit_value"].IsNumber) { throw new SerializationException(); }  HealthLimitValue = _buf["health_limit_value"]; }
-        { if(!_buf["end_round_when_use"].IsBoolean) { throw new SerializationException(); }  EndRoundWhenUse = _buf["end_round_when_use"]; }
+        { var __json0 = _buf["value"]; if(!__json0.IsArray) { throw new SerializationException(); } int _n0 = __json0.Count; Value = new int[_n0]; int __index0=0; foreach(JSONNode __e0 in __json0.Children) { int __v0;  { if(!__e0.IsNumber) { throw new SerializationException(); }  __v0 = __e0; }  Value[__index0++] = __v0; }   }
+        { if(!_buf["can_end_round"].IsBoolean) { throw new SerializationException(); }  CanEndRound = _buf["can_end_round"]; }
+        { if(!_buf["阎王面具"].IsNumber) { throw new SerializationException(); }  阎王面具 = (CardEnum)_buf["阎王面具"].AsInt; }
+        { if(!_buf["无常面具"].IsNumber) { throw new SerializationException(); }  无常面具 = (CardEnum)_buf["无常面具"].AsInt; }
+        { if(!_buf["阎罗面具"].IsNumber) { throw new SerializationException(); }  阎罗面具 = (CardEnum)_buf["阎罗面具"].AsInt; }
+        { if(!_buf["孟婆面具"].IsNumber) { throw new SerializationException(); }  孟婆面具 = (CardEnum)_buf["孟婆面具"].AsInt; }
+        { if(!_buf["二郎神面具"].IsNumber) { throw new SerializationException(); }  二郎神面具 = (CardEnum)_buf["二郎神面具"].AsInt; }
     }
 
     public static CardConfig DeserializeCardConfig(JSONNode _buf)
@@ -32,18 +36,22 @@ public sealed partial class CardConfig : Luban.BeanBase
     }
 
     public readonly CardEnum Id;
+    public readonly CardTypeEnum Type;
+    /// <summary>
+    /// 卡牌名
+    /// </summary>
+    public readonly string Name;
     /// <summary>
     /// 描述
     /// </summary>
     public readonly string Desc;
-    public readonly int DamageValue;
-    public readonly int ShieldValue;
-    public readonly int HealthValue;
-    public readonly int HealthLimitValue;
-    /// <summary>
-    /// 打出后结束回合?
-    /// </summary>
-    public readonly bool EndRoundWhenUse;
+    public readonly int[] Value;
+    public readonly bool CanEndRound;
+    public readonly CardEnum 阎王面具;
+    public readonly CardEnum 无常面具;
+    public readonly CardEnum 阎罗面具;
+    public readonly CardEnum 孟婆面具;
+    public readonly CardEnum 二郎神面具;
    
     public const int __ID__ = -2113914222;
     public override int GetTypeId() => __ID__;
@@ -56,12 +64,16 @@ public sealed partial class CardConfig : Luban.BeanBase
     {
         return "{ "
         + "id:" + Id + ","
+        + "type:" + Type + ","
+        + "name:" + Name + ","
         + "desc:" + Desc + ","
-        + "damageValue:" + DamageValue + ","
-        + "shieldValue:" + ShieldValue + ","
-        + "healthValue:" + HealthValue + ","
-        + "healthLimitValue:" + HealthLimitValue + ","
-        + "endRoundWhenUse:" + EndRoundWhenUse + ","
+        + "value:" + Luban.StringUtil.CollectionToString(Value) + ","
+        + "canEndRound:" + CanEndRound + ","
+        + "阎王面具:" + 阎王面具 + ","
+        + "无常面具:" + 无常面具 + ","
+        + "阎罗面具:" + 阎罗面具 + ","
+        + "孟婆面具:" + 孟婆面具 + ","
+        + "二郎神面具:" + 二郎神面具 + ","
         + "}";
     }
 }

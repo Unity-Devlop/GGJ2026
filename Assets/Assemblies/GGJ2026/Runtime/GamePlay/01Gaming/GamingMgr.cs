@@ -177,7 +177,7 @@ namespace GGJ2026.GamePlay
             if (playerOperationQueue.Count > 0)
             {
                 var first = playerOperationQueue.Peek();
-                if (first is UseCardOperation useCardOperation && useCardOperation.cardData.config.EndRoundWhenUse)
+                if (first is UseCardOperation useCardOperation && useCardOperation.cardData.config.CanEndRound)
                 {
                     Debug.LogWarning("当前有结束回合的操作在队列中，无法添加新的操作");
                     return false;

@@ -9,7 +9,6 @@ namespace GGJ2026.Editor
 {
     public class GameEditorWindow : OdinMenuEditorWindow
     {
-        
         [MenuItem("Tools/EditorWindow")]
         private static void ShowWindow()
         {
@@ -18,14 +17,15 @@ namespace GGJ2026.Editor
             window.position = GUIHelper.GetEditorWindowRect().AlignCenter(800, 600);
             window.Show();
         }
-        
+
         protected override OdinMenuTree BuildMenuTree()
         {
             OdinMenuTree odinMenuTree = new OdinMenuTree()
             {
-                { "存档系统", new SaveSystemEditor() , EditorIcons.SettingsCog },
+                { "卡牌效果生成器", new CardEffectGeneratorEditor(), EditorIcons.SettingsCog },
+                { "存档系统", new SaveSystemEditor(), EditorIcons.SettingsCog },
             };
-            
+
             return odinMenuTree;
         }
     }

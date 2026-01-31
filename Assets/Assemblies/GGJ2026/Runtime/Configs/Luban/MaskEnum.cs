@@ -11,18 +11,14 @@
 
 namespace cfg
 { 
-    public enum GameLevelEnum
+    public enum MaskEnum
     {
-        None = 0,
-        第一关 = 1,
-        第二关 = 2,
-        第三关 = 3,
-        第四关 = 4,
-        第五关 = 5,
-        第六关 = 6,
-        第七关 = 7,
-        第八关 = 8,
-        第九关 = 9,
+        本我 = 0,
+        阎王 = 1,
+        十殿阎罗 = 2,
+        黑白无常 = 3,
+        孟婆 = 4,
+        二郎神 = 5,
     }
 
 } 

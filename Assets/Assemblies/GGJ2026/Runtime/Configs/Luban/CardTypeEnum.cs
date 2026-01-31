@@ -11,18 +11,12 @@
 
 namespace cfg
 { 
-    public enum GameLevelEnum
+    public enum CardTypeEnum
     {
-        None = 0,
-        第一关 = 1,
-        第二关 = 2,
-        第三关 = 3,
-        第四关 = 4,
-        第五关 = 5,
-        第六关 = 6,
-        第七关 = 7,
-        第八关 = 8,
-        第九关 = 9,
+        攻击 = 0,
+        功能 = 1,
+        请神 = 2,
+        面具 = 3,
     }
 
 } 

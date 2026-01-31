@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "desc": "",
+    "can_wear_any_time": true
+  },
+  {
+    "id": 1,
+    "desc": "",
+    "can_wear_any_time": true
+  },
+  {
+    "id": 2,
+    "desc": "",
+    "can_wear_any_time": true
+  },
+  {
+    "id": 3,
+    "desc": "",
+    "can_wear_any_time": false
+  },
+  {
+    "id": 4,
+    "desc": "",
+    "can_wear_any_time": false
+  },
+  {
+    "id": 5,
+    "desc": "",
+    "can_wear_any_time": false
+  }
+]
