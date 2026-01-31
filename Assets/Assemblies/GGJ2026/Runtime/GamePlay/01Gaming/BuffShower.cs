@@ -40,6 +40,10 @@ namespace GGJ2026.GamePlay
                 {
                     _stringBuilder.Append("白\n");
                 }
+                else
+                {
+                    _stringBuilder.AppendLine($"{buffInfo.buffEnum}\n");
+                }
             }
 
             buffText.text = _stringBuilder.ToString();

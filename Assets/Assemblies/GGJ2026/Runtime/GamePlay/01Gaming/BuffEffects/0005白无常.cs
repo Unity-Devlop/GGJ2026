@@ -1,10 +1,16 @@
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace GGJ2026.GamePlay
 {
     [BuffExecutor(cfg.BuffEnum.白无常)]
     public class 白无常 : IBuffEffectExecutor
     {
+        public void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff, ref int shieldValue)
+        {
+            
+        }
+
         public void ProcessTakeDamageBuff(IEntityController sender, IEntityController enity, BuffInfo buff,
             ref int damageValue)
         {
@@ -13,6 +19,7 @@ namespace GGJ2026.GamePlay
         public async UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value,
             BuffInfo buff)
         {
+            Debug.Log("白无常回血" + value);
             await entity.GainHealth(value);
         }
 
@@ -26,7 +33,8 @@ namespace GGJ2026.GamePlay
             return UniTask.CompletedTask;
         }
 
-        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield)
+        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController sender, IEntityController taker, BuffInfo buff,
+            ref bool ignoreShield)
         {
         }
     }

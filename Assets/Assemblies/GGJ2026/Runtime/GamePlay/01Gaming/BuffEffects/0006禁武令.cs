@@ -5,16 +5,20 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(cfg.BuffEnum.禁武令)]
     public class 禁武令 : IBuffEffectExecutor
     {
-
-        public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff, ref int damageValue)
+        public void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff, ref int shieldValue)
         {
             
         }
 
-        public UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value,
+        public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff,
+            ref int damageValue)
+        {
+        }
+
+        public async UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value,
             BuffInfo buff)
         {
-            return UniTask.CompletedTask;
+            await entity.TakeDamage(entity, value);
         }
 
         public UniTask OnTurnEnd(IEntityController entity, BuffInfo buff)
@@ -27,8 +31,10 @@ namespace GGJ2026.GamePlay
             return UniTask.CompletedTask;
         }
 
-        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield)
+        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController sender, IEntityController taker, BuffInfo buff,
+            ref bool ignoreShield)
         {
+            ignoreShield = true;
         }
     }
 }

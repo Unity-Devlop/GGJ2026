@@ -40,6 +40,8 @@ namespace GGJ2026.GamePlay
 
     public interface IBuffEffectExecutor
     {
+        void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff,
+            ref int shieldValue);
         void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff,
             ref int damageValue);
 
@@ -48,7 +50,9 @@ namespace GGJ2026.GamePlay
 
         UniTask OnTurnEnd(IEntityController entity, BuffInfo buff);
         UniTask OnReduceBuff(IEntityController entity, BuffInfo buff, object parmaters);
-        void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield);
+
+        void ProcessTakeDamageIgnoreShieldBuffs(IEntityController sender, IEntityController taker, BuffInfo buff,
+            ref bool ignoreShield);
     }
 
 
