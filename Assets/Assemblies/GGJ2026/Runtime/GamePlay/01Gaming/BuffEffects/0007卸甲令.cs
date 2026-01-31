@@ -5,6 +5,11 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(cfg.BuffEnum.卸甲令)]
     public class 卸甲令 : IBuffEffectExecutor
     {
+        public void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff, ref int shieldValue)
+        {
+            shieldValue = 0;
+        }
+
         public void ProcessTakeDamageBuff(IEntityController sender, IEntityController enity, BuffInfo buff,
             ref int damageValue)
         {

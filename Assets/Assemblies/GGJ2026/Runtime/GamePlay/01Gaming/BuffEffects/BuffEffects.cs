@@ -31,7 +31,8 @@ namespace GGJ2026.GamePlay
             }
         }
 
-        public static void ProcessTakeDamageBuffs(IEntityController sender,IEntityController taker, ref int damageValue)
+        public static void ProcessTakeDamageBuffs(IEntityController sender, IEntityController taker,
+            ref int damageValue)
         {
             taker.GetBuffs(out var buffs);
             for (int i = buffs.Count - 1; i >= 0; i--)
@@ -39,7 +40,7 @@ namespace GGJ2026.GamePlay
                 var buff = buffs[i];
                 if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
                 {
-                    executor.ProcessTakeDamageBuff(sender,taker, buff, ref damageValue);
+                    executor.ProcessTakeDamageBuff(sender, taker, buff, ref damageValue);
                 }
             }
         }
@@ -87,7 +88,8 @@ namespace GGJ2026.GamePlay
             }
         }
 
-        public static void ProcessTakeDamageIgnoreShieldBuffs(IEntityController sender,IEntityController taker, ref bool ignoreShield)
+        public static void ProcessTakeDamageIgnoreShieldBuffs(IEntityController sender, IEntityController taker,
+            ref bool ignoreShield)
         {
             sender.GetBuffs(out var buffs);
             for (int i = buffs.Count - 1; i >= 0; i--)
@@ -95,7 +97,21 @@ namespace GGJ2026.GamePlay
                 var buff = buffs[i];
                 if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
                 {
-                    executor.ProcessTakeDamageIgnoreShieldBuffs(sender,taker, buff, ref ignoreShield);
+                    executor.ProcessTakeDamageIgnoreShieldBuffs(sender, taker, buff, ref ignoreShield);
+                }
+            }
+        }
+
+        public static void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver,
+            ref int shieldValue)
+        {
+            sender.GetBuffs(out var buffs);
+            for (int i = buffs.Count - 1; i >= 0; i--)
+            {
+                var buffInfo = buffs[i];
+                if (_buffEffectExecutors.TryGetValue(buffInfo.buffEnum, out var executor))
+                {
+                    executor.ProcessGainShieldBuffs(sender, giver, buffInfo, ref shieldValue);
                 }
             }
         }

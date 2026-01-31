@@ -6,6 +6,10 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(BuffEnum.返回本我效果)]
     public class 傩戏开场效果 : IBuffEffectExecutor
     {
+        public void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff, ref int shieldValue)
+        {
+            
+        }
 
         public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff, ref int damageValue)
         {

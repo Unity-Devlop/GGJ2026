@@ -182,8 +182,8 @@ namespace GGJ2026.GamePlay
 
         public async UniTask TakeDamage(IEntityController sender, int damageValue, bool ignoreShield)
         {
-            BuffEffects.ProcessTakeDamageBuffs(sender,this, ref damageValue);
-            BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(sender,this, ref ignoreShield);
+            BuffEffects.ProcessTakeDamageBuffs(sender, this, ref damageValue);
+            BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(sender, this, ref ignoreShield);
             if (data.property.shield > 0 && !ignoreShield)
             {
                 // 先扣护甲 扣完护甲如果还有伤害再扣血量
@@ -209,6 +209,7 @@ namespace GGJ2026.GamePlay
 
         public UniTask GainShield(int value)
         {
+            BuffEffects.ProcessGainShieldBuffs(this, this, ref value);
             data.property.shield += value;
             return UniTask.CompletedTask;
         }

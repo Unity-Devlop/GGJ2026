@@ -7,11 +7,16 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(BuffEnum.碎魂效果)]
     public class 碎魂效果 : IBuffEffectExecutor
     {
+        public void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff, ref int shieldValue)
+        {
+            
+        }
+
         public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff,
             ref int damageValue)
         {
             Assert.IsTrue(buff.buffEnum == BuffEnum.碎魂效果);
-            damageValue = 1;
+            damageValue = 0;
             entity.RemoveBuff(buff.buffEnum);
         }
 
