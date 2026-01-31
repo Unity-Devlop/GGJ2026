@@ -1,10 +1,12 @@
 [
   {
     "id": 0,
-    "desc": "我是水鬼"
+    "desc": "我是水鬼",
+    "prefab_path": "Ghost/死水鬼.prefab"
   },
   {
     "id": 1,
-    "desc": "我是拔舌鬼"
+    "desc": "我是拔舌鬼",
+    "prefab_path": "Ghost/死水鬼.prefab"
   }
 ]

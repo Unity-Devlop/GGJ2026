@@ -19,6 +19,7 @@ public sealed partial class GhostConfig : Luban.BeanBase
     {
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = (GhostEnum)_buf["id"].AsInt; }
         { if(!_buf["desc"].IsString) { throw new SerializationException(); }  Desc = _buf["desc"]; }
+        { if(!_buf["prefab_path"].IsString) { throw new SerializationException(); }  PrefabPath = _buf["prefab_path"]; }
     }
 
     public static GhostConfig DeserializeGhostConfig(JSONNode _buf)
@@ -31,6 +32,7 @@ public sealed partial class GhostConfig : Luban.BeanBase
     /// 描述
     /// </summary>
     public readonly string Desc;
+    public readonly string PrefabPath;
    
     public const int __ID__ = -301065583;
     public override int GetTypeId() => __ID__;
@@ -44,6 +46,7 @@ public sealed partial class GhostConfig : Luban.BeanBase
         return "{ "
         + "id:" + Id + ","
         + "desc:" + Desc + ","
+        + "prefabPath:" + PrefabPath + ","
         + "}";
     }
 }
