@@ -59,8 +59,6 @@ namespace GGJ2026.GamePlay
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
 
 
-
-            
             var gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
             Global.localSave.Get<GameData>(out var gameData);
 
@@ -72,16 +70,15 @@ namespace GGJ2026.GamePlay
 
             playerController.Bind(playerData);
             enemyController.Bind(enemyData);
-            
 
 
             // await UniTask.Delay(TimeSpan.FromSeconds(1));
             currentGamingState = GamingState.PlayerRound;
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
-            
+
             isGameOver = enemyController.IsDead() || playerController.IsDead();
             isGameWin = enemyController.IsDead() && !playerController.IsDead();
-            
+
             while (true)
             {
                 isGameOver = playerController.IsDead() || enemyController.IsDead();
@@ -98,10 +95,10 @@ namespace GGJ2026.GamePlay
                             var cardData = useCardOperation.cardData;
                             await playerController.UseCard(cardData);
                             // 结算伤害
-                            await CardEffects.ExecuteCardEffects(cardData, playerController,
+                            bool endRound = await CardEffects.ExecuteCardEffects(cardData, playerController,
                                 enemyController);
 
-                            if (cardData.config.EndRoundWhenUse)
+                            if (endRound)
                             {
                                 currentGamingState = GamingState.EnemyRound;
                                 await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
@@ -116,7 +113,7 @@ namespace GGJ2026.GamePlay
                 {
                     await enemyController.StartThinking();
 
-                    while (enemyController.wantedOperation)
+                    while (true)
                     {
                         var operation = await enemyController.GetNextOperation();
                         if (operation is UseCardOperation useCardOperation)
@@ -124,8 +121,14 @@ namespace GGJ2026.GamePlay
                             var cardData = useCardOperation.cardData;
                             await enemyController.TakeCard(cardData);
                             // 结算伤害
-                            await CardEffects.ExecuteCardEffects(cardData, enemyController,
+                            bool endRound = await CardEffects.ExecuteCardEffects(cardData, enemyController,
                                 playerController);
+                            if (endRound)
+                            {
+                                currentGamingState = GamingState.PlayerRound;
+                                await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
+                                break;
+                            }
                         }
                     }
 

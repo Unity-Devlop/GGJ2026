@@ -9,12 +9,12 @@ namespace GGJ2026.GamePlay
     public class EnemyController : MonoBehaviour, IEntityController
     {
         [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
-        public EnemyData enemyData { get; private set; }
+        public EnemyData data { get; private set; }
         private EntityPropertyShower _propertyShower;
         private DoTweenHitEffect _doTweenHitEffect;
         private EnemyIntentVisual _enemyIntent;
-        public bool wantedOperation;
 
+        private int currentOperationIndex = 0;
 
         private void Awake()
         {
@@ -26,34 +26,38 @@ namespace GGJ2026.GamePlay
 
         public void Bind(EnemyData enemyData)
         {
-            this.enemyData = enemyData;
-            _propertyShower.Bind(this.enemyData.propertyData);
+            this.data = enemyData;
+            _propertyShower.Bind(this.data.property);
+            currentOperationIndex = 0;
         }
 
         public bool IsDead()
         {
-            return enemyData.propertyData.health.Value <= 0;
+            return data.property.health.Value <= 0;
         }
 
         public void UnBind()
         {
-            enemyData = null;
+            data = null;
             _propertyShower.UnBind();
         }
 
         public async UniTask StartThinking()
         {
-            wantedOperation = false;
         }
 
-        public async Task<IOperation> GetNextOperation()
+        public async UniTask<IOperation> GetNextOperation()
         {
-            throw new NotImplementedException();
+            if(currentOperationIndex >= data.candidateCards.Count)
+            {
+                currentOperationIndex = 0;
+            }
+            var carData = data.candidateCards[currentOperationIndex];
+            return new UseCardOperation(carData);
         }
 
-        public UniTask UseCard(CardData cardData)
+        public async UniTask UseCard(CardData cardData)
         {
-            throw new NotImplementedException();
         }
 
         public async UniTask TakeCard(CardData cardData)
@@ -62,7 +66,7 @@ namespace GGJ2026.GamePlay
 
         public async UniTask TakeDamage(int damageValue)
         {
-            enemyData.propertyData.health.Value -= damageValue;
+            data.property.health.Value -= damageValue;
             // DOTween
             await _doTweenHitEffect.PlayHitEffect();
         }

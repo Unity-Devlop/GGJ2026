@@ -34,10 +34,11 @@ namespace GGJ2026.GamePlay
         
 
 
-        public static async UniTask ExecuteCardEffects(CardData cardData, IEntityController playerController,
+        public static async UniTask<bool> ExecuteCardEffects(CardData cardData, IEntityController playerController,
             IEntityController enemyController)
         {
-            await _cardEffectExecutors[cardData.id].Execute(cardData, playerController, enemyController);
+           bool result=  await _cardEffectExecutors[cardData.id].Execute(cardData, playerController, enemyController);
+           return result;
         }
     }
 }

@@ -46,11 +46,11 @@ MonoBehaviour:
     list:
     - key: 1
       value:
-        propertyData:
+        property:
           health:
-            _maxValue: 1
+            _maxValue: 10
             _minValue: 0
-            _value: 1
+            _value: 10
           shield: 0
         candidateCards:
         - id: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
         - id: 0
     - key: 2
       value:
-        propertyData:
+        property:
           health:
             _maxValue: 10
             _minValue: 0
