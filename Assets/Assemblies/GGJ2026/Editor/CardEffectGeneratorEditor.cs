@@ -1,4 +1,5 @@
 using System.Text;
+using cfg;
 
 namespace GGJ2026.Editor
 {
@@ -17,7 +18,14 @@ namespace GGJ2026.Editor
                 string filePath = $"{path}/{(int)(cardConfig.Id):0000}{name}.cs";
                 if (System.IO.File.Exists(filePath))
                 {
-                    UnityEngine.Debug.LogWarning($"File already exists: {filePath}");
+                    // 把里面的注释换一下 和下面一样的逻辑
+                    string fileContent = System.IO.File.ReadAllText(filePath);
+                    
+                    // Remove All "//" comments 然后重新注释上
+                    var lines = fileContent.Split('\n');
+
+
+
                     continue;
                 }
 
@@ -34,6 +42,14 @@ namespace GGJ2026.Editor
                     "        public async UniTask<bool> Execute(CardData cardData, IEntityController playerController, IEntityController enemyController)");
                 stringBuilder.AppendLine("        {");
                 stringBuilder.AppendLine($"            // {desc}");
+
+                foreach (var (mask, card) in cardConfig.MaskToCardEffect)
+                {
+                    if (mask == MaskEnum.本我) continue;
+                    var targetConfig = Global.tables.CardTable.Get(card);
+                    stringBuilder.AppendLine($"            //{mask}: {targetConfig.Desc}");
+                }
+
                 stringBuilder.AppendLine("            return false;");
                 stringBuilder.AppendLine("        }");
                 stringBuilder.AppendLine("    }");
