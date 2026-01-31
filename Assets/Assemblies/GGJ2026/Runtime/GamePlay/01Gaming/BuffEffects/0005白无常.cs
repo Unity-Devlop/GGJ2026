@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace GGJ2026.GamePlay
 {
@@ -13,6 +14,7 @@ namespace GGJ2026.GamePlay
         public async UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value,
             BuffInfo buff)
         {
+            Debug.Log("白无常回血" + value);
             await entity.GainHealth(value);
         }
 
@@ -26,7 +28,8 @@ namespace GGJ2026.GamePlay
             return UniTask.CompletedTask;
         }
 
-        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield)
+        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController sender, IEntityController taker, BuffInfo buff,
+            ref bool ignoreShield)
         {
         }
     }

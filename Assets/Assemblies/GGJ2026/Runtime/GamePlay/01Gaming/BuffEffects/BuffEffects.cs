@@ -87,15 +87,15 @@ namespace GGJ2026.GamePlay
             }
         }
 
-        public static void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, ref bool ignoreShield)
+        public static void ProcessTakeDamageIgnoreShieldBuffs(IEntityController sender,IEntityController taker, ref bool ignoreShield)
         {
-            entity.GetBuffs(out var buffs);
+            sender.GetBuffs(out var buffs);
             for (int i = buffs.Count - 1; i >= 0; i--)
             {
                 var buff = buffs[i];
                 if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
                 {
-                    executor.ProcessTakeDamageIgnoreShieldBuffs(entity, buff, ref ignoreShield);
+                    executor.ProcessTakeDamageIgnoreShieldBuffs(sender,taker, buff, ref ignoreShield);
                 }
             }
         }

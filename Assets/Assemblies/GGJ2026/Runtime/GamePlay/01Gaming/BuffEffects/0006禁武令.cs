@@ -27,8 +27,10 @@ namespace GGJ2026.GamePlay
             return UniTask.CompletedTask;
         }
 
-        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield)
+        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController sender, IEntityController taker, BuffInfo buff,
+            ref bool ignoreShield)
         {
+            ignoreShield = true;
         }
     }
 }

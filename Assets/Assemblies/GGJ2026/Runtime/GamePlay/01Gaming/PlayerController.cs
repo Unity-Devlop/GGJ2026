@@ -153,7 +153,7 @@ namespace GGJ2026.GamePlay
         public async UniTask TakeDamage(IEntityController sender, int damageValue, bool ignoreShield)
         {
             BuffEffects.ProcessTakeDamageBuffs(sender, this, ref damageValue);
-            BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(this, ref ignoreShield);
+            BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(sender, this, ref ignoreShield);
 
             if (data.property.shield > 0 && !ignoreShield)
             {
