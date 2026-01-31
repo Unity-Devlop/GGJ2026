@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using cfg;
 using Cysharp.Threading.Tasks;
+using UnityToolkit;
 
 namespace GGJ2026.GamePlay
 {
@@ -33,8 +34,9 @@ namespace GGJ2026.GamePlay
         public static void ProcessTakeDamageBuffs(IEntityController entity, ref int damageValue)
         {
             entity.GetBuffs(out var buffs);
-            foreach (var buff in buffs)
+            for (int i = buffs.Count - 1; i >= 0; i--)
             {
+                var buff = buffs[i];
                 if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
                 {
                     executor.ProcessTakeDamageBuff(entity, buff, ref damageValue);
@@ -46,8 +48,9 @@ namespace GGJ2026.GamePlay
             int value)
         {
             entity.GetBuffs(out var buffs);
-            foreach (var buff in buffs)
+            for (int i = buffs.Count - 1; i >= 0; i--)
             {
+                var buff = buffs[i];
                 if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
                 {
                     await executor.ProcessWhenApplyDamageTo(entity, tar, value, buff);
@@ -58,8 +61,9 @@ namespace GGJ2026.GamePlay
         public static async UniTask OnTurnEnd(IEntityController entity)
         {
             entity.GetBuffs(out var buffs);
-            foreach (var buff in buffs)
+            for (int i = buffs.Count - 1; i >= 0; i--)
             {
+                var buff = buffs[i];
                 if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
                 {
                     await executor.OnTurnEnd(entity, buff);
@@ -70,8 +74,9 @@ namespace GGJ2026.GamePlay
         public static async UniTask ReduceBuff(IEntityController entity, BuffEnum id, object parmaters)
         {
             entity.GetBuffs(out var buffs);
-            foreach (var buff in buffs)
+            for (int i = buffs.Count - 1; i >= 0; i--)
             {
+                var buff = buffs[i];
                 if (buff.buffEnum == id)
                 {
                     if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))

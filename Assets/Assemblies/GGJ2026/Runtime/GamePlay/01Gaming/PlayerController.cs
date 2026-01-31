@@ -71,6 +71,7 @@ namespace GGJ2026.GamePlay
                 Debug.Log("玩家可抽的牌组为空，无法抽牌");
                 return;
             }
+
             await GamingMgr.Singleton.LocalPlayerDrawCards(count);
         }
 
