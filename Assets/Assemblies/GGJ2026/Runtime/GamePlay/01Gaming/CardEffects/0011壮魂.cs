@@ -16,9 +16,9 @@ namespace GGJ2026.GamePlay
                 return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
             }
             
-            await tar.UseCard(cardData);
-            await tar.TakeCard(cardData);
-            await tar.AddBuff(BuffEnum.壮魂效果, cardData.config.Value[0]);
+            await atk.UseCard(cardData);
+            await atk.TakeCard(cardData);
+            await atk.AddBuff(BuffEnum.壮魂效果, cardData.config.Value[0]);
 
             return false;
         }

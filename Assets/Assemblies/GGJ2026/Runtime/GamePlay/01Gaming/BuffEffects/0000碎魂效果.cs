@@ -11,7 +11,7 @@ namespace GGJ2026.GamePlay
             ref int damageValue)
         {
             Assert.IsTrue(buff.buffEnum == BuffEnum.碎魂效果);
-            damageValue = 1;
+            damageValue = 0;
             entity.RemoveBuff(buff.buffEnum);
         }
 
