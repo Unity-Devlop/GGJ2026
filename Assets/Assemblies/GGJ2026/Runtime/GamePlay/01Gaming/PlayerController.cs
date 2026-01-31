@@ -66,6 +66,11 @@ namespace GGJ2026.GamePlay
 
         public async UniTask DrawCards(int count)
         {
+            if (data.candidateCards.Count == 0)
+            {
+                Debug.Log("玩家可抽的牌组为空，无法抽牌");
+                return;
+            }
             await GamingMgr.Singleton.LocalPlayerDrawCards(count);
         }
 
@@ -124,6 +129,7 @@ namespace GGJ2026.GamePlay
         {
             lastUsedCardThisRound = CardEnum.None;
             thisRoundUseCardCount.Clear();
+            await DrawCards(1);
             await UniTask.CompletedTask;
         }
 
@@ -195,7 +201,6 @@ namespace GGJ2026.GamePlay
                 default:
                     throw new ArgumentOutOfRangeException(nameof(id), id, null);
             }
-            
         }
 
         public UniTask ReduceBuff(BuffEnum id, object parmaters)

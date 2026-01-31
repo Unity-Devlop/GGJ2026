@@ -17,6 +17,17 @@ namespace GGJ2026.GamePlay
         [SerializeField] private UICardDesc cardDesc;
 
         private PlayerData _playerData;
+        
+        [SerializeField] private Button endTurnButton;
+
+        private void Awake()
+        {
+            endTurnButton.onClick.AddListener(() =>
+            {
+                Debug.Log("End Turn Button Clicked");
+                GamingMgr.Singleton.PushPlayerOperation(new EndTurnOperation());
+            });
+        }
 
         public void Bind(PlayerData playerData)
         {
@@ -35,6 +46,7 @@ namespace GGJ2026.GamePlay
 
         private UniTask OnGamingStateChanged(in GamingMgr.GamingState args)
         {
+            endTurnButton.gameObject.SetActive(args == GamingMgr.GamingState.PlayerRound);
             switch (args)
             {
                 case GamingMgr.GamingState.GameStart:
@@ -79,4 +91,5 @@ namespace GGJ2026.GamePlay
             }
         }
     }
+
 }

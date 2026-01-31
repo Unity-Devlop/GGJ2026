@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdd7df18f5d46b4914a40304f41736b, type: 3}
+  m_Name: LevelConfig_DEBUG
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.LevelConfig
+  levelPlayerData:
+    list:
+    - key: 1
+      value:
+        cards:
+        - id: 1
+        property:
+          health:
+            _maxValue: 10
+            _minValue: 0
+            _value: 10
+          shield: 0
+        currentMask: 0
+        randomDrawCard: 0
+        candidateCards: 01000000
+        currentDrawIndex: -1
+    - key: 2
+      value:
+        cards:
+        - id: 2
+        - id: 10
+        property:
+          health:
+            _maxValue: 20
+            _minValue: 0
+            _value: 20
+          shield: 0
+        currentMask: 0
+        randomDrawCard: 0
+        candidateCards: 0a000000
+        currentDrawIndex: -1
+    - key: 3
+      value:
+        cards:
+        - id: 1
+        property:
+          health:
+            _maxValue: 10
+            _minValue: 0
+            _value: 10
+          shield: 0
+        currentMask: 0
+        randomDrawCard: 0
+        candidateCards: 
+        currentDrawIndex: -1
+    - key: 4
+      value:
+        cards:
+        - id: 3
+        - id: 4
+        property:
+          health:
+            _maxValue: 10
+            _minValue: 0
+            _value: 10
+          shield: 0
+        currentMask: 0
+        randomDrawCard: 1
+        candidateCards: 0c0000000b0000000a0000000a0000000900000008000000080000000700000001000000010000000200000002000000040000000500000005000000060000000600000006000000
+        currentDrawIndex: -1
+    - key: 5
+      value:
+        cards: []
+        property:
+          health:
+            _maxValue: 0
+            _minValue: 0
+            _value: 1
+          shield: 0
+        currentMask: 0
+        randomDrawCard: 0
+        candidateCards: 
+        currentDrawIndex: -1
+    - key: 6
+      value:
+        cards: []
+        property:
+          health:
+            _maxValue: 0
+            _minValue: 0
+            _value: 1
+          shield: 0
+        currentMask: 0
+        randomDrawCard: 0
+        candidateCards: 
+        currentDrawIndex: -1
+    - key: 7
+      value:
+        cards: []
+        property:
+          health:
+            _maxValue: 0
+            _minValue: 0
+            _value: 1
+          shield: 0
+        currentMask: 0
+        randomDrawCard: 0
+        candidateCards: 
+        currentDrawIndex: -1
+  levelEnemyData:
+    list:
+    - key: 1
+      value:
+        property:
+          health:
+            _maxValue: 1
+            _minValue: 0
+            _value: 1
+          shield: 1
+        candidateCards:
+        - id: 40
+    - key: 2
+      value:
+        property:
+          health:
+            _maxValue: 100
+            _minValue: 0
+            _value: 100
+          shield: 0
+        candidateCards:
+        - id: 35
+    - key: 3
+      value:
+        property:
+          health:
+            _maxValue: 1
+            _minValue: 0
+            _value: 1
+          shield: 9999
+        candidateCards:
+        - id: 37
+        - id: 38
+    - key: 4
+      value:
+        property:
+          health:
+            _maxValue: 6
+            _minValue: 0
+            _value: 6
+          shield: 0
+        candidateCards:
+        - id: 36
+    - key: 5
+      value:
+        property:
+          health:
+            _maxValue: 0
+            _minValue: 0
+            _value: 1
+          shield: 0
+        candidateCards: []
+    - key: 6
+      value:
+        property:
+          health:
+            _maxValue: 0
+            _minValue: 0
+            _value: 1
+          shield: 0
+        candidateCards: []
+    - key: 7
+      value:
+        property:
+          health:
+            _maxValue: 0
+            _minValue: 0
+            _value: 1
+          shield: 0
+        candidateCards: []

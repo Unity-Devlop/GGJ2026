@@ -105,7 +105,7 @@ namespace GGJ2026.GamePlay
             if (!autoSizing) return;
             // 根据手牌的数量 动态调整自己的大小
             float maxWidth = standardWidth * standardCount;
-            float width = standardWidth * _playerData.cards.Count;
+            float width = standardWidth * _cards.Count;
             if (width < maxWidth)
             {
                 rectTransform.sizeDelta = new Vector2(width, standardHeight);

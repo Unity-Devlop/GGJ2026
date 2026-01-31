@@ -129,11 +129,20 @@ namespace GGJ2026.GamePlay
                                 break;
                             }
                         }
+                        else if (operation is EndTurnOperation)
+                        {
+                            currentGamingState = GamingState.EnemyRound;
+                            await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
+                            Assert.IsTrue(playerOperationQueue.Count == 0,
+                                "结束回合操作执行时，玩家操作队列不为空");
+                            await playerController.TurnEnd();
+                            await enemyController.TurnStart();
+                            break;
+                        }
                     }
                 }
                 else if (currentGamingState == GamingState.EnemyRound)
                 {
-
                     await enemyController.StartThinking();
 
                     while (true)
@@ -233,6 +242,10 @@ namespace GGJ2026.GamePlay
                 {
                     var currentIndex = playerData.currentDrawIndex;
                     if (currentIndex >= playerData.candidateCards.Count)
+                    {
+                        currentIndex = 0;
+                    }
+                    else if (currentIndex < 0)
                     {
                         currentIndex = 0;
                     }
