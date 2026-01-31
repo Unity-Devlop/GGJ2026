@@ -34,12 +34,7 @@ namespace GGJ2026.GamePlay
         {
             
         }
-
-        UniTask IEntityController.GainShield(int value)
-        {
-            throw new System.NotImplementedException();
-        }
-
+        
         public UniTask TakeCard(CardData cardData)
         {
             throw new System.NotImplementedException();
@@ -50,7 +45,7 @@ namespace GGJ2026.GamePlay
             throw new System.NotImplementedException();
         }
 
-        public async Task GainShield(int value)
+        public async UniTask GainShield(int value)
         {
             
         }

@@ -6,7 +6,7 @@ using UnityEngine;
 namespace GGJ2026.GamePlay
 {
     [RequireComponent(typeof(EntityPropertyShower))]
-    public class EnemyController : MonoBehaviour,IEntityController
+    public class EnemyController : MonoBehaviour, IEntityController
     {
         public EnemyData enemyData { get; private set; }
         private EntityPropertyShower _propertyShower;
@@ -22,19 +22,6 @@ namespace GGJ2026.GamePlay
             _enemyIntent = GetComponentInChildren<EnemyIntentVisual>();
         }
 
-        public UniTask UseCard(CardData cardData)
-        {
-            throw new NotImplementedException();
-        }
-
-        public UniTask GainShield(int value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async UniTask TakeCard(CardData cardData)
-        {
-        }
 
         public void Bind(EnemyData enemyData)
         {
@@ -53,6 +40,25 @@ namespace GGJ2026.GamePlay
             _propertyShower.UnBind();
         }
 
+        public async UniTask StartThinking()
+        {
+            wantedOperation = false;
+        }
+
+        public async Task<IOperation> GetNextOperation()
+        {
+            throw new NotImplementedException();
+        }
+
+        public UniTask UseCard(CardData cardData)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async UniTask TakeCard(CardData cardData)
+        {
+        }
+
         public async UniTask TakeDamage(int damageValue)
         {
             enemyData.propertyData.health.Value -= damageValue;
@@ -60,11 +66,7 @@ namespace GGJ2026.GamePlay
             await _doTweenHitEffect.PlayHitEffect();
         }
 
-        public async UniTask StartThinking()
-        {
-            wantedOperation = false;
-        }
-        public async Task<IOperation> GetNextOperation()
+        public UniTask GainShield(int value)
         {
             throw new NotImplementedException();
         }
