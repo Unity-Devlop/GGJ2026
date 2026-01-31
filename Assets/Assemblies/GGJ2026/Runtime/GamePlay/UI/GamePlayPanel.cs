@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -11,7 +12,8 @@ namespace GGJ2026.GamePlay
     {
         [SerializeField] private UICardContainer cardContainer;
         [SerializeField] private RectTransform useCardArea;
-
+        [SerializeField] private TurnStartUIEffect playerStartUIEffect;
+        [SerializeField] private TurnStartUIEffect enemyStartUIEffect;
 
         private PlayerData _playerData;
 
@@ -21,11 +23,31 @@ namespace GGJ2026.GamePlay
             cardContainer.Bind(playerData);
 
             Global.Event.Listen<OnUICardVisualEndDrag>(OnUICardVisualEndDrag);
+            Global.Event.Listen<GamingMgr.GamingState>(OnGamingStateChanged);
+        }
+
+        private void OnGamingStateChanged(in GamingMgr.GamingState args)
+        {
+            switch (args)
+            {
+                case GamingMgr.GamingState.GameStart:
+                    break;
+                case GamingMgr.GamingState.PlayerRound:
+                    playerStartUIEffect.PlayEffect().Forget();
+                    break;
+                case GamingMgr.GamingState.EnemyRound:
+                    break;
+                case GamingMgr.GamingState.GameOver:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(args), args, null);
+            }
         }
 
         public void UnBind()
         {
             Global.Event.UnListen<OnUICardVisualEndDrag>(OnUICardVisualEndDrag);
+            Global.Event.UnListen<GamingMgr.GamingState>(OnGamingStateChanged);
             cardContainer.UnBind();
             _playerData = null;
         }

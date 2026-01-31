@@ -49,6 +49,8 @@ namespace GGJ2026.GamePlay
         private async UniTask GameFlow()
         {
             currentGamingState = GamingState.GameStart;
+            Global.Event.Invoke(currentGamingState);
+         
             isGameOver = false;
             var gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
             Global.localSave.Get<GameData>(out var gameData);
@@ -59,6 +61,7 @@ namespace GGJ2026.GamePlay
 
 
             currentGamingState = GamingState.PlayerRound;
+            Global.Event.Invoke(currentGamingState);
             while (true)
             {
                 isGameOver = playerController.IsDead() || enemyController.IsDead();
@@ -88,6 +91,7 @@ namespace GGJ2026.GamePlay
             playerController.UnBind();
             enemyController.UnBind();
             currentGamingState = GamingState.GameOver;
+            Global.Event.Invoke(currentGamingState);
         }
 
 

@@ -34,5 +34,10 @@ namespace GGJ2026.GamePlay
         {
             
         }
+
+        public async Task GainShield(int value)
+        {
+            
+        }
     }
 }
