@@ -18,5 +18,7 @@ namespace GGJ2026.GamePlay
                 if (!broaderMaskSprites.TryAdd(maskEnum, null)) continue;
             }
         }
+
+        public SerializableDictionary<CardEnum, Sprite> cardMangaSprites;
     }
 }
