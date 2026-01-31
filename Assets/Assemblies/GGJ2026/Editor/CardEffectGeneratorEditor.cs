@@ -76,7 +76,14 @@ namespace GGJ2026.Editor
                     var targetConfig = Global.tables.CardTable.Get(card);
                     stringBuilder.AppendLine($"            //{mask}: {targetConfig.Desc}");
                 }
-
+                stringBuilder.AppendLine();
+                stringBuilder.AppendLine("          if (atk.TryGetMask(out var mask) && cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))");
+                stringBuilder.AppendLine("          {");
+                stringBuilder.AppendLine("              return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);");
+                stringBuilder.AppendLine("          }");
+                stringBuilder.AppendLine();
+                    
+                    
                 stringBuilder.AppendLine("            return false;");
                 stringBuilder.AppendLine("        }");
                 stringBuilder.AppendLine("    }");

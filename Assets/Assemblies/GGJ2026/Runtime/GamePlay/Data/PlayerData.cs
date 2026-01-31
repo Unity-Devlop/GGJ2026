@@ -11,5 +11,7 @@ namespace GGJ2026.GamePlay
         public List<CardData> cards = new();
         public EntityPropertyData property = new();
         public MaskEnum currentMask = MaskEnum.本我;
+        public bool randomDrawCard = false;
+        public List<CardEnum> candidateCards = new();
     }
 }

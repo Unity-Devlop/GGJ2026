@@ -9,6 +9,12 @@ namespace GGJ2026.GamePlay
         public async UniTask<bool> Execute(CardData cardData, IEntityController atk, IEntityController tar)
         {
             // 对本我造成{0}点伤害，自己恢复{1}点生命。打出后有{2}%几率结束回合。
+
+          if (atk.TryGetMask(out var mask) && cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
+          {
+              return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
+          }
+
             return false;
         }
     }
