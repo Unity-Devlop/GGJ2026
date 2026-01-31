@@ -162,6 +162,7 @@ namespace GGJ2026.GamePlay
 
         public async UniTask SwitchMask(MaskEnum id)
         {
+            Global.Event.Invoke(new OnLocalPlayerWearMaskEvent(id));
             await Global.Event.Invoke<OnLocalPlayerWearMaskEvent, UniTask>(
                 new OnLocalPlayerWearMaskEvent(id));
             Debug.Log("玩家切换面具: " + id);

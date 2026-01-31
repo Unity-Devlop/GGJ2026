@@ -62,24 +62,30 @@ namespace GGJ2026.GamePlay
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
 
 
-            gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
             Global.localSave.Get<GameData>(out var gameData);
 
             var currentLevel = gameData.lastCompletedLevel;
             playerData = Global.refHolder.levelConfig.levelPlayerData[currentLevel].DeepCopy();
             enemyData = Global.refHolder.levelConfig.levelEnemyData[currentLevel].DeepCopy();
 
-            gamePlayPanel.Bind(playerData);
 
             playerController.Bind(playerData);
             enemyController.Bind(enemyData);
 
 
+            
+            gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
+            
+            gamePlayPanel.Bind(playerData);
+            
             // await UniTask.Delay(TimeSpan.FromSeconds(1));
             currentGamingState = GamingState.PlayerRound;
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
+            
             await playerController.TurnStart();
             await playerController.SwitchMask(MaskEnum.本我);
+            
+            
 
             isGameOver = enemyController.IsDead() || playerController.IsDead();
             isGameWin = enemyController.IsDead() && !playerController.IsDead();
