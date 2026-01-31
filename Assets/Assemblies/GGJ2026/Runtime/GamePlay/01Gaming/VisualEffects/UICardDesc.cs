@@ -39,7 +39,14 @@ namespace GGJ2026.GamePlay
 
         private void OnUICardVisualPointerEnter(in OnUICardVisualPointerEnter args)
         {
-            descText.text = args.data.config.Desc;
+            string desc = args.data.config.Desc;
+            for (int i = 0; i < args.data.config.Value.Length; i++)
+            {
+                desc = desc.Replace("{" + i + "}", args.data.config.Value[i].ToString());
+            }
+
+            descText.text = desc;
+
             gameObject.SetActive(true);
             _canvasGroup.alpha = 1;
             _bounceEffectCts?.Cancel();
