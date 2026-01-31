@@ -36,6 +36,9 @@ namespace GGJ2026.Editor
                 stringBuilder.AppendLine("        }");
                 stringBuilder.AppendLine("    }");
                 stringBuilder.AppendLine("}");
+                
+                System.IO.File.WriteAllText(filePath, stringBuilder.ToString());
+                UnityEngine.Debug.Log($"Generated file: {filePath}");
 
                 
                 
