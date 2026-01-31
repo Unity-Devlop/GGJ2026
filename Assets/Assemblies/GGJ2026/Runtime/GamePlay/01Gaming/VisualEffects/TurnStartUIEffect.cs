@@ -37,6 +37,7 @@ namespace GGJ2026.GamePlay
         public async UniTask PlayEffect(System.Action onComplete = null)
         {
             // 1. 初始化状态
+            if (gameObject == null) return;
             gameObject.SetActive(true);
             canvasGroup.alpha = 0;
             mainTextRect.anchoredPosition = new Vector2(_originalPos.x - startOffset, _originalPos.y);

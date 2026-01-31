@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityToolkit;
 
 namespace GGJ2026.GamePlay
@@ -50,7 +51,7 @@ namespace GGJ2026.GamePlay
         {
             currentGamingState = GamingState.GameStart;
             Global.Event.Invoke(currentGamingState);
-         
+
             isGameOver = false;
             var gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
             Global.localSave.Get<GameData>(out var gameData);
@@ -74,10 +75,20 @@ namespace GGJ2026.GamePlay
                         var operation = playerOperationQueue.Dequeue();
                         if (operation is UseCardOperation useCardOperation)
                         {
-                            await playerController.UseCard(useCardOperation.cardData);
+                            var cardData = useCardOperation.cardData;
+                            await playerController.UseCard(cardData);
                             // 结算伤害
-                            await CardEffects.ExecuteCardEffects(useCardOperation.cardData, playerController,
+                            await CardEffects.ExecuteCardEffects(cardData, playerController,
                                 enemyController);
+
+                            if (cardData.config.EndRoundWhenUse)
+                            {
+                                currentGamingState = GamingState.EnemyRound;
+                                Global.Event.Invoke(currentGamingState);
+                                Assert.IsTrue(playerOperationQueue.Count == 0,
+                                    "结束回合操作执行时，玩家操作队列不为空");
+                                break;
+                            }
                         }
                     }
                 }
@@ -102,9 +113,19 @@ namespace GGJ2026.GamePlay
         }
 
 
-        public bool PushPlayerOperation(IOperation useCardOperation)
+        public bool PushPlayerOperation(IOperation operation)
         {
-            playerOperationQueue.Enqueue(useCardOperation);
+            if (playerOperationQueue.Count > 0)
+            {
+                var first = playerOperationQueue.Peek();
+                if (first is UseCardOperation useCardOperation && useCardOperation.cardData.config.EndRoundWhenUse)
+                {
+                    Debug.LogWarning("当前有结束回合的操作在队列中，无法添加新的操作");
+                    return false;
+                }
+            }
+
+            playerOperationQueue.Enqueue(operation);
             return currentGamingState == GamingState.PlayerRound;
         }
     }

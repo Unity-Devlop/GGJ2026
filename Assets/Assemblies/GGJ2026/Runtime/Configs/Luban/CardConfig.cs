@@ -23,6 +23,7 @@ public sealed partial class CardConfig : Luban.BeanBase
         { if(!_buf["shield_value"].IsNumber) { throw new SerializationException(); }  ShieldValue = _buf["shield_value"]; }
         { if(!_buf["health_value"].IsNumber) { throw new SerializationException(); }  HealthValue = _buf["health_value"]; }
         { if(!_buf["health_limit_value"].IsNumber) { throw new SerializationException(); }  HealthLimitValue = _buf["health_limit_value"]; }
+        { if(!_buf["end_round_when_use"].IsBoolean) { throw new SerializationException(); }  EndRoundWhenUse = _buf["end_round_when_use"]; }
     }
 
     public static CardConfig DeserializeCardConfig(JSONNode _buf)
@@ -39,6 +40,10 @@ public sealed partial class CardConfig : Luban.BeanBase
     public readonly int ShieldValue;
     public readonly int HealthValue;
     public readonly int HealthLimitValue;
+    /// <summary>
+    /// 打出后结束回合?
+    /// </summary>
+    public readonly bool EndRoundWhenUse;
    
     public const int __ID__ = -2113914222;
     public override int GetTypeId() => __ID__;
@@ -56,6 +61,7 @@ public sealed partial class CardConfig : Luban.BeanBase
         + "shieldValue:" + ShieldValue + ","
         + "healthValue:" + HealthValue + ","
         + "healthLimitValue:" + HealthLimitValue + ","
+        + "endRoundWhenUse:" + EndRoundWhenUse + ","
         + "}";
     }
 }
