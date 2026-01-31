@@ -19,7 +19,7 @@ namespace GGJ2026.GamePlay
 
             await tar.UseCard(cardData);
             await tar.TakeCard(cardData);
-            await tar.TakeDamage(cardData.config.Value[0]);
+            await tar.TakeDamage(atk, cardData.config.Value[0]);
             await tar.AddBuff(BuffEnum.碎魂效果, cardData.config.Value[1]);
 
             return Random.Range(0, 100) < cardData.config.Value[2];

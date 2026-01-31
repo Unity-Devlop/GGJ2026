@@ -27,7 +27,7 @@ namespace GGJ2026.GamePlay
             int times = cardData.config.Value[1];
             for (int i = 0; i < times; i++)
             {
-                await tar.TakeDamage(damage);
+                await tar.TakeDamage(atk, damage);
             }
 
             if (times >= cardData.config.Value[4])

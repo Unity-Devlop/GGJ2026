@@ -11,7 +11,7 @@ namespace GGJ2026.GamePlay
         {
             // 造成{0}点伤害。打出后有{1}%几率结束回合。
             await UniTask.Yield();
-            
+
             if (atk.TryGetMask(out var mask) &&
                 cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
             {
@@ -20,7 +20,7 @@ namespace GGJ2026.GamePlay
 
             await atk.UseCard(cardData);
             await tar.TakeCard(cardData);
-            await tar.TakeDamage(cardData.config.Value[0]);
+            await tar.TakeDamage(atk, cardData.config.Value[0]);
             await atk.OnApplyDamageTo(tar, cardData.config.Value[0]);
 
             // [0,100)

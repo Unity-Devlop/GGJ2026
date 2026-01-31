@@ -5,7 +5,8 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(cfg.BuffEnum.黑无常)]
     public class 黑无常 : IBuffEffectExecutor
     {
-        public void ProcessTakeDamageBuff(IEntityController enity, BuffInfo buff, ref int damageValue)
+
+        public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff, ref int damageValue)
         {
         }
 
@@ -22,6 +23,11 @@ namespace GGJ2026.GamePlay
         public UniTask OnReduceBuff(IEntityController entity, BuffInfo buff, object parmaters)
         {
             return UniTask.CompletedTask;
+        }
+
+        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield)
+        {
+            ignoreShield = true;
         }
     }
 }

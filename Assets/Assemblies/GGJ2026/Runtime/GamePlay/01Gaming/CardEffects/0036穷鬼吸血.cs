@@ -18,7 +18,7 @@ namespace GGJ2026.GamePlay
             }
 
             await atk.UseCard(cardData);
-            await tar.TakeDamage(cardData.config.Value[0]);
+            await tar.TakeDamage(atk, cardData.config.Value[0]);
             await atk.OnApplyDamageTo(tar, cardData.config.Value[0]);
             await atk.GainHealth(cardData.config.Value[1]);
 

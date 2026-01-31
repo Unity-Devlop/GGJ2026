@@ -19,12 +19,12 @@ namespace GGJ2026.GamePlay
 
             await atk.UseCard(cardData);
             await atk.TakeCard(cardData);
-            await atk.TakeDamage(cardData.config.Value[0]);
+            await atk.TakeDamage(atk, cardData.config.Value[0]);
             await atk.AddBuff(BuffEnum.碎魂效果, cardData.config.Value[1]);
-            
+
             await tar.ReduceBuff(BuffEnum.死期, cardData.config.Value[3]);
-            
-            if(Random.Range(0, 100) < cardData.config.Value[2])
+
+            if (Random.Range(0, 100) < cardData.config.Value[2])
             {
                 return true;
             }

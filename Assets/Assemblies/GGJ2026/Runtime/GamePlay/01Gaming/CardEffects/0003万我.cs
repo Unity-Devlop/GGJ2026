@@ -16,13 +16,14 @@ namespace GGJ2026.GamePlay
             {
                 return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
             }
-            
+
             await atk.UseCard(cardData);
             await tar.TakeCard(cardData);
             for (int i = 0; i < cardData.config.Value[1]; i++)
             {
-                await tar.TakeDamage(cardData.config.Value[0]);
+                await tar.TakeDamage(atk, cardData.config.Value[0]);
             }
+
             cardData.config.Value[1] += cardData.config.Value[2];
             Debug.Log($"万我 damage times increased to {cardData.config.Value[1]}");
             return Random.Range(0, 100) < cardData.config.Value[3];

@@ -1,4 +1,5 @@
 // c#
+
 using cfg;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -28,7 +29,7 @@ namespace GGJ2026.GamePlay
             await atk.OnApplyDamageTo(atk, damage);
 
             // 造成自伤
-            await atk.TakeDamage(damage);
+            await atk.TakeDamage(atk, damage);
 
             // 按概率结束回合
             return Random.Range(0, 100) < cardData.config.Value[1];

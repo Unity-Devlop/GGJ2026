@@ -23,7 +23,7 @@ namespace GGJ2026.GamePlay
         UniTask UseCard(CardData cardData);
         UniTask GainShield(int value);
         UniTask TakeCard(CardData cardData);
-        UniTask TakeDamage(int value);
+        UniTask TakeDamage(IEntityController sender, int value, bool ignoreShield = false);
         UniTask OnceKill();
         bool IsDead();
         UniTask GainHealth(int value);
@@ -40,13 +40,15 @@ namespace GGJ2026.GamePlay
 
     public interface IBuffEffectExecutor
     {
-        void ProcessTakeDamageBuff(IEntityController enity, BuffInfo buff, ref int damageValue);
+        void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff,
+            ref int damageValue);
 
         UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value,
             BuffInfo buff);
 
         UniTask OnTurnEnd(IEntityController entity, BuffInfo buff);
         UniTask OnReduceBuff(IEntityController entity, BuffInfo buff, object parmaters);
+        void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield);
     }
 
 

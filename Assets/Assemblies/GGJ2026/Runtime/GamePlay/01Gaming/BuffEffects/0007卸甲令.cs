@@ -5,7 +5,8 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(cfg.BuffEnum.卸甲令)]
     public class 卸甲令 : IBuffEffectExecutor
     {
-        public void ProcessTakeDamageBuff(IEntityController enity, BuffInfo buff, ref int damageValue)
+        public void ProcessTakeDamageBuff(IEntityController sender, IEntityController enity, BuffInfo buff,
+            ref int damageValue)
         {
         }
 
@@ -23,6 +24,11 @@ namespace GGJ2026.GamePlay
         public UniTask OnReduceBuff(IEntityController entity, BuffInfo buff, object parmaters)
         {
             return UniTask.CompletedTask;
+        }
+
+        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield)
+        {
+            
         }
     }
 }

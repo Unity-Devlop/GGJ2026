@@ -6,7 +6,8 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(BuffEnum.返回本我效果)]
     public class 傩戏开场效果 : IBuffEffectExecutor
     {
-        public void ProcessTakeDamageBuff(IEntityController enity, BuffInfo buff, ref int damageValue)
+
+        public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff, ref int damageValue)
         {
             
         }
@@ -26,6 +27,11 @@ namespace GGJ2026.GamePlay
         public UniTask OnReduceBuff(IEntityController entity, BuffInfo buff, object parmaters)
         {
             return UniTask.CompletedTask;
+        }
+
+        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield)
+        {
+            
         }
     }
 }

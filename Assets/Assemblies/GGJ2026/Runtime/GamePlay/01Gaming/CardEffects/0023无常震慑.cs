@@ -19,7 +19,7 @@ namespace GGJ2026.GamePlay
 
             await atk.UseCard(cardData);
             await tar.TakeCard(cardData);
-            await tar.TakeDamage(cardData.config.Value[0]);
+            await tar.TakeDamage(atk, cardData.config.Value[0]);
             // 斩杀概率
             if (Random.Range(0, 100) < cardData.config.Value[1])
             {
