@@ -164,6 +164,7 @@ namespace GGJ2026.GamePlay
         {
             await Global.Event.Invoke<OnLocalPlayerWearMaskEvent, UniTask>(
                 new OnLocalPlayerWearMaskEvent(id));
+            Debug.Log("玩家切换面具: " + id);
             maskText.text = id.ToString();
             data.currentMask = id;
 

@@ -382,7 +382,8 @@ MonoBehaviour:
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 1
-  levelConfig: {fileID: 11400000, guid: 2f240b414961145ed9239547fcf1fee7, type: 2}
+  levelConfig: {fileID: 11400000, guid: 99bd486af79864709891e06b16f66b56, type: 2}
+  spriteConfig: {fileID: 11400000, guid: 40a5ec995f9094317a213907eb5121e5, type: 2}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

@@ -53,6 +53,7 @@ namespace GGJ2026.GamePlay
 
         public virtual void Bind(UICard card, CardData cardData)
         {
+            Debug.Log("UICardVisual Bind");
             Global.Event.Listen<OnLocalPlayerWearMaskEvent>(OnLocalPlayerWearMaskEvent);
             this.cardData = cardData;
             if (this.card != null)
@@ -84,12 +85,28 @@ namespace GGJ2026.GamePlay
 
         public void UnBind()
         {
+            Debug.Log("UICardVisual UnBind");
             Global.Event.UnListen<OnLocalPlayerWearMaskEvent>(OnLocalPlayerWearMaskEvent);
         }
 
         private void OnLocalPlayerWearMaskEvent(in OnLocalPlayerWearMaskEvent args)
         {
+            Debug.Log($"OnLocalPlayerWearMaskEvent: maskID={args.maskID}");
             maskBorder.sprite = Global.refHolder.spriteConfig.broaderMaskSprites[args.maskID];
+            var atk = GamingMgr.Singleton.GetLocalPlayer();
+            string name;
+            if (atk.TryGetMask(out var mask) &&
+                cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
+            {
+                var newCardConfig = Global.tables.CardTable.Get(newCardEffectId);
+                name = newCardConfig.Name;
+            }
+            else
+            {
+                name = cardData.config.Name;
+            }
+
+            nameText.text = name;
         }
 
         protected virtual void Hover(UICard card, bool hovering)

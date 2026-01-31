@@ -13,6 +13,7 @@ namespace GGJ2026.GamePlay
         public void OnEnter(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
             GamingMgr.Singleton.StartGame();
+            Debug.Log("Enter Gaming State");
         }
 
         public void Transition(GameMgr owner, IStateMachine<GameMgr> stateMachine)

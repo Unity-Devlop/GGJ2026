@@ -39,11 +39,28 @@ namespace GGJ2026.GamePlay
 
         private void OnUICardVisualPointerEnter(in OnUICardVisualPointerEnter args)
         {
-            string desc = args.data.config.Desc;
-            for (int i = 0; i < args.data.config.Value.Length; i++)
+            string desc;
+            var atk = GamingMgr.Singleton.GetLocalPlayer();
+            var cardData = args.data;
+            if (atk.TryGetMask(out var mask) &&
+                cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
             {
-                desc = desc.Replace("{" + i + "}", args.data.config.Value[i].ToString());
+                var newCardConfig = Global.tables.CardTable.Get(newCardEffectId);
+                desc = newCardConfig.Desc;
+                for (int i = 0; i < newCardConfig.Value.Length; i++)
+                {
+                    desc = desc.Replace("{" + i + "}", newCardConfig.Value[i].ToString());
+                }
             }
+            else
+            {
+                desc = args.data.config.Desc;
+                for (int i = 0; i < args.data.config.Value.Length; i++)
+                {
+                    desc = desc.Replace("{" + i + "}", args.data.config.Value[i].ToString());
+                }
+            }
+
 
             descText.text = desc;
 

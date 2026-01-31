@@ -46,6 +46,7 @@ namespace GGJ2026.GamePlay
 
         private UniTask OnGamingStateChanged(in GamingMgr.GamingState args)
         {
+            
             endTurnButton.gameObject.SetActive(args == GamingMgr.GamingState.PlayerRound);
             switch (args)
             {

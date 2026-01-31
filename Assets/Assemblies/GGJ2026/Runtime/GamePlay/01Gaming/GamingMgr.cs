@@ -201,6 +201,7 @@ namespace GGJ2026.GamePlay
                 }
             }
 
+            gamePlayPanel.UnBind();
             playerController.UnBind();
             enemyController.UnBind();
             UIRoot.Singleton.Dispose<GamePlayPanel>();
@@ -270,6 +271,11 @@ namespace GGJ2026.GamePlay
             }
 
             throw new Exception("无法识别的实体控制器");
+        }
+
+        public IEntityController GetLocalPlayer()
+        {
+            return playerController;
         }
     }
 }

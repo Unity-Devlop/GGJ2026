@@ -24,6 +24,14 @@ namespace GGJ2026.GamePlay
 
         private void OnClick()
         {
+            var player = GamingMgr.Singleton.GetLocalPlayer();
+
+            if (player.TryGetMask(out var mask) && mask == id)
+            {
+                Debug.LogWarning("Already in this mask: " + id);
+                return;
+            }
+
             GamingMgr.Singleton.PushPlayerOperation(new SwitchMaskOperation(id, true));
         }
 
