@@ -24,7 +24,7 @@ namespace GGJ2026.GamePlay
 
         private void OnClick()
         {
-            GamingMgr.Singleton.PushPlayerOperation(new PlayerSwitchMaskOperation(id));
+            GamingMgr.Singleton.PushPlayerOperation(new SwitchMaskOperation(id, true));
         }
 
         public void Bind(MaskEnum id)

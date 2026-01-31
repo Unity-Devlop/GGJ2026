@@ -65,11 +65,11 @@ namespace GGJ2026.GamePlay
     }
     
     
-    public readonly struct OnWearMaskEvent
+    public readonly struct OnLocalPlayerWearMaskEvent
     {
         public readonly MaskEnum maskID;
 
-        public OnWearMaskEvent(MaskEnum id)
+        public OnLocalPlayerWearMaskEvent(MaskEnum id)
         {
             maskID = id;
         }

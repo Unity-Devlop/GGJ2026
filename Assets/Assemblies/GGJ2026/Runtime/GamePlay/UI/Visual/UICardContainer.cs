@@ -77,6 +77,9 @@ namespace GGJ2026.GamePlay
             _cards.Remove(info.card);
             _visuals.Remove(info.visual);
 
+            info.card.UnBind();
+            info.visual.UnBind();
+
             slotPool.Release(info.slot.gameObject);
             cardPool.Release(info.card.gameObject);
             visualPool.Release(info.visual.gameObject);

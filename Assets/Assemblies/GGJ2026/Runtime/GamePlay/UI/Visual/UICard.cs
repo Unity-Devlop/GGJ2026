@@ -251,5 +251,9 @@ namespace GGJ2026.GamePlay
         //
         //     return 0;
         // }
+        public void UnBind()
+        {
+            
+        }
     }
 }

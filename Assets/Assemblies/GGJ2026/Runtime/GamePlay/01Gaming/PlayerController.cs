@@ -1,5 +1,7 @@
 using System.Threading.Tasks;
+using cfg;
 using Cysharp.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 
 namespace GGJ2026.GamePlay
@@ -13,6 +15,8 @@ namespace GGJ2026.GamePlay
         private EntityPropertyShower _propertyShower;
 
         private DoTweenHitEffect _doTweenHitEffect;
+        
+        [SerializeField] private TMP_Text maskText;
 
         private void Awake()
         {
@@ -54,6 +58,11 @@ namespace GGJ2026.GamePlay
 
         public async UniTask GainShield(int value)
         {
+        }
+
+        public async Task SwitchMask(MaskEnum id)
+        {
+            maskText.text = id.ToString();
         }
     }
 }

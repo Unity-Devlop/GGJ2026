@@ -9,5 +9,6 @@ namespace GGJ2026
         public AssetReference homeScene;
         public AssetReference gameScene;
         public LevelConfig levelConfig;
+        public SpriteConfig spriteConfig;
     }
 }

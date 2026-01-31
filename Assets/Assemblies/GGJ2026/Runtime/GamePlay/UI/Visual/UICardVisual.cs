@@ -35,6 +35,7 @@ namespace GGJ2026.GamePlay
         private Canvas _canvas;
         // private Canvas _shadowCanvas;
 
+        [SerializeField] protected Image maskBorder;
         [SerializeField] protected Image background;
         [SerializeField] protected TextMeshProUGUI nameText;
 
@@ -52,6 +53,7 @@ namespace GGJ2026.GamePlay
 
         public virtual void Bind(UICard card, CardData cardData)
         {
+            Global.Event.Listen<OnLocalPlayerWearMaskEvent>(OnLocalPlayerWearMaskEvent);
             this.cardData = cardData;
             if (this.card != null)
             {
@@ -77,7 +79,17 @@ namespace GGJ2026.GamePlay
             card.SelectEvent += Select;
             card.HoverEvent += Hover;
 
-            // nameText.text = card.data.config.Id.ToString();
+            nameText.text = cardData.config.Name;
+        }
+
+        public void UnBind()
+        {
+            Global.Event.UnListen<OnLocalPlayerWearMaskEvent>(OnLocalPlayerWearMaskEvent);
+        }
+
+        private void OnLocalPlayerWearMaskEvent(in OnLocalPlayerWearMaskEvent args)
+        {
+            maskBorder.sprite = Global.refHolder.spriteConfig.broaderMaskSprites[args.maskID];
         }
 
         protected virtual void Hover(UICard card, bool hovering)

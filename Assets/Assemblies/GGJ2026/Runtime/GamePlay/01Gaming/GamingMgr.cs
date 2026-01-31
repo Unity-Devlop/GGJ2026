@@ -107,6 +107,20 @@ namespace GGJ2026.GamePlay
                                 break;
                             }
                         }
+                        else if (operation is SwitchMaskOperation switchMask)
+                        {
+                            await playerController.SwitchMask(switchMask.id);
+                            await Global.Event.Invoke<OnLocalPlayerWearMaskEvent, UniTask>(
+                                new OnLocalPlayerWearMaskEvent(switchMask.id));
+                            if (switchMask.endRoundRightAfter)
+                            {
+                                currentGamingState = GamingState.EnemyRound;
+                                await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
+                                Assert.IsTrue(playerOperationQueue.Count == 0,
+                                    "结束回合操作执行时，玩家操作队列不为空");
+                                break;
+                            }
+                        }
                     }
                 }
                 else if (currentGamingState == GamingState.EnemyRound)
@@ -174,6 +188,12 @@ namespace GGJ2026.GamePlay
 
         public bool PushPlayerOperation(IOperation operation)
         {
+            if (playerOperationQueue.Contains(operation))
+            {
+                Debug.LogWarning("操作队列中已存在相同操作，无法重复添加");
+                return false;
+            }
+            
             if (playerOperationQueue.Count > 0)
             {
                 var first = playerOperationQueue.Peek();

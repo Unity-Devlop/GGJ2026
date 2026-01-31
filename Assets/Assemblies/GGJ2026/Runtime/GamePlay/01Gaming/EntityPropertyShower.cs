@@ -9,6 +9,7 @@ namespace GGJ2026.GamePlay
         [SerializeField] private TMP_Text healthText;
         [SerializeField] private TMP_Text shieldText;
 
+
         private EntityPropertyData _propertyData;
         public void Bind(EntityPropertyData propertyData)
         {
