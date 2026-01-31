@@ -114,11 +114,11 @@ namespace GGJ2026.GamePlay
             thisRoundUseCardCount[cardData.id]++;
         }
 
-        public UniTask TurnStart()
+        public async UniTask TurnStart()
         {
             lastUsedCardThisRound = CardEnum.None;
             thisRoundUseCardCount.Clear();
-            return UniTask.CompletedTask;
+            await UniTask.CompletedTask;
         }
 
         public async UniTask TurnEnd()

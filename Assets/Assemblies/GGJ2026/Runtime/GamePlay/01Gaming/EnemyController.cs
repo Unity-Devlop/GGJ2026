@@ -133,6 +133,13 @@ namespace GGJ2026.GamePlay
         {
             lastUsedCardThisRound = CardEnum.None;
             await BuffEffects.OnTurnEnd(this);
+            
+            // 拿到下一次会出的牌
+            if (data.candidateCards.Count > 0)
+            {
+                var nextCard = data.candidateCards[currentOperationIndex % data.candidateCards.Count];
+                _enemyIntent.SetIntent(nextCard.config.Intent);
+            }
         }
 
         public int GetUseCardCount(CardEnum cardEnum)
