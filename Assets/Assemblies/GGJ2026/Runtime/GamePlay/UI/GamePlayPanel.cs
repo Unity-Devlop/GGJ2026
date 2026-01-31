@@ -27,6 +27,12 @@ namespace GGJ2026.GamePlay
             Global.Event.Listen<GamingMgr.GamingState, UniTask>(OnGamingStateChanged);
         }
 
+        public async UniTask DrawCard(CardData cardData)
+        {
+            cardContainer.AddCard(cardData);
+            await UniTask.CompletedTask;
+        }
+
         private UniTask OnGamingStateChanged(in GamingMgr.GamingState args)
         {
             switch (args)

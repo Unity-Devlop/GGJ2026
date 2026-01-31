@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using cfg;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -53,13 +54,15 @@ namespace GGJ2026.GamePlay
         [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
         private EnemyData enemyData;
 
+        private GamePlayPanel gamePlayPanel;
+
         private async UniTask GameFlow()
         {
             currentGamingState = GamingState.GameStart;
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
 
 
-            var gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
+            gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
             Global.localSave.Get<GameData>(out var gameData);
 
             var currentLevel = gameData.lastCompletedLevel;
@@ -194,7 +197,7 @@ namespace GGJ2026.GamePlay
                 Debug.LogWarning("操作队列中已存在相同操作，无法重复添加");
                 return false;
             }
-            
+
             if (playerOperationQueue.Count > 0)
             {
                 var first = playerOperationQueue.Peek();
@@ -207,6 +210,30 @@ namespace GGJ2026.GamePlay
 
             playerOperationQueue.Enqueue(operation);
             return currentGamingState == GamingState.PlayerRound;
+        }
+
+        public async UniTask LocalPlayerDrawCards(int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                if (playerData.randomDrawCard)
+                {
+                    var cardId = playerData.candidateCards.RandomTakeWithoutRemove();
+                    gamePlayPanel.DrawCard(new CardData(cardId));
+                }
+                else
+                {
+                    var currentIndex = playerData.currentDrawIndex;
+                    if (currentIndex >= playerData.candidateCards.Count)
+                    {
+                        currentIndex = 0;
+                    }
+
+                    var cardId = playerData.candidateCards[currentIndex];
+                    playerData.currentDrawIndex = currentIndex + 1;
+                   await gamePlayPanel.DrawCard(new CardData(cardId));
+                }
+            }
         }
     }
 }

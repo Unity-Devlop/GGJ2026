@@ -30,9 +30,26 @@ namespace GGJ2026.GamePlay
             _propertyShower.Bind(this.data.property);
         }
 
+        public UniTask OnceKill()
+        {
+            data.property.health.Value = 0;
+            return UniTask.CompletedTask;
+        }
+
         public bool IsDead()
         {
             return data.property.health.Value <= 0;
+        }
+
+        public UniTask GainHealth(int value)
+        {
+            data.property.health.Value += value;
+            return UniTask.CompletedTask;
+        }
+
+        public async UniTask DrawCards(int count)
+        {
+            await GamingMgr.Singleton.LocalPlayerDrawCards(count);
         }
 
         public void UnBind()
@@ -71,7 +88,6 @@ namespace GGJ2026.GamePlay
         {
             maskText.text = id.ToString();
             data.currentMask = id;
-            
         }
     }
 }
