@@ -1,0 +1,15 @@
+using cfg;
+using Cysharp.Threading.Tasks;
+
+namespace GGJ2026.GamePlay
+{
+    [CardExecutor(CardEnum.阎王攻击)]
+    public class 阎王攻击 : ICardEffectExecutor
+    {
+        public async UniTask<bool> Execute(CardData cardData, IEntityController atk, IEntityController tar)
+        {
+            // 造成{0}点伤害。打出后有{1}%几率结束回合。
+            return false;
+        }
+    }
+}
