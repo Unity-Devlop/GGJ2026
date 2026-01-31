@@ -8,7 +8,8 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(BuffEnum.死期)]
     public class 死期 : IBuffEffectExecutor
     {
-        public void ProcessTakeDamageBuff(IEntityController enity, BuffInfo buff, ref int damageValue)
+
+        public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff, ref int damageValue)
         {
         }
 
@@ -32,6 +33,11 @@ namespace GGJ2026.GamePlay
                 await entity.OnceKill();
                 entity.RemoveBuff(buff.buffEnum);
             }
+        }
+
+        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield)
+        {
+            
         }
     }
 }

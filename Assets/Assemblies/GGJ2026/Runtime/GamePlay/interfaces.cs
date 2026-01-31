@@ -23,13 +23,13 @@ namespace GGJ2026.GamePlay
         UniTask UseCard(CardData cardData);
         UniTask GainShield(int value);
         UniTask TakeCard(CardData cardData);
-        UniTask TakeDamage(int value);
+        UniTask TakeDamage(IEntityController sender, int value, bool ignoreShield = false);
         UniTask OnceKill();
         bool IsDead();
         UniTask GainHealth(int value);
         UniTask DrawCards(int count);
         bool TryGetLastUsedCardThisRound(out CardEnum cardEnum);
-        UniTask AddBuff(BuffEnum 碎魂效果, object values);
+        UniTask AddBuff(BuffEnum buffEnum, object values);
         void GetBuffs(out List<BuffInfo> buffInfos);
         void RemoveBuff(BuffEnum buff);
         UniTask OnApplyDamageTo(IEntityController tar, int value);
@@ -40,13 +40,15 @@ namespace GGJ2026.GamePlay
 
     public interface IBuffEffectExecutor
     {
-        void ProcessTakeDamageBuff(IEntityController enity, BuffInfo buff, ref int damageValue);
+        void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff,
+            ref int damageValue);
 
         UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value,
             BuffInfo buff);
 
         UniTask OnTurnEnd(IEntityController entity, BuffInfo buff);
         UniTask OnReduceBuff(IEntityController entity, BuffInfo buff, object parmaters);
+        void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield);
     }
 
 

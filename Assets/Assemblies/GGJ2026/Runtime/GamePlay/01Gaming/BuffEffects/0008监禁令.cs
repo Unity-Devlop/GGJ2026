@@ -5,8 +5,10 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(cfg.BuffEnum.监禁令)]
     public class 监禁令 : IBuffEffectExecutor
     {
-        public void ProcessTakeDamageBuff(IEntityController enity, BuffInfo buff, ref int damageValue)
+
+        public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff, ref int damageValue)
         {
+            
         }
 
         public UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value,
@@ -23,6 +25,10 @@ namespace GGJ2026.GamePlay
         public UniTask OnReduceBuff(IEntityController entity, BuffInfo buff, object parmaters)
         {
             return UniTask.CompletedTask;
+        }
+
+        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield)
+        {
         }
     }
 }

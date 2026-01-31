@@ -31,15 +31,15 @@ namespace GGJ2026.GamePlay
             }
         }
 
-        public static void ProcessTakeDamageBuffs(IEntityController entity, ref int damageValue)
+        public static void ProcessTakeDamageBuffs(IEntityController sender,IEntityController taker, ref int damageValue)
         {
-            entity.GetBuffs(out var buffs);
+            taker.GetBuffs(out var buffs);
             for (int i = buffs.Count - 1; i >= 0; i--)
             {
                 var buff = buffs[i];
                 if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
                 {
-                    executor.ProcessTakeDamageBuff(entity, buff, ref damageValue);
+                    executor.ProcessTakeDamageBuff(sender,taker, buff, ref damageValue);
                 }
             }
         }
@@ -83,6 +83,19 @@ namespace GGJ2026.GamePlay
                     {
                         await executor.OnReduceBuff(entity, buff, parmaters);
                     }
+                }
+            }
+        }
+
+        public static void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, ref bool ignoreShield)
+        {
+            entity.GetBuffs(out var buffs);
+            for (int i = buffs.Count - 1; i >= 0; i--)
+            {
+                var buff = buffs[i];
+                if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
+                {
+                    executor.ProcessTakeDamageIgnoreShieldBuffs(entity, buff, ref ignoreShield);
                 }
             }
         }

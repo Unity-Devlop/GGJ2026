@@ -58,10 +58,10 @@ namespace GGJ2026.GamePlay
             return data.property.health.Value <= 0;
         }
 
-        public UniTask GainHealth(int value)
+        public async UniTask GainHealth(int value)
         {
             data.property.health.Value += value;
-            return UniTask.CompletedTask;
+            await UniTask.CompletedTask;
         }
 
         public async UniTask DrawCards(int count)
@@ -81,9 +81,9 @@ namespace GGJ2026.GamePlay
             return lastUsedCardThisRound != CardEnum.None;
         }
 
-        public UniTask AddBuff(BuffEnum 碎魂效果, object values)
+        public UniTask AddBuff(BuffEnum buffEnum, object values)
         {
-            _buffs.Add(new BuffInfo() { buffEnum = 碎魂效果, parameters = values });
+            _buffs.Add(new BuffInfo() { buffEnum = buffEnum, parameters = values });
             return UniTask.CompletedTask;
         }
 
@@ -150,11 +150,12 @@ namespace GGJ2026.GamePlay
         {
         }
 
-        public async UniTask TakeDamage(int damageValue)
+        public async UniTask TakeDamage(IEntityController sender, int damageValue, bool ignoreShield)
         {
-            BuffEffects.ProcessTakeDamageBuffs(this, ref damageValue);
+            BuffEffects.ProcessTakeDamageBuffs(sender, this, ref damageValue);
+            BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(this, ref ignoreShield);
 
-            if (data.property.shield > 0)
+            if (data.property.shield > 0 && !ignoreShield)
             {
                 // 先扣护甲 扣完护甲如果还有伤害再扣血量
                 int shieldDamage = Math.Min(data.property.shield, damageValue);
@@ -183,9 +184,15 @@ namespace GGJ2026.GamePlay
                 new OnLocalPlayerWearMaskEvent(id));
             Debug.Log("玩家切换面具: " + id);
             maskText.text = id.ToString();
-            data.currentMask = id;
 
             var enemy = GamingMgr.Singleton.GetEnemyEntity(this);
+            if (data.currentMask == MaskEnum.阎王面具)
+            {
+                enemy.RemoveBuff(BuffEnum.死期);
+            }
+
+            data.currentMask = id;
+
             switch (id)
             {
                 case MaskEnum.本我:
@@ -195,10 +202,25 @@ namespace GGJ2026.GamePlay
                     break;
                 case MaskEnum.无常面具:
                     // TODO 默认黑 点自己切白
-                    RemoveBuff(BuffEnum.黑无常);
-                    RemoveBuff(BuffEnum.白无常);
+                    if (ContainsBuff(BuffEnum.黑无常))
+                    {
+                        RemoveBuff(BuffEnum.黑无常);
+                        RemoveBuff(BuffEnum.白无常);
+                        await AddBuff(BuffEnum.白无常, null);
+                    }
+                    else if (ContainsBuff(BuffEnum.白无常))
+                    {
+                        RemoveBuff(BuffEnum.黑无常);
+                        RemoveBuff(BuffEnum.白无常);
+                        await AddBuff(BuffEnum.黑无常, null);
+                    }
+                    else
+                    {
+                        RemoveBuff(BuffEnum.黑无常);
+                        RemoveBuff(BuffEnum.白无常);
+                        await AddBuff(BuffEnum.黑无常, null);
+                    }
 
-                    await AddBuff(BuffEnum.白无常, null);
                     break;
                 case MaskEnum.阎罗面具:
                     BuffEnum[] laws =
@@ -223,6 +245,19 @@ namespace GGJ2026.GamePlay
                 default:
                     throw new ArgumentOutOfRangeException(nameof(id), id, null);
             }
+        }
+
+        private bool ContainsBuff(BuffEnum buffEnum)
+        {
+            foreach (var buff in _buffs)
+            {
+                if (buff.buffEnum == buffEnum)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public UniTask ReduceBuff(BuffEnum id, object parmaters)

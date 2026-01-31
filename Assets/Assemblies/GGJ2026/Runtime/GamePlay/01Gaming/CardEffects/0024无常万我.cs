@@ -21,7 +21,7 @@ namespace GGJ2026.GamePlay
 
             for (int i = 0; i < cardData.config.Value[1]; i++)
             {
-                await tar.TakeDamage(cardData.config.Value[0]);
+                await tar.TakeDamage(atk, cardData.config.Value[0]);
                 await atk.OnApplyDamageTo(tar, cardData.config.Value[0]);
             }
 

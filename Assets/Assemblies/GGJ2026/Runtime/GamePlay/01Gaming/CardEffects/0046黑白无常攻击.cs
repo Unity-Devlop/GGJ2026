@@ -1,4 +1,5 @@
 // c#
+
 using cfg;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -26,7 +27,7 @@ namespace GGJ2026.GamePlay
             // 在造成伤害前触发钩子（按实际接口调整参数）
             await atk.OnApplyDamageTo(tar, damage);
 
-            await tar.TakeDamage(damage);
+            await tar.TakeDamage(atk, damage);
 
             return Random.Range(0, 100) < cardData.config.Value[1];
         }
