@@ -34,8 +34,8 @@ namespace GGJ2026.GamePlay
                 entity.RemoveBuff(buff.buffEnum);
             }
         }
-
-        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController entity, BuffInfo buff, ref bool ignoreShield)
+        public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController sender, IEntityController taker, BuffInfo buff,
+            ref bool ignoreShield)
         {
             
         }

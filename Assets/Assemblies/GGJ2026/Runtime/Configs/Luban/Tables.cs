@@ -17,12 +17,14 @@ public partial class Tables
     public CardTable CardTable {get; }
     public GhostTable GhostTable {get; }
     public MaskTable MaskTable {get; }
+    public MengpoTable MengpoTable {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
         CardTable = new CardTable(loader("cardtable"));
         GhostTable = new GhostTable(loader("ghosttable"));
         MaskTable = new MaskTable(loader("masktable"));
+        MengpoTable = new MengpoTable(loader("mengpotable"));
         ResolveRef();
     }
     
@@ -31,6 +33,7 @@ public partial class Tables
         CardTable.ResolveRef(this);
         GhostTable.ResolveRef(this);
         MaskTable.ResolveRef(this);
+        MengpoTable.ResolveRef(this);
     }
 }
 

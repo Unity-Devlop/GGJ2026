@@ -10,7 +10,7 @@ namespace GGJ2026.GamePlay
     [RequireComponent(typeof(EntityPropertyShower))]
     public class EnemyController : MonoBehaviour, IEntityController
     {
-        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        [Sirenix.OdinInspector.ShowInInspector]
         public EnemyData data { get; private set; }
 
         [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
@@ -183,7 +183,7 @@ namespace GGJ2026.GamePlay
         public async UniTask TakeDamage(IEntityController sender, int damageValue, bool ignoreShield)
         {
             BuffEffects.ProcessTakeDamageBuffs(sender,this, ref damageValue);
-            BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(this, ref ignoreShield);
+            BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(sender,this, ref ignoreShield);
             if (data.property.shield > 0 && !ignoreShield)
             {
                 // 先扣护甲 扣完护甲如果还有伤害再扣血量

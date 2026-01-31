@@ -1,0 +1,413 @@
+[
+  {
+    "id": 50,
+    "mengpo_soup_effect": [
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 51,
+    "mengpo_soup_effect": [
+      [
+        0,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "mengpo_soup_effect": [
+      [
+        0,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "mengpo_soup_effect": [
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 54,
+    "mengpo_soup_effect": [
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "mengpo_soup_effect": [
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 56,
+    "mengpo_soup_effect": [
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 57,
+    "mengpo_soup_effect": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 58,
+    "mengpo_soup_effect": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 59,
+    "mengpo_soup_effect": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 60,
+    "mengpo_soup_effect": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 61,
+    "mengpo_soup_effect": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 62,
+    "mengpo_soup_effect": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 63,
+    "mengpo_soup_effect": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 64,
+    "mengpo_soup_effect": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 65,
+    "mengpo_soup_effect": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 66,
+    "mengpo_soup_effect": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 67,
+    "mengpo_soup_effect": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 68,
+    "mengpo_soup_effect": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 69,
+    "mengpo_soup_effect": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 70,
+    "mengpo_soup_effect": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "id": 71,
+    "mengpo_soup_effect": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  {
+    "id": 72,
+    "mengpo_soup_effect": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 73,
+    "mengpo_soup_effect": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 74,
+    "mengpo_soup_effect": [
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 75,
+    "mengpo_soup_effect": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 76,
+    "mengpo_soup_effect": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 77,
+    "mengpo_soup_effect": [
+      [
+        0,
+        3
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 78,
+    "mengpo_soup_effect": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 79,
+    "mengpo_soup_effect": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "id": 80,
+    "mengpo_soup_effect": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        1
+      ]
+    ]
+  }
+]

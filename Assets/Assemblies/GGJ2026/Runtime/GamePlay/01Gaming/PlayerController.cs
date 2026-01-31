@@ -138,6 +138,35 @@ namespace GGJ2026.GamePlay
         {
             await BuffEffects.OnTurnEnd(this);
             lastUsedCardThisRound = CardEnum.None;
+
+            CardEnum target = CardEnum.None;
+            
+            foreach (var mengpoConfig in Global.tables.MengpoTable.DataList)
+            {
+                // 找到第一个匹配的
+                var dict = mengpoConfig.MengpoSoupEffect;
+                // 看看是不是完全匹配
+                bool isMatch = true;
+                foreach (var kv in dict)
+                {
+                    mengpoData.TryAdd(kv.Key, 0);
+                    if (mengpoData[kv.Key] < kv.Value)
+                    {
+                        isMatch = false;
+                        break;
+                    }
+                }
+
+                if (isMatch)
+                {
+                    target = mengpoConfig.Id;
+                    break;
+                }
+            }
+            
+            await CardEffects.ExecuteCardEffects(new CardData(target), this, GamingMgr.Singleton.GetEnemyEntity(this));
+            
+            mengpoData.Clear();
         }
 
         public int GetUseCardCount(CardEnum cardEnum)
@@ -153,7 +182,7 @@ namespace GGJ2026.GamePlay
         public async UniTask TakeDamage(IEntityController sender, int damageValue, bool ignoreShield)
         {
             BuffEffects.ProcessTakeDamageBuffs(sender, this, ref damageValue);
-            BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(this, ref ignoreShield);
+            BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(sender, this, ref ignoreShield);
 
             if (data.property.shield > 0 && !ignoreShield)
             {
