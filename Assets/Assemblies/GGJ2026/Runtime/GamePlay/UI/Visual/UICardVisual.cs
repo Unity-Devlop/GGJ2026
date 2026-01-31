@@ -93,7 +93,10 @@ namespace GGJ2026.GamePlay
                 typeImg.sprite = typeSprite;
             nameText.text = cardData.config.Name;
         }
+        private void Start()
+        {
 
+        }
         public void UnBind()
         {
             Debug.Log("UICardVisual UnBind");
@@ -200,11 +203,13 @@ namespace GGJ2026.GamePlay
 
         protected virtual void Update()
         {
+            typeImg.SetNativeSize();
+            mangaImg.SetNativeSize();
             if (card == null)
             {
                 return;
             }
-            
+      
             var atk = GamingMgr.Singleton.GetLocalPlayer();
             if (atk.TryGetMask(out var mask) &&
                 cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))

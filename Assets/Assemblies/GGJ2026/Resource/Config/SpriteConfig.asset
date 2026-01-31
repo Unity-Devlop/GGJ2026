@@ -18,13 +18,13 @@ MonoBehaviour:
       value: {fileID: -5311594942607803499, guid: eb03434d62bf7e44c96ede90350363d0, type: 3}
     - key: 2
       value: {fileID: 7915987716080404997, guid: 532efc4d7b06bb54084b4f12b57c4025, type: 3}
-    - key: 0
-      value: {fileID: -8296620554632208756, guid: 39ebe7ccbc854b94590f1a506350f223, type: 3}
     - key: 3
       value: {fileID: -8296620554632208756, guid: 39ebe7ccbc854b94590f1a506350f223, type: 3}
     - key: 4
       value: {fileID: -8296620554632208756, guid: 39ebe7ccbc854b94590f1a506350f223, type: 3}
     - key: 5
+      value: {fileID: -8296620554632208756, guid: 39ebe7ccbc854b94590f1a506350f223, type: 3}
+    - key: 0
       value: {fileID: -8296620554632208756, guid: 39ebe7ccbc854b94590f1a506350f223, type: 3}
   cardMangaSprites:
     list:
@@ -52,3 +52,5 @@ MonoBehaviour:
       value: {fileID: -1284068457121754297, guid: 374a47e850a78e2489f2fc9859a97e0d, type: 3}
     - key: 12
       value: {fileID: 7435498934128065243, guid: 2bdf14a73c89e7748adea9c30274b76c, type: 3}
+  cardTypeSprites:
+    list: []
