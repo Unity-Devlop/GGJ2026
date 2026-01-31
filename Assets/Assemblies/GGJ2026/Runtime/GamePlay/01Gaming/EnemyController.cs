@@ -28,6 +28,10 @@ namespace GGJ2026.GamePlay
         [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
         private List<BuffInfo> _buffs = new List<BuffInfo>();
 
+
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        private Dictionary<CardTypeEnum, int> mengpoData = new Dictionary<CardTypeEnum, int>();
+
         private void Awake()
         {
             _propertyShower = GetComponent<EntityPropertyShower>();
@@ -82,9 +86,9 @@ namespace GGJ2026.GamePlay
             buffInfos = _buffs;
         }
 
-        public void RemoveBuff(BuffInfo buff)
+        public void RemoveBuff(BuffEnum buff)
         {
-            _buffs.Remove(buff);
+            _buffs.RemoveAll(b => b.buffEnum == buff);
         }
 
         public async UniTask OnApplyDamageTo(IEntityController tar, int value)
@@ -100,6 +104,13 @@ namespace GGJ2026.GamePlay
         public async UniTask ReduceBuff(BuffEnum id, object parmaters)
         {
             await BuffEffects.ReduceBuff(this, id, parmaters);
+        }
+
+
+        public void AddMengpoData(CardTypeEnum type, int value)
+        {
+            mengpoData.TryAdd(type, 0);
+            mengpoData[type] += value;
         }
 
         public void UnBind()

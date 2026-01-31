@@ -10,10 +10,11 @@ namespace GGJ2026.GamePlay
         {
             // 此牌无效。
 
-          if (atk.TryGetMask(out var mask) && cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
-          {
-              return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
-          }
+            if (atk.TryGetMask(out var mask) &&
+                cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
+            {
+                return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
+            }
 
             return false;
         }

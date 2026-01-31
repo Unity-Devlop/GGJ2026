@@ -1,5 +1,7 @@
+// c#
 using cfg;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace GGJ2026.GamePlay
 {
@@ -10,12 +12,20 @@ namespace GGJ2026.GamePlay
         {
             // 获得{0}点护甲。打出后有{1}%几率结束回合。
 
-          if (atk.TryGetMask(out var mask) && cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
-          {
-              return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
-          }
+            if (atk.TryGetMask(out var mask) &&
+                cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
+            {
+                return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
+            }
 
-            return false;
+            await atk.UseCard(cardData);
+            await tar.TakeCard(cardData);
+
+            // 获得护甲（按实际接口调整方法名）
+            await atk.GainShield(cardData.config.Value[0]);
+
+            // 按概率结束回合
+            return Random.Range(0, 100) < cardData.config.Value[1];
         }
     }
 }

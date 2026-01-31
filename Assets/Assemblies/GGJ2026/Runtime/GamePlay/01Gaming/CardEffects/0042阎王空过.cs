@@ -1,5 +1,7 @@
+// c#
 using cfg;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace GGJ2026.GamePlay
 {
@@ -10,12 +12,16 @@ namespace GGJ2026.GamePlay
         {
             // 无事发生。打出后有{1}%几率结束回合。
 
-          if (atk.TryGetMask(out var mask) && cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
-          {
-              return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
-          }
+            if (atk.TryGetMask(out var mask) &&
+                cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
+            {
+                return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
+            }
 
-            return false;
+            await atk.UseCard(cardData);
+            await tar.TakeCard(cardData);
+
+            return Random.Range(0, 100) < cardData.config.Value[1];
         }
     }
 }

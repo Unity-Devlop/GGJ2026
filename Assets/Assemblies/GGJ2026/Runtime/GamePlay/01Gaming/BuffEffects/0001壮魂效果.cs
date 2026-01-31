@@ -13,7 +13,7 @@ namespace GGJ2026.GamePlay
         public async UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value, BuffInfo buff)
         {
             await entity.GainShield((int)buff.parameters);
-            entity.RemoveBuff(buff);
+            entity.RemoveBuff(buff.buffEnum);
         }
 
         public UniTask OnTurnEnd(IEntityController entity, BuffInfo buff)

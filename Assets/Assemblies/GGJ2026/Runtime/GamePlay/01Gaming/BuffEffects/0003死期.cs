@@ -27,7 +27,7 @@ namespace GGJ2026.GamePlay
             if ((int)buff.parameters <= 0)
             {
                 await entity.OnceKill();
-                entity.RemoveBuff(buff);
+                entity.RemoveBuff(buff.buffEnum);
             }
         }
     }

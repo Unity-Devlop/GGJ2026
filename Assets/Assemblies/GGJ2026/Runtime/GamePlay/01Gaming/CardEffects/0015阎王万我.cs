@@ -1,4 +1,5 @@
 // c#
+
 using cfg;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -28,12 +29,12 @@ namespace GGJ2026.GamePlay
             {
                 await tar.TakeDamage(damage);
             }
-            // TODO: 若累计伤害次数 >= {4}，则对目标应用“死期减少{5}”（例如：await tar.ReduceDeathPeriod(cardData.config.Value[5]);）
-            if(times>= cardData.config.Value[4])
+
+            if (times >= cardData.config.Value[4])
             {
                 await tar.ReduceBuff(BuffEnum.死期, cardData.config.Value[5]);
             }
-            
+
 
             // 永久增加伤害次数
             cardData.config.Value[1] += cardData.config.Value[2];

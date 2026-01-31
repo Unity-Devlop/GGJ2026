@@ -19,7 +19,7 @@ namespace GGJ2026.GamePlay
         public UniTask OnTurnEnd(IEntityController entity, BuffInfo buff)
         {
             entity.SwitchMask(MaskEnum.本我);
-            entity.RemoveBuff(buff);
+            entity.RemoveBuff(buff.buffEnum);
             return UniTask.CompletedTask;
         }
 

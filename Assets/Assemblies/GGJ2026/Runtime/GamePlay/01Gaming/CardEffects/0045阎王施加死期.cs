@@ -1,5 +1,8 @@
+// c#
+
 using cfg;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace GGJ2026.GamePlay
 {
@@ -10,12 +13,21 @@ namespace GGJ2026.GamePlay
         {
             // 敌人获得死期效果，倒计时为{0}。已有则无事发生。打出后有{1}%几率结束回合。
 
-          if (atk.TryGetMask(out var mask) && cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
-          {
-              return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
-          }
+            if (atk.TryGetMask(out var mask) &&
+                cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
+            {
+                return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
+            }
 
-            return false;
+            await atk.UseCard(cardData);
+            await tar.TakeCard(cardData);
+
+            // 若目标未处于死期，则施加倒计时（按实际接口调整方法名）
+            int period = cardData.config.Value[0];
+            await tar.AddBuff(BuffEnum.死期, period);
+
+
+            return Random.Range(0, 100) < cardData.config.Value[1];
         }
     }
 }
