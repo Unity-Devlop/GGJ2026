@@ -74,42 +74,48 @@ MonoBehaviour:
         currentDrawIndex: -1
     - key: 5
       value:
-        cards: []
+        cards:
+        - id: 3
+        - id: 4
         property:
           health:
-            _maxValue: 0
+            _maxValue: 10
             _minValue: 0
-            _value: 1
+            _value: 10
           shield: 0
         currentMask: 0
-        randomDrawCard: 0
-        candidateCards: 
+        randomDrawCard: 1
+        candidateCards: 0c0000000b0000000a0000000a0000000900000008000000080000000700000001000000010000000200000002000000040000000500000005000000060000000600000006000000
         currentDrawIndex: -1
     - key: 6
       value:
-        cards: []
+        cards:
+        - id: 3
+        - id: 4
         property:
           health:
-            _maxValue: 0
+            _maxValue: 10
             _minValue: 0
-            _value: 1
+            _value: 10
           shield: 0
         currentMask: 0
-        randomDrawCard: 0
-        candidateCards: 
+        randomDrawCard: 1
+        candidateCards: 0c0000000b0000000a0000000a0000000900000008000000080000000700000001000000010000000200000002000000040000000500000005000000060000000600000006000000
         currentDrawIndex: -1
     - key: 7
       value:
-        cards: []
+        cards:
+        - id: 3
+        - id: 4
         property:
           health:
-            _maxValue: 0
+            _maxValue: 10
             _minValue: 0
-            _value: 1
+            _value: 10
           shield: 0
         currentMask: 0
-        randomDrawCard: 0
-        candidateCards: 
+        randomDrawCard: 1
+        candidateCards: 0c0000000b0000000a0000000a0000000900000008000000080000000700000001000000010000000200000002000000040000000500000005000000060000000600000006000000
         currentDrawIndex: -1
   levelEnemyData:
     list:
@@ -140,7 +146,7 @@ MonoBehaviour:
             _maxValue: 1
             _minValue: 0
             _value: 1
-          shield: 9999
+          shield: 100
         candidateCards:
         - id: 37
         - id: 38
@@ -148,9 +154,9 @@ MonoBehaviour:
       value:
         property:
           health:
-            _maxValue: 6
+            _maxValue: 10
             _minValue: 0
-            _value: 6
+            _value: 8
           shield: 0
         candidateCards:
         - id: 36
@@ -158,26 +164,36 @@ MonoBehaviour:
       value:
         property:
           health:
-            _maxValue: 0
+            _maxValue: 20
             _minValue: 0
-            _value: 1
-          shield: 0
-        candidateCards: []
+            _value: 20
+          shield: 9999
+        candidateCards:
+        - id: 39
     - key: 6
       value:
         property:
           health:
-            _maxValue: 0
+            _maxValue: 40
             _minValue: 0
-            _value: 1
+            _value: 30
           shield: 0
-        candidateCards: []
+        candidateCards:
+        - id: 46
+        - id: 47
+        - id: 46
+        - id: 48
     - key: 7
       value:
         property:
           health:
-            _maxValue: 0
+            _maxValue: 100
             _minValue: 0
-            _value: 1
-          shield: 0
-        candidateCards: []
+            _value: 100
+          shield: 100
+        candidateCards:
+        - id: 45
+        - id: 41
+        - id: 42
+        - id: 43
+        - id: 44
