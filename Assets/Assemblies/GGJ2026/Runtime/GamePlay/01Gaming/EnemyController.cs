@@ -10,6 +10,7 @@ namespace GGJ2026.GamePlay
     {
         [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
         public EnemyData data { get; private set; }
+
         private EntityPropertyShower _propertyShower;
         private DoTweenHitEffect _doTweenHitEffect;
         private EnemyIntentVisual _enemyIntent;
@@ -29,6 +30,10 @@ namespace GGJ2026.GamePlay
             this.data = enemyData;
             _propertyShower.Bind(this.data.property);
             currentOperationIndex = 0;
+            foreach (var cardData in data.candidateCards)
+            {
+                Debug.Log($"Enemy Candidate Card: {cardData.config.Id}");
+            }
         }
 
         public bool IsDead()
@@ -48,16 +53,18 @@ namespace GGJ2026.GamePlay
 
         public async UniTask<IOperation> GetNextOperation()
         {
-            if(currentOperationIndex >= data.candidateCards.Count)
+            if (currentOperationIndex >= data.candidateCards.Count)
             {
                 currentOperationIndex = 0;
             }
+
             var carData = data.candidateCards[currentOperationIndex];
             return new UseCardOperation(carData);
         }
 
         public async UniTask UseCard(CardData cardData)
         {
+            currentOperationIndex++;
         }
 
         public async UniTask TakeCard(CardData cardData)

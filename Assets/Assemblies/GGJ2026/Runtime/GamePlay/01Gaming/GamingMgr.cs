@@ -130,6 +130,7 @@ namespace GGJ2026.GamePlay
                     while (true)
                     {
                         var operation = await enemyController.GetNextOperation();
+                        Debug.Log($"敌人执行操作：{operation}");
                         if (operation is UseCardOperation useCardOperation)
                         {
                             var cardData = useCardOperation.cardData;
