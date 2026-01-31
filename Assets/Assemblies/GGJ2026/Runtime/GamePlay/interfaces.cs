@@ -20,6 +20,10 @@ namespace GGJ2026.GamePlay
         UniTask GainShield(int value);
         UniTask TakeCard(CardData cardData);
         UniTask TakeDamage(int value);
+        UniTask OnceKill();
+        bool IsDead();
+        UniTask GainHealth(int value);
+        UniTask DrawCards(int count);
     }
 
     public interface ICardEffectExecutor

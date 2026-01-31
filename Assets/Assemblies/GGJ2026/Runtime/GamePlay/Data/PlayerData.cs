@@ -13,5 +13,6 @@ namespace GGJ2026.GamePlay
         public MaskEnum currentMask = MaskEnum.本我;
         public bool randomDrawCard = false;
         public List<CardEnum> candidateCards = new();
+        public int currentDrawIndex = -1;
     }
 }

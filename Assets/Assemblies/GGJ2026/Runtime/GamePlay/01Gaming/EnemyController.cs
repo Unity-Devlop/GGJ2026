@@ -42,6 +42,17 @@ namespace GGJ2026.GamePlay
             return data.property.health.Value <= 0;
         }
 
+        public UniTask GainHealth(int value)
+        {
+            data.property.health.Value += value;
+            return UniTask.CompletedTask;
+        }
+
+        public UniTask DrawCards(int count)
+        {
+            return UniTask.CompletedTask;
+        }
+
         public void UnBind()
         {
             data = null;
@@ -83,6 +94,12 @@ namespace GGJ2026.GamePlay
             data.property.health.Value -= damageValue;
             // DOTween
             await _doTweenHitEffect.PlayHitEffect();
+        }
+
+        public UniTask OnceKill()
+        {
+            data.property.health.Value = 0;
+            return UniTask.CompletedTask;
         }
 
         public UniTask GainShield(int value)
