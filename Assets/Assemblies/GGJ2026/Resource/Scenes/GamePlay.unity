@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e946869d82e041af9caefb100f23ebce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.EnemyController
+  wantedOperation: 0
 --- !u!114 &114005680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,21 +608,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.GamingMgr
   isGameOver: 0
-  playerData:
-    cards: []
-    property:
-      health:
-        _maxValue: 0
-        _minValue: 0
-        _value: 1
-      shield: 0
-  enemyData:
-    propertyData:
-      health:
-        _maxValue: 100
-        _minValue: 0
-        _value: 100
-      shield: 0
   playerController: {fileID: 2008996154}
   enemyController: {fileID: 114005679}
 --- !u!1 &619394800

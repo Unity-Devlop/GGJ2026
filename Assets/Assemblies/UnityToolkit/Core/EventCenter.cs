@@ -162,12 +162,12 @@ namespace UnityToolkit
 
         public void UnListen<T, TResult>(ResultEventHandler<T, TResult> onResultEvent)
         {
-            _repository.Get<BuildInResultEvent<T, TResult>>()?.UnRegister(onResultEvent);
+            _repository.GetOrAdd<BuildInResultEvent<T, TResult>>().UnRegister(onResultEvent);
         }
 
         public TResult Invoke<T, TResult>(T args)
         {
-            return _repository.Get<BuildInResultEvent<T, TResult>>().Invoke(args);
+            return _repository.GetOrAdd<BuildInResultEvent<T, TResult>>().Invoke(args);
         }
     }
 

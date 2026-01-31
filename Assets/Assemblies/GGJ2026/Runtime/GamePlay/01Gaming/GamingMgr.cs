@@ -50,24 +50,24 @@ namespace GGJ2026.GamePlay
         private async UniTask GameFlow()
         {
             currentGamingState = GamingState.GameStart;
-            Global.Event.Invoke(currentGamingState);
+            await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
 
             isGameOver = false;
             var gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
             Global.localSave.Get<GameData>(out var gameData);
 
             var currentLevel = gameData.lastCompletedLevel;
-            var playerData = Global.refHolder.levelConfig.levelPlayerData[currentLevel];
-            var enemyData = Global.refHolder.levelConfig.levelEnemyData[currentLevel];
+            var playerData = Global.refHolder.levelConfig.levelPlayerData[currentLevel].DeepCopy();
+            var enemyData = Global.refHolder.levelConfig.levelEnemyData[currentLevel].DeepCopy();
 
             gamePlayPanel.Bind(playerData);
 
             playerController.Bind(playerData);
             enemyController.Bind(enemyData);
 
-
+            // await UniTask.Delay(TimeSpan.FromSeconds(1));
             currentGamingState = GamingState.PlayerRound;
-            Global.Event.Invoke(currentGamingState);
+            await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
             while (true)
             {
                 isGameOver = playerController.IsDead() || enemyController.IsDead();
@@ -89,7 +89,7 @@ namespace GGJ2026.GamePlay
                             if (cardData.config.EndRoundWhenUse)
                             {
                                 currentGamingState = GamingState.EnemyRound;
-                                Global.Event.Invoke(currentGamingState);
+                                await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
                                 Assert.IsTrue(playerOperationQueue.Count == 0,
                                     "结束回合操作执行时，玩家操作队列不为空");
                                 break;
@@ -115,7 +115,7 @@ namespace GGJ2026.GamePlay
                     }
 
                     currentGamingState = GamingState.PlayerRound;
-                    Global.Event.Invoke(currentGamingState);
+                    await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
                 }
 
                 await UniTask.Yield();
@@ -124,7 +124,7 @@ namespace GGJ2026.GamePlay
             playerController.UnBind();
             enemyController.UnBind();
             currentGamingState = GamingState.GameOver;
-            Global.Event.Invoke(currentGamingState);
+            await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
         }
 
         public void ExitGame()

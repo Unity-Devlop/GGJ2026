@@ -21,6 +21,7 @@ namespace GGJ2026.GamePlay
 
         private Vector2 _originalPos;
         private Vector3 _originalScale;
+        private bool _awakened = false;
 
         void Awake()
         {
@@ -31,14 +32,14 @@ namespace GGJ2026.GamePlay
             // 初始状态：透明且隐藏
             canvasGroup.alpha = 0;
             gameObject.SetActive(false);
+            _awakened = true;
         }
 
         [Sirenix.OdinInspector.Button]
         public async UniTask PlayEffect(System.Action onComplete = null)
         {
+            if (!_awakened) Awake();
             // 1. 初始化状态
-            if (this == null) return;
-            if (gameObject == null) return;
             gameObject.SetActive(true);
             canvasGroup.alpha = 0;
             mainTextRect.anchoredPosition = new Vector2(_originalPos.x - startOffset, _originalPos.y);
