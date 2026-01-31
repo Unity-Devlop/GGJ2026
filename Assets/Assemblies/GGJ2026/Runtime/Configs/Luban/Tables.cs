@@ -14,17 +14,17 @@ namespace cfg
 {
 public partial class Tables
 {
-    public GameMapTable GameMapTable {get; }
+    public CardTable CardTable {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
-        GameMapTable = new GameMapTable(loader("gamemaptable"));
+        CardTable = new CardTable(loader("cardtable"));
         ResolveRef();
     }
     
     private void ResolveRef()
     {
-        GameMapTable.ResolveRef(this);
+        CardTable.ResolveRef(this);
     }
 }
 

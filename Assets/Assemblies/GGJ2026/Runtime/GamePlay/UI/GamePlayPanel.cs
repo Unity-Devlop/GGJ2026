@@ -7,7 +7,7 @@ using UnityToolkit;
 
 namespace GGJ2026.GamePlay
 {
-    public class GamePlayPanel : UIPanel, IDropHandler
+    public class GamePlayPanel : UIPanel
     {
         [SerializeField] private UICardContainer cardContainer;
         [SerializeField] private RectTransform useCardArea;
@@ -34,16 +34,15 @@ namespace GGJ2026.GamePlay
         {
             Vector3 screenPoint = UIRoot.Singleton.UICamera.WorldToScreenPoint(args.visual.transform.position);
             Debug.Log("OnUICardVisualEndDrag: screenPoint " + screenPoint);
-            if (RectTransformUtility.RectangleContainsScreenPoint(useCardArea, 
+            if (RectTransformUtility.RectangleContainsScreenPoint(useCardArea,
                     new Vector2(screenPoint.x, screenPoint.y), UIRoot.Singleton.UICamera))
             {
                 Debug.Log("OnUICardVisualEndDrag: use card " + args.data);
-                cardContainer.RemoveCard(args.data);
+                if (GamingMgr.Singleton.PushPlayerOperation(new UseCardOperation(args.data)))
+                {
+                    cardContainer.RemoveCard(args.data);
+                }
             }
-        }
-
-        public void OnDrop(PointerEventData eventData)
-        {
         }
     }
 }

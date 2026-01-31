@@ -1,11 +1,10 @@
 using System;
-using cfg;
 
 namespace GGJ2026.GamePlay
 {
     [Serializable]
-    public class CardData
+    public class EnemyData 
     {
-        public CardEnum id;
+        public EntityPropertyData propertyData;
     }
 }

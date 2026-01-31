@@ -2,6 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using Capabilities;
 using cfg;
+using GGJ2026.GamePlay;
 using SimpleJSON;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -93,6 +94,8 @@ namespace GGJ2026
 
         protected override void OnInit()
         {
+            CardEffects.AutoRegisterAllCardEffects();
+
             _event = new TypeEventSystem();
 
             _tables = new Tables(TableLoader);
@@ -139,7 +142,5 @@ namespace GGJ2026
                 }
             }
         }
-
-
     }
 }

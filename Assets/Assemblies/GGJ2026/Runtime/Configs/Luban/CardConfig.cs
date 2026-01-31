@@ -13,26 +13,26 @@ using SimpleJSON;
 
 namespace cfg
 {
-public sealed partial class GameMapConfig : Luban.BeanBase
+public sealed partial class CardConfig : Luban.BeanBase
 {
-    public GameMapConfig(JSONNode _buf) 
+    public CardConfig(JSONNode _buf) 
     {
-        { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = (GameMapEnum)_buf["id"].AsInt; }
-        { if(!_buf["addressable_path"].IsString) { throw new SerializationException(); }  AddressablePath = _buf["addressable_path"]; }
+        { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = (CardEnum)_buf["id"].AsInt; }
+        { if(!_buf["desc"].IsString) { throw new SerializationException(); }  Desc = _buf["desc"]; }
     }
 
-    public static GameMapConfig DeserializeGameMapConfig(JSONNode _buf)
+    public static CardConfig DeserializeCardConfig(JSONNode _buf)
     {
-        return new GameMapConfig(_buf);
+        return new CardConfig(_buf);
     }
 
-    public readonly GameMapEnum Id;
+    public readonly CardEnum Id;
     /// <summary>
-    /// 加载路径
+    /// 描述
     /// </summary>
-    public readonly string AddressablePath;
+    public readonly string Desc;
    
-    public const int __ID__ = 1766192076;
+    public const int __ID__ = -2113914222;
     public override int GetTypeId() => __ID__;
 
     public  void ResolveRef(Tables tables)
@@ -43,7 +43,7 @@ public sealed partial class GameMapConfig : Luban.BeanBase
     {
         return "{ "
         + "id:" + Id + ","
-        + "addressablePath:" + AddressablePath + ","
+        + "desc:" + Desc + ","
         + "}";
     }
 }

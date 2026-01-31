@@ -11,19 +11,12 @@
 
 namespace cfg
 { 
-    public enum ElementEnum
+    public enum CardEnum
     {
-        /// <summary>
-        /// 0
-        /// </summary>
-        None = 0,
-        火 = 1,
-        草 = 2,
-        人造 = 3,
-        风 = 4,
-        毒 = 5,
-        电 = 6,
-        水 = 7,
+        杀 = 0,
+        盾 = 1,
+        桃 = 2,
+        好桃 = 3,
     }
 
 } 

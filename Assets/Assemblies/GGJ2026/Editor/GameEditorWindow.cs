@@ -5,7 +5,7 @@ using Sirenix.Utilities.Editor;
 using UnityEditor;
 using UnityEngine;
 
-namespace Jump.Editor
+namespace GGJ2026.Editor
 {
     public class GameEditorWindow : OdinMenuEditorWindow
     {

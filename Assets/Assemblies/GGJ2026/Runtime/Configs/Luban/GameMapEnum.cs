@@ -17,15 +17,6 @@ namespace cfg
         /// 开发测试地图
         /// </summary>
         Developer = -1,
-        None = 0,
-        /// <summary>
-        /// 序章地图
-        /// </summary>
-        Started = 1,
-        /// <summary>
-        /// 第一章
-        /// </summary>
-        ForsakenCity = 2,
     }
 
 } 

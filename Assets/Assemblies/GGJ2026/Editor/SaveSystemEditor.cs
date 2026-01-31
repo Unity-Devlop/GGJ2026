@@ -2,7 +2,7 @@ using System;
 using GGJ2026;
 using GGJ2026.GamePlay;
 
-namespace Jump.Editor
+namespace GGJ2026.Editor
 {
     [Serializable]
     public class SaveSystemEditor
