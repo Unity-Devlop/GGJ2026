@@ -5,6 +5,11 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(cfg.BuffEnum.监禁令)]
     public class 监禁令 : IBuffEffectExecutor
     {
+        public void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff, ref int shieldValue)
+        {
+            // TODO 
+        }
+
         public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff,
             ref int damageValue)
         {

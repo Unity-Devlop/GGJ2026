@@ -40,6 +40,8 @@ namespace GGJ2026.GamePlay
 
     public interface IBuffEffectExecutor
     {
+        void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff,
+            ref int shieldValue);
         void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff,
             ref int damageValue);
 

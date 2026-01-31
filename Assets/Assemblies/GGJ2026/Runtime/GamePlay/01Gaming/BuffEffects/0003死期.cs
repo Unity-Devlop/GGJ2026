@@ -8,6 +8,10 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(BuffEnum.死期)]
     public class 死期 : IBuffEffectExecutor
     {
+        public void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff, ref int shieldValue)
+        {
+            
+        }
 
         public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff, ref int damageValue)
         {

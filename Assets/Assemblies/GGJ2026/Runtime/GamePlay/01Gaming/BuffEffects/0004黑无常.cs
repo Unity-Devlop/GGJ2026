@@ -5,6 +5,10 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(cfg.BuffEnum.黑无常)]
     public class 黑无常 : IBuffEffectExecutor
     {
+        public void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff, ref int shieldValue)
+        {
+            
+        }
 
         public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff, ref int damageValue)
         {
