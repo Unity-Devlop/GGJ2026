@@ -1,5 +1,6 @@
 using cfg;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace GGJ2026.GamePlay
 {
@@ -18,7 +19,9 @@ namespace GGJ2026.GamePlay
 
             if (atk.TryGetLastUsedCardThisRound(out CardEnum lastCard))
             {
+                Debug.Log(lastCard);
                 return await CardEffects.ExecuteCardEffects(new CardData(lastCard), atk, tar);
+                //return Random.Range(0, 100) < cardData.config.Value[0];
             }
             
 
