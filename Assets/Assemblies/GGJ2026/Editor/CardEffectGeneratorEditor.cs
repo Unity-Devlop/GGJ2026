@@ -66,7 +66,7 @@ namespace GGJ2026.Editor
                 stringBuilder.AppendLine($"    public class {name} : ICardEffectExecutor");
                 stringBuilder.AppendLine("    {");
                 stringBuilder.AppendLine(
-                    "        public async UniTask<bool> Execute(CardData cardData, IEntityController playerController, IEntityController enemyController)");
+                    "        public async UniTask<bool> Execute(CardData cardData, IEntityController atk, IEntityController tar)");
                 stringBuilder.AppendLine("        {");
                 stringBuilder.AppendLine($"            // {desc}");
 

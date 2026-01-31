@@ -6,7 +6,7 @@ namespace GGJ2026.GamePlay
     [CardExecutor(CardEnum.无常自力)]
     public class 无常自力 : ICardEffectExecutor
     {
-        public async UniTask<bool> Execute(CardData cardData, IEntityController playerController, IEntityController enemyController)
+        public async UniTask<bool> Execute(CardData cardData, IEntityController atk, IEntityController tar)
         {
             // 视为打出本回合中你上一次打出的牌。打出后有{0}%几率结束回合。
             return false;

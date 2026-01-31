@@ -24,6 +24,6 @@ namespace GGJ2026.GamePlay
 
     public interface ICardEffectExecutor
     {
-        UniTask<bool> Execute(CardData cardData, IEntityController playerController, IEntityController enemyController);
+        UniTask<bool> Execute(CardData cardData, IEntityController atk, IEntityController tar);
     }
 }
