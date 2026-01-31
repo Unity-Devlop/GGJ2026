@@ -26,7 +26,10 @@ namespace GGJ2026.GamePlay
                 }
                 else
                 {
-                    Global.gameFlow.stateMachine.Change<HomeState>();
+                    if (Global.gameFlow.stateMachine.currentState is not HomeState)
+                    {
+                        Global.gameFlow.stateMachine.Change<HomeState>();
+                    }
                 }
             }
         }

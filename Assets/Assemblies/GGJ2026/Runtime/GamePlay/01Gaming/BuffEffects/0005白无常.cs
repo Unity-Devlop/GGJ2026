@@ -10,10 +10,10 @@ namespace GGJ2026.GamePlay
         {
         }
 
-        public UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value,
+        public async UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value,
             BuffInfo buff)
         {
-            return UniTask.CompletedTask;
+            await entity.GainHealth(value);
         }
 
         public UniTask OnTurnEnd(IEntityController entity, BuffInfo buff)

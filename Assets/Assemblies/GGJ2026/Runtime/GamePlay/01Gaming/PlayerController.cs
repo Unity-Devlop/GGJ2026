@@ -58,10 +58,10 @@ namespace GGJ2026.GamePlay
             return data.property.health.Value <= 0;
         }
 
-        public UniTask GainHealth(int value)
+        public async UniTask GainHealth(int value)
         {
             data.property.health.Value += value;
-            return UniTask.CompletedTask;
+            await UniTask.CompletedTask;
         }
 
         public async UniTask DrawCards(int count)
@@ -184,9 +184,15 @@ namespace GGJ2026.GamePlay
                 new OnLocalPlayerWearMaskEvent(id));
             Debug.Log("玩家切换面具: " + id);
             maskText.text = id.ToString();
-            data.currentMask = id;
 
             var enemy = GamingMgr.Singleton.GetEnemyEntity(this);
+            if (data.currentMask == MaskEnum.阎王面具)
+            {
+                enemy.RemoveBuff(BuffEnum.死期);
+            }
+
+            data.currentMask = id;
+
             switch (id)
             {
                 case MaskEnum.本我:
@@ -212,7 +218,7 @@ namespace GGJ2026.GamePlay
                     {
                         RemoveBuff(BuffEnum.黑无常);
                         RemoveBuff(BuffEnum.白无常);
-                        await AddBuff(BuffEnum.白无常, null);
+                        await AddBuff(BuffEnum.黑无常, null);
                     }
 
                     break;
