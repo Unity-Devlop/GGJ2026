@@ -20,7 +20,7 @@ namespace GGJ2026.GamePlay
             BuffInfo buff)
         {
             await entity.GainShield((int)buff.parameters);
-            entity.RemoveBuff(buff.buffEnum);
+            // entity.RemoveBuff(buff.buffEnum);
         }
 
         public UniTask OnTurnEnd(IEntityController entity, BuffInfo buff)

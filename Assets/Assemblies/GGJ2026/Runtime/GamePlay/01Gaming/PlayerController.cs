@@ -139,6 +139,7 @@ namespace GGJ2026.GamePlay
         {
             await BuffEffects.OnTurnEnd(this);
             lastUsedCardThisRound = CardEnum.None;
+            RemoveBuff(BuffEnum.壮魂效果);
 
             CardEnum target = CardEnum.None;
             
