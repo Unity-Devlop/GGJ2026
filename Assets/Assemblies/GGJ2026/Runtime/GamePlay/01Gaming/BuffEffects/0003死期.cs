@@ -1,5 +1,7 @@
 using cfg;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
+using UnityToolkit;
 
 namespace GGJ2026.GamePlay
 {
@@ -26,6 +28,7 @@ namespace GGJ2026.GamePlay
             buff.parameters = (int)buff.parameters - 1;
             if ((int)buff.parameters <= 0)
             {
+                Debug.Log($"死期效果触发，{entity} 被击杀".Color(Color.black));
                 await entity.OnceKill();
                 entity.RemoveBuff(buff.buffEnum);
             }

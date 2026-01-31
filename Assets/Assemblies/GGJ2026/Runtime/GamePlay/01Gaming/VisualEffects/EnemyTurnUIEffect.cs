@@ -1,3 +1,5 @@
+using System;
+
 namespace GGJ2026.GamePlay
 {
     using UnityEngine;
@@ -28,6 +30,14 @@ namespace GGJ2026.GamePlay
             if (bgOverlay != null) bgOverlay.color = Color.clear;
             gameObject.SetActive(false);
             _awakened = true;
+        }
+
+        private void OnDestroy()
+        {
+            DOTween.Kill(container);
+            DOTween.Kill(canvasGroup);
+            if (bgOverlay != null)
+                DOTween.Kill(bgOverlay);
         }
 
         [Sirenix.OdinInspector.Button]
