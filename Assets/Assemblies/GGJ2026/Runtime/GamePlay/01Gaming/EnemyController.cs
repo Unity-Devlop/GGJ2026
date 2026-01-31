@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using cfg;
 using Cysharp.Threading.Tasks;
@@ -12,11 +13,20 @@ namespace GGJ2026.GamePlay
         [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
         public EnemyData data { get; private set; }
 
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        private CardEnum lastUsedCardThisRound;
+
         private EntityPropertyShower _propertyShower;
         private DoTweenHitEffect _doTweenHitEffect;
         private EnemyIntentVisual _enemyIntent;
 
         private int currentOperationIndex = 0;
+
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        private Dictionary<CardEnum, int> useCardCountThisTurn = new Dictionary<CardEnum, int>();
+
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        private List<BuffInfo> _buffs = new List<BuffInfo>();
 
         private void Awake()
         {
@@ -53,10 +63,42 @@ namespace GGJ2026.GamePlay
             return UniTask.CompletedTask;
         }
 
+
+        public bool TryGetLastUsedCardThisRound(out CardEnum cardEnum)
+        {
+            cardEnum = lastUsedCardThisRound;
+            return lastUsedCardThisRound != default;
+        }
+
+
+        public UniTask AddBuff(BuffEnum 碎魂效果, object values)
+        {
+            _buffs.Add(new BuffInfo() { buffEnum = 碎魂效果, parameters = values });
+            return UniTask.CompletedTask;
+        }
+
+        public void GetBuffs(out List<BuffInfo> buffInfos)
+        {
+            buffInfos = _buffs;
+        }
+
+        public void RemoveBuff(BuffInfo buff)
+        {
+            _buffs.Remove(buff);
+        }
+
+        public async UniTask OnApplyDamageTo(IEntityController tar, int value)
+        {
+            await BuffEffects.ProcessWhenApplyDamageTo(this, tar, value);
+        }
+
         public void UnBind()
         {
             data = null;
             _propertyShower.UnBind();
+            _buffs.Clear();
+            useCardCountThisTurn.Clear();
+            lastUsedCardThisRound = CardEnum.None;
         }
 
         public async UniTask StartThinking()
@@ -74,6 +116,25 @@ namespace GGJ2026.GamePlay
             return new UseCardOperation(carData);
         }
 
+
+        public UniTask TurnStart()
+        {
+            useCardCountThisTurn.Clear();
+            lastUsedCardThisRound = CardEnum.None;
+            return UniTask.CompletedTask;
+        }
+
+        public UniTask TurnEnd()
+        {
+            lastUsedCardThisRound = CardEnum.None;
+            return UniTask.CompletedTask;
+        }
+
+        public int GetUseCardCount(CardEnum cardEnum)
+        {
+            return useCardCountThisTurn.GetValueOrDefault(cardEnum, 0);
+        }
+
         public bool TryGetMask(out MaskEnum id)
         {
             id = default;
@@ -83,6 +144,8 @@ namespace GGJ2026.GamePlay
         public async UniTask UseCard(CardData cardData)
         {
             currentOperationIndex++;
+            useCardCountThisTurn.TryAdd(cardData.id, 0);
+            useCardCountThisTurn[cardData.id]++;
         }
 
         public async UniTask TakeCard(CardData cardData)
@@ -91,6 +154,7 @@ namespace GGJ2026.GamePlay
 
         public async UniTask TakeDamage(int damageValue)
         {
+            BuffEffects.ProcessTakeDamageBuffs(this, ref damageValue);
             data.property.health.Value -= damageValue;
             // DOTween
             await _doTweenHitEffect.PlayHitEffect();

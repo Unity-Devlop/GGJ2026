@@ -11,14 +11,11 @@
 
 namespace cfg
 { 
-    public enum MaskEnum
+    public enum BuffEnum
     {
-        本我 = 0,
-        阎王面具 = 1,
-        无常面具 = 2,
-        阎罗面具 = 3,
-        孟婆面具 = 4,
-        二郎神面具 = 5,
+        None = 0,
+        碎魂效果 = 1,
+        壮魂效果 = 2,
     }
 
 } 

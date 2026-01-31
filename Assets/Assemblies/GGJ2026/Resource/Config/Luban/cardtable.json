@@ -19,12 +19,8 @@
         22
       ],
       [
-        3,
-        30
-      ],
-      [
         4,
-        33
+        30
       ]
     ]
   },
@@ -40,7 +36,24 @@
       10
     ],
     "can_end_round": true,
-    "mask_to_card_effect": []
+    "mask_to_card_effect": [
+      [
+        1,
+        14
+      ],
+      [
+        2,
+        23
+      ],
+      [
+        3,
+        27
+      ],
+      [
+        4,
+        30
+      ]
+    ]
   },
   {
     "id": 3,
@@ -55,7 +68,20 @@
       100
     ],
     "can_end_round": true,
-    "mask_to_card_effect": []
+    "mask_to_card_effect": [
+      [
+        1,
+        15
+      ],
+      [
+        2,
+        24
+      ],
+      [
+        4,
+        30
+      ]
+    ]
   },
   {
     "id": 4,
@@ -68,7 +94,24 @@
       5
     ],
     "can_end_round": false,
-    "mask_to_card_effect": []
+    "mask_to_card_effect": [
+      [
+        1,
+        16
+      ],
+      [
+        2,
+        25
+      ],
+      [
+        3,
+        28
+      ],
+      [
+        4,
+        30
+      ]
+    ]
   },
   {
     "id": 5,
@@ -80,7 +123,16 @@
       1
     ],
     "can_end_round": false,
-    "mask_to_card_effect": []
+    "mask_to_card_effect": [
+      [
+        1,
+        17
+      ],
+      [
+        4,
+        31
+      ]
+    ]
   },
   {
     "id": 6,
@@ -93,7 +145,16 @@
       2
     ],
     "can_end_round": false,
-    "mask_to_card_effect": []
+    "mask_to_card_effect": [
+      [
+        1,
+        18
+      ],
+      [
+        4,
+        31
+      ]
+    ]
   },
   {
     "id": 7,
@@ -106,7 +167,16 @@
       100
     ],
     "can_end_round": true,
-    "mask_to_card_effect": []
+    "mask_to_card_effect": [
+      [
+        1,
+        19
+      ],
+      [
+        4,
+        31
+      ]
+    ]
   },
   {
     "id": 8,
@@ -120,7 +190,12 @@
       100
     ],
     "can_end_round": true,
-    "mask_to_card_effect": []
+    "mask_to_card_effect": [
+      [
+        4,
+        31
+      ]
+    ]
   },
   {
     "id": 9,
@@ -132,7 +207,16 @@
       100
     ],
     "can_end_round": true,
-    "mask_to_card_effect": []
+    "mask_to_card_effect": [
+      [
+        2,
+        26
+      ],
+      [
+        4,
+        31
+      ]
+    ]
   },
   {
     "id": 10,
@@ -146,7 +230,16 @@
       100
     ],
     "can_end_round": true,
-    "mask_to_card_effect": []
+    "mask_to_card_effect": [
+      [
+        1,
+        20
+      ],
+      [
+        4,
+        31
+      ]
+    ]
   },
   {
     "id": 11,
@@ -158,7 +251,12 @@
       1
     ],
     "can_end_round": false,
-    "mask_to_card_effect": []
+    "mask_to_card_effect": [
+      [
+        4,
+        32
+      ]
+    ]
   },
   {
     "id": 12,
@@ -168,7 +266,24 @@
     "desc": "直到你的回合结束时，随机佩戴一个面具（从十殿阎罗、孟婆、二郎真君中随机选择）。",
     "value": [],
     "can_end_round": false,
-    "mask_to_card_effect": []
+    "mask_to_card_effect": [
+      [
+        1,
+        21
+      ],
+      [
+        2,
+        21
+      ],
+      [
+        3,
+        29
+      ],
+      [
+        4,
+        32
+      ]
+    ]
   },
   {
     "id": 13,
@@ -453,7 +568,11 @@
     "intent": 0,
     "name": "",
     "desc": "造成{0}点伤害，重复{1}次。打出后有{2}%几率结束回合。",
-    "value": [],
+    "value": [
+      1,
+      2,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -463,7 +582,11 @@
     "intent": 3,
     "name": "",
     "desc": "对本我造成{0}点伤害，自己恢复{1}点生命。打出后有{2}%几率结束回合。",
-    "value": [],
+    "value": [
+      1,
+      1,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -473,7 +596,10 @@
     "intent": 1,
     "name": "",
     "desc": "获得{0}点护甲。打出后有{1}%几率结束回合。",
-    "value": [],
+    "value": [
+      5,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -483,7 +609,10 @@
     "intent": 0,
     "name": "",
     "desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
-    "value": [],
+    "value": [
+      10,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -493,7 +622,10 @@
     "intent": 0,
     "name": "",
     "desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
-    "value": [],
+    "value": [
+      3,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -503,7 +635,10 @@
     "intent": 0,
     "name": "",
     "desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
-    "value": [],
+    "value": [
+      1,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -513,7 +648,10 @@
     "intent": 0,
     "name": "",
     "desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
-    "value": [],
+    "value": [
+      2,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -522,8 +660,10 @@
     "type": 0,
     "intent": 2,
     "name": "",
-    "desc": "无事发生。打出后有{1}%几率结束回合。",
-    "value": [],
+    "desc": "无事发生。打出后有{0}%几率结束回合。",
+    "value": [
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -533,7 +673,10 @@
     "intent": 1,
     "name": "",
     "desc": "获得{0}点护甲。打出后有{1}%几率结束回合。",
-    "value": [],
+    "value": [
+      5,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -543,7 +686,10 @@
     "intent": 2,
     "name": "",
     "desc": "敌人的死期减少{0}。打出后有{1}%几率结束回合。",
-    "value": [],
+    "value": [
+      1,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -553,7 +699,10 @@
     "intent": 2,
     "name": "",
     "desc": "敌人获得死期效果，倒计时为{0}。已有则无事发生。打出后有{1}%几率结束回合。",
-    "value": [],
+    "value": [
+      5,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -563,7 +712,10 @@
     "intent": 0,
     "name": "",
     "desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
-    "value": [],
+    "value": [
+      3,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -573,7 +725,10 @@
     "intent": 0,
     "name": "",
     "desc": "对自己造成{0}点伤害。打出后有{1}%几率结束回合。",
-    "value": [],
+    "value": [
+      2,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
@@ -583,22 +738,15 @@
     "intent": 1,
     "name": "",
     "desc": "获得{0}点护甲。打出后有{1}%几率结束回合。",
-    "value": [],
+    "value": [
+      3,
+      100
+    ],
     "can_end_round": true,
     "mask_to_card_effect": []
   },
   {
     "id": 49,
-    "type": 0,
-    "intent": 0,
-    "name": "",
-    "desc": "",
-    "value": [],
-    "can_end_round": true,
-    "mask_to_card_effect": []
-  },
-  {
-    "id": 0,
     "type": 0,
     "intent": 0,
     "name": "",

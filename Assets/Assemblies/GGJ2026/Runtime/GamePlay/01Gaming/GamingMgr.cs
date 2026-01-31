@@ -82,6 +82,7 @@ namespace GGJ2026.GamePlay
             isGameOver = enemyController.IsDead() || playerController.IsDead();
             isGameWin = enemyController.IsDead() && !playerController.IsDead();
 
+
             while (true)
             {
                 isGameOver = playerController.IsDead() || enemyController.IsDead();
@@ -90,6 +91,8 @@ namespace GGJ2026.GamePlay
 
                 if (currentGamingState == GamingState.PlayerRound)
                 {
+                    await enemyController.TurnEnd();
+                    await playerController.TurnStart();
                     while (playerOperationQueue.Count > 0)
                     {
                         var operation = playerOperationQueue.Dequeue();
@@ -128,6 +131,9 @@ namespace GGJ2026.GamePlay
                 }
                 else if (currentGamingState == GamingState.EnemyRound)
                 {
+                    await enemyController.TurnStart();
+                    await playerController.TurnEnd();
+
                     await enemyController.StartThinking();
 
                     while (true)
@@ -219,7 +225,7 @@ namespace GGJ2026.GamePlay
                 if (playerData.randomDrawCard)
                 {
                     var cardId = playerData.candidateCards.RandomTakeWithoutRemove();
-                    gamePlayPanel.DrawCard(new CardData(cardId));
+                    await gamePlayPanel.DrawCard(new CardData(cardId));
                 }
                 else
                 {
@@ -231,7 +237,7 @@ namespace GGJ2026.GamePlay
 
                     var cardId = playerData.candidateCards[currentIndex];
                     playerData.currentDrawIndex = currentIndex + 1;
-                   await gamePlayPanel.DrawCard(new CardData(cardId));
+                    await gamePlayPanel.DrawCard(new CardData(cardId));
                 }
             }
         }
