@@ -24,32 +24,36 @@ namespace GGJ2026.GamePlay
             cardContainer.Bind(playerData);
 
             Global.Event.Listen<OnUICardVisualEndDrag>(OnUICardVisualEndDrag);
-            Global.Event.Listen<GamingMgr.GamingState>(OnGamingStateChanged);
+            Global.Event.Listen<GamingMgr.GamingState, UniTask>(OnGamingStateChanged);
         }
 
-        private void OnGamingStateChanged(in GamingMgr.GamingState args)
+        private UniTask OnGamingStateChanged(in GamingMgr.GamingState args)
         {
             switch (args)
             {
                 case GamingMgr.GamingState.GameStart:
                     break;
                 case GamingMgr.GamingState.PlayerRound:
-                    playerStartUIEffect.PlayEffect().Forget();
+                    Debug.Log("OnGamingStateChanged: PlayerRound");
+                    // return playerStartUIEffect.PlayEffect();
                     break;
                 case GamingMgr.GamingState.EnemyRound:
-                    enemyStartUIEffect.PlayEffectAsync().Forget();
+                    Debug.Log("OnGamingStateChanged: EnemyRound");
+                    // return enemyStartUIEffect.PlayEffectAsync();
                     break;
                 case GamingMgr.GamingState.GameOver:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(args), args, null);
             }
+
+            return UniTask.CompletedTask;
         }
 
         public void UnBind()
         {
             Global.Event.UnListen<OnUICardVisualEndDrag>(OnUICardVisualEndDrag);
-            Global.Event.UnListen<GamingMgr.GamingState>(OnGamingStateChanged);
+            Global.Event.UnListen<GamingMgr.GamingState, UniTask>(OnGamingStateChanged);
             cardContainer.UnBind();
             _playerData = null;
         }

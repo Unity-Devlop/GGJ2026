@@ -382,6 +382,7 @@ MonoBehaviour:
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 1
+  levelConfig: {fileID: 11400000, guid: 2f240b414961145ed9239547fcf1fee7, type: 2}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

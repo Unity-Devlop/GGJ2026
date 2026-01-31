@@ -19,19 +19,21 @@ namespace GGJ2026.GamePlay
         [Header("视觉反馈")] public float shakeStrength = 10f; // 撞击时的屏幕震动强度
         public Color bgFadeColor = new Color(0, 0, 0, 0.6f); // 遮罩颜色
 
+        private bool _awakened = false;
+
         void Awake()
         {
             if (canvasGroup == null) canvasGroup = GetComponent<CanvasGroup>();
             canvasGroup.alpha = 0;
             if (bgOverlay != null) bgOverlay.color = Color.clear;
             gameObject.SetActive(false);
+            _awakened = true;
         }
 
         [Sirenix.OdinInspector.Button]
         public async UniTask PlayEffectAsync()
         {
-            if (this == null) return;
-            if (gameObject == null) return;
+            if (!_awakened) Awake();
             gameObject.SetActive(true);
             var ct = this.GetCancellationTokenOnDestroy();
 

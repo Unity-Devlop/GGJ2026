@@ -10,7 +10,11 @@ namespace GGJ2026.GamePlay
 {
     public class GameMgr : MonoSingleton<GameMgr>
     {
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
         public StateMachine<GameMgr> stateMachine { get; private set; }
+
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        public IState<GameMgr> currentState => stateMachine.currentState;
 
 
         [field: SerializeField] public CinemachineCamera main { get; private set; }
@@ -22,14 +26,16 @@ namespace GGJ2026.GamePlay
             // TODO 绑定UI等等操作
 
             stateMachine = new StateMachine<GameMgr>(this);
+            stateMachine.OnStateChange += (oldState, newState) =>
+            {
+                Debug.Log($"GameMgr State Change: {oldState?.GetType().Name} -> {newState.GetType().Name}");
+            };
 
             stateMachine.Add<GameStartState>();
             stateMachine.Add<GamingState>();
             stateMachine.Add<GameEndState>();
 
             stateMachine.Run<GameStartState>();
-
-
         }
 
         private void Update()

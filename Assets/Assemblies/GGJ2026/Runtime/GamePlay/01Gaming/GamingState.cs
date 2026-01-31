@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityToolkit;
 
 namespace GGJ2026.GamePlay
@@ -36,6 +37,7 @@ namespace GGJ2026.GamePlay
 
         public void OnExit(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
+            Debug.Log("Exit Gaming State");
             GamingMgr.Singleton.ExitGame();
         }
     }

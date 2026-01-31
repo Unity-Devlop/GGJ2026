@@ -6,7 +6,7 @@ namespace GGJ2026.GamePlay
     [Serializable]
     public class EnemyData 
     {
-        public EntityPropertyData propertyData;
+        public EntityPropertyData property;
         public List<CardData> candidateCards;
     }
 }

@@ -45,20 +45,26 @@ namespace GGJ2026.GamePlay
         }
 
         private bool playerOperationInProgress = false;
-        public bool isGameWin => enemyController.IsDead() && !playerController.IsDead();
+        public bool isGameWin;
+
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        private PlayerData playerData;
+
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        private EnemyData enemyData;
 
         private async UniTask GameFlow()
         {
             currentGamingState = GamingState.GameStart;
-            Global.Event.Invoke(currentGamingState);
+            await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
 
-            isGameOver = false;
+
             var gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
             Global.localSave.Get<GameData>(out var gameData);
 
             var currentLevel = gameData.lastCompletedLevel;
-            var playerData = gameData.levelPlayerData[currentLevel];
-            var enemyData = gameData.levelEnemyData[currentLevel];
+            playerData = Global.refHolder.levelConfig.levelPlayerData[currentLevel].DeepCopy();
+            enemyData = Global.refHolder.levelConfig.levelEnemyData[currentLevel].DeepCopy();
 
             gamePlayPanel.Bind(playerData);
 
@@ -66,11 +72,17 @@ namespace GGJ2026.GamePlay
             enemyController.Bind(enemyData);
 
 
+            // await UniTask.Delay(TimeSpan.FromSeconds(1));
             currentGamingState = GamingState.PlayerRound;
-            Global.Event.Invoke(currentGamingState);
+            await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
+
+            isGameOver = enemyController.IsDead() || playerController.IsDead();
+            isGameWin = enemyController.IsDead() && !playerController.IsDead();
+
             while (true)
             {
                 isGameOver = playerController.IsDead() || enemyController.IsDead();
+                isGameWin = enemyController.IsDead() && !playerController.IsDead();
                 if (isGameOver) break;
 
                 if (currentGamingState == GamingState.PlayerRound)
@@ -83,13 +95,13 @@ namespace GGJ2026.GamePlay
                             var cardData = useCardOperation.cardData;
                             await playerController.UseCard(cardData);
                             // 结算伤害
-                            await CardEffects.ExecuteCardEffects(cardData, playerController,
+                            bool endRound = await CardEffects.ExecuteCardEffects(cardData, playerController,
                                 enemyController);
 
-                            if (cardData.config.EndRoundWhenUse)
+                            if (endRound)
                             {
                                 currentGamingState = GamingState.EnemyRound;
-                                Global.Event.Invoke(currentGamingState);
+                                await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
                                 Assert.IsTrue(playerOperationQueue.Count == 0,
                                     "结束回合操作执行时，玩家操作队列不为空");
                                 break;
@@ -101,7 +113,7 @@ namespace GGJ2026.GamePlay
                 {
                     await enemyController.StartThinking();
 
-                    while (enemyController.wantedOperation)
+                    while (true)
                     {
                         var operation = await enemyController.GetNextOperation();
                         if (operation is UseCardOperation useCardOperation)
@@ -109,22 +121,27 @@ namespace GGJ2026.GamePlay
                             var cardData = useCardOperation.cardData;
                             await enemyController.TakeCard(cardData);
                             // 结算伤害
-                            await CardEffects.ExecuteCardEffects(cardData, enemyController,
+                            bool endRound = await CardEffects.ExecuteCardEffects(cardData, enemyController,
                                 playerController);
+                            if (endRound)
+                            {
+                                currentGamingState = GamingState.PlayerRound;
+                                await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
+                                break;
+                            }
                         }
                     }
 
                     currentGamingState = GamingState.PlayerRound;
-                    Global.Event.Invoke(currentGamingState);
+                    await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
                 }
 
                 await UniTask.Yield();
             }
 
-            playerController.UnBind();
-            enemyController.UnBind();
+            isGameWin = enemyController.IsDead() && !playerController.IsDead();
             currentGamingState = GamingState.GameOver;
-            Global.Event.Invoke(currentGamingState);
+            await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
         }
 
         public void ExitGame()
@@ -149,9 +166,9 @@ namespace GGJ2026.GamePlay
                 }
             }
 
-
-            isGameOver = true;
-            UIRoot.Singleton.ClosePanel<GamePlayPanel>();
+            playerController.UnBind();
+            enemyController.UnBind();
+            UIRoot.Singleton.Dispose<GamePlayPanel>();
         }
 
 
