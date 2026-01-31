@@ -116,8 +116,6 @@ namespace GGJ2026.GamePlay
                         else if (operation is SwitchMaskOperation switchMask)
                         {
                             await playerController.SwitchMask(switchMask.id);
-                            await Global.Event.Invoke<OnLocalPlayerWearMaskEvent, UniTask>(
-                                new OnLocalPlayerWearMaskEvent(switchMask.id));
                             if (switchMask.endRoundRightAfter)
                             {
                                 currentGamingState = GamingState.EnemyRound;

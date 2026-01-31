@@ -30,27 +30,39 @@ namespace GGJ2026.GamePlay
             }
         }
 
-        public static void ProcessTakeDamageBuffs(IEntityController entityController, ref int damageValue)
+        public static void ProcessTakeDamageBuffs(IEntityController entity, ref int damageValue)
         {
-            entityController.GetBuffs(out var buffs);
+            entity.GetBuffs(out var buffs);
             foreach (var buff in buffs)
             {
                 if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
                 {
-                    executor.ProcessTakeDamageBuff(entityController, buff, ref damageValue);
+                    executor.ProcessTakeDamageBuff(entity, buff, ref damageValue);
                 }
             }
         }
 
-        public static async UniTask ProcessWhenApplyDamageTo(IEntityController enemyController, IEntityController tar,
+        public static async UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar,
             int value)
         {
-            enemyController.GetBuffs(out var buffs);
+            entity.GetBuffs(out var buffs);
             foreach (var buff in buffs)
             {
                 if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
                 {
-                    await executor.ProcessWhenApplyDamageTo(enemyController, tar, value, buff);
+                    await executor.ProcessWhenApplyDamageTo(entity, tar, value, buff);
+                }
+            }
+        }
+
+        public static async UniTask OnTurnEnd(IEntityController entity)
+        {
+            entity.GetBuffs(out var buffs);
+            foreach (var buff in buffs)
+            {
+                if (_buffEffectExecutors.TryGetValue(buff.buffEnum, out var executor))
+                {
+                    await executor.OnTurnEnd(entity, buff);
                 }
             }
         }

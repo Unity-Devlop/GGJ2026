@@ -33,14 +33,17 @@ namespace GGJ2026.GamePlay
         void GetBuffs(out List<BuffInfo> buffInfos);
         void RemoveBuff(BuffInfo buff);
         UniTask OnApplyDamageTo(IEntityController tar, int value);
+        UniTask SwitchMask(MaskEnum id);
     }
 
     public interface IBuffEffectExecutor
     {
-        void ProcessTakeDamageBuff(IEntityController entityController, BuffInfo buff, ref int damageValue);
+        void ProcessTakeDamageBuff(IEntityController enity, BuffInfo buff, ref int damageValue);
 
-        UniTask ProcessWhenApplyDamageTo(IEntityController enemyController, IEntityController tar, int value,
+        UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value,
             BuffInfo buff);
+
+        UniTask OnTurnEnd(IEntityController entity, BuffInfo buff);
     }
 
 
