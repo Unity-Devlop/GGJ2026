@@ -10,6 +10,9 @@ namespace GGJ2026.GamePlay
     {
         public static string defaultDataFileName => "GameData";
 
-        public PlayerData playerData;
+        public GameLevelEnum lastCompletedLevel = GameLevelEnum.None;
+
+        public SerializableDictionary<GameLevelEnum, PlayerData> levelPlayerData = new();
+        public SerializableDictionary<GameLevelEnum, EnemyData> levelEnemyData = new();
     }
 }

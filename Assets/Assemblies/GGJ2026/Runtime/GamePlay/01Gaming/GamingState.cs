@@ -18,7 +18,14 @@ namespace GGJ2026.GamePlay
         {
             if (GamingMgr.Singleton.isGameOver)
             {
-                stateMachine.Run<GameEndState>();
+                if (GamingMgr.Singleton.isGameWin)
+                {
+                    stateMachine.Change<GameEndState>();
+                }
+                else
+                {
+                    Global.gameFlow.stateMachine.Change<HomeState>();
+                }
             }
         }
 
@@ -29,7 +36,7 @@ namespace GGJ2026.GamePlay
 
         public void OnExit(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
-            GamingMgr.Singleton.EndGame();
+            GamingMgr.Singleton.ExitGame();
         }
     }
 }

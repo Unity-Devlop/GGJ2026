@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using cfg;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -18,8 +19,6 @@ namespace GGJ2026.GamePlay
         }
 
         public bool isGameOver;
-        [SerializeField] private PlayerData playerData;
-        [SerializeField] private EnemyData enemyData;
 
 
         [SerializeField] private PlayerController playerController;
@@ -46,6 +45,7 @@ namespace GGJ2026.GamePlay
         }
 
         private bool playerOperationInProgress = false;
+        public bool isGameWin => enemyController.IsDead() && !playerController.IsDead();
 
         private async UniTask GameFlow()
         {
@@ -55,7 +55,12 @@ namespace GGJ2026.GamePlay
             isGameOver = false;
             var gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
             Global.localSave.Get<GameData>(out var gameData);
-            gamePlayPanel.Bind(gameData.playerData);
+
+            var currentLevel = gameData.lastCompletedLevel;
+            var playerData = gameData.levelPlayerData[currentLevel];
+            var enemyData = gameData.levelEnemyData[currentLevel];
+
+            gamePlayPanel.Bind(playerData);
 
             playerController.Bind(playerData);
             enemyController.Bind(enemyData);
@@ -122,9 +127,29 @@ namespace GGJ2026.GamePlay
             Global.Event.Invoke(currentGamingState);
         }
 
-
-        public void EndGame()
+        public void ExitGame()
         {
+            Global.localSave.Get<GameData>(out var gameData);
+
+
+            if (playerController.IsDead())
+            {
+            }
+            else if (enemyController.IsDead())
+            {
+                if (gameData.lastCompletedLevel == EnumHelper<GameLevelEnum>.keys[^1])
+                {
+                    Debug.Log("通关最后一关，回到第一关");
+                    gameData.lastCompletedLevel = GameLevelEnum.第一关;
+                }
+                else
+                {
+                    Debug.Log("提升关卡");
+                    gameData.lastCompletedLevel += 1;
+                }
+            }
+
+
             isGameOver = true;
             UIRoot.Singleton.ClosePanel<GamePlayPanel>();
         }

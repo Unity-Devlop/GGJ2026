@@ -16,7 +16,7 @@ namespace GGJ2026.GamePlay
 
         public void Transition(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
-            // throw new System.NotImplementedException();
+            stateMachine.Change<GameStartState>();
         }
 
         public void OnUpdate(GameMgr owner, IStateMachine<GameMgr> stateMachine)

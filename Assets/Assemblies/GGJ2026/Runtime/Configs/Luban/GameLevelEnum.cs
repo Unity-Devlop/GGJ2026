@@ -11,12 +11,13 @@
 
 namespace cfg
 { 
-    public enum GameLevel
+    public enum GameLevelEnum
     {
-        第一关 = 0,
-        第二关 = 1,
-        第三关 = 2,
-        第四关 = 3,
+        None = 0,
+        第一关 = 1,
+        第二关 = 2,
+        第三关 = 3,
+        第四关 = 4,
     }
 
 } 
