@@ -18,8 +18,8 @@ namespace GGJ2026.GamePlay
                 return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
             }
             
-            await tar.UseCard(cardData);
-            await tar.TakeCard(cardData);
+            await atk.UseCard(cardData);
+            await atk.TakeCard(cardData);
             
             MaskEnum[] possibleMasks = new MaskEnum[]
             {
@@ -29,8 +29,8 @@ namespace GGJ2026.GamePlay
             };
 
             var target = possibleMasks.ToList().RandomTakeWithoutRemove();
-            await tar.SwitchMask(target);
-            await tar.AddBuff(BuffEnum.返回本我效果,null);
+            await atk.SwitchMask(target);
+            await atk.AddBuff(BuffEnum.返回本我效果,null);
 
             return false;
         }
