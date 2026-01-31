@@ -32,16 +32,16 @@ MonoBehaviour:
       value:
         cards:
         - id: 2
-        - id: 10
+        - id: 6
         property:
           health:
-            _maxValue: 20
+            _maxValue: 10
             _minValue: 0
-            _value: 20
+            _value: 10
           shield: 0
         currentMask: 0
         randomDrawCard: 0
-        candidateCards: 0a000000
+        candidateCards: 0600000002000000
         currentDrawIndex: -1
     - key: 3
       value:
@@ -133,9 +133,9 @@ MonoBehaviour:
       value:
         property:
           health:
-            _maxValue: 100
+            _maxValue: 60
             _minValue: 0
-            _value: 100
+            _value: 60
           shield: 0
         candidateCards:
         - id: 35
@@ -167,7 +167,7 @@ MonoBehaviour:
             _maxValue: 20
             _minValue: 0
             _value: 20
-          shield: 9999
+          shield: 99
         candidateCards:
         - id: 39
     - key: 6
@@ -187,10 +187,10 @@ MonoBehaviour:
       value:
         property:
           health:
-            _maxValue: 100
+            _maxValue: 99
             _minValue: 0
-            _value: 100
-          shield: 100
+            _value: 99
+          shield: 99
         candidateCards:
         - id: 45
         - id: 41
