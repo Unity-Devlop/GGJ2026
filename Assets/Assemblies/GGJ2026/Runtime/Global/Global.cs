@@ -95,6 +95,7 @@ namespace GGJ2026
         protected override void OnInit()
         {
             CardEffects.AutoRegisterAllCardEffects();
+            BuffEffects.AutoRegisterAllBuffEffects();
 
             _event = new TypeEventSystem();
 

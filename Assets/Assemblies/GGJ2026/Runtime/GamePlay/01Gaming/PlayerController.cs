@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using cfg;
 using Cysharp.Threading.Tasks;
@@ -17,6 +18,16 @@ namespace GGJ2026.GamePlay
         private DoTweenHitEffect _doTweenHitEffect;
 
         [SerializeField] private TMP_Text maskText;
+
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        private Dictionary<CardEnum, int> thisRoundUseCardCount = new Dictionary<CardEnum, int>();
+
+
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        private CardEnum lastUsedCardThisRound;
+
+        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        private List<BuffInfo> _buffs = new List<BuffInfo>();
 
         private void Awake()
         {
@@ -52,11 +63,42 @@ namespace GGJ2026.GamePlay
             await GamingMgr.Singleton.LocalPlayerDrawCards(count);
         }
 
+        public bool TryGetLastUsedCardThisRound(out CardEnum cardEnum)
+        {
+            cardEnum = lastUsedCardThisRound;
+            return lastUsedCardThisRound != CardEnum.None;
+        }
+
+        public UniTask AddBuff(BuffEnum 碎魂效果, object values)
+        {
+            _buffs.Add(new BuffInfo() { buffEnum = 碎魂效果, parameters = values });
+            return UniTask.CompletedTask;
+        }
+
+        public void GetBuffs(out List<BuffInfo> buffInfos)
+        {
+            buffInfos = _buffs;
+        }
+
+        public void RemoveBuff(BuffInfo buff)
+        {
+            _buffs.Remove(buff);
+        }
+
+        public async UniTask OnApplyDamageTo(IEntityController tar, int value)
+        {
+            await BuffEffects.ProcessWhenApplyDamageTo(this,tar, value);
+        }
+
         public void UnBind()
         {
             data = null;
             _propertyShower.UnBind();
+            _buffs.Clear();
+            thisRoundUseCardCount.Clear();
+            lastUsedCardThisRound = CardEnum.None;
         }
+
 
         public bool TryGetMask(out MaskEnum id)
         {
@@ -65,8 +107,30 @@ namespace GGJ2026.GamePlay
             return true;
         }
 
+
         public async UniTask UseCard(CardData cardData)
         {
+            thisRoundUseCardCount.TryAdd(cardData.id, 0);
+            thisRoundUseCardCount[cardData.id]++;
+        }
+
+        public UniTask TurnStart()
+        {
+            lastUsedCardThisRound = CardEnum.None;
+            thisRoundUseCardCount.Clear();
+            return UniTask.CompletedTask;
+        }
+
+        public UniTask TurnEnd()
+        {
+            lastUsedCardThisRound = CardEnum.None;
+            return UniTask.CompletedTask;
+        }
+
+        public int GetUseCardCount(CardEnum cardEnum)
+        {
+            thisRoundUseCardCount.TryAdd(cardEnum, 0);
+            return thisRoundUseCardCount[cardEnum];
         }
 
         public async UniTask TakeCard(CardData cardData)
