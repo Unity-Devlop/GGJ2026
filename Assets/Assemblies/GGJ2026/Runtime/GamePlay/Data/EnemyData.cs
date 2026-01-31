@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace GGJ2026.GamePlay
 {
@@ -6,5 +7,6 @@ namespace GGJ2026.GamePlay
     public class EnemyData 
     {
         public EntityPropertyData propertyData;
+        public List<CardData> candidateCards;
     }
 }
