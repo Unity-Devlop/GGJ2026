@@ -75,9 +75,9 @@ namespace GGJ2026.GamePlay
         }
 
 
-        public UniTask AddBuff(BuffEnum 碎魂效果, object values)
+        public UniTask AddBuff(BuffEnum buffEnum, object values)
         {
-            _buffs.Add(new BuffInfo() { buffEnum = 碎魂效果, parameters = values });
+            _buffs.Add(new BuffInfo() { buffEnum = buffEnum, parameters = values });
             return UniTask.CompletedTask;
         }
 

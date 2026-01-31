@@ -81,9 +81,9 @@ namespace GGJ2026.GamePlay
             return lastUsedCardThisRound != CardEnum.None;
         }
 
-        public UniTask AddBuff(BuffEnum 碎魂效果, object values)
+        public UniTask AddBuff(BuffEnum buffEnum, object values)
         {
-            _buffs.Add(new BuffInfo() { buffEnum = 碎魂效果, parameters = values });
+            _buffs.Add(new BuffInfo() { buffEnum = buffEnum, parameters = values });
             return UniTask.CompletedTask;
         }
 
@@ -195,10 +195,25 @@ namespace GGJ2026.GamePlay
                     break;
                 case MaskEnum.无常面具:
                     // TODO 默认黑 点自己切白
-                    RemoveBuff(BuffEnum.黑无常);
-                    RemoveBuff(BuffEnum.白无常);
+                    if (ContainsBuff(BuffEnum.黑无常))
+                    {
+                        RemoveBuff(BuffEnum.黑无常);
+                        RemoveBuff(BuffEnum.白无常);
+                        await AddBuff(BuffEnum.白无常, null);
+                    }
+                    else if (ContainsBuff(BuffEnum.白无常))
+                    {
+                        RemoveBuff(BuffEnum.黑无常);
+                        RemoveBuff(BuffEnum.白无常);
+                        await AddBuff(BuffEnum.黑无常, null);
+                    }
+                    else
+                    {
+                        RemoveBuff(BuffEnum.黑无常);
+                        RemoveBuff(BuffEnum.白无常);
+                        await AddBuff(BuffEnum.白无常, null);
+                    }
 
-                    await AddBuff(BuffEnum.白无常, null);
                     break;
                 case MaskEnum.阎罗面具:
                     BuffEnum[] laws =
@@ -223,6 +238,19 @@ namespace GGJ2026.GamePlay
                 default:
                     throw new ArgumentOutOfRangeException(nameof(id), id, null);
             }
+        }
+
+        private bool ContainsBuff(BuffEnum buffEnum)
+        {
+            foreach (var buff in _buffs)
+            {
+                if (buff.buffEnum == buffEnum)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public UniTask ReduceBuff(BuffEnum id, object parmaters)

@@ -29,7 +29,7 @@ namespace GGJ2026.GamePlay
         UniTask GainHealth(int value);
         UniTask DrawCards(int count);
         bool TryGetLastUsedCardThisRound(out CardEnum cardEnum);
-        UniTask AddBuff(BuffEnum 碎魂效果, object values);
+        UniTask AddBuff(BuffEnum buffEnum, object values);
         void GetBuffs(out List<BuffInfo> buffInfos);
         void RemoveBuff(BuffEnum buff);
         UniTask OnApplyDamageTo(IEntityController tar, int value);

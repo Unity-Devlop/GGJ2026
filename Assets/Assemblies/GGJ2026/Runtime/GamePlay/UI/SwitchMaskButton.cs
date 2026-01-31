@@ -28,6 +28,11 @@ namespace GGJ2026.GamePlay
 
             if (player.TryGetMask(out var mask) && mask == id)
             {
+                if (id == MaskEnum.无常面具)
+                {
+                    GamingMgr.Singleton.PushPlayerOperation(new SwitchMaskOperation(id, true));
+                }
+
                 Debug.LogWarning("Already in this mask: " + id);
                 return;
             }
