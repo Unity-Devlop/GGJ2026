@@ -31,9 +31,11 @@ namespace GGJ2026.GamePlay
         bool TryGetLastUsedCardThisRound(out CardEnum cardEnum);
         UniTask AddBuff(BuffEnum 碎魂效果, object values);
         void GetBuffs(out List<BuffInfo> buffInfos);
-        void RemoveBuff(BuffInfo buff);
+        void RemoveBuff(BuffEnum buff);
         UniTask OnApplyDamageTo(IEntityController tar, int value);
         UniTask SwitchMask(MaskEnum id);
+        UniTask ReduceBuff(BuffEnum id, object parmaters);
+        void AddMengpoData(CardTypeEnum type, int value);
     }
 
     public interface IBuffEffectExecutor
@@ -44,6 +46,7 @@ namespace GGJ2026.GamePlay
             BuffInfo buff);
 
         UniTask OnTurnEnd(IEntityController entity, BuffInfo buff);
+        UniTask OnReduceBuff(IEntityController entity, BuffInfo buff, object parmaters);
     }
 
 

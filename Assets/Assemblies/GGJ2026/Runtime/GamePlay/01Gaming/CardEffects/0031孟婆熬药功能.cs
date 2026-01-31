@@ -14,6 +14,8 @@ namespace GGJ2026.GamePlay
           {
               return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
           }
+          
+            atk.AddMengpoData(CardTypeEnum.功能, 1);
 
             return false;
         }

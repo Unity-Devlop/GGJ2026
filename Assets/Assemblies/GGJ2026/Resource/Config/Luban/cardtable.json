@@ -21,6 +21,10 @@
       [
         4,
         30
+      ],
+      [
+        5,
+        33
       ]
     ]
   },
@@ -52,6 +56,10 @@
       [
         4,
         30
+      ],
+      [
+        5,
+        33
       ]
     ]
   },
@@ -80,6 +88,10 @@
       [
         4,
         30
+      ],
+      [
+        5,
+        33
       ]
     ]
   },
@@ -110,6 +122,10 @@
       [
         4,
         30
+      ],
+      [
+        5,
+        33
       ]
     ]
   },
@@ -282,6 +298,10 @@
       [
         4,
         32
+      ],
+      [
+        5,
+        34
       ]
     ]
   },
@@ -753,6 +773,316 @@
     "desc": "",
     "value": [],
     "can_end_round": true,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 50,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 51,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 52,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 53,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 54,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 55,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 56,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 57,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 58,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 59,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 60,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 61,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 62,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 63,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 64,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 65,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 66,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 67,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 68,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 69,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 70,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 71,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 72,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 73,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 74,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 75,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 76,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 77,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 78,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 79,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
+    "mask_to_card_effect": []
+  },
+  {
+    "id": 80,
+    "type": 0,
+    "intent": 0,
+    "name": "",
+    "desc": "",
+    "value": [],
+    "can_end_round": false,
     "mask_to_card_effect": []
   }
 ]
