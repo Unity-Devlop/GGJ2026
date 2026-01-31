@@ -35,17 +35,18 @@ namespace GGJ2026.GamePlay
                     break;
                 case GamingMgr.GamingState.PlayerRound:
                     Debug.Log("OnGamingStateChanged: PlayerRound");
-                    return playerStartUIEffect.PlayEffect();
+                    // return playerStartUIEffect.PlayEffect();
+                    break;
                 case GamingMgr.GamingState.EnemyRound:
                     Debug.Log("OnGamingStateChanged: EnemyRound");
-                    return enemyStartUIEffect.PlayEffectAsync();
+                    // return enemyStartUIEffect.PlayEffectAsync();
                     break;
                 case GamingMgr.GamingState.GameOver:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(args), args, null);
             }
- 
+
             return UniTask.CompletedTask;
         }
 

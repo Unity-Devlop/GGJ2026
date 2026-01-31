@@ -45,8 +45,7 @@ namespace GGJ2026.GamePlay
         }
 
         private bool playerOperationInProgress = false;
-        public bool isGameWin => enemyController.IsDead() && !playerController.IsDead();
-
+        public bool isGameWin;
 
         [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
         private PlayerData playerData;
@@ -59,7 +58,9 @@ namespace GGJ2026.GamePlay
             currentGamingState = GamingState.GameStart;
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
 
-            isGameOver = false;
+
+
+            
             var gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
             Global.localSave.Get<GameData>(out var gameData);
 
@@ -71,13 +72,20 @@ namespace GGJ2026.GamePlay
 
             playerController.Bind(playerData);
             enemyController.Bind(enemyData);
+            
+
 
             // await UniTask.Delay(TimeSpan.FromSeconds(1));
             currentGamingState = GamingState.PlayerRound;
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
+            
+            isGameOver = enemyController.IsDead() || playerController.IsDead();
+            isGameWin = enemyController.IsDead() && !playerController.IsDead();
+            
             while (true)
             {
                 isGameOver = playerController.IsDead() || enemyController.IsDead();
+                isGameWin = enemyController.IsDead() && !playerController.IsDead();
                 if (isGameOver) break;
 
                 if (currentGamingState == GamingState.PlayerRound)
@@ -128,6 +136,7 @@ namespace GGJ2026.GamePlay
                 await UniTask.Yield();
             }
 
+            isGameWin = enemyController.IsDead() && !playerController.IsDead();
             currentGamingState = GamingState.GameOver;
             await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
         }
@@ -135,8 +144,7 @@ namespace GGJ2026.GamePlay
         public void ExitGame()
         {
             Global.localSave.Get<GameData>(out var gameData);
-            playerController.UnBind();
-            enemyController.UnBind();
+
 
             if (playerController.IsDead())
             {
@@ -155,9 +163,9 @@ namespace GGJ2026.GamePlay
                 }
             }
 
-
-            isGameOver = true;
-            UIRoot.Singleton.ClosePanel<GamePlayPanel>();
+            playerController.UnBind();
+            enemyController.UnBind();
+            UIRoot.Singleton.Dispose<GamePlayPanel>();
         }
 
 
