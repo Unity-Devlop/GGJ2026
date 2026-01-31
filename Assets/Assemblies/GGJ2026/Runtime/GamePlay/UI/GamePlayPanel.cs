@@ -13,7 +13,7 @@ namespace GGJ2026.GamePlay
         [SerializeField] private UICardContainer cardContainer;
         [SerializeField] private RectTransform useCardArea;
         [SerializeField] private TurnStartUIEffect playerStartUIEffect;
-        [SerializeField] private TurnStartUIEffect enemyStartUIEffect;
+        [SerializeField] private EnemyTurnUIEffect enemyStartUIEffect;
 
         private PlayerData _playerData;
 
@@ -36,6 +36,7 @@ namespace GGJ2026.GamePlay
                     playerStartUIEffect.PlayEffect().Forget();
                     break;
                 case GamingMgr.GamingState.EnemyRound:
+                    enemyStartUIEffect.PlayEffectAsync().Forget();
                     break;
                 case GamingMgr.GamingState.GameOver:
                     break;
