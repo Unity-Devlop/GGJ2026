@@ -35,6 +35,10 @@ namespace GGJ2026.GamePlay
         [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
         private Dictionary<CardTypeEnum, int> mengpoData = new Dictionary<CardTypeEnum, int>();
 
+
+        [SerializeField] private SerializableDictionary<MaskEnum, GameObject> maskVisuals =
+            new SerializableDictionary<MaskEnum, GameObject>();
+
         private void Awake()
         {
             _propertyShower = GetComponent<EntityPropertyShower>();
@@ -216,6 +220,37 @@ namespace GGJ2026.GamePlay
             Debug.Log("玩家切换面具: " + id);
             maskText.text = id.ToString();
 
+
+            foreach (var (maskId, go) in maskVisuals)
+            {
+                if (go != null)
+                {
+                    go.SetActive(false);
+                }
+            }
+
+            GameObject target = null;
+
+            foreach (var (maskId, go) in maskVisuals)
+            {
+                if (go != null)
+                {
+                    go.SetActive(maskId == id);
+                }
+
+                if (maskId == id)
+                {
+                    target = go;
+                }
+            }
+
+            if (target != null)
+            {
+                float time = target.GetComponent<AnimationTime>().time;
+                await UniTask.Delay(TimeSpan.FromSeconds(time));
+            }
+
+
             var enemy = GamingMgr.Singleton.GetEnemyEntity(this);
             if (data.currentMask == MaskEnum.阎王面具)
             {
@@ -315,5 +350,14 @@ namespace GGJ2026.GamePlay
             data.property.shield = 0;
             return UniTask.CompletedTask;
         }
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            foreach (var maskEnum in EnumHelper<MaskEnum>.keys)
+            {
+                maskVisuals.TryAdd(maskEnum, null);
+            }
+        }
+#endif
     }
 }
