@@ -42,5 +42,10 @@ namespace GGJ2026.GamePlay
         {
             
         }
+
+        public UniTask OnBuffAdded(IEntityController sender, BuffEnum buffEnum, object values, BuffInfo buffInfo)
+        {
+            return UniTask.CompletedTask;
+        }
     }
 }

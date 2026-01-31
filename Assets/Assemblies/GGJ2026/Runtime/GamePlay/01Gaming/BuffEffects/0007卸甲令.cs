@@ -1,3 +1,4 @@
+using cfg;
 using Cysharp.Threading.Tasks;
 
 namespace GGJ2026.GamePlay
@@ -5,7 +6,8 @@ namespace GGJ2026.GamePlay
     [BuffExecutor(cfg.BuffEnum.卸甲令)]
     public class 卸甲令 : IBuffEffectExecutor
     {
-        public void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff, ref int shieldValue)
+        public void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff,
+            ref int shieldValue)
         {
             shieldValue = 0;
         }
@@ -35,6 +37,13 @@ namespace GGJ2026.GamePlay
             ref bool ignoreShield)
         {
             ignoreShield = true;
+        }
+
+        public async UniTask OnBuffAdded(IEntityController sender, BuffEnum buffEnum, object values, BuffInfo buffInfo)
+        {
+            sender.RemoveBuff(BuffEnum.监禁令);
+            sender.RemoveBuff(BuffEnum.禁武令);
+            await sender.ClearShield();
         }
     }
 }

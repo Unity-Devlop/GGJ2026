@@ -75,10 +75,11 @@ namespace GGJ2026.GamePlay
         }
 
 
-        public UniTask AddBuff(BuffEnum buffEnum, object values)
+       
+        public async UniTask AddBuff(BuffEnum buffEnum, object values)
         {
+            await BuffEffects.OnBuffAdded(this, buffEnum, values);
             _buffs.Add(new BuffInfo() { buffEnum = buffEnum, parameters = values });
-            return UniTask.CompletedTask;
         }
 
         public void GetBuffs(out List<BuffInfo> buffInfos)
@@ -111,6 +112,12 @@ namespace GGJ2026.GamePlay
         {
             mengpoData.TryAdd(type, 0);
             mengpoData[type] += value;
+        }
+
+        public UniTask ClearShield()
+        {
+            data.property.shield = 0;
+            return UniTask.CompletedTask;
         }
 
         public void UnBind()
