@@ -94,6 +94,23 @@ namespace GGJ2026.GamePlay
                 }
                 else if (currentGamingState == GamingState.EnemyRound)
                 {
+                    await enemyController.StartThinking();
+
+                    while (enemyController.wantedOperation)
+                    {
+                        var operation = await enemyController.GetNextOperation();
+                        if (operation is UseCardOperation useCardOperation)
+                        {
+                            var cardData = useCardOperation.cardData;
+                            await enemyController.TakeCard(cardData);
+                            // 结算伤害
+                            await CardEffects.ExecuteCardEffects(cardData, enemyController,
+                                playerController);
+                        }
+                    }
+
+                    currentGamingState = GamingState.PlayerRound;
+                    Global.Event.Invoke(currentGamingState);
                 }
 
                 await UniTask.Yield();

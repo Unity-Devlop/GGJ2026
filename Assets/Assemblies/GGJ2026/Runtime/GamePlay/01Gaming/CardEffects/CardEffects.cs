@@ -31,9 +31,11 @@ namespace GGJ2026.GamePlay
                 }
             }
         }
+        
 
-        public static async UniTask ExecuteCardEffects(CardData cardData, PlayerController playerController,
-            EnemyController enemyController)
+
+        public static async UniTask ExecuteCardEffects(CardData cardData, IEntityController playerController,
+            IEntityController enemyController)
         {
             await _cardEffectExecutors[cardData.id].Execute(cardData, playerController, enemyController);
         }

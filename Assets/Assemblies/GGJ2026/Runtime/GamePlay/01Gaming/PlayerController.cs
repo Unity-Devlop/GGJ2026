@@ -5,7 +5,7 @@ using UnityEngine;
 namespace GGJ2026.GamePlay
 {
     [RequireComponent(typeof(EntityPropertyShower))]
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : MonoBehaviour,IEntityController
     {
         public PlayerData playerData { get; private set; }
         private EntityPropertyShower _propertyShower;
@@ -33,6 +33,21 @@ namespace GGJ2026.GamePlay
         public async UniTask UseCard(CardData cardData)
         {
             
+        }
+
+        UniTask IEntityController.GainShield(int value)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public UniTask TakeCard(CardData cardData)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public UniTask TakeDamage(int value)
+        {
+            throw new System.NotImplementedException();
         }
 
         public async Task GainShield(int value)
