@@ -1,3 +1,4 @@
+using cfg;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -36,6 +37,11 @@ namespace GGJ2026.GamePlay
         public void ProcessTakeDamageIgnoreShieldBuffs(IEntityController sender, IEntityController taker, BuffInfo buff,
             ref bool ignoreShield)
         {
+        }
+        
+        public UniTask OnBuffAdded(IEntityController sender, BuffEnum buffEnum, object values, BuffInfo buffInfo)
+        {
+            return UniTask.CompletedTask;
         }
     }
 }

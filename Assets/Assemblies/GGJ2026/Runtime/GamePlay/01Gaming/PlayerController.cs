@@ -81,10 +81,10 @@ namespace GGJ2026.GamePlay
             return lastUsedCardThisRound != CardEnum.None;
         }
 
-        public UniTask AddBuff(BuffEnum buffEnum, object values)
+        public async UniTask AddBuff(BuffEnum buffEnum, object values)
         {
+            await BuffEffects.OnBuffAdded(this, buffEnum, values);
             _buffs.Add(new BuffInfo() { buffEnum = buffEnum, parameters = values });
-            return UniTask.CompletedTask;
         }
 
         public void GetBuffs(out List<BuffInfo> buffInfos)
@@ -142,7 +142,7 @@ namespace GGJ2026.GamePlay
             RemoveBuff(BuffEnum.壮魂效果);
 
             CardEnum target = CardEnum.None;
-            
+
             foreach (var mengpoConfig in Global.tables.MengpoTable.DataList)
             {
                 // 找到第一个匹配的
@@ -165,9 +165,9 @@ namespace GGJ2026.GamePlay
                     break;
                 }
             }
-            
+
             await CardEffects.ExecuteCardEffects(new CardData(target), this, GamingMgr.Singleton.GetEnemyEntity(this));
-            
+
             mengpoData.Clear();
         }
 
@@ -308,6 +308,12 @@ namespace GGJ2026.GamePlay
         {
             mengpoData.TryAdd(type, 0);
             mengpoData[type] += value;
+        }
+
+        public UniTask ClearShield()
+        {
+            data.property.shield = 0;
+            return UniTask.CompletedTask;
         }
     }
 }

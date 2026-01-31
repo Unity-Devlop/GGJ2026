@@ -22,10 +22,14 @@ namespace GGJ2026.GamePlay
 
         private void Awake()
         {
-            endTurnButton.onClick.AddListener(() =>
+            
+            endTurnButton.onClick.AddListener(async () =>
             {
                 Debug.Log("End Turn Button Clicked");
+                endTurnButton.enabled = false;
+                await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
                 GamingMgr.Singleton.PushPlayerOperation(new EndTurnOperation());
+                endTurnButton.enabled = true;
             });
         }
 

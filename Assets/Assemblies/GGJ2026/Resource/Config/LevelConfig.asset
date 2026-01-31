@@ -174,13 +174,13 @@ MonoBehaviour:
       value:
         property:
           health:
-            _maxValue: 40
+            _maxValue: 30
             _minValue: 0
-            _value: 30
+            _value: 15
           shield: 0
         candidateCards:
         - id: 46
-        - id: 47
+        - id: 46
         - id: 46
         - id: 48
     - key: 7

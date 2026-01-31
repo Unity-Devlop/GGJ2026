@@ -115,5 +115,18 @@ namespace GGJ2026.GamePlay
                 }
             }
         }
+
+        public static async UniTask OnBuffAdded(IEntityController sender, BuffEnum buffEnum, object values)
+        {
+            sender.GetBuffs(out var buffs);
+            for (int i = buffs.Count - 1; i >= 0; i--)
+            {
+                var buffInfo = buffs[i];
+                if (_buffEffectExecutors.TryGetValue(buffInfo.buffEnum, out var executor))
+                {
+                    await executor.OnBuffAdded(sender, buffEnum, values, buffInfo);
+                }
+            }
+        }
     }
 }

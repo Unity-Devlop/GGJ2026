@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using cfg;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace GGJ2026.GamePlay
 {
@@ -35,13 +36,17 @@ namespace GGJ2026.GamePlay
         private void Awake()
         {
             _propertyShower = GetComponent<EntityPropertyShower>();
-            _doTweenHitEffect = GetComponentInChildren<DoTweenHitEffect>();
             _enemyIntent = GetComponentInChildren<EnemyIntentVisual>();
         }
 
 
         public void Bind(EnemyData enemyData)
         {
+            var cfg = Global.tables.GhostTable.Get(enemyData.id);
+            Addressables.InstantiateAsync(cfg.PrefabPath, transform).WaitForCompletion();
+
+
+            _doTweenHitEffect = GetComponentInChildren<DoTweenHitEffect>();
             this.data = enemyData;
             _propertyShower.Bind(this.data.property);
             currentOperationIndex = 0;
@@ -49,6 +54,17 @@ namespace GGJ2026.GamePlay
             {
                 Debug.Log($"Enemy Candidate Card: {cardData.config.Id}");
             }
+        }
+
+        public void UnBind()
+        {
+            Addressables.ReleaseInstance(_doTweenHitEffect.gameObject);
+
+            data = null;
+            _propertyShower.UnBind();
+            _buffs.Clear();
+            useCardCountThisTurn.Clear();
+            lastUsedCardThisRound = CardEnum.None;
         }
 
         public bool IsDead()
@@ -75,10 +91,10 @@ namespace GGJ2026.GamePlay
         }
 
 
-        public UniTask AddBuff(BuffEnum buffEnum, object values)
+        public async UniTask AddBuff(BuffEnum buffEnum, object values)
         {
+            await BuffEffects.OnBuffAdded(this, buffEnum, values);
             _buffs.Add(new BuffInfo() { buffEnum = buffEnum, parameters = values });
-            return UniTask.CompletedTask;
         }
 
         public void GetBuffs(out List<BuffInfo> buffInfos)
@@ -113,14 +129,12 @@ namespace GGJ2026.GamePlay
             mengpoData[type] += value;
         }
 
-        public void UnBind()
+        public UniTask ClearShield()
         {
-            data = null;
-            _propertyShower.UnBind();
-            _buffs.Clear();
-            useCardCountThisTurn.Clear();
-            lastUsedCardThisRound = CardEnum.None;
+            data.property.shield = 0;
+            return UniTask.CompletedTask;
         }
+
 
         public async UniTask StartThinking()
         {

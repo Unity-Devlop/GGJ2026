@@ -36,6 +36,7 @@ namespace GGJ2026.GamePlay
         UniTask SwitchMask(MaskEnum id);
         UniTask ReduceBuff(BuffEnum id, object parmaters);
         void AddMengpoData(CardTypeEnum type, int value);
+        UniTask ClearShield();
     }
 
     public interface IBuffEffectExecutor
@@ -53,6 +54,8 @@ namespace GGJ2026.GamePlay
 
         void ProcessTakeDamageIgnoreShieldBuffs(IEntityController sender, IEntityController taker, BuffInfo buff,
             ref bool ignoreShield);
+
+        UniTask OnBuffAdded(IEntityController sender, BuffEnum buffEnum, object values, BuffInfo buffInfo);
     }
 
 
