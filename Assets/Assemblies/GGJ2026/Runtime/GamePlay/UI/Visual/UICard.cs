@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;  
+using UnityEngine.UI;
 using UnityToolkit;
 
 namespace GGJ2026.GamePlay
@@ -53,6 +53,8 @@ namespace GGJ2026.GamePlay
         public Image img { get; private set; }
         private Canvas _canvas;
 
+        public static UICard currentDragCard;
+
 
         protected override void Awake()
         {
@@ -64,6 +66,7 @@ namespace GGJ2026.GamePlay
         public void Bind(UICardSlot slot, UICardVisual uiCardVisual)
         {
         }
+
         public void OnGet()
         {
             gameObject.SetActive(true);
@@ -98,9 +101,10 @@ namespace GGJ2026.GamePlay
                 Vector3 mousePosition = Pointer.current.position.value;
                 Vector2 targetPosition = UIRoot.Singleton.UICamera.ScreenToWorldPoint(mousePosition) - offset;
                 Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
-                Vector2 velocity = direction * Mathf.Min(moveSpeedLimit, Vector2.Distance(transform.position, targetPosition) / Time.deltaTime);
+                Vector2 velocity = direction * Mathf.Min(moveSpeedLimit,
+                    Vector2.Distance(transform.position, targetPosition) / Time.deltaTime);
                 transform.Translate(velocity * Time.deltaTime);
-                
+
                 ClampPosition(); // 限制位置 不能超出屏幕
             }
             else if (canReset)
@@ -109,7 +113,10 @@ namespace GGJ2026.GamePlay
                 rectTransform.anchoredPosition = Vector2.zero;
             }
 
-            if (isDragging || isHovering)
+            // hovering 但是 drag了一个非自己的时候 不放大
+            if (isDragging ||
+                (isHovering && currentDragCard == null)
+               )
             {
                 transform.localScale = originScale * biggerScale;
             }
@@ -135,6 +142,7 @@ namespace GGJ2026.GamePlay
 
         public virtual void OnBeginDrag(PointerEventData eventData)
         {
+            currentDragCard = this;
             // Debug.Log("OnBeginDrag");
             transform.DOScale(Vector3.one * biggerScale, 0.1f);
             BeginDragEvent(this);
@@ -152,6 +160,7 @@ namespace GGJ2026.GamePlay
 
         public virtual async void OnEndDrag(PointerEventData eventData)
         {
+            currentDragCard = null;
             EndDragEvent.Invoke(this);
             isDragging = false;
             _canvas.GetComponent<GraphicRaycaster>().enabled = true;

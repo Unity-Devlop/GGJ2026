@@ -30,6 +30,7 @@ namespace GGJ2026.GamePlay
         [Sirenix.OdinInspector.Button]
         public async UniTask PlayEffectAsync()
         {
+            if (this == null) return;
             if (gameObject == null) return;
             gameObject.SetActive(true);
             var ct = this.GetCancellationTokenOnDestroy();

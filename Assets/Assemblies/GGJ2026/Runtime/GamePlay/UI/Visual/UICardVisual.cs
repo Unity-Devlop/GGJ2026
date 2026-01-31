@@ -43,14 +43,14 @@ namespace GGJ2026.GamePlay
         // public ActiveSkillTypeEnum id { get; private set; }
 
         public CardData cardData { get; private set; }
-        
-        
+
+
         private void Awake()
         {
             _canvas = GetComponentInParent<Canvas>();
         }
 
-        public virtual void Bind(UICard card,CardData cardData)
+        public virtual void Bind(UICard card, CardData cardData)
         {
             this.cardData = cardData;
             if (this.card != null)
@@ -82,6 +82,7 @@ namespace GGJ2026.GamePlay
 
         protected virtual void Hover(UICard card, bool hovering)
         {
+            if (UICard.currentDragCard != null) return;
             _canvas.overrideSorting = hovering;
         }
 
@@ -101,18 +102,18 @@ namespace GGJ2026.GamePlay
         {
             // if (scaleAnimations)
             // transform.DOScale(scaleOnSelect, scaleTransition).SetEase(scaleEase);
-
+            Global.Event.Invoke(new OnUICardVisualBeginDrag(this));
             _canvas.overrideSorting = true;
         }
 
         protected virtual void EndDrag(UICard card)
         {
+            Global.Event.Invoke(new OnUICardVisualEndDrag(this));
             _canvas.overrideSorting = false;
             // transform.DOScale(1, scaleTransition).SetEase(scaleEase);
-            
+
             Global.Event.Invoke(new OnUICardVisualEndDrag(this));
         }
-        
 
 
         [Header("Hober Parameters")] [SerializeField]
@@ -122,6 +123,7 @@ namespace GGJ2026.GamePlay
 
         protected virtual void PointerEnter(UICard card)
         {
+            Global.Event.Invoke(new OnUICardVisualPointerEnter(this));
             DOTween.Kill(2, true);
             shakeContainer.DOPunchRotation(Vector3.forward * hoverPunchAngle, hoverTransition, 20, 1).SetId(2);
             // if (scaleAnimations)
@@ -133,6 +135,7 @@ namespace GGJ2026.GamePlay
 
         protected virtual void PointerExit(UICard card)
         {
+            Global.Event.Invoke(new OnUICardVisualPointerExit(this));
             // if (!card.wasDragged)
             // transform.DOScale(1, scaleTransition).SetEase(scaleEase);
         }
@@ -168,7 +171,7 @@ namespace GGJ2026.GamePlay
                 _canvas.overrideSorting = true;
             }
 
-            if (card.isHovering)
+            if (card.isHovering && UICard.currentDragCard == null)
             {
                 _canvas.overrideSorting = true;
             }

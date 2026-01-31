@@ -14,6 +14,7 @@ namespace GGJ2026.GamePlay
         [SerializeField] private RectTransform useCardArea;
         [SerializeField] private TurnStartUIEffect playerStartUIEffect;
         [SerializeField] private EnemyTurnUIEffect enemyStartUIEffect;
+        [SerializeField] private UICardDesc cardDesc;
 
         private PlayerData _playerData;
 
