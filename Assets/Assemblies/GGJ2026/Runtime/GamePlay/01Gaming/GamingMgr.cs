@@ -57,8 +57,8 @@ namespace GGJ2026.GamePlay
             Global.localSave.Get<GameData>(out var gameData);
 
             var currentLevel = gameData.lastCompletedLevel;
-            var playerData = gameData.levelPlayerData[currentLevel];
-            var enemyData = gameData.levelEnemyData[currentLevel];
+            var playerData = Global.refHolder.levelConfig.levelPlayerData[currentLevel];
+            var enemyData = Global.refHolder.levelConfig.levelEnemyData[currentLevel];
 
             gamePlayPanel.Bind(playerData);
 

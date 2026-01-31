@@ -1,6 +1,6 @@
+using GGJ2026.GamePlay;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.SceneManagement;
 
 namespace GGJ2026
 {
@@ -8,5 +8,6 @@ namespace GGJ2026
     {
         public AssetReference homeScene;
         public AssetReference gameScene;
+        public LevelConfig levelConfig;
     }
 }
