@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using cfg;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -60,6 +61,12 @@ namespace GGJ2026.GamePlay
 
             var carData = data.candidateCards[currentOperationIndex];
             return new UseCardOperation(carData);
+        }
+
+        public bool TryGetMask(out MaskEnum id)
+        {
+            id = default;
+            return false;
         }
 
         public async UniTask UseCard(CardData cardData)

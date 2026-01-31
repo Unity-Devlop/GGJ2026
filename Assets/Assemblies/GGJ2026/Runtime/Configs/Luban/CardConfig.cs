@@ -19,15 +19,12 @@ public sealed partial class CardConfig : Luban.BeanBase
     {
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = (CardEnum)_buf["id"].AsInt; }
         { if(!_buf["type"].IsNumber) { throw new SerializationException(); }  Type = (CardTypeEnum)_buf["type"].AsInt; }
+        { if(!_buf["intent"].IsNumber) { throw new SerializationException(); }  Intent = (IntentEnum)_buf["intent"].AsInt; }
         { if(!_buf["name"].IsString) { throw new SerializationException(); }  Name = _buf["name"]; }
         { if(!_buf["desc"].IsString) { throw new SerializationException(); }  Desc = _buf["desc"]; }
         { var __json0 = _buf["value"]; if(!__json0.IsArray) { throw new SerializationException(); } int _n0 = __json0.Count; Value = new int[_n0]; int __index0=0; foreach(JSONNode __e0 in __json0.Children) { int __v0;  { if(!__e0.IsNumber) { throw new SerializationException(); }  __v0 = __e0; }  Value[__index0++] = __v0; }   }
         { if(!_buf["can_end_round"].IsBoolean) { throw new SerializationException(); }  CanEndRound = _buf["can_end_round"]; }
-        { if(!_buf["阎王面具"].IsNumber) { throw new SerializationException(); }  阎王面具 = (CardEnum)_buf["阎王面具"].AsInt; }
-        { if(!_buf["无常面具"].IsNumber) { throw new SerializationException(); }  无常面具 = (CardEnum)_buf["无常面具"].AsInt; }
-        { if(!_buf["阎罗面具"].IsNumber) { throw new SerializationException(); }  阎罗面具 = (CardEnum)_buf["阎罗面具"].AsInt; }
-        { if(!_buf["孟婆面具"].IsNumber) { throw new SerializationException(); }  孟婆面具 = (CardEnum)_buf["孟婆面具"].AsInt; }
-        { if(!_buf["二郎神面具"].IsNumber) { throw new SerializationException(); }  二郎神面具 = (CardEnum)_buf["二郎神面具"].AsInt; }
+        { var __json0 = _buf["mask_to_card_effect"]; if(!__json0.IsArray) { throw new SerializationException(); } MaskToCardEffect = new System.Collections.Generic.Dictionary<MaskEnum, CardEnum>(__json0.Count); foreach(JSONNode __e0 in __json0.Children) { MaskEnum _k0;  { if(!__e0[0].IsNumber) { throw new SerializationException(); }  _k0 = (MaskEnum)__e0[0].AsInt; } CardEnum _v0;  { if(!__e0[1].IsNumber) { throw new SerializationException(); }  _v0 = (CardEnum)__e0[1].AsInt; }  MaskToCardEffect.Add(_k0, _v0); }   }
     }
 
     public static CardConfig DeserializeCardConfig(JSONNode _buf)
@@ -37,6 +34,7 @@ public sealed partial class CardConfig : Luban.BeanBase
 
     public readonly CardEnum Id;
     public readonly CardTypeEnum Type;
+    public readonly IntentEnum Intent;
     /// <summary>
     /// 卡牌名
     /// </summary>
@@ -47,11 +45,7 @@ public sealed partial class CardConfig : Luban.BeanBase
     public readonly string Desc;
     public readonly int[] Value;
     public readonly bool CanEndRound;
-    public readonly CardEnum 阎王面具;
-    public readonly CardEnum 无常面具;
-    public readonly CardEnum 阎罗面具;
-    public readonly CardEnum 孟婆面具;
-    public readonly CardEnum 二郎神面具;
+    public readonly System.Collections.Generic.Dictionary<MaskEnum, CardEnum> MaskToCardEffect;
    
     public const int __ID__ = -2113914222;
     public override int GetTypeId() => __ID__;
@@ -65,15 +59,12 @@ public sealed partial class CardConfig : Luban.BeanBase
         return "{ "
         + "id:" + Id + ","
         + "type:" + Type + ","
+        + "intent:" + Intent + ","
         + "name:" + Name + ","
         + "desc:" + Desc + ","
         + "value:" + Luban.StringUtil.CollectionToString(Value) + ","
         + "canEndRound:" + CanEndRound + ","
-        + "阎王面具:" + 阎王面具 + ","
-        + "无常面具:" + 无常面具 + ","
-        + "阎罗面具:" + 阎罗面具 + ","
-        + "孟婆面具:" + 孟婆面具 + ","
-        + "二郎神面具:" + 二郎神面具 + ","
+        + "maskToCardEffect:" + Luban.StringUtil.CollectionToString(MaskToCardEffect) + ","
         + "}";
     }
 }

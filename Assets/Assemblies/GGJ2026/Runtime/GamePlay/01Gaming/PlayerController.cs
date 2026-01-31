@@ -15,7 +15,7 @@ namespace GGJ2026.GamePlay
         private EntityPropertyShower _propertyShower;
 
         private DoTweenHitEffect _doTweenHitEffect;
-        
+
         [SerializeField] private TMP_Text maskText;
 
         private void Awake()
@@ -41,6 +41,12 @@ namespace GGJ2026.GamePlay
             _propertyShower.UnBind();
         }
 
+        public bool TryGetMask(out MaskEnum id)
+        {
+            id = data.currentMask;
+            return true;
+        }
+
         public async UniTask UseCard(CardData cardData)
         {
         }
@@ -60,9 +66,11 @@ namespace GGJ2026.GamePlay
         {
         }
 
-        public async Task SwitchMask(MaskEnum id)
+        public async UniTask SwitchMask(MaskEnum id)
         {
             maskText.text = id.ToString();
+            data.currentMask = id;
+            
         }
     }
 }

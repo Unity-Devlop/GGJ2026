@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using cfg;
 using UnityToolkit;
 
 namespace GGJ2026.GamePlay
@@ -9,5 +10,6 @@ namespace GGJ2026.GamePlay
     {
         public List<CardData> cards = new();
         public EntityPropertyData property = new();
+        public MaskEnum currentMask = MaskEnum.本我;
     }
 }
