@@ -1,9 +1,12 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using cfg;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityToolkit;
 
 namespace GGJ2026.GamePlay
 {
@@ -157,6 +160,42 @@ namespace GGJ2026.GamePlay
                 new OnLocalPlayerWearMaskEvent(id));
             maskText.text = id.ToString();
             data.currentMask = id;
+
+            var enemy = GamingMgr.Singleton.GetEnemyEntity(this);
+            switch (id)
+            {
+                case MaskEnum.本我:
+                    break;
+                case MaskEnum.阎王面具:
+                    await enemy.AddBuff(BuffEnum.死期, 5);
+                    break;
+                case MaskEnum.无常面具:
+                    // TODO 默认黑 点自己切白
+                    break;
+                case MaskEnum.阎罗面具:
+                    BuffEnum[] laws =
+                    {
+                        BuffEnum.监禁令,
+                        BuffEnum.卸甲令,
+                        BuffEnum.禁武令,
+                    };
+
+                    var targetLaw = laws.ToList().RandomTakeWithoutRemove();
+
+                    enemy.RemoveBuff(BuffEnum.监禁令);
+                    enemy.RemoveBuff(BuffEnum.卸甲令);
+                    enemy.RemoveBuff(BuffEnum.禁武令);
+
+                    await enemy.AddBuff(targetLaw, null);
+                    break;
+                case MaskEnum.孟婆面具:
+                    break;
+                case MaskEnum.二郎神面具:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(id), id, null);
+            }
+            
         }
 
         public UniTask ReduceBuff(BuffEnum id, object parmaters)

@@ -243,5 +243,20 @@ namespace GGJ2026.GamePlay
                 }
             }
         }
+
+        public IEntityController GetEnemyEntity(IEntityController whoAreYou)
+        {
+            if (ReferenceEquals(whoAreYou, playerController))
+            {
+                return enemyController;
+            }
+
+            if (ReferenceEquals(whoAreYou, enemyController))
+            {
+                return playerController;
+            }
+
+            throw new Exception("无法识别的实体控制器");
+        }
     }
 }
