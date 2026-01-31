@@ -2,6 +2,7 @@ using System;
 using cfg;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,6 +41,10 @@ namespace GGJ2026.GamePlay
 
         [SerializeField] protected Image maskBorder;
         [SerializeField] protected Image background;
+        [LabelText("插图")]
+        [SerializeField] protected Image mangaImg;
+        [LabelText("类型")]
+        [SerializeField] protected Image typeImg;
         [SerializeField] protected TextMeshProUGUI nameText;
 
         [SerializeField] private RectTransform shakeContainer;
@@ -82,6 +87,10 @@ namespace GGJ2026.GamePlay
             card.SelectEvent += Select;
             card.HoverEvent += Hover;
 
+            if (Global.refHolder.spriteConfig.cardMangaSprites.TryGetValue(cardData.id, out var sprite))
+                mangaImg.sprite = sprite;
+            if (Global.refHolder.spriteConfig.cardTypeSprites.TryGetValue(cardData.config.Type, out var typeSprite))
+                typeImg.sprite = typeSprite;
             nameText.text = cardData.config.Name;
         }
 

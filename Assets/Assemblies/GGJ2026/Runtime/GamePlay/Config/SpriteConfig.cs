@@ -20,5 +20,6 @@ namespace GGJ2026.GamePlay
         }
 
         public SerializableDictionary<CardEnum, Sprite> cardMangaSprites;
+        public SerializableDictionary<CardTypeEnum, Sprite> cardTypeSprites;
     }
 }
