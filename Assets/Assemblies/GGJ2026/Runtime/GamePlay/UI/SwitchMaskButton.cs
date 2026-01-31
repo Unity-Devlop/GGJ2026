@@ -1,15 +1,31 @@
+using System;
 using cfg;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace GGJ2026.GamePlay
 {
+    [RequireComponent(typeof(Button))]
     public class SwitchMaskButton : MonoBehaviour
     {
         [Sirenix.OdinInspector.ReadOnly, Sirenix.OdinInspector.ShowInInspector]
         private MaskEnum id;
 
+        private Button button;
+
         [field: SerializeField] public TextMeshProUGUI nameText;
+
+        private void Awake()
+        {
+            button = this.GetComponent<Button>();
+            button.onClick.AddListener(OnClick);
+        }
+
+        private void OnClick()
+        {
+            GamingMgr.Singleton.PushPlayerOperation(new PlayerSwitchMaskOperation(id));
+        }
 
         public void Bind(MaskEnum id)
         {

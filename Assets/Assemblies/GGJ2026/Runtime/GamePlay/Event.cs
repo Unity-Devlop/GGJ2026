@@ -1,3 +1,4 @@
+using cfg;
 using UnityEngine;
 using UnityToolkit;
 
@@ -60,6 +61,17 @@ namespace GGJ2026.GamePlay
         {
             visual = cardVisual;
             data = cardVisual.cardData;
+        }
+    }
+    
+    
+    public readonly struct OnWearMaskEvent
+    {
+        public readonly MaskEnum maskID;
+
+        public OnWearMaskEvent(MaskEnum id)
+        {
+            maskID = id;
         }
     }
 }
