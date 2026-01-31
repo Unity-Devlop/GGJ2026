@@ -16,8 +16,7 @@ MonoBehaviour:
     list:
     - key: 1
       value:
-        cards:
-        - id: 3
+        cards: []
         property:
           health:
             _maxValue: 100
@@ -26,7 +25,7 @@ MonoBehaviour:
           shield: 999
         currentMask: 0
         randomDrawCard: 0
-        candidateCards: 03000000
+        candidateCards: 04000000
         currentDrawIndex: -1
   levelEnemyData:
     list:
@@ -34,9 +33,9 @@ MonoBehaviour:
       value:
         property:
           health:
-            _maxValue: 999
+            _maxValue: 1
             _minValue: 0
-            _value: 999
-          shield: 0
+            _value: 1
+          shield: 1
         candidateCards:
         - id: 40
