@@ -176,7 +176,7 @@ namespace GGJ2026.GamePlay
                 case MaskEnum.本我:
                     break;
                 case MaskEnum.阎王面具:
-                    await enemy.AddBuff(BuffEnum.死期, 1);
+                    await enemy.AddBuff(BuffEnum.死期, 5);
                     break;
                 case MaskEnum.无常面具:
                     // TODO 默认黑 点自己切白
