@@ -77,5 +77,5 @@ MonoBehaviour:
     - key: 2
       value: {fileID: 588844091590828973, guid: de1f1e9620390db4aa967e24eaf9f731, type: 3}
   "mask\u9ED1\u767D\u65E0\u5E38Icon":
-  - {fileID: 21300000, guid: c26d758d3052e1e49a354d7e15b6ab52, type: 3}
-  - {fileID: 21300000, guid: 1411d8c44066dc94a87b16330ea064c8, type: 3}
+  - {fileID: 588844091590828973, guid: de1f1e9620390db4aa967e24eaf9f731, type: 3}
+  - {fileID: 588844091590828973, guid: de1f1e9620390db4aa967e24eaf9f731, type: 3}
