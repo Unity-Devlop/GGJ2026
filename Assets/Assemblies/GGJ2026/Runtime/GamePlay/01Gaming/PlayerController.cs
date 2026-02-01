@@ -63,6 +63,7 @@ namespace GGJ2026.GamePlay
         {
             GamingMgr.Singleton.OnEntityTakeDamage(transform.position, 9999);
             data.property.health.Value = 0;
+            RuntimeManager.PlayOneShot(Global.refHolder.dead);
             return UniTask.CompletedTask;
         }
 
@@ -117,6 +118,14 @@ namespace GGJ2026.GamePlay
 
         public void UnBind()
         {
+            foreach (var (maskId, go) in maskVisuals)
+            {
+                if (go != null)
+                {
+                    go.SetActive(false);
+                }
+            }
+
             ColorEffectController.Instance.ResetColor();
             data = null;
             _propertyShower.UnBind();
@@ -208,6 +217,7 @@ namespace GGJ2026.GamePlay
             BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(sender, this, ref ignoreShield);
 
             RuntimeManager.PlayOneShot(Global.refHolder.attack);
+            RuntimeManager.PlayOneShot(Global.refHolder.受击);
 
             if (data.property.shield > 0 && !ignoreShield)
             {
@@ -225,6 +235,11 @@ namespace GGJ2026.GamePlay
             {
                 GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageValue);
                 data.property.health.Value -= damageValue;
+            }
+
+            if (data.property.health.Value <= 0)
+            {
+                RuntimeManager.PlayOneShot(Global.refHolder.dead);
             }
 
             // DOTween
@@ -297,6 +312,28 @@ namespace GGJ2026.GamePlay
 
 
             data.currentMask = id;
+
+            switch (id)
+            {
+                case MaskEnum.本我:
+                    break;
+                case MaskEnum.阎王面具:
+                    RuntimeManager.PlayOneShot(Global.refHolder.阎王出场);
+                    break;
+                case MaskEnum.无常面具:
+                    break;
+                case MaskEnum.阎罗面具:
+                    RuntimeManager.PlayOneShot(Global.refHolder.阎罗);
+                    break;
+                case MaskEnum.孟婆面具:
+                    RuntimeManager.PlayOneShot(Global.refHolder.孟婆);
+                    break;
+                case MaskEnum.二郎神面具:
+                    RuntimeManager.PlayOneShot(Global.refHolder.二郎神);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(id), id, null);
+            }
 
             switch (id)
             {
