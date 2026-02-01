@@ -352,7 +352,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -2270279294984716318, guid: e7b7aaf5e1e30554bae19a4f8891b9e2, type: 3}
   m_Color: {r: 0.29749966, g: 0.31132078, b: 0.29516736, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -614,7 +614,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -17
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1843028302627794106, guid: 0a7efc91250f93c41815d9565d5f53d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a7efc91250f93c41815d9565d5f53d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -760,10 +760,10 @@ PrefabInstance:
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 583428569478408072, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 0}
+      addedObject: {fileID: 3220803750635756912}
     - targetCorrespondingSourceObject: {fileID: 583428569478408072, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3220803750635756912}
+      addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 1794303428612644501, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3220803750635756913}
@@ -948,10 +948,10 @@ PrefabInstance:
       addedObject: {fileID: 5200886681954117662}
     - targetCorrespondingSourceObject: {fileID: 4803530427256473861, guid: 7058caf548ebe48fd86addfe662892f3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 0}
+      addedObject: {fileID: 5200886681954117661}
     - targetCorrespondingSourceObject: {fileID: 4803530427256473861, guid: 7058caf548ebe48fd86addfe662892f3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5200886681954117661}
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7058caf548ebe48fd86addfe662892f3, type: 3}
 --- !u!1 &5200886681954117659 stripped
 GameObject:
