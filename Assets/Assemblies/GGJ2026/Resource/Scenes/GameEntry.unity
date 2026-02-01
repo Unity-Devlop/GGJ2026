@@ -384,6 +384,62 @@ MonoBehaviour:
     m_EditorAssetChanged: 1
   levelConfig: {fileID: 11400000, guid: 2f240b414961145ed9239547fcf1fee7, type: 2}
   spriteConfig: {fileID: 11400000, guid: 40a5ec995f9094317a213907eb5121e5, type: 2}
+  bgm:
+    Guid:
+      Data1: -733456071
+      Data2: 1288392589
+      Data3: 1314880951
+      Data4: 1321550633
+    Path: event:/bgm
+  useCard:
+    Guid:
+      Data1: 1106403572
+      Data2: 1314027673
+      Data3: -986347381
+      Data4: -1784172399
+    Path: "event:/\u51FA\u724C"
+  attack:
+    Guid:
+      Data1: 369290063
+      Data2: 1310245366
+      Data3: 440326023
+      Data4: 1825899224
+    Path: "event:/\u653B\u51FB"
+  selectCard:
+    Guid:
+      Data1: 344519123
+      Data2: 1325840165
+      Data3: -406811747
+      Data4: 2021098102
+    Path: "event:/\u9009\u724C"
+  defence:
+    Guid:
+      Data1: 1575322877
+      Data2: 1097333099
+      Data3: -1759007563
+      Data4: 1534430275
+    Path: "event:/\u9632\u5FA1"
+  blackWhiteLaugh:
+    Guid:
+      Data1: -1389580206
+      Data2: 1279912890
+      Data3: -1601438324
+      Data4: 1460322713
+    Path: "event:/\u9ED1\u65E0\u5E38\u7B11"
+  whiteLaugh:
+    Guid:
+      Data1: 1406853980
+      Data2: 1323928481
+      Data3: 588683915
+      Data4: 1845589897
+    Path: "event:/\u767D\u65E0\u5E38\u7B11"
+  blackLaugh:
+    Guid:
+      Data1: -1157930714
+      Data2: 1178377772
+      Data3: -958354042
+      Data4: 575391626
+    Path: "event:/\u9ED1\u767D\u65E0\u5E38\u7B11"
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,8 +637,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996265439}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18232132, y: 0, z: 0, w: 0.983239}
-  m_LocalPosition: {x: 0, y: 3.5952892, z: -9.331346}
+  m_LocalRotation: {x: 0.0748917, y: 0, z: 0, w: 0.9971917}
+  m_LocalPosition: {x: 0, y: 1.68, z: -9.889357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

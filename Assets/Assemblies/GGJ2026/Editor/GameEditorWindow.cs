@@ -26,6 +26,7 @@ namespace GGJ2026.Editor
                 { "卡牌效果生成器", new CardEffectGeneratorEditor(), EditorIcons.SettingsCog },
                 { "存档系统", new SaveSystemEditor(), EditorIcons.SettingsCog },
                 { "文字收集", new SuperTextExtractor(), EditorIcons.SettingsCog },
+                { "FMOD事件生成器", new FMODEditor(), EditorIcons.SettingsCog },
             };
 
             return odinMenuTree;

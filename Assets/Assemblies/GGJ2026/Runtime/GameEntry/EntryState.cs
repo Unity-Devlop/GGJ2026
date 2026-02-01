@@ -1,4 +1,5 @@
 using cfg;
+using FMODUnity;
 using GGJ2026.GamePlay;
 using UnityToolkit;
 
@@ -12,6 +13,7 @@ namespace GGJ2026
 
         public void OnEnter(GameFlow owner, IStateMachine<GameFlow> stateMachine)
         {
+            RuntimeManager.PlayOneShot(Global.refHolder.bgm);
             bool haveData = LocalSaveSystem.Read(GameData.defaultDataFileName, out GameData gameData);
             if (!haveData)
             {

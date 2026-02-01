@@ -14,7 +14,7 @@ namespace GGJ2026.GamePlay
 
         private Button button;
 
-        [field: SerializeField] public TextMeshProUGUI nameText;
+        // [field: SerializeField] public TextMeshProUGUI nameText;
         [field: SerializeField] public Image maskIcon;
 
         private void Awake()
@@ -48,7 +48,7 @@ namespace GGJ2026.GamePlay
         public void Bind(MaskEnum id)
         {
             this.id = id;
-            nameText.text = id.ToString();
+            // nameText.text = id.ToString();
             if (id == MaskEnum.无常面具)
             {
                 int index  = Random.Range(0, maskIcon.transform.childCount);

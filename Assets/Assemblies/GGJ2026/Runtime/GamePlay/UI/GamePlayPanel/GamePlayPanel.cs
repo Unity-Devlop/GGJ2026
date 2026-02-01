@@ -1,5 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -88,6 +89,7 @@ namespace GGJ2026.GamePlay
             if (RectTransformUtility.RectangleContainsScreenPoint(useCardArea,
                     new Vector2(screenPoint.x, screenPoint.y), UIRoot.Singleton.UICamera))
             {
+                RuntimeManager.PlayOneShot(Global.refHolder.useCard);
                 Debug.Log("OnUICardVisualEndDrag: use card " + args.data);
                 if (GamingMgr.Singleton.PushPlayerOperation(new UseCardOperation(args.data)))
                 {
