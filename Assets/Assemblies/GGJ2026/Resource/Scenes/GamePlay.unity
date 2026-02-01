@@ -655,19 +655,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 160957593750884796, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.40600052
+      value: 0.024994902
       objectReference: {fileID: 0}
     - target: {fileID: 160957593750884796, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.39308167
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 160957593750884796, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
       propertyPath: m_fontColor.r
-      value: 1
+      value: 0.9685534
       objectReference: {fileID: 0}
     - target: {fileID: 160957593750884796, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4285031679
+      value: 4278583543
       objectReference: {fileID: 0}
     - target: {fileID: 2007320287006604382, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
       propertyPath: m_AnchorMax.y
