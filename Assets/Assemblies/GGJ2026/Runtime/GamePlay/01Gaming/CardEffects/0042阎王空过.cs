@@ -20,7 +20,7 @@ namespace GGJ2026.GamePlay
             await atk.UseCard(cardData);
             await tar.TakeCard(cardData);
 
-            return Random.Range(0, 100) < cardData.config.Value[1];
+            return Random.Range(0, 100) < cardData.config.Value[0];
         }
     }
 }
