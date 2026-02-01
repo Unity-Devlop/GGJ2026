@@ -1,32 +1,32 @@
 [
   {
     "id": 0,
-    "desc": "",
+    "desc": "最真实的自己",
     "can_wear_any_time": true
   },
   {
     "id": 1,
-    "desc": "",
+    "desc": "戴上时施加死期",
     "can_wear_any_time": true
   },
   {
     "id": 2,
-    "desc": "",
+    "desc": "黑白无常",
     "can_wear_any_time": true
   },
   {
     "id": 3,
-    "desc": "",
+    "desc": "XXX",
     "can_wear_any_time": false
   },
   {
     "id": 4,
-    "desc": "",
+    "desc": "XXX",
     "can_wear_any_time": false
   },
   {
     "id": 5,
-    "desc": "",
+    "desc": "拜托了 二郎神大人",
     "can_wear_any_time": false
   }
 ]
