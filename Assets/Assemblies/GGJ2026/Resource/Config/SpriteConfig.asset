@@ -64,10 +64,6 @@ MonoBehaviour:
       value: {fileID: -5280610218553326879, guid: 906b802d6c1a32d4d8e9451c3ded50b6, type: 3}
   maskSprites:
     list:
-    - key: 1
-      value: {fileID: 21300000, guid: 5d3ba2238f7a57544980d3af86707827, type: 3}
-    - key: 2
-      value: {fileID: 21300000, guid: c26d758d3052e1e49a354d7e15b6ab52, type: 3}
     - key: 3
       value: {fileID: 21300000, guid: eeed93877340e0448bc932df7dbb641d, type: 3}
     - key: 4
@@ -75,7 +71,11 @@ MonoBehaviour:
     - key: 5
       value: {fileID: 21300000, guid: 54ce57d70fc67034b9ffebe89d2f6801, type: 3}
     - key: 0
-      value: {fileID: 21300000, guid: 7bc011dd2ebcbeb4da14724b12671e70, type: 3}
+      value: {fileID: -3189358301118560256, guid: 1fb7c1f64a9d7d147a540b643847d80e, type: 3}
+    - key: 1
+      value: {fileID: 7940944276619754064, guid: 698f92b3fd64ee54bbf70143960dd86b, type: 3}
+    - key: 2
+      value: {fileID: 588844091590828973, guid: de1f1e9620390db4aa967e24eaf9f731, type: 3}
   "mask\u9ED1\u767D\u65E0\u5E38Icon":
   - {fileID: 21300000, guid: c26d758d3052e1e49a354d7e15b6ab52, type: 3}
   - {fileID: 21300000, guid: 1411d8c44066dc94a87b16330ea064c8, type: 3}
