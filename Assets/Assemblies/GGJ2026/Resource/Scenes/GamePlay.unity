@@ -352,12 +352,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.29749966, g: 0.31132078, b: 0.29516736, a: 1}
+  m_Sprite: {fileID: -2270279294984716318, guid: e7b7aaf5e1e30554bae19a4f8891b9e2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 2
+  m_Size: {x: 120, y: 100}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -372,8 +372,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -6.5, z: 0}
-  m_LocalScale: {x: 48.82, y: 48.820004, z: 48.820004}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 207224634}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -614,7 +614,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -17
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1843028302627794106, guid: 0a7efc91250f93c41815d9565d5f53d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a7efc91250f93c41815d9565d5f53d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -752,13 +752,85 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1368601997032865729, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3220803750635756914}
     - targetCorrespondingSourceObject: {fileID: 4395893646893424759, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
     - targetCorrespondingSourceObject: {fileID: 583428569478408072, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 3220803750635756912}
+    - targetCorrespondingSourceObject: {fileID: 583428569478408072, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 1794303428612644501, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3220803750635756913}
   m_SourcePrefab: {fileID: 100100000, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
+--- !u!1 &3220803750635756909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 583428569478408072, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
+  m_PrefabInstance: {fileID: 3220803750635756908}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3220803750635756910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1794303428612644501, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
+  m_PrefabInstance: {fileID: 3220803750635756908}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3220803750635756911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1368601997032865729, guid: 4e267ff70f89c4c629fff92e0198b566, type: 3}
+  m_PrefabInstance: {fileID: 3220803750635756908}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3220803750635756912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3220803750635756909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeb7552fc4043d8bd44da77ae411886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.Billboard
+  billboardType: 1
+  useMainCamera: 1
+  targetCamera: {fileID: 0}
+  flip: 0
+--- !u!114 &3220803750635756913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3220803750635756910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeb7552fc4043d8bd44da77ae411886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.Billboard
+  billboardType: 1
+  useMainCamera: 1
+  targetCamera: {fileID: 0}
+  flip: 0
+--- !u!114 &3220803750635756914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3220803750635756911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeb7552fc4043d8bd44da77ae411886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.Billboard
+  billboardType: 1
+  useMainCamera: 1
+  targetCamera: {fileID: 0}
+  flip: 0
 --- !u!1001 &5200886681954117658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -871,10 +943,58 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3057299001690251749, guid: 7058caf548ebe48fd86addfe662892f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5200886681954117662}
+    - targetCorrespondingSourceObject: {fileID: 4803530427256473861, guid: 7058caf548ebe48fd86addfe662892f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5200886681954117661}
     - targetCorrespondingSourceObject: {fileID: 4803530427256473861, guid: 7058caf548ebe48fd86addfe662892f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 7058caf548ebe48fd86addfe662892f3, type: 3}
+--- !u!1 &5200886681954117659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4803530427256473861, guid: 7058caf548ebe48fd86addfe662892f3, type: 3}
+  m_PrefabInstance: {fileID: 5200886681954117658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5200886681954117660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3057299001690251749, guid: 7058caf548ebe48fd86addfe662892f3, type: 3}
+  m_PrefabInstance: {fileID: 5200886681954117658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5200886681954117661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5200886681954117659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeb7552fc4043d8bd44da77ae411886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.Billboard
+  billboardType: 1
+  useMainCamera: 1
+  targetCamera: {fileID: 0}
+  flip: 0
+--- !u!114 &5200886681954117662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5200886681954117660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeb7552fc4043d8bd44da77ae411886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.Billboard
+  billboardType: 1
+  useMainCamera: 1
+  targetCamera: {fileID: 0}
+  flip: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
