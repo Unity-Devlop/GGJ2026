@@ -44,7 +44,7 @@ namespace GGJ2026.GamePlay
     {
         void ProcessGainShieldBuffs(IEntityController sender, IEntityController giver, BuffInfo buff,
             ref int shieldValue);
-        void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff,
+        UniTask ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff,
             ref int damageValue);
 
         UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value,

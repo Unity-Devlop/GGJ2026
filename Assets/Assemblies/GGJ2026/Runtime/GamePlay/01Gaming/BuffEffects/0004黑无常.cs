@@ -11,10 +11,12 @@ namespace GGJ2026.GamePlay
             
         }
 
-        public void ProcessTakeDamageBuff(IEntityController sender, IEntityController entity, BuffInfo buff, ref int damageValue)
-        {
-        }
 
+        public UniTask ProcessTakeDamageBuff(IEntityController sender, IEntityController enity, BuffInfo buff,
+            ref int damageValue)
+        {
+            return UniTask.CompletedTask;
+        }
         public UniTask ProcessWhenApplyDamageTo(IEntityController entity, IEntityController tar, int value, BuffInfo buff)
         {
             return UniTask.CompletedTask;

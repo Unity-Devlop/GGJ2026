@@ -257,6 +257,12 @@ namespace GGJ2026.GamePlay
                 enemy.RemoveBuff(BuffEnum.死期);
             }
 
+            if (data.currentMask == MaskEnum.二郎神面具)
+            {
+                RemoveBuff(BuffEnum.二郎神);
+            }
+
+
             data.currentMask = id;
 
             switch (id)
@@ -307,6 +313,7 @@ namespace GGJ2026.GamePlay
                 case MaskEnum.孟婆面具:
                     break;
                 case MaskEnum.二郎神面具:
+                    await AddBuff(BuffEnum.二郎神, null);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(id), id, null);

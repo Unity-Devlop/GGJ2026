@@ -8,7 +8,7 @@ using UnityEngine.UI;
 namespace GGJ2026.GamePlay
 {
     [RequireComponent(typeof(Button))]
-    public class SwitchMaskButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
+    public class SwitchMaskButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [Sirenix.OdinInspector.ReadOnly, Sirenix.OdinInspector.ShowInInspector]
         private MaskEnum id;
@@ -35,6 +35,11 @@ namespace GGJ2026.GamePlay
                 }
 
                 Debug.LogWarning("Already in this mask: " + id);
+                return;
+            }
+
+            if (id == MaskEnum.本我)
+            {
                 return;
             }
 
