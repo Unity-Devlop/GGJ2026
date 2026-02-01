@@ -370,7 +370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.65, y: 1.99}
+  m_AnchoredPosition: {x: 0.65, y: 2}
   m_SizeDelta: {x: 417.6893, y: 120.065}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3367684399872659301
@@ -1082,16 +1082,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6499458249438566018}
-  m_LocalRotation: {x: 0, y: 0, z: 0.3420201, w: 0.9396927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.22, y: 1.22, z: 1.22}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1593875507639637002}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 40}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -39.710007, y: 9.8}
+  m_AnchoredPosition: {x: -61, y: -9}
   m_SizeDelta: {x: 122, y: 167}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6317658493510137884
@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6183285496726299092, guid: 2212a10c07a38e548884c293d24f21df, type: 3}
+  m_Sprite: {fileID: -3123884775447335583, guid: fe1e98ae5f73caf44b2d42459d523462, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4955669703375846436, guid: 232e816c1fe2c0448a569e5d6139dcae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 232e816c1fe2c0448a569e5d6139dcae, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1302,7 +1302,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2743702310654316260
 MonoBehaviour:
@@ -1427,6 +1427,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1992248941107964586}
     m_Modifications:
+    - target: {fileID: 1014054128222215884, guid: e04458648074a455484fbc6cea6f8673, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eeed93877340e0448bc932df7dbb641d, type: 3}
+    - target: {fileID: 1014054128222215884, guid: e04458648074a455484fbc6cea6f8673, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5208259379693033907, guid: e04458648074a455484fbc6cea6f8673, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.119999886
