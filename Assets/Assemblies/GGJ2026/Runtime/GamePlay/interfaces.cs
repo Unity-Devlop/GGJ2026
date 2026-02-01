@@ -37,6 +37,7 @@ namespace GGJ2026.GamePlay
         UniTask ReduceBuff(BuffEnum id, object parmaters);
         void AddMengpoData(CardTypeEnum type, int value);
         UniTask ClearShield();
+        string GetName();
     }
 
     public interface IBuffEffectExecutor
