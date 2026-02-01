@@ -15,7 +15,7 @@ namespace GGJ2026.GamePlay
             data = cardVisual.cardData;
         }
     }
-    
+
     public readonly struct OnUICardVisualBeginDrag
     {
         public readonly UICardVisual visual;
@@ -27,7 +27,7 @@ namespace GGJ2026.GamePlay
             data = cardVisual.cardData;
         }
     }
-    
+
     public readonly struct OnUICardVisualDrag
     {
         public readonly UICardVisual visual;
@@ -39,7 +39,7 @@ namespace GGJ2026.GamePlay
             data = cardVisual.cardData;
         }
     }
-    
+
     public readonly struct OnUICardVisualPointerEnter
     {
         public readonly CardData data;
@@ -63,8 +63,8 @@ namespace GGJ2026.GamePlay
             data = cardVisual.cardData;
         }
     }
-    
-    
+
+
     public readonly struct OnLocalPlayerWearMaskEvent
     {
         public readonly MaskEnum maskID;
@@ -84,7 +84,7 @@ namespace GGJ2026.GamePlay
             maskID = id;
         }
     }
-    
+
     public readonly struct OnMaskButtonPointerExit
     {
         public readonly MaskEnum maskID;
@@ -92,6 +92,42 @@ namespace GGJ2026.GamePlay
         public OnMaskButtonPointerExit(MaskEnum id)
         {
             maskID = id;
+        }
+    }
+
+    public readonly struct OnPointerEnterHealthTriggerEvent
+    {
+    }
+
+    public readonly struct OnPointerExitHealthTriggerEvent
+    {
+    }
+
+    public readonly struct OnPointerEnterShieldTriggerEvent
+    {
+    }
+
+    public readonly struct OnPointerExitShieldTriggerEvent
+    {
+    }
+
+    public readonly struct OnPointerEnterBuffTriggerEvent
+    {
+        public readonly BuffEnum buffID;
+
+        public OnPointerEnterBuffTriggerEvent(BuffEnum id)
+        {
+            buffID = id;
+        }
+    }
+
+    public readonly struct OnPointerExitBuffTriggerEvent
+    {
+        public readonly BuffEnum buffID;
+
+        public OnPointerExitBuffTriggerEvent(BuffEnum id)
+        {
+            buffID = id;
         }
     }
 }
