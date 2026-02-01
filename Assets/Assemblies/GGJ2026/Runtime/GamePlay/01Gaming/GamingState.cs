@@ -20,17 +20,18 @@ namespace GGJ2026.GamePlay
         {
             if (GamingMgr.Singleton.isGameOver)
             {
-                if (GamingMgr.Singleton.isGameWin)
-                {
-                    stateMachine.Change<GameEndState>();
-                }
-                else
-                {
-                    if (Global.gameFlow.stateMachine.currentState is not HomeState)
-                    {
-                        Global.gameFlow.stateMachine.Change<HomeState>();
-                    }
-                }
+                stateMachine.Change<GameEndState>();
+                // if (GamingMgr.Singleton.isGameWin)
+                // {
+                //     stateMachine.Change<GameEndState>();
+                // }
+                // else
+                // {
+                //     if (Global.gameFlow.stateMachine.currentState is not HomeState)
+                //     {
+                //         Global.gameFlow.stateMachine.Change<HomeState>();
+                //     }
+                // }
             }
         }
 

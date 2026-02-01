@@ -84,8 +84,6 @@ namespace GGJ2026.GamePlay
             await enemySeq.ToUniTask(TweenCancelBehaviour.KillAndCancelAwait, ct);
 
             gameObject.SetActive(false);
-            await UniTask.Delay(TimeSpan.FromSeconds(0.5f), cancellationToken: ct); // 确保异步等待完成
-
         }
     }
 }
