@@ -1,4 +1,3 @@
-// c#
 using cfg;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -23,7 +22,6 @@ namespace GGJ2026.GamePlay
 
             await atk.GainShield(cardData.config.Value[0]);
 
-            // 结束回合概率
             return Random.Range(0, 100) < cardData.config.Value[1];
         }
     }

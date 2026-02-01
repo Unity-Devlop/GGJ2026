@@ -1,4 +1,3 @@
-// c#
 
 using cfg;
 using Cysharp.Threading.Tasks;
@@ -22,7 +21,6 @@ namespace GGJ2026.GamePlay
             await atk.UseCard(cardData);
             await tar.TakeCard(cardData);
 
-            // 多次伤害
             int damage = cardData.config.Value[0];
             int times = cardData.config.Value[1];
             for (int i = 0; i < times; i++)
@@ -36,9 +34,7 @@ namespace GGJ2026.GamePlay
             }
 
 
-            // 永久增加伤害次数
             cardData.config.Value[1] += cardData.config.Value[2];
-            // 结束回合概率
             return Random.Range(0, 100) < cardData.config.Value[3];
         }
     }

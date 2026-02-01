@@ -20,20 +20,17 @@ namespace GGJ2026.GamePlay
             await atk.UseCard(cardData);
             await tar.TakeCard(cardData);
             await tar.TakeDamage(atk, cardData.config.Value[0]);
-            // 斩杀概率
             if (Random.Range(0, 100) < cardData.config.Value[1])
             {
                 await tar.OnceKill();
             }
 
-            // 结束回合?
             bool endTurn = Random.Range(0, 100) < cardData.config.Value[2];
             if (endTurn)
             {
                 return true;
             }
 
-            // 额外打出一次此牌概率
             if (Random.Range(0, 100) < cardData.config.Value[3])
             {
                 return await Execute(cardData, atk, tar);

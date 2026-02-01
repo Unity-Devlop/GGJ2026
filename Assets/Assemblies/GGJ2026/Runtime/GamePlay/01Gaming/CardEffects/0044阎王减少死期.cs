@@ -1,4 +1,3 @@
-// c#
 
 using cfg;
 using Cysharp.Threading.Tasks;
@@ -22,10 +21,8 @@ namespace GGJ2026.GamePlay
             await atk.UseCard(cardData);
             await tar.TakeCard(cardData);
 
-            // 减少目标的死期（按实际接口调整方法名）
             await tar.ReduceBuff(BuffEnum.死期, cardData.config.Value[0]);
 
-            // 结束回合概率
             return Random.Range(0, 100) < cardData.config.Value[1];
         }
     }

@@ -10,6 +10,8 @@ namespace GGJ2026.GamePlay
         public async UniTask<bool> Execute(CardData cardData, IEntityController atk, IEntityController tar)
         {
             // 获得{0}点护甲。打出后有{1}%几率结束回合。
+            //阎王面具: 获得{0}点护甲。打出后有{1}%几率结束回合。
+            //孟婆面具: 孟婆汤中的功能牌+1。
 
           if (atk.TryGetMask(out var mask) && cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
           {
