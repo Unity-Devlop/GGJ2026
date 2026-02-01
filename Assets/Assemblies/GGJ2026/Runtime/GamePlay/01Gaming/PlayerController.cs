@@ -51,7 +51,6 @@ namespace GGJ2026.GamePlay
         {
             this.data = playerData;
             _propertyShower.Bind(this.data.property);
-            data.property.health.Register(OnHealthChanged);
         }
 
         private void OnHealthChanged(Property<int> obj)
@@ -61,6 +60,7 @@ namespace GGJ2026.GamePlay
 
         public UniTask OnceKill()
         {
+            GamingMgr.Singleton.OnEntityTakeDamage(transform.position, 9999);
             data.property.health.Value = 0;
             return UniTask.CompletedTask;
         }
@@ -121,6 +121,7 @@ namespace GGJ2026.GamePlay
             _buffs.Clear();
             thisRoundUseCardCount.Clear();
             lastUsedCardThisRound = CardEnum.None;
+            
             
         }
 
@@ -205,10 +206,13 @@ namespace GGJ2026.GamePlay
                 int shieldDamage = Math.Min(data.property.shield, damageValue);
                 int damageToHealth = damageValue - shieldDamage;
                 data.property.shield -= shieldDamage;
+                
+                GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageToHealth);
                 data.property.health.Value -= damageToHealth;
             }
             else
             {
+                GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageValue);
                 data.property.health.Value -= damageValue;
             }
 
