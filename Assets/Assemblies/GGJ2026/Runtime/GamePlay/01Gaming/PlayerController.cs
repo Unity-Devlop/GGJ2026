@@ -263,7 +263,6 @@ namespace GGJ2026.GamePlay
             {
                 RuntimeManager.PlayOneShot(Global.refHolder.阎王出场);
                 ColorEffectController.Instance.PlayUltimateColor();
-                await UniTask.Delay(TimeSpan.FromSeconds(1f));
             }
             else
             {
@@ -292,6 +291,11 @@ namespace GGJ2026.GamePlay
                 {
                     target = go;
                 }
+            }
+
+            if (id == MaskEnum.阎王面具)
+            {
+                await UniTask.Delay(TimeSpan.FromSeconds(2f));
             }
 
 

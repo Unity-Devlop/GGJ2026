@@ -1,3 +1,4 @@
+using System;
 using Cysharp.Threading.Tasks;
 
 namespace GGJ2026.GamePlay
@@ -78,6 +79,8 @@ namespace GGJ2026.GamePlay
             });
 
             await turnSequence;
+            await UniTask.Delay(TimeSpan.FromSeconds(0.5f)); // 确保异步等待完成
+            
         }
     }
 }
