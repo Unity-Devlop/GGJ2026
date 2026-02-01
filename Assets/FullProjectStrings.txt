@@ -3,6 +3,8 @@
 --
 ---
 ⤴
+- {buffConfig.Id}: {buffConfig.Desc}\n
+- {buffConfig.Id}-{parameters}: {buffConfig.Desc}\n
 ' || TryMoveNext() == false ) {
                 str = string.Empty;
                 return MakeFailure(
@@ -1928,6 +1930,7 @@ buff
 buffer
 Buffer overflow
 Buffering
+bufftable
 Build
 Build Path
 Build path '{0}' does not contain any built banks.
@@ -5373,6 +5376,7 @@ Zero
 zoomFactor
 万我
 万我 damage times increased to {cardData.config.Value[1]}
+你
 傩戏开场！
 养神
 写入数据key[{key}],类型[{typeof(T)}],路径[{path}]
@@ -5421,11 +5425,13 @@ zoomFactor
 当前有结束回合的操作在队列中，无法添加新的操作
 当前面具
 恢复{0}点生命。如果本回合中你打出过此牌的次数不小于{1}，有{2}%几率结束回合。
+意图:{args.intent.ToString()}
 慷慨
 我是拔舌鬼
 我是水鬼
 戴上时施加死期
 抓手工具
+护盾，可以抵挡伤害。
 拘魂
 拜托了 二郎神大人
 拜托了！神灵们
@@ -5461,6 +5467,7 @@ zoomFactor
 炼魂
 玩家切换面具:
 玩家可抽的牌组为空，无法抽牌
+生命值 归零后失败
 生成网络实体{entity.id}，所有者{entity.owner}
 白\n
 白无常回血
@@ -5491,6 +5498,8 @@ zoomFactor
 读取数据key[{key}],类型[{typeof(T)}],路径[{path}]
 轻击
 过关！！！！！
+这是{args.entityController.GetName()}
+这是敌人
 进入游戏场景
 通关最后一关，回到第一关
 造成{0}点伤害，摸{1}张牌。
