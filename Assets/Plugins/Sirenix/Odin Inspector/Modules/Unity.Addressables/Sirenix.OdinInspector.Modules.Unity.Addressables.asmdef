@@ -1,14 +1,9 @@
 {
     "name": "Sirenix.OdinInspector.Modules.Unity.Addressables",
+    "rootNamespace": "",
     "references": [
         "Unity.Addressables",
-        "Unity.Addressables.Editor",
-        "Sirenix.Serialization",
-        "Sirenix.OdinInspector.Attributes",
-        "Sirenix.OdinInspector.Editor",
-        "Sirenix.Utilities.Editor",
-        "Sirenix.Utilities",
-        "Sirenix.OdinValidator.Editor"
+        "Unity.Addressables.Editor"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
