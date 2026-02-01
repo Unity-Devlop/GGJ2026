@@ -3,8 +3,6 @@
 --
 ---
 ⤴
-- {buffConfig.Id}: {buffConfig.Desc}\n
-- {buffConfig.Id}-{parameters}: {buffConfig.Desc}\n
 ' || TryMoveNext() == false ) {
                 str = string.Empty;
                 return MakeFailure(
@@ -665,6 +663,7 @@ $version
 [[T]]
 []
 [^0-9a-zA-Z]
+[^a-zA-Z0-9_]
 [{0}]
 [{nameof(GameObjectPoolManager)}]:{key} not exist! Destroy the object!
 [{nameof(UIRoot)}]: Layer {layer} not found
@@ -872,6 +871,7 @@ $version
 \tpublic const string {editorParamRef.Name} = \"{editorParamRef.StudioPath}\";
 \tpublic const string {eventName} = \"{eventRef.Path}\";
 \tpublic const string {eventName}_{parameterName} = \"{eventRefParameter.Name}\";
+\tpublic const string {memeberName} = \"{eventRefParameter.Name}\";
 \tpublic const string {snapshotName} = \"{eventRef.Path}\";
 \uE347
 ]
@@ -1052,6 +1052,7 @@ _value
 {assetPath}.meta
 {assetReference.GetType().GetNiceFullName()}.ValidateAsset failed to validate assigned asset.
 {bb} Blackboard Variables
+{buffConfig.Id}-{parameters}: {buffConfig.Desc}\n
 {buffInfo.buffEnum}\n
 {bytes} B
 {CacheFolderFull}/{RegisterStaticPluginsFile}
@@ -1132,6 +1133,11 @@ _value
 || numberString ==
 }
 ~
+“叮铃铛铛”，当铜钱在地狱中回响，鬼差们最不愿意面对的穷鬼登场。\n它会不停吸取敌人的生命，将敌人的财运化为己用。
+“哮天犬，你去吧！”
+“孤魂野鬼禁止藏甲！”清空护甲，并且无法获得护甲。
+“重大嫌疑实施逮捕！”下次行动失效。
+“阴曹地府禁止斗殴！”攻击者将受到伤害。
 +
 + content);
                 }
@@ -1463,6 +1469,7 @@ The <<#ffff00>link="id"</color>><link="id_01><u><i><#80ff80>Insert link text her
 1f60e.png
 1f618.png
 1f923.png
+2
 2.0
 2.0.19/libfmodstudio{0}.a
 2021.3
@@ -1529,6 +1536,7 @@ AAudio
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 Aborted Add operation as it seemed to be going on forever
 Absolute URL
+abstract
 Acceleration
 Acceleration Event Count
 Acceleration Events
@@ -1635,7 +1643,6 @@ AllowFadeout
 AllowNonRigidbodyDoppler
 alphaKeys
 already exists
-Already in this mask:
 Altitude
 amount
 An action that will simply run forever and never finish
@@ -1761,12 +1768,12 @@ Assets can not have scene object references
 Assets to ignore when validating.
 Assets/
 Assets/Assemblies/GGJ2026/Resource/Scenes/GameEntry.unity
+Assets/Assemblies/GGJ2026/Runtime/FMODName.cs
 Assets/Assemblies/GGJ2026/Runtime/GamePlay/01Gaming/CardEffects
 Assets/Create/ParadoxNotion/NodeCanvas/New Task
 Assets/Create/Shader/URP/FullScreen Shader
 Assets/Create/Shader/URP/Unlit Shader
 Assets/Create/Toolkit/UIPanel
-Assets/DesertSafari/Logic/AudioManager/Runtime/FMODName.cs
 Assets/Editor Default Resources/FMOD/{filename}
 Assets/Editor/FMODMigrationUtil.cs
 Assets/FMODStudioCache.asset
@@ -1858,6 +1865,7 @@ BankRefreshCooldown
 Banks
 banks in
 BanksToLoad
+base
 Base Line
 Base Line (
 Base path {0} is not within the Assets folder
@@ -1890,6 +1898,7 @@ Blackboard Variable not set.
 Blackboard Variables
 Blend Weights
 Bolt.Flow.Editor
+bool
 border
 Border.png
 bottom
@@ -1918,6 +1927,7 @@ box
 box find count:
 BoxFind
 Branch
+break
 Break on
 Breakpoint
 Breakpoints Pause Editor
@@ -1954,6 +1964,7 @@ ButtonMid
 ButtonRight
 by default; the Optional attribute can then be used to exclude specific AssetLabelReferences from
 by distance as
+byte
 bytes.
 C. This block of text contains one line of text.
 C.<indent=4em>This block of text contains one line of text.
@@ -2023,6 +2034,8 @@ Capture Delta Time
 Capture Framerate
 cards
 cardtable
+case
+catch
 Catchup / Slowdown
 Catchup begins when the local timeline is moving too slow and getting too far away from remote time. Threshold is in frames worth of snapshots.\n\nThis needs to be positive.\n\nDon't modify unless you know what you are doing.
 Catchup/Slowdown is adjusted over n-second exponential moving average.
@@ -2047,6 +2060,7 @@ Changed.
 Changing frame counter anchor position.
 Changing the FNV hash size - xor-folding
 CHANNELS: real = {0}, total = {1}\n
+char
 Character
 Character [
 Character '{1}' at position {2} is invalid - it must be a letter, a number, or an underscore ('_').
@@ -2080,6 +2094,7 @@ Check Value
 Check whether or not a variable is null
 checkBounds
 CheckDuplicateBundleDependenciesValidator.cs
+checked
 CheckFunction Error
 CheckProperty Error
 checkRay
@@ -2099,6 +2114,7 @@ Choose how to access your FMOD Studio content:
 Circular buffer cannot have negative or zero capacity.
 CircularBuffer{T}
 ClampPosition, transform.position:
+class
 class {0}
 Classes/
 Classes/System/Object
@@ -2183,6 +2199,7 @@ Console *
 console.infoicon
 console.infoicon.sml
 console.warnicon.sml
+const
 Constant Buffer Offset Alignment
 contains
 content
@@ -2190,6 +2207,7 @@ Content
 contentOffset
 context
 Context Menu
+continue
 ContinuousParameterIcon.png
 Control
 Control Graph Owner
@@ -2270,6 +2288,7 @@ Cursor Visible
 Curve
 Curve Tween
 CurveEditorBackground
+customStrength
 CustomYieldInstruction
 Cut
 Cutouts
@@ -2292,6 +2311,7 @@ d_ViewToolOrbit On
 d_winbtn_mac_close
 d_winbtn_win_max
 d2
+damage
 data
 Data received from connection {connectionId} cnt:{data.Count}
 data, please report an issue with an included test case.
@@ -2311,6 +2331,7 @@ Debugger window has been registered, can not create debugger window group.
 Debugger window has been registered.
 Debugger window is invalid.
 debuggerWindow
+decimal
 Decompose Vector
 Decorate
 Decorators
@@ -2322,6 +2343,7 @@ Default
 defaultParameters
 Definition
 definition has not been encountered for object with id=
+delegate
 Delete
 Delete (DEL)
 Delete {targetPath}
@@ -2396,6 +2418,7 @@ DitherEffect
 DitherEffect Blit
 Divide
 DMA Failure.  See debug output for more information.
+do
 Do not display this again
 Do you want to delete the
 Do you want to repair them now?
@@ -2404,6 +2427,7 @@ Done Counting down.
 Done revealing the text.
 Don't Retrigger Running States
 Don't show again.
+double
 Double Pass
 Double-click to rename
 Down
@@ -2462,6 +2486,7 @@ elapsedLoops
 elapseSeconds
 elasticity
 Element
+else
 Else
 email
 emaN
@@ -2509,6 +2534,7 @@ entity != null
 Entity ID空间已耗尽！
 entity.components.Count > idx
 entry
+enum
 EnumConverter encountered an unknown JSON data type
 Enumerations/
 Equal
@@ -2524,6 +2550,7 @@ Error watching {0}: {1}
 Error while parsing:
 Error({0})
 Error: Please make a selection
+event
 Event
 Event [{0}].value == {1}
 Event [{0}]\n{1} = EventValue
@@ -2603,6 +2630,7 @@ Expected initial [ when parsing an array
 Expected initial { when parsing an object
 expected number but got
 expected one of
+explicit
 Explorer
 Export '{0}' Graph
 Export JSON
@@ -2612,6 +2640,7 @@ Exposed Graph Variable named '{0}' was not found
 Exposed Graph Variables. Use the arrows button to override/parametrize the variable. Doing this will not change the graph serialization. Prefab overrides are also supported.
 Exposed Public
 Extents
+extern
 External Serialization File
 Eye
 F
@@ -2668,6 +2697,7 @@ filterMode
 Filters the access of its child either a specific number of times, or every specific amount of time.
 filterType
 filterTypes
+finally
 find
 Find
 Find a transform child by name within the agent's transform
@@ -2686,6 +2716,7 @@ First
 firstActivation
 Fix conflicting migration targets on fields <b>{0}</b>
 FixChoice
+fixed
 Fixed
 Fixed Delta Time
 Fixed Time
@@ -2696,6 +2727,7 @@ fixedWidth
 Flee from {0}
 Flees away from the target
 FlipSelector
+float
 Float
 Float[]
 floating text
@@ -2822,6 +2854,7 @@ FMODUnity
 FMODUnity.{0}
 FMODUnityEditor
 FMODUnityResonance
+FMOD事件生成器
 focused
 folder
 Folder Icon
@@ -2848,6 +2881,7 @@ for
 For Each\t
 For instance, imagine two prefabs in separate groups, both referencing the same material. Each group would then include the material
 Force Finish the current graph this Task is assigned to.
+foreach
 format
 Format is invalid.
 Forward
@@ -2935,13 +2969,20 @@ GetObjects in '
 Gets a lists of game objects that are in the physics overlap sphere at the position of the agent, excluding the agent
 GGJ2026/Config/SpriteConfig
 GGJ2026/LevelConfig
-Ghost/死水鬼.prefab
+Ghost/拔舌鬼.prefab
+Ghost/水鬼.prefab
+Ghost/穷鬼.prefab
+Ghost/肉山鬼.prefab
+Ghost/铜柱鬼.prefab
+Ghost/阎王.prefab
+Ghost/黑白无常.prefab
 ghosttable
 gizmoColor
 Global
 Global Maximum LOD
 Global Parameters
 Global Render Pipeline
+goto
 gradient
 Graph
 Graph Change
@@ -3021,6 +3062,7 @@ ID 02
 id:
 id_01
 id_02
+if
 If
 if (atk.TryGetMask(out var mask) && cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
 If <b>!</b>
@@ -3066,6 +3108,7 @@ Implementation of '{0}' drawer attribute not found.
 Implemented Action
 Implemented Action (Desktop Only)
 ImplementedAction Error
+implicit
 Import '{0}' Graph
 Import Failure
 Import Graph
@@ -3126,6 +3169,7 @@ Inspector Change
 instance
 Instance
 Instantiate
+int
 Int32
 Int32[]
 inTangent
@@ -3134,7 +3178,9 @@ Integer[]
 Integration Manual
 intent
 intent:
+interface
 Interfaces/
+internal
 Internal Deserialization Error - Object
 Internal Error -
 Internal Error - Mismatched Enter/Exit
@@ -3163,7 +3209,9 @@ Is In Transition
 is needed
 Is Web Player
 IsColliding(Octree.BoundingBox)
+isCritical
 isLooped
+isRight
 It further checks the existence of the main asset at the assigned path, ensuring it hasn't been
 It validates whether an asset reference has been assigned, and if it's missing, raises an error.
 item
@@ -3278,6 +3326,7 @@ LocalNetwork stopped.
 Locate Bank
 Locate Build Folder
 Locate Studio Project
+lock
 Lock
 Lock Prefab Graph Overrides
 LockScroll
@@ -3292,6 +3341,7 @@ LoggingLevel
 logMessage
 Logs the value of a variable in the console
 logType
+long
 Longitude
 LookAt
 Loop Horizontal Scroll Rect
@@ -3551,6 +3601,7 @@ NetworkTimeServer Start At {ip}:{port} {DateTime.Now:yyyy-MM-dd HH:mm:ss}
 Never
 never accessed by the same user group, such as region-specific assets, these duplications might be desired or at least inconsequential.
 Never Sleep
+new
 New
 new {0} (
 New Action Task
@@ -3712,6 +3763,7 @@ NumObjectsAllowed
 obj
 objBounds
 objBoundsCenter
+object
 Object Editor
 Object is not an IDialogueActor and none of the components attached is an IDialogueActor either.
 objPos
@@ -3805,6 +3857,7 @@ Operating System
 Operating System Family
 Operation could not be performed because specified sound/DSP connection is not ready.
 Operation on a non-blocking socket could not complete immediately.
+operator
 Option A
 Optional
 Optional Parent Asset Blackboard to 'inherit' variables from.
@@ -3829,6 +3882,7 @@ Output sub-directory:
 outputType
 outTangent
 overflow
+override
 Override Agent
 Override Value
 Override Variable
@@ -3985,6 +4039,7 @@ preWrapMode
 priority
 Priority
 priorityComparer
+private
 private static extern FMOD.RESULT FMOD5_System_RegisterDSP(IntPtr system, IntPtr description, IntPtr handle);
 private static extern IntPtr {0}();
 ProbabilitySelector
@@ -4024,11 +4079,13 @@ Property Request
 Property Type
 Property with name '{0}' on type '{1}', could not be resolved.
 propertyID
+protected
 Protects the decorated child from running if another Guard with the same token is already guarding (Running) that token.\nGuarding is global for all of the agent Behaviour Trees.
 Proxy authentication is required to access the specified resource.
 PS4
 Pts
 pts - Lorem ipsum dolor sit...
+public
 public async UniTask<bool> Execute(CardData cardData, IEntityController atk, IEntityController tar)
 public class {name} : ICardEffectExecutor
 public FMODUnity.EventReference {2};\n
@@ -4062,6 +4119,7 @@ Reached maximum audible playback count for this sound's soundgroup.
 Read (Out)
 ReadMessageBlocking: payloadBuffer needs to be of size 4 + MaxMessageSize = {4 + MaxMessageSize} instead of {payloadBuffer.Length}
 ReadMessageBlocking: possible header attack with a header of:
+readonly
 ready
 Ready
 Real Channel Count
@@ -4165,6 +4223,7 @@ result
 result = FMOD5_System_RegisterDSP(coreSystem.handle, {0}(), IntPtr.Zero);
 results
 Results is invalid.
+return
 Return
 return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
 return false;
@@ -4229,6 +4288,7 @@ savePolicy
 Saves the blackboard variables in the provided key and to be loaded later on
 Say
 Say Selection
+sbyte
 scale
 Scale Canvas Group
 Scale Parameters
@@ -4252,6 +4312,7 @@ ScriptableObjects
 Scroll With Speed
 Scroll Within Time
 ScrollRect.value
+sealed
 Search
 Search for logs
 Search Icon
@@ -4411,6 +4472,7 @@ Shared subsounds cannot be replaced or moved from their parent stream, such as w
 Shield
 Shift Left
 Shift Right
+short
 Should the iteration start from the begining after the Iterator node resets?
 Shout Event [{0}]
 Show Comments
@@ -4440,6 +4502,7 @@ Sirenix ApS
 size
 Size
 sizeHint
+sizeof
 Skin Weights
 Sleep Timeout
 SlicedBackground
@@ -4513,6 +4576,7 @@ spriteSourceSize
 src
 src/Editor
 stack
+stackalloc
 Stacked Call Mode will push the current state to the stack and pop return to it later when another finished state without outgoing transitions has been encountered within the FSM. If you decide to use this feature make sure that you are not cycle stacking states.\nA Clean transition will clear the FSM stack.
 stackTrack
 Start
@@ -4557,7 +4621,9 @@ Streaming
 strength
 stretchHeight
 stretchWidth
+string
 strings.bank
+struct
 Structs/
 Stub
 Studio Bank Loader
@@ -4649,6 +4715,7 @@ Surround 5.1
 Surround 7.1
 Surround 7.1.4
 Surround speaker mode:
+switch
 Switch
 Switch Behaviour {0}
 Switch FSM {0}
@@ -4693,6 +4760,7 @@ Tag...
 Take Sample
 Take Sample for {0}
 tangentMode
+target
 Target
 Target Blackboard
 Target In Line Of Sight
@@ -4859,6 +4927,7 @@ There is no Behaviour Tree assigned
 There is no Conidition on the Dialoge Condition Node
 These duplications mean that data will be included in both the application build and the addressables build.\n\n
 They started dragging
+this
 This {typeof(T).GetNiceName()} field has been marked as not allowing sub assets, but the target type '{this.targetType.GetNiceName()}' is not a valid main asset for {typeof(T).GetNiceName()}, so the target value *must* be a sub asset. Therefore sub assets have been enabled. (Valid main asset types for {typeof(T).GetNiceName()} are: {string.Join(
 This block of text is <#f0af80>Justified</color> on the left and right side.
 This block of text is
@@ -4929,6 +4998,7 @@ This will make a local copy of the graph, bound to the owner.\n\nThis allows you
 This will restart Unity. You will be prompted to save your work if you have unsaved
 Thread Affinity
 Threads
+throw
 Tick True
 TickGreen.png
 time
@@ -5026,6 +5096,7 @@ true
 TRUE
 True Heading
 True, {0}
+try
 Try Again
 TryGetComp failed for type:
 TryGetConfig failed for type:
@@ -5057,6 +5128,7 @@ Type: {0}
 TypeIcons/Explicit/
 TypeIcons/Implicit/
 typeName
+typeof
 typeOptions
 typePrefs
 UGUI
@@ -5078,8 +5150,10 @@ UICardVisual Bind
 UICardVisual UnBind
 UIDatabase
 UIFramework
+uint
 UIRoot
 UIRoot already exists
+ulong
 Unable to add converter
 Unable to cast <
 Unable to find member \"
@@ -5087,6 +5161,7 @@ Unable to find type
 Unavailable
 UnBind
 UnBind Variable
+unchecked
 under
 UNDERLAY_ON
 UndoRedoPerformed
@@ -5134,6 +5209,7 @@ Unrecognised thread type '
 Unrecognized AssetType:
 Unrecognized EventLinkage:
 Unrecognized SavePolicy:
+unsafe
 Unscaled Delta Time
 Unscaled Time
 Unsupported file or audio format.
@@ -5187,6 +5263,8 @@ useRealTime
 user-guide
 Uses Load Store Actions
 Uses Reversed ZBuffer
+ushort
+using
 Using <#80ff80>Hy\u00ADphen\u00ADa\u00ADtion</color> can help <#80ff80>im\u00ADprove</color> the <#80ff80>read\u00ADability</color> of text. This is a <#ffff80>well-known</color> fact.
 using cfg;
 using Cysharp.Threading.Tasks;
@@ -5228,9 +5306,12 @@ Vertical Scrolling is Enabled!
 vh
 vibrato
 View Documentation
+virtual
 Virtual Channel Count
 visionos
 visionOS
+void
+volatile
 volume
 VOLUME: RMS = {0:f2}db\n
 volumeManager
@@ -5262,6 +5343,7 @@ What will happen when the GraphOwner is disabled
 What will happen when the GraphOwner is enabled
 when parsing a string
 When the graph will first activate. Async mode will load the graph on a separate thread (thus no spikes), but the graph will activate a few frames later.
+while
 while ( HasValue() && Character() != '\"' ) {
                 char c = Character();
 
@@ -5341,7 +5423,6 @@ xMax
 xMin
 xml
 XOR
-XXX
 y
 Y
 y:
@@ -5374,8 +5455,12 @@ Z
 z:
 Zero
 zoomFactor
+一人勾魂，一人索命
+一动不动，无法挪移的肉山鬼。\n要想个办法撼动它才行……
 万我
 万我 damage times increased to {cardData.config.Value[1]}
+上路
+什么？是阎王？你真的能战胜对手吗？
 你
 傩戏开场！
 养神
@@ -5384,7 +5469,9 @@ zoomFactor
 判官笔
 加载本地存档完成
 动画参数
+动画配置
 勾魂
+十殿阎罗颁布律令！
 十殿齐发
 卡牌效果生成器
 发送网络实体{networkEntity}给客户端{connectId} 因为客户端刚刚连接
@@ -5394,7 +5481,12 @@ zoomFactor
 受到{0}点伤害，然后摸{1}张牌。
 向服务器发送对时请求
 吸魂
+哮天犬？
+喝了这碗汤，该上路了……
+回合结束时神祇力量消散，返回原本的样子。
+在拔舌地狱中遭遇极刑的鬼怪。\n它的攻击连续不断，而且招惹它时会增加它的力量。
 壮魂
+失败了喵
 存档系统
 孟婆汤中的功能牌+1。
 孟婆汤中的攻击牌+1。
@@ -5413,6 +5505,7 @@ zoomFactor
 对时服务器拒绝连接 重新连接
 对本我造成{0}点伤害，自己恢复{1}点生命。打出后有{2}%几率结束回合。
 对自己造成{0}点伤害。打出后有{1}%几率结束回合。
+巨大而沉重的铜柱是它的特征。\n如果有办法绕过铜柱的防御直接攻击其本体，或许就能一击必杀？
 已广播: {data.Length} 个字节 [{DateTime.Now:T}]
 已快速打开场景:
 已有神助
@@ -5427,18 +5520,15 @@ zoomFactor
 恢复{0}点生命。如果本回合中你打出过此牌的次数不小于{1}，有{2}%几率结束回合。
 意图:{args.intent.ToString()}
 慷慨
-我是拔舌鬼
-我是水鬼
-戴上时施加死期
 抓手工具
 护盾，可以抵挡伤害。
 拘魂
-拜托了 二郎神大人
 拜托了！神灵们
 提升关卡
 插图
 摸{0}张牌。
 操作队列中已存在相同操作，无法重复添加
+攻击回血，勾魂随我！
 敌人执行操作：{operation}
 敌人的死期减少{0}。打出后有{1}%几率结束回合。
 敌人获得死期效果，倒计时为{0}。已有则无事发生。打出后有{1}%几率结束回合。
@@ -5446,6 +5536,7 @@ zoomFactor
 旋转微调
 无事发生。打出后有{0}%几率结束回合。
 无法识别的实体控制器
+无视护甲，径直取命！
 是否反向面向相机（有些模型初始背对相机）
 是否启用位置震动
 是否启用弹性缩放
@@ -5460,11 +5551,14 @@ zoomFactor
 材料：黄
 此牌无效。
 死期: {(int)buffInfo.parameters}\n
+死期减少为0时死亡。
 死期效果触发，{entity} 被击杀
+水鬼，在地府中最常见的鬼怪。\n弱的一批，随便打打就能过——你该不会打不过吧？
 没有找到本地存档，创建默认存档
 游戏开始
 漫天冥气
 炼魂
+牺牲部分魂魄，换取敌人攻击落空。
 玩家切换面具:
 玩家可抽的牌组为空，无法抽牌
 生命值 归零后失败
@@ -5498,7 +5592,7 @@ zoomFactor
 读取数据key[{key}],类型[{typeof(T)}],路径[{path}]
 轻击
 过关！！！！！
-这是{args.entityController.GetName()}
+这是{args.entityController.GetName()}\n
 这是敌人
 进入游戏场景
 通关最后一关，回到第一关
@@ -5516,10 +5610,12 @@ zoomFactor
 造成{0}点伤害。若有敌人因此牌的伤害死亡，你恢复{1}点生命。
 造成{0}点伤害。若有敌人因此牌的伤害死亡，你恢复{1}点生命。有{2}%的概率额外打出一次此牌。
 造成一点伤害
+重拳出击！壮大自己的魂魄。
 销毁属于客户端{connectId}的网络实体{entity}
 销毁网络实体{entity.id}，所有者{entity.owner}
 闪烁次数，设为 2 可能会有更强烈的视觉残留
 阎王压迫
+阎王将会宣判死期
 随机切换一个律令（可能重复）。
 震动强度，数值越大晃动越剧烈
 震动持续时间
@@ -5529,9 +5625,11 @@ zoomFactor
 静心
 面板的排序顺序 越大越优先显示
 颜色从闪烁变回原色的持续时间
+颜色设置
 颜色闪烁设置 (Flash Settings)
 驱罪为己
+鬼魂们最怕遭遇的鬼差，白无常勾魂，黑无常索命。
 魂归我用
 黑\n
-黑白无常
 黑白相连
+默认参数

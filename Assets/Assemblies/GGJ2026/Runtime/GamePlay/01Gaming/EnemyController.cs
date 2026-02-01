@@ -197,6 +197,7 @@ namespace GGJ2026.GamePlay
 
         public async UniTask UseCard(CardData cardData)
         {
+            await transform.PlayAttackAnimation(false);
             currentOperationIndex++;
             useCardCountThisTurn.TryAdd(cardData.id, 0);
             useCardCountThisTurn[cardData.id]++;
