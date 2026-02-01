@@ -101,7 +101,7 @@ namespace GGJ2026.GamePlay
                 var win = enemyController.IsDead() && !playerController.IsDead();
                 if (over)
                 {
-                    await UniTask.Delay(TimeSpan.FromSeconds(1f));
+                    await UniTask.Delay(TimeSpan.FromSeconds(0.3f));
                     isGameOver = true;
                     isGameWin = win;
                     break;
@@ -116,7 +116,7 @@ namespace GGJ2026.GamePlay
                     while (playerOperationQueue.Count > 0)
                     {
                         var operation = playerOperationQueue.Dequeue();
-                        await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
+                        await UniTask.Delay(TimeSpan.FromSeconds(0.1f));
                         if (operation is UseCardOperation useCardOperation)
                         {
                             var cardData = useCardOperation.cardData;
@@ -163,7 +163,7 @@ namespace GGJ2026.GamePlay
 
                     while (true)
                     {
-                        await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
+                        await UniTask.Delay(TimeSpan.FromSeconds(0.1f));
                         var operation = await enemyController.GetNextOperation();
                         Debug.Log($"敌人执行操作：{operation}");
                         if (operation is UseCardOperation useCardOperation)

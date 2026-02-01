@@ -295,7 +295,7 @@ namespace GGJ2026.GamePlay
 
             if (id == MaskEnum.阎王面具)
             {
-                await UniTask.Delay(TimeSpan.FromSeconds(2f));
+                await UniTask.Delay(TimeSpan.FromSeconds(1.2f));
             }
 
 
@@ -399,7 +399,7 @@ namespace GGJ2026.GamePlay
                     throw new ArgumentOutOfRangeException(nameof(id), id, null);
             }
 
-            await UniTask.Delay(TimeSpan.FromSeconds(2f));
+            await UniTask.Delay(TimeSpan.FromSeconds(1f));
         }
 
         private bool ContainsBuff(BuffEnum buffEnum)
