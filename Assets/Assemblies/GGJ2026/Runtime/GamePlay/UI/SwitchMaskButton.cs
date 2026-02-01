@@ -33,15 +33,14 @@ namespace GGJ2026.GamePlay
                 {
                     GamingMgr.Singleton.PushPlayerOperation(new SwitchMaskOperation(id, true));
                 }
-
-                Debug.LogWarning("Already in this mask: " + id);
                 return;
             }
 
-            if (id == MaskEnum.本我)
+            if (!player.TryGetMask(out var mask2) && id == MaskEnum.本我)
             {
                 return;
             }
+            
 
             GamingMgr.Singleton.PushPlayerOperation(new SwitchMaskOperation(id, true));
         }

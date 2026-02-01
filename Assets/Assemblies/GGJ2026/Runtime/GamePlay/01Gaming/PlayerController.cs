@@ -49,8 +49,8 @@ namespace GGJ2026.GamePlay
 
         public void Bind(PlayerData playerData)
         {
-            this.data = playerData;
-            _propertyShower.Bind(this.data.property);
+            data = playerData;
+            _propertyShower.Bind(data.property);
         }
 
         private void OnHealthChanged(Property<int> obj)
@@ -116,13 +116,20 @@ namespace GGJ2026.GamePlay
 
         public void UnBind()
         {
+            
+            ColorEffectController.Instance.ResetColor();
             data = null;
             _propertyShower.UnBind();
+
+            for (var i = _buffs.Count - 1; i >= 0; i--)
+            {
+                var buff = _buffs[i];
+                RemoveBuff(buff.buffEnum);
+            }
+
             _buffs.Clear();
             thisRoundUseCardCount.Clear();
             lastUsedCardThisRound = CardEnum.None;
-            
-            
         }
 
 
@@ -206,7 +213,7 @@ namespace GGJ2026.GamePlay
                 int shieldDamage = Math.Min(data.property.shield, damageValue);
                 int damageToHealth = damageValue - shieldDamage;
                 data.property.shield -= shieldDamage;
-                
+
                 GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageToHealth);
                 data.property.health.Value -= damageToHealth;
             }
@@ -232,6 +239,16 @@ namespace GGJ2026.GamePlay
                 new OnLocalPlayerWearMaskEvent(id));
             Debug.Log("玩家切换面具: " + id);
             maskText.text = id.ToString();
+
+            if (id == MaskEnum.阎王面具)
+            {
+                ColorEffectController.Instance.PlayUltimateColor();
+            }
+            else
+            {
+                ColorEffectController.Instance.ResetColor();
+            }
+            
 
 
             foreach (var (maskId, go) in maskVisuals)
