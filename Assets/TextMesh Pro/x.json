@@ -1,0 +1,842 @@
+{
+  "levelPlayerData": {
+    "第一关": {
+      "cards": [
+        {
+          "id": 1,
+          "config": {
+            "Id": 1,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "轻击",
+            "Desc": "造成{0}点伤害。",
+            "Value": [
+              2
+            ],
+            "CanEndRound": false,
+            "MaskToCardEffect": {
+              "阎王面具": 13,
+              "无常面具": 22,
+              "孟婆面具": 30,
+              "二郎神面具": 33
+            }
+          }
+        }
+      ],
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 0
+      },
+      "currentMask": 0,
+      "randomDrawCard": false,
+      "candidateCards": [],
+      "currentDrawIndex": -1
+    },
+    "第二关": {
+      "cards": [
+        {
+          "id": 2,
+          "config": {
+            "Id": 2,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "震慑",
+            "Desc": "造成{0}点伤害，有{1}%几率斩杀对手。打出后有{2}%几率结束回合。",
+            "Value": [
+              2,
+              10,
+              10
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {
+              "阎王面具": 14,
+              "无常面具": 23,
+              "阎罗面具": 27,
+              "孟婆面具": 30,
+              "二郎神面具": 33
+            }
+          }
+        },
+        {
+          "id": 6,
+          "config": {
+            "Id": 6,
+            "Type": 1,
+            "Intent": 0,
+            "Name": "慷慨",
+            "Desc": "受到{0}点伤害，然后摸{1}张牌。",
+            "Value": [
+              2,
+              2
+            ],
+            "CanEndRound": false,
+            "MaskToCardEffect": {
+              "阎王面具": 18,
+              "孟婆面具": 31
+            }
+          }
+        }
+      ],
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 0
+      },
+      "currentMask": 0,
+      "randomDrawCard": false,
+      "candidateCards": [
+        6,
+        2
+      ],
+      "currentDrawIndex": -1
+    },
+    "第三关": {
+      "cards": [
+        {
+          "id": 1,
+          "config": {
+            "Id": 1,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "轻击",
+            "Desc": "造成{0}点伤害。",
+            "Value": [
+              2
+            ],
+            "CanEndRound": false,
+            "MaskToCardEffect": {
+              "阎王面具": 13,
+              "无常面具": 22,
+              "孟婆面具": 30,
+              "二郎神面具": 33
+            }
+          }
+        }
+      ],
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 0
+      },
+      "currentMask": 0,
+      "randomDrawCard": false,
+      "candidateCards": [],
+      "currentDrawIndex": -1
+    },
+    "第四关": {
+      "cards": [
+        {
+          "id": 3,
+          "config": {
+            "Id": 3,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "万我",
+            "Desc": "造成{0}点伤害，重复{1}次。打出后伤害次数永久增加{2}，并且有{3}%几率结束回合。",
+            "Value": [
+              1,
+              1,
+              1,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {
+              "阎王面具": 15,
+              "无常面具": 24,
+              "孟婆面具": 30,
+              "二郎神面具": 33
+            }
+          }
+        },
+        {
+          "id": 6,
+          "config": {
+            "Id": 6,
+            "Type": 1,
+            "Intent": 0,
+            "Name": "慷慨",
+            "Desc": "受到{0}点伤害，然后摸{1}张牌。",
+            "Value": [
+              2,
+              2
+            ],
+            "CanEndRound": false,
+            "MaskToCardEffect": {
+              "阎王面具": 18,
+              "孟婆面具": 31
+            }
+          }
+        },
+        {
+          "id": 12,
+          "config": {
+            "Id": 12,
+            "Type": 2,
+            "Intent": 0,
+            "Name": "傩戏开场！",
+            "Desc": "直到你的回合结束时，随机佩戴一个面具（从十殿阎罗、孟婆、二郎真君中随机选择）。",
+            "Value": [],
+            "CanEndRound": false,
+            "MaskToCardEffect": {
+              "阎王面具": 21,
+              "无常面具": 21,
+              "阎罗面具": 29,
+              "孟婆面具": 32,
+              "二郎神面具": 34
+            }
+          }
+        }
+      ],
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 0
+      },
+      "currentMask": 0,
+      "randomDrawCard": true,
+      "candidateCards": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12
+      ],
+      "currentDrawIndex": -1
+    },
+    "第五关": {
+      "cards": [
+        {
+          "id": 3,
+          "config": {
+            "Id": 3,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "万我",
+            "Desc": "造成{0}点伤害，重复{1}次。打出后伤害次数永久增加{2}，并且有{3}%几率结束回合。",
+            "Value": [
+              1,
+              1,
+              1,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {
+              "阎王面具": 15,
+              "无常面具": 24,
+              "孟婆面具": 30,
+              "二郎神面具": 33
+            }
+          }
+        },
+        {
+          "id": 6,
+          "config": {
+            "Id": 6,
+            "Type": 1,
+            "Intent": 0,
+            "Name": "慷慨",
+            "Desc": "受到{0}点伤害，然后摸{1}张牌。",
+            "Value": [
+              2,
+              2
+            ],
+            "CanEndRound": false,
+            "MaskToCardEffect": {
+              "阎王面具": 18,
+              "孟婆面具": 31
+            }
+          }
+        },
+        {
+          "id": 12,
+          "config": {
+            "Id": 12,
+            "Type": 2,
+            "Intent": 0,
+            "Name": "傩戏开场！",
+            "Desc": "直到你的回合结束时，随机佩戴一个面具（从十殿阎罗、孟婆、二郎真君中随机选择）。",
+            "Value": [],
+            "CanEndRound": false,
+            "MaskToCardEffect": {
+              "阎王面具": 21,
+              "无常面具": 21,
+              "阎罗面具": 29,
+              "孟婆面具": 32,
+              "二郎神面具": 34
+            }
+          }
+        }
+      ],
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 0
+      },
+      "currentMask": 0,
+      "randomDrawCard": true,
+      "candidateCards": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12
+      ],
+      "currentDrawIndex": -1
+    },
+    "第六关": {
+      "cards": [
+        {
+          "id": 3,
+          "config": {
+            "Id": 3,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "万我",
+            "Desc": "造成{0}点伤害，重复{1}次。打出后伤害次数永久增加{2}，并且有{3}%几率结束回合。",
+            "Value": [
+              1,
+              1,
+              1,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {
+              "阎王面具": 15,
+              "无常面具": 24,
+              "孟婆面具": 30,
+              "二郎神面具": 33
+            }
+          }
+        },
+        {
+          "id": 6,
+          "config": {
+            "Id": 6,
+            "Type": 1,
+            "Intent": 0,
+            "Name": "慷慨",
+            "Desc": "受到{0}点伤害，然后摸{1}张牌。",
+            "Value": [
+              2,
+              2
+            ],
+            "CanEndRound": false,
+            "MaskToCardEffect": {
+              "阎王面具": 18,
+              "孟婆面具": 31
+            }
+          }
+        },
+        {
+          "id": 12,
+          "config": {
+            "Id": 12,
+            "Type": 2,
+            "Intent": 0,
+            "Name": "傩戏开场！",
+            "Desc": "直到你的回合结束时，随机佩戴一个面具（从十殿阎罗、孟婆、二郎真君中随机选择）。",
+            "Value": [],
+            "CanEndRound": false,
+            "MaskToCardEffect": {
+              "阎王面具": 21,
+              "无常面具": 21,
+              "阎罗面具": 29,
+              "孟婆面具": 32,
+              "二郎神面具": 34
+            }
+          }
+        }
+      ],
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 0
+      },
+      "currentMask": 0,
+      "randomDrawCard": true,
+      "candidateCards": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12
+      ],
+      "currentDrawIndex": -1
+    },
+    "第七关": {
+      "cards": [
+        {
+          "id": 3,
+          "config": {
+            "Id": 3,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "万我",
+            "Desc": "造成{0}点伤害，重复{1}次。打出后伤害次数永久增加{2}，并且有{3}%几率结束回合。",
+            "Value": [
+              1,
+              1,
+              1,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {
+              "阎王面具": 15,
+              "无常面具": 24,
+              "孟婆面具": 30,
+              "二郎神面具": 33
+            }
+          }
+        },
+        {
+          "id": 6,
+          "config": {
+            "Id": 6,
+            "Type": 1,
+            "Intent": 0,
+            "Name": "慷慨",
+            "Desc": "受到{0}点伤害，然后摸{1}张牌。",
+            "Value": [
+              2,
+              2
+            ],
+            "CanEndRound": false,
+            "MaskToCardEffect": {
+              "阎王面具": 18,
+              "孟婆面具": 31
+            }
+          }
+        },
+        {
+          "id": 12,
+          "config": {
+            "Id": 12,
+            "Type": 2,
+            "Intent": 0,
+            "Name": "傩戏开场！",
+            "Desc": "直到你的回合结束时，随机佩戴一个面具（从十殿阎罗、孟婆、二郎真君中随机选择）。",
+            "Value": [],
+            "CanEndRound": false,
+            "MaskToCardEffect": {
+              "阎王面具": 21,
+              "无常面具": 21,
+              "阎罗面具": 29,
+              "孟婆面具": 32,
+              "二郎神面具": 34
+            }
+          }
+        }
+      ],
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 0
+      },
+      "currentMask": 0,
+      "randomDrawCard": true,
+      "candidateCards": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12
+      ],
+      "currentDrawIndex": -1
+    }
+  },
+  "levelEnemyData": {
+    "第一关": {
+      "id": 0,
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 1
+      },
+      "candidateCards": [
+        {
+          "id": 40,
+          "config": {
+            "Id": 40,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "",
+            "Desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
+            "Value": [
+              1,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        }
+      ]
+    },
+    "第二关": {
+      "id": 1,
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 0
+      },
+      "candidateCards": [
+        {
+          "id": 35,
+          "config": {
+            "Id": 35,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "",
+            "Desc": "造成{0}点伤害，重复{1}次。打出后有{2}%几率结束回合。",
+            "Value": [
+              1,
+              2,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        }
+      ]
+    },
+    "第三关": {
+      "id": 3,
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 100
+      },
+      "candidateCards": [
+        {
+          "id": 37,
+          "config": {
+            "Id": 37,
+            "Type": 0,
+            "Intent": 1,
+            "Name": "",
+            "Desc": "获得{0}点护甲。打出后有{1}%几率结束回合。",
+            "Value": [
+              5,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        },
+        {
+          "id": 38,
+          "config": {
+            "Id": 38,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "",
+            "Desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
+            "Value": [
+              10,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        }
+      ]
+    },
+    "第四关": {
+      "id": 2,
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 0
+      },
+      "candidateCards": [
+        {
+          "id": 36,
+          "config": {
+            "Id": 36,
+            "Type": 0,
+            "Intent": 3,
+            "Name": "",
+            "Desc": "对本我造成{0}点伤害，自己恢复{1}点生命。打出后有{2}%几率结束回合。",
+            "Value": [
+              1,
+              1,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        }
+      ]
+    },
+    "第五关": {
+      "id": 4,
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 99
+      },
+      "candidateCards": [
+        {
+          "id": 39,
+          "config": {
+            "Id": 39,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "",
+            "Desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
+            "Value": [
+              3,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        }
+      ]
+    },
+    "第六关": {
+      "id": 6,
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 0
+      },
+      "candidateCards": [
+        {
+          "id": 46,
+          "config": {
+            "Id": 46,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "",
+            "Desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
+            "Value": [
+              3,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        },
+        {
+          "id": 46,
+          "config": {
+            "Id": 46,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "",
+            "Desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
+            "Value": [
+              3,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        },
+        {
+          "id": 46,
+          "config": {
+            "Id": 46,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "",
+            "Desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
+            "Value": [
+              3,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        },
+        {
+          "id": 48,
+          "config": {
+            "Id": 48,
+            "Type": 0,
+            "Intent": 1,
+            "Name": "",
+            "Desc": "获得{0}点护甲。打出后有{1}%几率结束回合。",
+            "Value": [
+              3,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        }
+      ]
+    },
+    "第七关": {
+      "id": 5,
+      "property": {
+        "health": {
+          "MaxValue": 0,
+          "MinValue": 0,
+          "Value": 1,
+          "ValueWithoutNotify": 1
+        },
+        "shield": 99
+      },
+      "candidateCards": [
+        {
+          "id": 45,
+          "config": {
+            "Id": 45,
+            "Type": 0,
+            "Intent": 2,
+            "Name": "",
+            "Desc": "敌人获得死期效果，倒计时为{0}。已有则无事发生。打出后有{1}%几率结束回合。",
+            "Value": [
+              10,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        },
+        {
+          "id": 41,
+          "config": {
+            "Id": 41,
+            "Type": 0,
+            "Intent": 0,
+            "Name": "",
+            "Desc": "造成{0}点伤害。打出后有{1}%几率结束回合。",
+            "Value": [
+              2,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        },
+        {
+          "id": 42,
+          "config": {
+            "Id": 42,
+            "Type": 0,
+            "Intent": 2,
+            "Name": "",
+            "Desc": "无事发生。打出后有{0}%几率结束回合。",
+            "Value": [
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        },
+        {
+          "id": 43,
+          "config": {
+            "Id": 43,
+            "Type": 0,
+            "Intent": 1,
+            "Name": "",
+            "Desc": "获得{0}点护甲。打出后有{1}%几率结束回合。",
+            "Value": [
+              5,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        },
+        {
+          "id": 44,
+          "config": {
+            "Id": 44,
+            "Type": 0,
+            "Intent": 2,
+            "Name": "",
+            "Desc": "敌人的死期减少{0}。打出后有{1}%几率结束回合。",
+            "Value": [
+              1,
+              100
+            ],
+            "CanEndRound": true,
+            "MaskToCardEffect": {}
+          }
+        }
+      ]
+    }
+  },
+  "name": "LevelConfig",
+  "hideFlags": 0
+}
+
+
+

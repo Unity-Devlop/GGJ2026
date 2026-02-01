@@ -188,5 +188,8 @@
   <assembly fullname="UnityEngine.TextCoreFontEngineModule">
     <type fullname="UnityEngine.TextCore.FaceInfo" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.TextCore.GlyphRect" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.LowLevel.GlyphValueRecord" preserve="nothing" serialized="true" />
   </assembly>
 </linker>

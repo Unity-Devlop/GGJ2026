@@ -1,5 +1,7 @@
+using System;
 using FMODUnity;
 using GGJ2026.GamePlay;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -29,5 +31,11 @@ namespace GGJ2026
         public EventReference uiClick;
         public EventReference roundStart;
         public EventReference roundEnd;
+
+
+        private void Awake()
+        {
+            Debug.Log(JsonConvert.SerializeObject(levelConfig));
+        }
     }
 }
