@@ -53,6 +53,11 @@ namespace GGJ2026.GamePlay
             _propertyShower.Bind(data.property);
         }
 
+        private void OnHealthChanged(Property<int> obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public UniTask OnceKill()
         {
             GamingMgr.Singleton.OnEntityTakeDamage(transform.position, 9999);
