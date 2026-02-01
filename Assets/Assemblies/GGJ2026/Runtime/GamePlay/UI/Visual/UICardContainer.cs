@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 using UnityToolkit;
 
@@ -91,9 +90,6 @@ namespace GGJ2026.GamePlay
         {
             _playerData = playerData;
             Debug.Log("Bind Card Container");
-            Assert.IsTrue(_slots.Count == 0);
-            Assert.IsTrue(_cards.Count == 0);
-            Assert.IsTrue(_visuals.Count == 0);
             foreach (var cardData in playerData.cards)
             {
                 AddCard(cardData);
