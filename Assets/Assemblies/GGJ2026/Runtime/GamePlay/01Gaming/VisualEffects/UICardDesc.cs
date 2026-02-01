@@ -23,9 +23,29 @@ namespace GGJ2026.GamePlay
             Global.Event.Listen<OnUICardVisualPointerExit>(OnUICardVisualPointerExit);
             Global.Event.Listen<OnMaskButtonPointerEnter>(OnMaskButtonPointerEnter);
             Global.Event.Listen<OnMaskButtonPointerExit>(OnMaskButtonPointerExit);
-
+            Global.Event.Listen<OnPointerEnterHealthTriggerEvent>(OnPointerEnterHealthTriggerEvent);
+            Global.Event.Listen<OnPointerExitHealthTriggerEvent>(OnPointerExitHealthTriggerEvent);
+            Global.Event.Listen<OnPointerEnterShieldTriggerEvent>(OnPointerEnterShieldTriggerEvent);
+            Global.Event.Listen<OnPointerExitShieldTriggerEvent>(OnPointerExitShieldTriggerEvent);
+            Global.Event.Listen<OnPointerEnterBuffTriggerEvent>(OnPointerEnterBuffTriggerEvent);
+            Global.Event.Listen<OnPointerExitBuffTriggerEvent>(OnPointerExitBuffTriggerEvent);
 
             gameObject.SetActive(false);
+        }
+
+
+        private void OnDestroy()
+        {
+            Global.Event.UnListen<OnUICardVisualPointerEnter>(OnUICardVisualPointerEnter);
+            Global.Event.UnListen<OnUICardVisualPointerExit>(OnUICardVisualPointerExit);
+            Global.Event.UnListen<OnMaskButtonPointerEnter>(OnMaskButtonPointerEnter);
+            Global.Event.UnListen<OnMaskButtonPointerExit>(OnMaskButtonPointerExit);
+            Global.Event.UnListen<OnPointerEnterHealthTriggerEvent>(OnPointerEnterHealthTriggerEvent);
+            Global.Event.UnListen<OnPointerExitHealthTriggerEvent>(OnPointerExitHealthTriggerEvent);
+            Global.Event.UnListen<OnPointerEnterShieldTriggerEvent>(OnPointerEnterShieldTriggerEvent);
+            Global.Event.UnListen<OnPointerExitShieldTriggerEvent>(OnPointerExitShieldTriggerEvent);
+            Global.Event.UnListen<OnPointerEnterBuffTriggerEvent>(OnPointerEnterBuffTriggerEvent);
+            Global.Event.UnListen<OnPointerExitBuffTriggerEvent>(OnPointerExitBuffTriggerEvent);
         }
 
 
@@ -73,13 +93,6 @@ namespace GGJ2026.GamePlay
             _charBounceEffect.PlayWaveEffect(_bounceEffectCts.Token).Forget();
         }
 
-        private void OnDestroy()
-        {
-            Global.Event.UnListen<OnUICardVisualPointerEnter>(OnUICardVisualPointerEnter);
-            Global.Event.UnListen<OnUICardVisualPointerExit>(OnUICardVisualPointerExit);
-            Global.Event.UnListen<OnMaskButtonPointerEnter>(OnMaskButtonPointerEnter);
-            Global.Event.UnListen<OnMaskButtonPointerExit>(OnMaskButtonPointerExit);
-        }
 
         private void OnMaskButtonPointerExit(in OnMaskButtonPointerExit args)
         {
@@ -92,6 +105,63 @@ namespace GGJ2026.GamePlay
         private void OnMaskButtonPointerEnter(in OnMaskButtonPointerEnter args)
         {
             descText.text = Global.tables.MaskTable.Get(args.maskID).Desc;
+
+            gameObject.SetActive(true);
+            _canvasGroup.alpha = 1;
+            _bounceEffectCts?.Cancel();
+            _bounceEffectCts = new CancellationTokenSource();
+            _charBounceEffect.PlayWaveEffect(_bounceEffectCts.Token).Forget();
+        }
+
+        private void OnPointerExitBuffTriggerEvent(in OnPointerExitBuffTriggerEvent args)
+        {
+            descText.text = string.Empty;
+            _canvasGroup.alpha = 0;
+            gameObject.SetActive(false);
+            _bounceEffectCts?.Cancel();
+        }
+
+        private void OnPointerEnterBuffTriggerEvent(in OnPointerEnterBuffTriggerEvent args)
+        {
+            descText.text = Global.tables.BuffTable.Get(args.buffID).Desc;
+
+            gameObject.SetActive(true);
+            _canvasGroup.alpha = 1;
+            _bounceEffectCts?.Cancel();
+            _bounceEffectCts = new CancellationTokenSource();
+            _charBounceEffect.PlayWaveEffect(_bounceEffectCts.Token).Forget();
+        }
+
+        private void OnPointerExitShieldTriggerEvent(in OnPointerExitShieldTriggerEvent args)
+        {
+            descText.text = string.Empty;
+            _canvasGroup.alpha = 0;
+            gameObject.SetActive(false);
+            _bounceEffectCts?.Cancel();
+        }
+
+        private void OnPointerEnterShieldTriggerEvent(in OnPointerEnterShieldTriggerEvent args)
+        {
+            descText.text = "护盾，可以抵挡伤害。";
+
+            gameObject.SetActive(true);
+            _canvasGroup.alpha = 1;
+            _bounceEffectCts?.Cancel();
+            _bounceEffectCts = new CancellationTokenSource();
+            _charBounceEffect.PlayWaveEffect(_bounceEffectCts.Token).Forget();
+        }
+
+        private void OnPointerExitHealthTriggerEvent(in OnPointerExitHealthTriggerEvent args)
+        {
+            descText.text = string.Empty;
+            _canvasGroup.alpha = 0;
+            gameObject.SetActive(false);
+            _bounceEffectCts?.Cancel();
+        }
+
+        private void OnPointerEnterHealthTriggerEvent(in OnPointerEnterHealthTriggerEvent args)
+        {
+            descText.text = "生命值 归零后失败";
 
             gameObject.SetActive(true);
             _canvasGroup.alpha = 1;

@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 8453621646946032359}
   - component: {fileID: 944079060474516395}
   - component: {fileID: 3474931562494171482}
+  - component: {fileID: 6266239370078739654}
   m_Layer: 0
   m_Name: BuffTip
   m_TagString: Untagged
@@ -208,14 +209,14 @@ RectTransform:
   m_GameObject: {fileID: 583428569478408072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7833186096240703751}
+  m_Father: {fileID: 3150143152406908426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2.5}
+  m_AnchoredPosition: {x: -23.999977, y: -492}
   m_SizeDelta: {x: 2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &944079060474516395
@@ -362,6 +363,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 944079060474516395}
   m_maskType: 0
+--- !u!114 &6266239370078739654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583428569478408072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b2e31ac70944b294b7213d46835060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.BuffTrigger
 --- !u!1 &1368601997032865729
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +386,7 @@ GameObject:
   - component: {fileID: 9155303133643613399}
   - component: {fileID: 1388672979798773161}
   - component: {fileID: 4056383688102797115}
+  - component: {fileID: 8144832999014061986}
   m_Layer: 0
   m_Name: Intent
   m_TagString: Untagged
@@ -468,6 +482,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.EnemyIntentVisual
   intentText: {fileID: 8488006493511211646}
+--- !u!114 &8144832999014061986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368601997032865729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeb7552fc4043d8bd44da77ae411886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.Billboard
+  billboardType: 1
+  useMainCamera: 1
+  targetCamera: {fileID: 0}
+  flip: 0
 --- !u!1 &1568260775866733717
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +589,7 @@ GameObject:
   - component: {fileID: 7725659848218257718}
   - component: {fileID: 817526067291445087}
   - component: {fileID: 2348219331372832183}
+  - component: {fileID: 6674869651869958341}
   m_Layer: 0
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -579,6 +610,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5250402031297219349}
+  - {fileID: 8453621646946032359}
   m_Father: {fileID: 7833186096240703751}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -649,6 +681,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
+--- !u!114 &6674869651869958341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794303428612644501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeb7552fc4043d8bd44da77ae411886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.Billboard
+  billboardType: 1
+  useMainCamera: 1
+  targetCamera: {fileID: 0}
+  flip: 0
 --- !u!1 &2863679195965632424
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,6 +964,7 @@ GameObject:
   - component: {fileID: 3891465353252447514}
   - component: {fileID: 5321320781926263658}
   - component: {fileID: 160957593750884796}
+  - component: {fileID: 6077332075406064169}
   m_Layer: 0
   m_Name: healthText
   m_TagString: Untagged
@@ -1043,6 +1092,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6077332075406064169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070908299279958844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a10bf7b2b85432684f538cd4c97987a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.HealthTrigger
 --- !u!1 &5347073517510361477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,7 +1393,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9155303133643613399}
-  - {fileID: 8453621646946032359}
   - {fileID: 1078043471164783262}
   - {fileID: 3150143152406908426}
   - {fileID: 2221088646618972139}
@@ -1570,6 +1630,7 @@ GameObject:
   - component: {fileID: 2645402005276100688}
   - component: {fileID: 2661433110527996935}
   - component: {fileID: 4360360546394953496}
+  - component: {fileID: 2328092287641238063}
   m_Layer: 0
   m_Name: shieldText
   m_TagString: Untagged
@@ -1697,3 +1758,15 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2328092287641238063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442469222133615999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df543690e40421ab50d020cfb2af79d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.ShieldTrigger

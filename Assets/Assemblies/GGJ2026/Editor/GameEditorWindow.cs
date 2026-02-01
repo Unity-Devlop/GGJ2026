@@ -1,4 +1,5 @@
 using Framework.Editor;
+using GGJ2026.Editor.GGJ2026.Editor;
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities;
 using Sirenix.Utilities.Editor;
@@ -24,6 +25,7 @@ namespace GGJ2026.Editor
             {
                 { "卡牌效果生成器", new CardEffectGeneratorEditor(), EditorIcons.SettingsCog },
                 { "存档系统", new SaveSystemEditor(), EditorIcons.SettingsCog },
+                { "文字收集", new SuperTextExtractor(), EditorIcons.SettingsCog },
             };
 
             return odinMenuTree;

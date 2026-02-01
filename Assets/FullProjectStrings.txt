@@ -1,0 +1,5528 @@
+'
+-
+--
+---
+⤴
+' || TryMoveNext() == false ) {
+                str = string.Empty;
+                return MakeFailure(
+' as
+' Assignable Blackboard Variable
+' for PlayAnimation Action
+' found on FSM '
+' it will automatically sync with the list. Useful when working with others on source control.
+' Seconds
+' tag
+​
+!
+!=
+!entities.ContainsKey(entity.id)
+#
+# Never ignore DLLs in the FMOD subfolder.
+!/[Aa]ssets/Plugins/FMOD/**/lib/*
+
+# Don't ignore images and gizmos used by FMOD in the Unity Editor.
+!/[Aa]ssets/Gizmos/FMOD/*
+!/[Aa]ssets/Editor Default Resources/FMOD/*
+
+# Ignore the Cache folder since it is updated locally.
+/[Aa]ssets/Plugins/FMOD/Cache/*
+
+# Ignore bank files in the StreamingAssets folder.
+/[Aa]ssets/StreamingAssets/**/*.bank
+/[Aa]ssets/StreamingAssets/**/*.bank.meta
+
+# If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
+# Log files can be ignored.
+fmod_editor.log
+#000000
+#0f81be
+#1974a5
+#262626
+#333333
+#666666
+#B8B8B8
+#d2d2d2
+#endif // ENABLE_IL2CPP
+#if ENABLE_IL2CPP
+#NAME#
+#pragma warning disable 0219, 0168, 0612
+#pragma warning restore 0219, 0168, 0612
+$1
+$Constructor
+$content
+$id
+$ref
+$TexturePacker:SmartUpdate:196a26a2e149d875b91ffc8fa3581e76:fc928c7e275404b7e0649307410475cb:424723c3774975ddb2053fd5c4b85f6e$
+$type
+$version
+%
+(
+((?:[^
+(?<=[a-z])([A-Z])
+(\w+)\[(\d+)\]$
+({0})
+({0})()
+({0})(\"{1}\", \"{2}\")
+({0})o
+({count - 1} attempts at growing the octree).
+({x}, {y}, {z}, {w})
+(<b>{0}</b>) {1}
+(automated)
+(Clone)
+(development build)
+(DynamicVar)
+(exists)
+(has initial value)
+(null) Create
+(T)
+)
+) && val.name == folderName ? val.id : folderGuid;
+                    });
+                    if (folderGuid ==
+) :
+) {
+                double doubleValue;
+                if ( double.TryParse(numberString, NumberStyles.Any, CultureInfo.InvariantCulture, out doubleValue) == false ) {
+                    data = null;
+                    return MakeFailure(
+) || numberString.Contains(
+) ||
+                numberString ==
+) to type
+)
+                    {
+                        var newFolder = studio.project.create(
+)) {
+                            currentItem.items.reverse().forEach(function(val) {
+                                items.unshift(val);
+                            });
+                        } else {
+                            output +=
+), but current queue contains
+');
+                            stream.Write(entry.Key);
+                            stream.Write('
+);
+                        }
+                    }
+                    return output;
+                }
+);
+                        newFolder.name = folderName;
+                        newFolder.folder = studio.project.lookup(parentGuid);
+                        folderGuid = newFolder.id;
+                    }
+                    return folderGuid;
+                }
+);
+                    }
+                }
+            }
+
+            // skip the first
+);
+                    event.note =
+');
+                    stream.Write(EscapeString(data.AsString));
+                    stream.Write('
+);
+                    tag.name =
+);
+                    track.mixerGroup.output = event.mixer.masterBus;
+                    track.mixerGroup.name =
+);
+        }
+
+        ///<summary>Raise the OnMultipleChoiceRequest event</summary>
+        public static void RequestMultipleChoices(MultipleChoiceRequestInfo info) {
+            if ( OnMultipleChoiceRequest != null )
+                OnMultipleChoiceRequest(info);
+            else Logger.LogWarning(
+);
+        }
+
+        protected override void OnGraphStarted() {
+            previousDialogue = currentDialogue;
+            currentDialogue = this;
+
+            Logger.Log(string.Format(
+);
+
+            if ( fail.Succeeded ) {
+                data = new fsData();
+                return fsResult.Success;
+            }
+
+            data = null;
+            return fail;
+        }
+
+
+        private bool IsSeparator(char c) {
+            return char.IsWhiteSpace(c) || c == ',' || c == '}' || c == ']';
+        }
+
+        ///<summary> Parses numbers that follow the regular expression [-+](\d+|\d*\.\d*)</summary>
+        private fsResult TryParseNumber(out fsData data) {
+            int start = _start;
+
+            // read until we get to a separator
+            while (
+                TryMoveNext() &&
+                ( HasValue() && IsSeparator(Character()) == false ) ) {
+            }
+
+            // try to parse the value
+            string numberString = _input.Substring(start, _start - start);
+
+            // double -- includes a .
+            if ( numberString.Contains(
+);
+
+            if ( fail.Succeeded ) {
+                data = new fsData(false);
+                return fsResult.Success;
+            }
+
+            data = null;
+            return fail;
+        }
+
+        private fsResult TryParseNull(out fsData data) {
+            var fail = TryParseExact(
+);
+
+            if ( fail.Succeeded ) {
+                data = new fsData(true);
+                return fsResult.Success;
+            }
+
+            data = null;
+            return fail;
+        }
+
+        private fsResult TryParseFalse(out fsData data) {
+            var fail = TryParseExact(
+')]
+)} {Variable} for {Flag} flag
+)}.txt
+)}{t.Hours}h
+)}{t.Minutes}m
+)}{t.Seconds}.{(t.Milliseconds / 100)}s
+)}{t.Seconds}s
+)</b>\n
+)</size></i>
+*
+* '{0}' target agent is null
+* Add a field of type <b>FMODUnity.EventReference</b> to this class\n
+* BBParameter '{0}' is null
+* Change the [FMODUnity.EventRef] attribute on the {3} field to:\n
+* Edit {2} and add an EventReference field:\n
+* Edit {3} and add an EventReference field named {2}:\n
+* Edit the definition of the {1} type and make sure all [FMODUnity.EventRef] attributes have
+* Edit the definition of the {2} type and remove the {3} field
+* Edit the definition of the {3} type and remove the {4} field
+* Ensure no other instances of the {2} type are using the {3} field\n
+* Ensure no other instances of the {3} type are using the {4} field\n
+* Never Triggered *
+* Or perhaps the network is simply too slow on our end, or on the other end.
+* Required field '{0}' is null
+* Required parameter '{0}' is null
+* Required string field '{0}' is null or empty
+* Re-scan your project
+* Re-scan your project.
+* Run the <b>
+* Set the <b>MigrateTo</b> property on the <b>[FMODUnity.EventRef]</b> attribute:
+* Try to Enable NoDelay, decrease INTERVAL, disable Congestion Window (= enable NOCWND!), increase SEND/RECV WINDOW or compress data.\n
+*.
+*.*
+*.bank
+*.strings.bank
+*{extension}
+*=
+*Partial list of the Rich Text Tags available in TextMeshPro.
+*This is a partial list of all the Rich Text Tags available.
+,
+, actions)}
+, Character()));
+            }
+        }
+        #endregion
+
+        private fsResult TryParseExact(string content) {
+            for ( int i = 0; i < content.Length; ++i ) {
+                if ( Character() != content[i] ) {
+                    return MakeFailure(
+, false, 2)]
+        static void Editor_CreateGraph() {
+            var dt = new GameObject(
+, groups)}
+, intChar).Trim());
+                    continue;
+                }
+
+                // standard escape character
+                switch ( c ) {
+                    case '
+, labelRestriction.m_AllowedLabels)}'</b>. The currently assigned item has none of them.
+, librariesToRepair)}\n\n
+, maximum number of layers reached.
+, null);
+            }
+
+            //Check for non INSTIGATOR selection. If there IS an actor reference return it
+            var refData = actorParameters.Find(r => r.name == paramName);
+            if ( refData != null && refData.actor != null ) {
+                return refData.actor;
+            }
+
+            //Otherwise use the default actor and set the name to the key and null transform
+            Logger.Log(string.Format(
+', or new Agent is NULL. Does the Agent has the requested Component?
+, pair.Key),
+, paramName),
+, this);
+                    continue;
+                }
+                param.actor = pair.Value;
+            }
+        }
+
+        ///<summary>Continues the DialogueTree at provided child connection index of currentNode</summary>
+        public void Continue(int index = 0) {
+            if ( index < 0 || index > currentNode.outConnections.Count - 1 ) {
+                Stop(true);
+                return;
+            }
+            currentNode.outConnections[index].status = Status.Success; //editor vis
+            EnterNode((DTNode)currentNode.outConnections[index].targetNode);
+        }
+
+        ///<summary>Enters the provided node</summary>
+        public void EnterNode(DTNode node) {
+            currentNode = node;
+            currentNode.Reset(false);
+            if ( currentNode.Execute(agent, blackboard) == Status.Error ) {
+                Stop(false);
+            }
+        }
+
+        ///<summary>Raise the OnSubtitlesRequest event</summary>
+        public static void RequestSubtitles(SubtitlesRequestInfo info) {
+            if ( OnSubtitlesRequest != null )
+                OnSubtitlesRequest(info);
+            else Logger.LogWarning(
+, this);
+                return;
+            }
+            param.actor = actor;
+        }
+
+        ///<summary>Set all target IDialogueActors at once by provided dictionary</summary>
+        public void SetActorReferences(Dictionary<string, IDialogueActor> actors) {
+            foreach ( var pair in actors ) {
+                var param = actorParameters.Find(p => p.name == pair.Key);
+                if ( param == null ) {
+                    Logger.LogWarning(string.Format(
+, this);
+            }
+
+            enterStartNodeFlag = true;
+        }
+
+        protected override void OnGraphUpdate() {
+            if ( enterStartNodeFlag ) {
+                //use a flag so that other nodes can do stuff on graph started
+                enterStartNodeFlag = false;
+                EnterNode(currentNode != null ? currentNode : (DTNode)primeNode);
+            }
+
+            if ( currentNode is IUpdatable ) {
+                ( currentNode as IUpdatable ).Update();
+            }
+        }
+
+        protected override void OnGraphStoped() {
+            currentDialogue = previousDialogue;
+            previousDialogue = null;
+            currentNode = null;
+
+            Logger.Log(string.Format(
+, this);
+            if ( OnDialogueFinished != null ) {
+                OnDialogueFinished(this);
+            }
+        }
+
+        protected override void OnGraphPaused() {
+            Logger.Log(string.Format(
+, this);
+            if ( OnDialoguePaused != null ) {
+                OnDialoguePaused(this);
+            }
+        }
+
+        protected override void OnGraphUnpaused() {
+            EnterNode(currentNode != null ? currentNode : (DTNode)primeNode);
+
+            Logger.Log(string.Format(
+, this);
+            if ( OnDialogueStarted != null ) {
+                OnDialogueStarted(this);
+            }
+        }
+
+        ///----------------------------------------------------------------------------------------------
+        ///---------------------------------------UNITY EDITOR-------------------------------------------
+#if UNITY_EDITOR
+        [UnityEditor.MenuItem(
+, this);
+            if ( OnDialogueStarted != null ) {
+                OnDialogueStarted(this);
+            }
+
+            if ( !( agent is IDialogueActor ) ) {
+                Logger.Log(
+, this);
+            return new ProxyDialogueActor(paramName, null);
+        }
+
+
+        ///<summary>Set the target IDialogueActor for the provided key parameter name</summary>
+        public void SetActorReference(string paramName, IDialogueActor actor) {
+            var param = actorParameters.Find(p => p.name == paramName);
+            if ( param == null ) {
+                Logger.LogError(string.Format(
+, this.name),
+, this.validMainAssetTypes.Select(n => n.GetNiceName()))}]>{this.targetType.GetNiceName()})
+, this.validMainAssetTypes.Select(t => t.GetNiceName()))})
+, weight
+,
+                            Character(0),
+                            Character(1),
+                            Character(2),
+                            Character(3)));
+                default:
+                    escaped = (char)0;
+                    return MakeFailure(string.Format(
+,\n
+.
+. Limit:
+...
+.../Assets
+...Compiling Please Wait...
+../
+./log/Log_{DateTime.Now:yyyy-MM-dd}.txt
+.\nAssign or Create a new one...
+._
+.{0} ({1}) {2}
+.0
+.asset
+.bank
+.bytes
+.cs
+.dll
+.fspro
+.json
+.meta
+.strings
+.xml
+/
+/(Create New)
+/*Auto-generated by FMODEditor*/
+/../
+//
+// {desc}
+// This file was generated by FMOD for Unity from the Static Plugins list in the FMOD settings.
+//{0} Types | {1} Methods spoofed
+//{mask}: {targetConfig.Desc}
+//member[starts-with(@name, '
+/{0}/{1}
+/{0}/{1}{2}
+/=
+/Add
+/CodeGeneration.cs
+/Editor/Timeline
+/fmodplugins.cpp
+/Inherited
+/Log_{System.DateTime.Now.ToString(
+/New FullScreen.shader
+/New Unlit.shader
+/NewPanel.prefab
+/Plugins/FMOD/Cache/fmod_register_static_plugins.cpp
+/Plugins/FMOD/src/Runtime/fmod_static_plugin_support.h
+/Runtime
+/Runtime/Timeline
+/Runtime/wrapper
+/src
+/src/fmod_static_plugin_support.h
+/src/fmodplugins.cpp
+/src/Runtime/CodeGeneration.cs
+/src/Runtime/fmod_static_plugin_support.h
+/src/Runtime/fmodplugins.cpp
+/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq
+/Timeline
+/Wrapper
+:
+': {
+                        string str;
+                        fsResult fail = TryParseString(out str);
+                        if ( fail.Failed ) {
+                            data = null;
+                            return fail;
+                        }
+                        data = new fsData(str);
+                        return fsResult.Success;
+                    }
+                case '[': return TryParseArray(out data);
+                case '{': return TryParseObject(out data);
+                case 't': return TryParseTrue(out data);
+                case 'f': return TryParseFalse(out data);
+                case 'n': return TryParseNull(out data);
+                default:
+                    data = null;
+                    return MakeFailure(
+: ActionTask
+: Bad data; expected bool, number, string, but got
+: ConditionTask
+': TryMoveNext(); escaped = '\"'; return fsResult.Success;
+                case 'a': TryMoveNext(); escaped = '\a'; return fsResult.Success;
+                case 'b': TryMoveNext(); escaped = '\b'; return fsResult.Success;
+                case 'f': TryMoveNext(); escaped = '\f'; return fsResult.Success;
+                case 'n': TryMoveNext(); escaped = '\n'; return fsResult.Success;
+                case 'r': TryMoveNext(); escaped = '\r'; return fsResult.Success;
+                case 't': TryMoveNext(); escaped = '\t'; return fsResult.Success;
+                case '0': TryMoveNext(); escaped = '\0'; return fsResult.Success;
+                case 'u':
+                    TryMoveNext();
+                    if ( IsHex(Character(0))
+                     && IsHex(Character(1))
+                     && IsHex(Character(2))
+                     && IsHex(Character(3)) ) {
+
+                        uint codePoint = ParseUnicode(Character(0), Character(1), Character(2), Character(3));
+
+                        TryMoveNext();
+                        TryMoveNext();
+                        TryMoveNext();
+                        TryMoveNext();
+
+                        escaped = (char)codePoint;
+                        return fsResult.Success;
+                    }
+
+                    // invalid escape sequence
+                    escaped = (char)0;
+                    return MakeFailure(
+                        string.Format(
+':
+                    case '\\':
+                    case '\a':
+                    case '\b':
+                    case '\f':
+                    case '\n':
+                    case '\r':
+                    case '\t':
+                    case '\0':
+                        needsEscape = true;
+                        break;
+                }
+
+                if ( needsEscape ) {
+                    break;
+                }
+            }
+
+            if ( needsEscape == false ) {
+                return str;
+            }
+
+
+            StringBuilder result = new StringBuilder();
+
+            for ( int i = 0; i < str.Length; ++i ) {
+                char c = str[i];
+
+                // unicode code point
+                int intChar = Convert.ToInt32(c);
+                if ( intChar < 0 || intChar > 127 ) {
+                    result.Append(string.Format(
+::
+;
+; context = <
+; have you reordered or modified the serialized data? If this is an issue
+; the object graph for
+; the type association strategy is unknown. Please use either
+;
+                    const items = [ studio.project.workspace.masterBankFolder ];
+                    while (items.length > 0) {
+                        var currentItem = items.shift();
+                        if (currentItem.isOfType(
+;
+                    event.name = eventName;
+                    event.folder = studio.project.lookup(folderGuid);
+
+                    track = studio.project.create(
+;
+                    event.relationships.groupTracks.add(track);
+
+                    tag = studio.project.create(
+;
+                    studio.project.lookup(parentGuid).items.forEach(function(val) {
+                        folderGuid = val.isOfType(
+;
+                    tag.folder = studio.project.workspace.masterTagFolder;
+                    event.relationships.tags.add(tag);
+
+                    return event.id;
+                }
+;
+
+        ///<summary>The dialogue actor parameters. We let Unity serialize this as well</summary>
+        [SerializeField] public List<ActorParameter> actorParameters = new List<ActorParameter>();
+        private bool enterStartNodeFlag;
+
+        public static event Action<DialogueTree> OnDialogueStarted;
+        public static event Action<DialogueTree> OnDialoguePaused;
+        public static event Action<DialogueTree> OnDialogueFinished;
+        public static event Action<SubtitlesRequestInfo> OnSubtitlesRequest;
+        public static event Action<MultipleChoiceRequestInfo> OnMultipleChoiceRequest;
+
+        ///<summary>The current DialogueTree running</summary>
+        public static DialogueTree currentDialogue { get; private set; }
+        ///<summary>The previous DialogueTree running</summary>
+        public static DialogueTree previousDialogue { get; private set; }
+
+        ///<summary>The current node of this DialogueTree</summary>
+        public DTNode currentNode { get; private set; }
+
+        ///----------------------------------------------------------------------------------------------
+        public override System.Type baseNodeType => typeof(DTNode);
+        public override bool requiresAgent => false;
+        public override bool requiresPrimeNode => true;
+        public override bool isTree => true;
+        public override bool allowBlackboardOverrides => true;
+        sealed public override bool canAcceptVariableDrops => false;
+        public sealed override PlanarDirection flowDirection => PlanarDirection.Vertical;
+        ///----------------------------------------------------------------------------------------------
+
+        ///<summary>A list of the defined names for the involved actor parameters</summary>
+        public List<string> definedActorParameterNames {
+            get
+            {
+                var list = actorParameters.Select(r => r.name).ToList();
+                list.Insert(0, INSTIGATOR_NAME);
+                return list;
+            }
+        }
+
+        ///<summary>Returns the ActorParameter by id</summary>
+        public ActorParameter GetParameterByID(string id) {
+            return actorParameters.Find(p => p.ID == id);
+        }
+
+        ///<summary>Returns the ActorParameter by name</summary>
+        public ActorParameter GetParameterByName(string paramName) {
+            return actorParameters.Find(p => p.name == paramName);
+        }
+
+        ///<summary>Returns the actor by parameter id.</summary>
+        public IDialogueActor GetActorReferenceByID(string id) {
+            var param = GetParameterByID(id);
+            return param != null ? GetActorReferenceByName(param.name) : null;
+        }
+
+        ///<summary>Resolves and gets an actor based on the key name</summary>
+        public IDialogueActor GetActorReferenceByName(string paramName) {
+
+            //Check for INSTIGATOR selection
+            if ( paramName == INSTIGATOR_NAME ) {
+
+                //return it directly if it implements IDialogueActor
+                if ( agent is IDialogueActor ) {
+                    return (IDialogueActor)agent;
+                }
+
+                //Otherwise use the default actor and set name and transform from agent
+                if ( agent != null ) {
+                    return new ProxyDialogueActor(agent.gameObject.name, agent.transform);
+                }
+
+                return new ProxyDialogueActor(
+;UNITY_BOLT_EXIST
+?
+?.
+@
+@GlobalBlackboard
+@true
+[
+[ {0}.{1}({2}) ]
+[...]
+[[
+[[T]]
+[]
+[^0-9a-zA-Z]
+[{0}]
+[{nameof(GameObjectPoolManager)}]:{key} not exist! Destroy the object!
+[{nameof(UIRoot)}]: Layer {layer} not found
+[{nameof(UIRoot)}]: Panel {type.Name} is opening async, can't close it
+[{this}]: client thread exception:
+[{this}]: Exception:
+[{this}]: listening port=
+[{this}]: send thread exception:
+[{this}]: Start port=
+[{this}]: thread aborted. That's okay.
+[{this}]: Thread stopped. That's okay.
+[{this}]:.Disconnect connectionId:
+[{this}]:.Send: invalid connectionId:
+[{this}]:.Send: message too big:
+[{this}]:.Send: sendPipe for connection {connectionId} reached limit of {SendQueueLimit}. This can happen if we call send faster than the network can process messages. Disconnecting this connection for load balancing.
+[{this}]:: stopping...
+[{this}]Connected to server
+[{this}]Connection id is already assigned
+[{this}]Disconnected from server
+[{this}]Unpack error from connection {connectionId}
+[<#FFFF80>
+[CardExecutor(CardEnum.{name})]
+[CharacterCollisionState2D] r: {0}, l: {1}, a: {2}, b: {3}, movingDownSlope: {4}, angle: {5}, wasGroundedLastFrame: {6}, becameGroundedThisFrame: {7}
+[DllImport(\"__Internal\")]
+[DllImport(FMOD.VERSION.dll)]
+[EventReceiver] is no longer used. Please use the '.router' property to subscribe/unsubscribe to events (in OnExecute/OnStop for actions and OnEnable/OnDisable for conditions). For custom events, use '.router.onCustomEvent'.
+[FMOD Assistant] Built in Unity audio has been disabled.
+[FMOD Assistant] Replacing Unity Listener with FMOD Listener on
+[FMOD] {0} : {1}
+[FMOD] {0}({1}) returned {2} for {3} (0x{4}).
+[FMOD] {SettingsAssetName} initialization failed. {SettingsAssetName} located in \"Packages\" folder. Please delete {SettingsAssetName} in file explorer.
+[FMOD] Attempted to instantiate Settings before EditorSettings was populated.
+[FMOD] Attempted to load FMOD plugins on a 32 bit ARM platform.
+[FMOD] Bus not found '
+[FMOD] Cannot find integration settings, creating default settings
+[FMOD] Cannot find properties for platform {0}, creating default properties
+[FMOD] Cannot initialize Java wrapper
+[FMOD] Cannot open network port for Live Update (in-use), restarting with Live Update disabled.
+[FMOD] Could not load bank '{0}' : {1}
+[FMOD] Could not load bank '{0}' : {1} : {2}
+[FMOD] Deprecated. Use AnySampleDataLoading instead.
+[FMOD] Deprecated. Use WaitForAllSampleLoading instead.
+[FMOD] Event not found:
+[FMOD] Event not found: '
+[FMOD] Failed to get enumerator for value in field '{0}': {1}
+[FMOD] Finished loading {0}
+[FMOD] Initialization failed
+[FMOD] Initialization failed : {2} : {0} : {1}
+[FMOD] Instance of Event {0} has not had EventInstance.set3DAttributes() called on it yet!
+[FMOD] Listener has already been added at index {0}.
+[FMOD] loadFromWeb.  Path = {0}, result = {1}.
+[FMOD] Max number of listeners reached : {0}.
+[FMOD] Missing 'fmodOverlayLayer' layer, Cannot display Debug Overlay
+[FMOD] Non-Rigidbody Velocity is enabled on Emitter attached to GameObject \"{0}\", which also has a Rigidbody component attached - this will be disabled in favor of velocity from Rigidbody component.
+[FMOD] Non-Rigidbody Velocity is enabled on Emitter attached to GameObject \"{0}\", which also has a Rigidbody2D component attached - this will be disabled in favor of velocity from Rigidbody2D component.
+[FMOD] Non-Rigidbody Velocity is enabled on Listener attached to GameObject \"{0}\", which also has a Rigidbody component attached - this will be disabled in favor of velocity from Rigidbody component.
+[FMOD] Non-Rigidbody Velocity is enabled on Listener attached to GameObject \"{0}\", which also has a Rigidbody2D component attached - this will be disabled in favor of velocity from Rigidbody2D component.
+[FMOD] Please add an 'FMOD Studio Listener' component to your camera in the scene for correct 3D positioning of sounds.
+[FMOD] RuntimeManager accessed outside of runtime. Do not use RuntimeManager for Editor-only functionality, create your own System objects instead.
+[FMOD] Studio::System::initialize returned {0}, defaulting to no-sound mode.
+[FMOD] StudioGlobalParameterTrigger failed to lookup parameter {0} : result = {1}
+[FMOD] StudioGlobalParameterTrigger failed to set parameter {0} : result = {1}
+[FMOD] Unable to initialize debug logging: Logging will be disabled.\nCheck the Import Settings of the FMOD libs to enable the logging library.
+[FMOD] Unable to load {0} - bank already loaded. This may occur when attempting to load another localized bank before the first is unloaded, or if a bank has been loaded via the API.
+[FMOD] Unable to load AssetReference:
+[FMOD] UNITY_URP_EXIST is not defined. The VR debug overlay requires the Universal Render Pipeline.
+[FMOD] Universal Render Pipeline Required, Cannot display Debug Overlay
+[FMOD] Unknown Debug Overlay issue. Contact Support
+[FMOD] VCA not found '
+[FMODUnity.EventRef(MigrateTo=\"yourNewFieldName\")]\n
+[GET ONLY]
+[KCP] {GetType()}: created with cookie={cookie}
+[KCP] {GetType()}: Disconnected.
+[KCP] {GetType()}: Failed to send unreliable message of size {content.Count} because it's larger than UnreliableMaxMessageSize={unreliableMax}
+[KCP] {GetType()}: Input failed with error={input} for buffer with length={message.Count - 1}
+[KCP] {GetType()}: received disconnect message
+[KCP] {GetType()}: received hello with cookie={cookie}
+[KCP] {GetType()}: received invalid header {header} while Connected. Disconnecting the connection.
+[KCP] {GetType()}: RTT={rttInMilliseconds}ms
+[KCP] {GetType()}: sending handshake to other end with cookie={cookie}
+[KCP] Client.RawReceive: looks like the other end has closed the connection. This is fine: {e}
+[KCP] Client.RawSend: looks like the other end has closed the connection. This is fine: {e}
+[KCP] Client: already connected!
+[KCP] Client: can't send because not connected!
+[KCP] Client: connect to {address}:{port}
+[KCP] Client: dropping message with mismatching cookie: {messageCookie} expected: {cookie}.
+[KCP] Client: invalid channel header: {channel}, likely internet noise
+[KCP] Client: OnConnected
+[KCP] Client: OnDisconnected
+[KCP] Client: received initial cookie: {cookie}
+[KCP] Client: received message with cookie=0, this should never happen. Server should always include the security cookie.
+[KCP] Failed to resolve host: {hostname} reason: {exception}
+[KCP] Failed to set Dual Mode, continuing with IPv6 without Dual Mode. Error: {e}
+[KCP] failed to set Socket RecvBufSize = {recvBufferSize} SendBufSize = {sendBufferSize}
+[KCP] OnServerError({connectionId}, {error}, {reason}
+[KCP] OnServerError({error}, {reason}
+[KCP] RecvBuf = {initialReceive}=>{socket.ReceiveBufferSize} ({socket.ReceiveBufferSize/initialReceive}x) SendBuf = {initialSend}=>{socket.SendBufferSize} ({socket.SendBufferSize/initialSend}x)
+[KCP] sending ping...
+[KCP] server raw recv {msgLength} bytes = {BitConverter.ToString(buffer, 0, msgLength)}
+[KCP] Server: added connection({connectionId})
+[KCP] Server: already started!
+[KCP] Server: OnConnected({connectionId})
+[KCP] Server: OnDisconnected({connectionId})
+[KCP] Server: RawSend invalid connectionId={connectionId}
+[KCP] Server: ReceiveFrom failed: {e}
+[KCP] Server: SendTo failed: {e}
+[KCP] ServerConnection: dropped message with invalid cookie: {messageCookie} from {remoteEndPoint} expected: {cookie} state: {state}. This can happen if the client's Hello message was transmitted multiple times, or if an attacker attempted UDP spoofing.
+[KCP] ServerConnection: invalid channel header: {channel} from {remoteEndPoint}, likely internet noise
+[LoopScrollRect] Flexible not supported yet
+[LoopScrollRect] unsupported GridLayoutGroup constraint
+[NONE AVAILABLE]
+[NONE]
+[Odin Addressable Module]: {fields[i].Name} was not found.
+[SIRENIX INTERNAL] Attempted to assign the Sub Asset on an AssetReference without the Main Asset being assigned first.
+\"
+\"   Link Text: \"
+\" has been selected.
+\" on
+\" preserve=\"all\"/>
+\")]\n
+\"{0}\"
+\"<i>
+\\
+\\.bank$
+\\\"
+\\]|\\.)*)
+\0
+\a
+\b
+\f
+\n
+\n- Disabled {0}
+\n- Enabled {0}
+\n* {p.assetPath}
+\n\n
+\n----\n\n\nAdd them in your Preferred Types List?
+\n\nFor detailed setup instructions, please see the FMOD/Help/Getting Started menu item.
+\n<i>(SaveGo As {0})</i>
+\n<i>(SavePos As {0})</i>
+\n<i><size=10>(
+\nIn\t
+\nLines:
+\nSaveGo As
+\nSavePos As
+\r
+\r\n
+\t
+\t//Auto generated classes for AOT support, where using undeclared generic classes with value types is limited. These are not actualy used but rather just declared for the compiler
+\t[Category(\"
+\t[Description(\"
+\t\t///----------------------------------------------------------------------------------------------
+\t\t//Call EndAction() to mark the action as finished, either in success or failure.\n
+\t\t//Called once per frame while the action is active.\n
+\t\t//Called once per frame while the condition is active.\n
+\t\t//Called when the task is disabled.\n
+\t\t//Called when the task is paused.\n
+\t\t//Called whenever the condition gets disabled.\n
+\t\t//Called whenever the condition gets enabled.\n
+\t\t//EndAction can be called from anywhere.\n
+\t\t//Return null if init was successfull. Return an error string otherwise\n
+\t\t//Return whether the condition is success or failure.\n
+\t\t//This is called once each time the task is enabled.\n
+\t\t//Use for initialization. This is called only once in the lifetime of the task.\n
+\t\t\t///------
+\t\t\t/// {eventRefParameter.Name}
+\t\t\t/// </summary>
+\t\t\t/// <summary>
+\t\t\t\n
+\t\t\t{0} {1} = default({2});
+\t\t\t{0} {1};
+\t\t\t{0}.{1}<{2}>( {3} );
+\t\t\tEndAction(true);\n
+\t\t\treturn null;\n
+\t\t\treturn true;\n
+\t\t\tSystem.Collections.Generic.Dictionary<System.String, {0}> Dict_{1};
+\t\t\tSystem.Collections.Generic.IDictionary<System.String, {0}> IDict_{1};
+\t\t{0} {1};
+\t\t}
+\t\t}\n
+\t\t}\n\n
+\t\t<size=30><b>{packageName}</b></size>
+\t\t<type fullname=\"
+\t\tobject o = null;
+\t\tprotected override bool OnCheck() {\n
+\t\tprotected override string OnInit() {\n
+\t\tprotected override string OnInit(){\n
+\t\tprotected override void OnDisable() {\n
+\t\tprotected override void OnEnable() {\n
+\t\tprotected override void OnExecute() {\n
+\t\tprotected override void OnPause() {\n
+\t\tprotected override void OnStop() {\n
+\t\tprotected override void OnUpdate() {\n
+\t\tvoid {0}()
+\t\tvoid {0}_{1}_{2}()
+\t\tvoid CustomSpoof(){
+\t}
+\t}\n
+\t</assembly>
+\t<assembly fullname=\"{0}\" preserve=\"all\">
+\t<assembly fullname=\"{0}\">
+\t<assembly fullname=\"Assembly-CSharp\" preserve=\"all\">
+\tpartial class AOTDummy{
+\tpublic class
+\tpublic const string {bankName} = \"{editorBankRef.StudioPath}\";
+\tpublic const string {editorParamRef.Name} = \"{editorParamRef.StudioPath}\";
+\tpublic const string {eventName} = \"{eventRef.Path}\";
+\tpublic const string {eventName}_{parameterName} = \"{eventRefParameter.Name}\";
+\tpublic const string {snapshotName} = \"{eventRef.Path}\";
+\uE347
+]
+] and Text \"
+] at Index:
+] has been selected.
+] was selected at POS:
+] with first character index of
+],[
+]]
+^refs/heads/master$
+^refs/heads/v\\d+(?:\\.\\d+)?$
+_
+__get_field_{0}_
+__Internal
+__set_field_{0}_
+_agentParameter
+_blackboard
+_boundGraphObjectReferences
+_boundGraphSerialization
+_boundGraphSource
+_CameraFader
+_category
+_comments
+_Delegate
+_disableAction
+_dontDestroyOnLoad
+_duplicate.asset
+_enableAction
+_EnvMatrix
+_fingerprint
+_firstActivation
+_graph
+_Help
+_identifier
+_isDisabled
+_lockBoundGraphPrefabOverrides
+_missingType
+_MonoManager
+_name
+_OutlineWidth
+_parentBlackboard
+_preInitializeSubGraphs
+_recoveryState
+_serializedExposedParameters
+_singletonMode
+_sourceNodeUID
+_updateMode
+_value
+`
+`1
+{
+{(bytes / (1024f * 1024f * 1024f)):F2} GB
+{(bytes / (1024f * 1024f)):F2} MB
+{(bytes / 1024f):F2} KB
+{(Clear.value ?
+{(res.Length > 0 ?
+{\n\n
+{_target}.SlotAmount is 0
+{{ {0} }}
+{{ data1 = 0x{0:x8}, data2 = 0x{1:x8} }}
+{0:2}</color> <#8080ff>FPS \n<#FF8000>{1:2} <#8080ff>MS
+{0:D2}:{1:D2}:{2:D3}
+{0:F2} </color>FPS \n{1:F2} <#8080ff>MS
+{0:F2} EB
+{0:F2} GB
+{0:F2} KB
+{0:F2} MB
+{0:F2} PB
+{0:F2} TB
+{0:X}.{1:X}
+{0:X1}.{1:X2}.{2:X2}
+{0}
+'{0}'
+{0} ({1})
+{0} @ {1} v{2}
+{0} [{1}]
+{0} {1}
+{0} '{1}'
+{0} {1} {2}{3}
+{0} = {1}
+{0} = {1} [{2}]
+{0} = {1} Children Of {2}
+{0} = {1}.{2}
+{0} = {1}.Count
+{0} = {1}.FindChild({2})
+{0} = {1}.ToString()
+{0} = {1}[{2}]
+{0} = Random From {1}
+{0} Bytes
+{0} Contains {1}
+{0} could not be moved to\n{1}: '{2}'
+{0} could not be removed
+{0} Event [{1}] ({2}){3}
+{0} has already been removed
+{0} in {1}...
+{0} Is Empty
+{0} is missing.\nYou may need to reinstall the {1} support package from {2}.
+{0} is not a valid bank.
+{0} is not a valid folder
+{0} is not empty
+{0} MB
+{0} MHz
+{0} ms
+{0} on {1}
+{0} Patrol {1}
+'{0}' Raised
+'{0}' Raised && Value == {1}
+{0} replaced
+{0} t:MonoScript
+{0} type can not be resolved
+{0} value must be a string
+{0} was moved to\n{1}
+{0} was removed
+{0} will be moved to\n{1}
+{0} will be removed
+{0} will be removed if it is empty
+{0} x {1} @ {2}Hz
+{0}({1})
+{0}, {1}
+{0}, {1}, {2}, {3}, {4}
+{0}.{1}
+{0}.{1} = {2}
+{0}.{1}({2}){3}
+{0}.{1}[{2}]
+{0}.{1}{2}
+{0}.{1}{2}{3}
+{0}.dll
+{0}.TryGetValue({1} as {2})
+{0}/{1}
+{0}/{1} : {2}
+{0}/{1}.a
+{0}/{1}.bc
+{0}/{1}.bundle
+{0}/{1}.dylib
+{0}/{1}/
+{0}/{1}/{2}
+{0}/{1}/{2}.dll
+{0}/{1}/{2}/{3}.html
+{0}/{1}/{2}/{3}.html#{4}
+{0}/{1}{2}
+{0}/fmod{1}
+{0}/fmodstudio{1}
+{0}/lib{1}.so
+{0}/libfmod{1}.so
+{0}/libfmodstudio{1}.so
+{0}/libgvraudio.so
+{0}/libresonanceaudio.so
+{0}/linux/lib/x86/lib{1}.so
+{0}/linux/lib/x86_64/lib{1}.so
+{0}/mac/lib/{1}.bundle
+{0}/mac/lib/{1}.dylib
+{0}/Plugins
+{0}/win/lib/x86/{1}.dll
+{0}/win/lib/x86_64/{1}.dll
+{0}: {1}
+{0}:\n
+{0}[{1}]
+{0}[{1}] = {2}
+{0}\n{1}
+{0}\nHeight:{1}
+{0}\nWidth:{1}
+{0}{1}
+{0}{1} (
+{0}{1}.{2} ({3})
+{0}{1}.{2}({3})
+{0}{2}{2}{1}
+{0}|{1}
+{0}|{1}|{2}
+{0}Header
+{1}\n
+{Application.dataPath}/Editor Default Resources/GameData
+{Application.dataPath}/GameData
+{Application.persistentDataPath}/log/Log_{DateTime.Now:yyyy-MM-dd}.txt
+{Application.persistentDataPath}/Logs/
+{args.NewFolder}/{Path.GetFileName(dependencyAssetPath)}
+{assetPath} is duplicated in these groups: {string.Join(
+{assetPath}.meta
+{assetReference.GetType().GetNiceFullName()}.ValidateAsset failed to validate assigned asset.
+{bb} Blackboard Variables
+{buffInfo.buffEnum}\n
+{bytes} B
+{CacheFolderFull}/{RegisterStaticPluginsFile}
+{CacheFolderRelative}/{RegisterStaticPluginsFile}
+{dataPath}/{key}.json
+{DateTime.Now:G}: {logType}: {log}
+{DateTime.Now:G}[{level}]: {log}
+{DateTime.Now:G}[{logType}]: {log}
+{DateTime.Now:HH:mm:ss}
+{dependencyAssetPath} is duplicated in addressable data and resource folders.
+{Environment.CurrentDirectory}/{path}
+{FMODFolderFull}/{CacheFolderName}
+{FMODFolderFull}/Resources
+{GetType()}: Connection timed out after not receiving any message for {timeout}ms. Disconnecting.
+{GetType()}: dead_link detected: a message was retransmitted {kcp.dead_link} times without ack. Disconnecting.
+{GetType()}: Disconnecting because {exception}. This is fine.
+{GetType()}: disconnecting connection because it can't process data fast enough.\n
+{GetType()}: Failed to send reliable message of size {content.Count} because it's larger than ReliableMaxMessageSize={reliableMax}
+{GetType()}: possible allocation attack for msgSize {msgSize} > buffer {kcpMessageBuffer.Length}. Disconnecting the connection.
+{GetType()}: Receive failed to parse header: {headerByte} is not defined in {typeof(KcpHeaderReliable)}.
+{GetType()}: Receive failed to parse header: {headerByte} is not defined in {typeof(KcpHeaderUnreliable)}.
+{GetType()}: Receive failed with error={received}. closing connection.
+{GetType()}: received empty Data message while Authenticated. Disconnecting the connection.
+{GetType()}: received invalid header {header} while Authenticated. Disconnecting the connection.
+{GetType()}: received unreliable message while not authenticated.
+{GetType()}: Send failed with error={sent} for content with length={content.Count}
+{GetType()}: tried sending empty message. This should never happen. Disconnecting.
+{GetType()}: unexpected exception: {exception}
+{GetType()}: unexpected Exception: {exception}
+{GuidPrefix} {newGUID}
+{libInfo.cpu}/{libInfo.lib}
+{memberInfo.MemberType.ToString()[0]}:{memberInfo.DeclaringType.FullName}.{memberInfo.Name}
+{nameof(GameObjectPoolManager)} is not initialized!
+{nameof(INetworkComponent)} {typeof(T).Name} 已经注册到{this} 中
+{nameof(NetworkTimeClient)} connected to {ip}:{port}
+{nameof(UIDatabase)} doesn't contain {typeof(T)}
+{nameof(UIRoot)}'s {nameof(UICamera)} is null
+{nameof(VolumeManager)}.baseComponentTypeArray no change. I don't know why
+{nameof(VolumeManager)}.baseComponentTypeArray not found. check your UniversalRP version
+{nameof(VolumeManager)}.m_DefaultStack not found. check your UniversalRP version
+{nameof(VolumeManager)}.ReloadBaseTypes not found. check your UniversalRP version
+{nameof(VolumeStack)}.components not found. check your UniversalRP version
+{nameof(VolumeStack)}.defaultParameters not found. check your UniversalRP version
+{nameof(VolumeStack)}.requiresReset not found. check your UniversalRP version
+{NON_ADDRESSABLES_ITEM_NAME}/{path}
+{path}/{(int)(cardConfig.Id):0000}{name}.cs
+{path}/Contents/Info.plist
+{percent:P}
+{PlatformsFolder}/{libInfo.platform}/lib/{CPUAndLibPath(libInfo)}
+{prefab.name} has more than one {nameof(IPoolObject)} component! refuse to register
+{prefab.name},instanceId:{key} already exist!
+{resourcesPath}/{assetName}.asset
+{RuntimeUtils.PluginBasePath}/{asset.destination}/{filename}
+{RuntimeUtils.PluginBasePath}/{CacheFolderName}
+{RuntimeUtils.PluginBasePath}/{folder.destination}/{filename}
+{RuntimeUtils.PluginBasePath}/{path}
+{RuntimeUtils.PluginBasePath}/{subPath}.asset
+{RuntimeUtils.PluginBasePath}/Cache/Editor/{cacheAssetName}.asset
+{RuntimeUtils.PluginBasePath}/images/{filename}
+{RuntimeUtils.PluginBasePath}/obsolete
+{RuntimeUtils.PluginBasePath}/platforms
+{RuntimeUtils.PluginBasePath}/platforms/{info.baseName}/lib
+{RuntimeUtils.PluginBasePath}/platforms/{info.baseName}/src
+{RuntimeUtils.PluginBasePath}/src/{Path.GetFileName(path)}
+{RuntimeUtils.PluginBasePath}/staging
+{RuntimeUtils.PluginBasePathDefault}/{path}
+{StagingFolder}/{libInfo.platform}/lib/{CPUAndLibPath(libInfo)}
+{string.Join(
+{t.Days}d
+{this}:广播数据时发生错误: {ex.Message}
+{this}:接收数据时发生错误: {ex.Message}
+{typeof(T).Name}
+{typeof(T)} is not blittable!
+{value}/{max}
+{Variable} has {Flag} flag
+|
+| Prefab Asset
+|| numberString ==
+}
+~
++
++ content);
+                }
+            }
+
+            return fsResult.Success;
+        }
+
+        private fsResult TryParseTrue(out fsData data) {
+            var fail = TryParseExact(
++ content[i]);
+                }
+
+                if ( TryMoveNext() == false ) {
+                    return MakeFailure(
++ currentItem.id + currentItem.getPath().replace(
++ numberString);
+                }
+
+                data = new fsData(doubleValue);
+                return fsResult.Success;
+            } else {
+                Int64 intValue;
+                if ( Int64.TryParse(numberString, NumberStyles.Any, CultureInfo.InvariantCulture, out intValue) == false ) {
+                    data = null;
+                    return MakeFailure(
++ numberString);
+                }
+
+                data = new fsData(intValue);
+                return fsResult.Success;
+            }
+        }
+
+        private readonly StringBuilder _cachedStringBuilder = new StringBuilder(256);
+        ///<summary> Parses a string</summary>
+        private fsResult TryParseString(out string str) {
+            _cachedStringBuilder.Length = 0;
+
+            // skip the first
+++
++=
++1
+<
+</?b>
+</b>
+</b> and <b>
+</b> command to
+</b>, <b>
+</color>]
+</i>
+</i> \"
+</linker>
+</size></b>
+</summary>
+        public const string INSTIGATOR_NAME =
+<<
+<=
+<align=center><b><u>Question 1</u></b></align>
+This is an example of using <u>TextMeshPro</u> in Unity to display text using the New UI's auto layout functionality.
+<align=center><style=H1><#ffffff><u>Multiple<#80f0ff> Alignment</color> per text object</u></color></style></align><line-height=2em>
+</line-height>The <<#ffffa0>align</color>> tag in TextMesh<#40a0ff>Pro</color> provides the ability to control the alignment of lines and paragraphs which is essential when working with text. 
+
+<align=left>You may want some block of text to be <#80f0ff>left aligned</color> <<#ffffa0>align=<#80f0ff>left</color></color>> which is sort of the standard.</align>
+
+<style=Quote><#ffffa0>"Using <#80f0ff>Center Alignment</color> <<#ffffa0>align=<#80f0ff>center</color></color>> for a title or displaying a quote is another good example of text alignment."</color></style>
+
+<align=right><#80f0ff>Right Alignment</color> <<#ffffa0>align=<#80f0ff>right</color></color>> can be useful to create contrast between lines and paragraphs of text.
+
+<align=justified><#80f0ff>Justified Alignment</color> <<#ffffa0>align=<#80f0ff>justified</color></color>> results in text that is flush on both the left and right margins. Used well, justified type can look clean and classy.
+
+<style=Quote><align=left><#ffffa0>"Text formatting and alignment has a huge impact on how people will read and perceive your text."</color>
+<size=65%><align=right>- Stephan Bouchard</style>
+<align=center><u><font="Anton SDF">Question 1</font></u></align>
+Example of using Unity's New UI and Layout components along with Masking with <size=110%><font="Bangers SDF">TextMesh<#0040ff>Pro</color>!</font>
+<b>
+<b>' {0} '</b>
+<b>- {0}</b>
+<b>${0}</b>
+<b>(
+<b>({0} {1})</b>
+<b>({0}) ({1}) | Var '{2}' = </b> {3}
+<b>({0})</b>
+<b>({0})</b>\n
+<b>...</b>
+<b>[{0}]</b>\n
+<b>[FMODUnity.EventRef(MigrateTo=\"yourNewFieldName\")]</b>\n
+<b>[FMODUnity.EventRef]</b> is obsolete - use the <b>FMODUnity.EventReference</b> type instead.
+<b>[NO RETRIGGER]</b>
+<b>[On {0}]</b>
+<b>[REPEAT]</b>
+<b>{0} {1}s ({2}) obtained at {3:yyyy-MM-dd HH:mm:ss}, while {4} {1}s ({5}) might be duplicated.</b>
+<b>{0} {1}s ({2}) obtained at {3:yyyy-MM-dd HH:mm:ss}.</b>
+<b>{0} Name</b>
+<b>{0} Objects ({1}) obtained at {2:yyyy-MM-dd HH:mm:ss}.</b>
+<b>{0} occurencies: '{1}'</b>
+<b>{0} occurencies: Type '{1}'</b>
+<b>{0} Runtime Memory Information</b>
+<b>{0}</b>
+<b>{0}</b> = {1}
+<b>{0}</b> command to scan your project for similar issues and fix them all.
+<b>{0}</b>: {1}
+<b>{0}</b>: {1} inheriting from
+<b>{0}</b>: {1} inheriting from Unity build target:
+<b>{0}</b>{1}
+<b>{this.Property.NiceName}</b> is required.
+<b>||</b>
+<b><color=#{0}>{1}</color></b>
+<b><size=14>
+<b><size=14>◄ {0}/{1}</size></b>
+<b><size=16>
+<b><size=22>{0} {1}</size></b>
+<b><size=22>{0} {1}</size></b>\n<size=10>{2}</size>
+<b>Acquire</b>
+<b>Add</b>
+<b>Assembly: {0}</b>
+<b>Avg.</b> ({0})
+<b>Bound Graph is prefab overridden.</b>
+<b>Class Name</b>
+<b>Close</b>
+<b>Count</b>
+<b>Debugger</b>
+<b>DYNAMIC</b>
+<b>Exceptions: </b>It's important to note that duplicate assets aren't inherently problematic. For example, if certain assets are
+<b>Fixes: </b>Executing the fix will make the dependency addressable and move it to the specified group.\n\n
+<b>Full Class Name</b>
+<b>Graphics Information</b>
+<b>Input Acceleration Information</b>
+<b>Input Compass Information</b>
+<b>Input Gyroscope Information</b>
+<b>Input Location Information</b>
+<b>Input Summary Information</b>
+<b>Input Touch Information</b>
+<b>Missing Agent Reference</b>
+<b>NONE</b>
+<b>NULL</b>
+<b>Other Information</b>
+<b>Owner System is null! This should really not happen but it did!\nPlease report a bug. Thank you :)</b>
+<b>Please take sample first.</b>
+<b>Please take sample for {0} first.</b>
+<b>Profiler Information</b>
+<b>Quality Level</b>
+<b>Question 1</b>
+This is an example of using Ui.Text in Unity to display text using the New UI's auto layout functionality.
+<b>RANDOM</b>
+<b>Reference Pool Information</b>
+<b>Release</b>
+<b>Remove</b>
+<b>Rendering Information</b>
+<b>REPEAT</b>\n
+<b>Runtime Memory Summary</b>
+<b>Scene Information</b>
+<b>Screen Information</b>
+<b>Self</b>
+<b>Shadows Information</b>
+<b>Size</b>
+<b>START</b>
+<b>System Information</b>
+<b>There is a new version available! ( v{0} )</b>
+<b>This will execute as a Coroutine!</b>
+<b>Time Information</b>
+<b>Type</b>
+<b>Unused</b>
+<b>Using</b>
+<b>Web Player Information</b>
+<b>You are up to date on the latest version!</b>
+<color=#{0:x2}{1:x2}{2:x2}{3:x2}>[{4:HH:mm:ss.fff}][{5}] {6}</color>
+<color=#{0:x2}{1:x2}{2:x2}{3:x2}><b>{4}</b></color>{6}{6}{5}
+<color=#{0:x2}{1:x2}{2:x2}{3:x2}><b>FPS: {4:F2}</b></color>
+<color=#{0}>{1}: {2}</color>
+<color=#{0}><size=14><b>{1}</b></size></color>
+<color=#{hex}>{s}</color>
+<color=#9c9c9c><size=10><b>© 2014-2023 Paradox Notion. All rights reserved.</b></size></color>
+<color=#d2d2d2>{webMessage}</color>
+<color=#d2d2d2><size=10><b>v{NodeCanvas.Framework.Internal.GraphSource.FRAMEWORK_VERSION}</b></size></color>
+<color=#d63e3e>* {0} *</color>
+<color=#DB2B2B>{0}</color>
+<color=#ff4d4d>({0})</color>
+<color=#ff6457>* {0} *</color>
+<color=#FF6C6C>{0}</color>
+<color=#FFEB04><b>({0})</b></color>
+<color=#FFEB04><b>Runtime: {0}</b></color>
+<color={0}><size=11>{1}</size></color>
+<color=cyan>全量提取完成！总计唯一文本: {_results.Count} 条。结果保存至: {outputPath}</color>
+<color=green>
+<color=red>
+<color=yellow>
+<color=yellow>{0}</color>
+<font="Anton SDF">A.</font><indent=1em>Each block of text is using the <<#ffff00>indent</color>> tag to nicely align the bullets and text.
+<font="Anton SDF">B.</font><indent=1em><#ffff00>Multiple fonts</color> are used to display the text. One for the bullets and the other for the rest of the text.
+<font="Anton SDF">C.</font><indent=1em>Sprites <sprite=2 tint=0> can be used as well inline with the text.
+<font="Anton SDF">D.</font><indent=1em><#ff0000>You selected the wrong answer.
+<font="Anton SDF">E.</font><indent=1em>This block of text contains three lines of text. The second line ends up outside the scrolling area.
+<i>
+<i>' {0} '</i>
+<i>{0} OnEnter Actions</i>
+<i>{0} OnExit Actions</i>
+<i>{0} OnUpdate Actions</i>
+<i>+ control for group</i>
+<i>No current Blackboard reference</i>
+<i>Reference Pool is Empty ...</i>
+<line-height=1.5em><size=125%><u><align=center><#80ff80>The <smallcaps></color>TextMesh<#40A0FF>Pro</color><#80ff80></smallcaps> Margin Tag</color></u></size></align>
+</line-height><margin=5%>Example of using the <<#FFFF00>margin=5%</color>> tag which defines the left and right margin of a line or paragraph of text.</margin>
+
+<margin left=15%>You can also use the <<#FFFF00>margin left=15%</color>> tag to independently control the left margin.</margin>
+
+<margin right=15%>Or use the <<#FFFF00>margin right=15%</color>> tag to control the right margin.</margin>
+<line-height=1.5em><size=125%><u><align=center><#80ff80>The <smallcaps></color>TextMesh<#40A0FF>Pro</color><#80ff80></smallcaps> Margin Tag</color></u></size></align>
+</line-height><margin=5%>Example of using the <<#FFFF00>margin=5%</color>> tag which defines the left and right margin of a line or paragraph of text.</margin>
+
+<margin-left=15%>You can also use the <<#FFFF00>margin-left=15%</color>> tag to independently control the left margin.</margin>
+
+<margin-right=15%>Or use the <<#FFFF00>margin-right=15%</color>> tag to control the right margin.</margin>
+<line-height=1.5em><size=125%><u><align=center>The<#80ff80> Style</color> Tag in <smallcaps>TextMesh<#40A0FF>Pro</color></smallcaps></u></size></align>
+</line-height>The <<#FFFF00>style="custom style name"</color>> tag makes it possible to define custom styles which combine several tags into a single one for convenience.
+
+Using <<#FFFF00>style="H1"</color>> for instance sets the text to <<#FFFF00>size=2em</color>><<#FFFF00>b</color>><<#FFFF00>#40ff80</color>>.
+
+<style="H1">H1<style="H2"> H2 <style="H3">H3</style></style></style>
+
+Style are defined in the <#80ff80>TMP Default Style Sheet</color>.
+<linker>
+<none>
+<none> (Addressable {filterTypesJoined})
+<none> (Addressable Asset)
+<size={0}><b>{1}</b></size>
+<size=11>{0}</size>
+<size=12><b> ROOT</b></size>
+<size=120%><u><#a0ffa0>Basic Style Tags</color>* available in TextMesh<#0080ff>Pro</color></u></size><line-height=1.5em>
+</line-height>Normal
+<b>Bold</b><pos=50%><<#ffff00>b</color>> <<#ffff00>/b</color>>
+<i>Italics</i><pos=50%><<#ffff00>i</color>> <<#ffff00>/i</color>>
+<u>Underline</u><pos=50%><<#ffff00>u</color>> <<#ffff00>/u</color>>
+<s>Strikethrough</s><pos=50%><<#ffff00>s</color>> <<#ffff00>/s</color>>
+Superscript  - X<sup>3</sup> -<pos=50%><<#ffff00>sup</color>> <<#ffff00>/sup</color>>
+Subscript  - H<sub>2</sub>O -<pos=50%><<#ffff00>sub</color>> <<#ffff00>/sub</color>>
+Text <mark=#ffff0040>Highlighting</mark><pos=50%><<#ffff00>mark=#ffff8000</color>> <<#ffff00>/mark</color>>
+<size=120%><u>Additional <#a0ffa0>Rich Text Tags</color> in TextMesh<#0080ff>Pro!</color></u></size><line-height=1.5em>
+</line-height><allcaps>all caps</allcaps><pos=50%><<#ffff00>allcaps</color>> <<#ffff00>/allcaps</color>>
+E<smallcaps>xample of small caps.</smallcaps><pos=50%><<#ffff00>smallcaps</color>> <<#ffff00>/smallcaps</color>>
+<cspace=0.3em>Character spacing</cspace><pos=50%><<#ffff00>cspace=0.3em</color>> <<#ffff00>/cspace</color>>
+<mspace=1em>Monospaced</mspace><pos=50%><<#ffff00>mspace=1em</color>> <<#ffff00>/mspace</color>>
+<line-height=75>Line height<pos=50%><<#ffff00>line-height=75</color>> <<#ffff00>/line-height</color>>
+</line-height>No Line-Break<pos=50%><<#ffff00>nobr</color>> <<#ffff00>/nobr</color>>
+Size <size=75%>Smaller / <size=1.5em>Bigger</size><pos=50%><<#ffff00>size=75%</color>> <<#ffff00>size=1.5em</color>> <<#ffff00>/size</color>>
+<size=125%>T</size>ext<size=125%>M</size>esh<sup> <#50aaff>PRO!</color></sup>
+<size=14><b>{0}</b></size>
+<size=16><b>Community</b></size>\nJoin the online Discord community.
+<size=16><b>Documentation</b></size>\nRead thorough documentation and API reference online.
+<size=16><b>Resources</b></size>\nDownload samples, extensions and other resources.
+<size=16><b>Support</b></size>\nJoin the online forums, get support and give feedback.
+<size=9>#{0}</size>
+<size=9>...</size>
+<size=9>{0}{1}</size>
+<size=9>{0}</size>
+<size=9><b>{0}</b> ({1})</size>
+<T>
+<u><align=center>Text <#80ff80>Interactions</color> in <smallcaps>TextMesh<#40A0FF>Pro</color></smallcaps></u></size></align>
+
+The <<#ffff00>link="id"</color>><link="id_01><u><i><#80ff80>Insert link text here</u></i></color></link> <<#ffff00>/link</color>> tag allows adding <link="id_02"><u><i><#80ff80>links</color></i></u></link> within a text object in <font="Bangers SDF">TextMesh<#40a0ff>Pro!</font>
+<u>9x<sup><#00ff00>3</color></sup></u> + <u>4x</u><sup><#00ff00>2</color></sup> + <u>2x + 4 = 0</u>
+<#ffff00><u><i><#ff8000><b>Propane</b></i></u></color> = <u>C<sub><#ffff00>3</color></sub>H<sub><#ffff00>8</color></sub></u>
+=
+-=
+=\"[^\"]*
+==
+== null
+>
+> (with type =
+> key in the data
+--> Replaced by the Actor starting the Dialogue
+->{sys.type}
+>=
+>>
+>k__BackingField
+×
+÷
+≠
+≤
+≥
+■
+□
+▪
+▲
+△
+▼
+▽
+▼▲
+▽△
+►
+► '
+●
+☰
+✫ Blackboard
+✫ Blackboard/Dictionaries
+✫ Blackboard/Lists
+✫ Reflected
+✫ Reflected/Events
+✫ Reflected/Faster Versions (Desktop Platforms Only)
+✫ Utility
+0
+0.0
+0.0.0.0
+0.00
+00
+06ae579381df01a4a87bb149dec89954
+0f8eb3f400726694eb47beb1a9f94ce8
+0s
+0x
+1
+-1
+1.0
+1.0.0
+10
+10/10
+127.0.0.1
+169.254.
+1f600.png
+1f601.png
+1f602.png
+1f603.png
+1f604.png
+1f605.png
+1f606.png
+1f609.png
+1f60a.png
+1f60b.png
+1f60d.png
+1f60e.png
+1f618.png
+1f923.png
+2.0
+2.0.19/libfmodstudio{0}.a
+2021.3
+22.05 kHz
+222222
+24 kHz
+2639.png
+263a.png
+2c5177b11d81d824dbb064f9ac8527da
+2D
+2fea114e74ecf3c4f920e1d5cc1c4c40
+3
+3.1.39/libfmodstudio{0}.a
+3.1.8/libfmodstudio{0}.a
+32 kHz
+333333
+37396737d95777be9bc370b6d218b29591fc411a
+3D
+44.1 kHz
+46fbfdf3fc43db0458918377fd40293e
+48 kHz
+50/100
+52eb9df5db46521439908db3a29a1bbb
+64
+6ebbff
+A *unique* identifier of this Global Blackboard
+A <#0080ff>simple</color> line of text.
+A Blackboard Variable '{0}' is due to bind to a Component type that is missing '{1}'. Binding ignored
+A Blackboard Variable '{0}' is due to bind to a Component type that is missing '{1}'. Binding ignored.
+A Blackboard Variable '{0}' is due to bind to a property/field named '{1}' that does not exist on type '{2}'. Binding ignored
+A call to a standard soundcard driver failed, which could possibly mean a bug in the driver or resources were missing or exhausted.
+A chance for the node to fail immediately.
+A collection of useful classes and functions for Unity.
+A combination of line of sight and view angle check
+A command issued was not supported by this object.  Possibly a plugin without certain callbacks specified.
+A distance to look away from the target for valid flee destination.
+A file relevant to 'code stripping' for platforms that have code stripping enabled will now be generated.
+A flat meta graph structure including nodes, connections, tasks and parameters. Use this utility window to quickly search, find and jump focus to the related element. Please note that keeping this utility window open, will slow down the graph editor.
+A HTTP error occurred. This is a catch-all for HTTP errors not listed elsewhere.
+A HTTP server error occurred.
+A layer mask to use for line of sight check.
+A layer mask to use for the line of sight check.
+A list of gameobjects patrol points.
+a moment
+A Node Provided is null.
+A Parameter Variable named '{0}' is missing. If it was meant to be a dynamic variable, please ensure that it starts with an underscore ('_') prefix by convention.
+A plugin was built with an unsupported SDK version.
+A random statement will be chosen each time for the actor to say
+A requested output, dsp unit type or codec was not available.
+A required BBParameter field value named '{0}' is not set.
+A required field named '{0}' is not set.
+A required string field named '{0}' is not set.
+A resource that the plugin requires cannot be allocated or found. (ie the DLS file for MIDI playback)
+A script relevant to AOT compatibility for certain platforms will now be generated.
+A socket error occurred.  This is a catch-all for socket-related errors not listed elsewhere.
+A unique Token to use for guarding.
+A Unity Object reference has not been deserialized because no database entry was found in provided database references.
+A Unity Object reference has not been deserialized because no database references was provided.
+A wander point can't be closer than this distance
+A wander point can't be further than this distance
+A. This block of text contains three lines of text which requires the container to dynamically expand vertically.
+A.<indent=4em>This block of text contains three lines of text which requires the container to dynamically expand vertically.
+AAudio
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Aborted Add operation as it seemed to be going on forever
+Absolute URL
+Acceleration
+Acceleration Event Count
+Acceleration Events
+Accessed Times
+Accessor
+acquireReferenceCount
+action
+Action
+Action is null on Dialogue Action Node
+Action State
+Action State (Super)
+Action will end in Failure if no objects are found
+actionList
+ActionList
+Actions
+active
+Active
+Active Color Gamut
+Active Color Space
+Active Scene Build Index
+Active Scene HandleRequest
+Active Scene Is Dirty
+Active Scene Is Loaded
+Active Scene Is Sub Scene
+Active Scene Is Valid
+Active Scene Name
+Active Scene Path
+Active Scene Root Count
+Active Tier
+Actor Assignment
+Actor Name
+actor parameter name
+Actor Parameter Name Change
+actorParametersMap
+Add
+Add {0} In {1}
+Add {0} Node
+Add Action State
+Add Actor Parameter
+Add All
+Add an <b>FMODUnity.EventReference</b> field named <b>{0}</b> to hold <b>'{1}'</b> from <b>{2}</b>
+Add an <b>FMODUnity.EventReference</b> field to hold <b>'{0}'</b> from <b>{1}</b>
+Add Bank
+Add Choice
+Add Connection
+Add Consideration
+Add Element
+Add FMOD Platform
+Add FMOD Platform Group
+Add Header Separator
+Add Item
+Add Labels
+Add line ending requirements to a .gitattributes file to avoid issues:
+Add New Type
+Add Node
+Add Override
+Add Parameter
+Add Preferred Type
+Add Studio Bank Loader
+Add Studio Event Emitter
+Add Studio Global Parameter Trigger
+Add Them
+Add Type...
+Add Variable
+add_
+AddIcon.png
+Adding the FMOD Studio Listener component to the main camera provides the FMOD Engine with the information it needs to play 3D events correctly.
+--additional-cpp
+addons
+addReferenceCount
+Addressable groups contains missing references
+Addressable Settings have not been created.
+Addressables Settings have not been created.
+AddressablesInspectors.cs
+AddressablesSelector.Flatten
+AddressablesSelector.ListMode
+addThousandsSeparator
+Adjusts the balance between high and low frequencies in the reverb.
+Adjusts the overall duration of the reverb by a positive scaling factor.
+Adjusts what proportion of the direct sound is reflected back by each surface, after an
+Advance
+Advanced Controls
+Advanced Linux Sound Architecture
+after
+After 1 minute
+After 1 second
+After 10 seconds
+After 20 seconds
+After 30 seconds
+After 5 seconds
+After this change you may move the FMOD folder to any location within your project.
+Agent
+Agent = {0}
+Agent Type(?)
+alignment
+all
+All
+All current graph information will be lost. Are you sure?
+All found struct types serialized in the graph are already in your Preferred Types list.
+ALL True
+Allocated Memory For Graphics Driver
+Allow Fadeout When Stopping
+AllowFadeout
+AllowNonRigidbodyDoppler
+alphaKeys
+already exists
+Already in this mask:
+Altitude
+amount
+An action that will simply run forever and never finish
+An element with the same key already exists in the dictionary.
+An error occured in the FMOD system. Use the logging version of FMOD for more information.
+An error occurred trying to initialize the recording device.
+An external text asset file to serialize the graph on top of the internal serialization
+An instance is required
+An instance is required but currently resolves to null. If it is set in runtime you can ignore this warning.
+An instance is required.
+An invalid object handle was used.
+An invalid parameter was passed to this function.
+An invalid seek position was passed to this function.
+An invalid speaker was passed to this function based on the current speaker mode.
+An invalid string was passed to this function.
+An optional Parent Blackboard Asset to 'inherit' variables from.
+An unspecified error has been returned from a plugin.
+and
+AND
+and all its associated dependencies.
+and length of
+and update them to use the FMODUnity.EventReference type.
+and, if not, offers a fix to make it addressable. Moreover, it ensures the asset adheres to
+andPlay
+android
+Android
+angle
+Anim
+Anim '
+Animate Inspector Panel
+Animating Vertex Attributes
+Animation
+AnimationCurve
+Animator
+Anisotropic Filtering
+Another blackboard with the same identifier name '{0}' exists. Please rename either.
+Another Global Blackboard has the same identifier name. Please rename either.
+Anti Aliasing
+Any
+Any Key
+Any Key Down
+Any State
+Any Target Within Distance
+Any Target Within Distance 2D
+ANY True
+AnyCPU
+AOT Classes File
+AOT link.xml
+AOTClasses
+api
+app
+AppCommandLeft
+AppCommandMid
+AppCommandRight
+Apple TV
+Application
+Application is not playing.
+Applies a gain adjustment to the reverberation in the room. The default value will leave
+Apply expensive changes on quality level change.
+Apply Exposed Parameter
+Apply Graph
+Apply Graph To Prefab
+Apply Prefab Modification To '
+Apply to Prefab '{asset.name}'
+Apply Variable To Prefab
+appropriate delay. Reverberation is unaffected by this setting.
+Are you sure you wish to replace all in the current hierachy?
+Are you sure?
+Area Count
+arg
+arg1
+arg10
+arg11
+arg12
+arg13
+arg14
+arg15
+arg16
+arg2
+arg3
+arg4
+arg5
+arg6
+arg7
+arg8
+arg9
+args
+ArgumentException
+ArgumentNullException
+Arial
+Arial.ttf
+arm
+ARM
+arm64
+ARM64
+arm64/fmodstudio
+arm64-v8a
+armeabi-v7a
+arrayIndex
+ArraySegment<byte>.Array is null
+ArrowIcon.png
+as
+As every project is unique, decisions concerning duplicate asset dependencies should be considered on a case-by-case basis.
+AS IS
+As you may be aware, if a host receives a packet for a UDP
+                // port that is not currently bound, it may send back an ICMP
+                //
+Ascent Line
+Ascent Line (
+assemblyOptions
+asset
+Asset
+Asset Graph is an asset file and can be reused amongst any number of GraphOwners.\n\n
+Asset Reference
+Asset reference is restricted to items with these specific labels <b>'{string.Join(
+Asset type is already tracked:
+AssetLabelReferenceValidator.cs
+assetReferenceType
+AssetReferenceUILabelRestriction
+AssetReferenceValidator.cs
+Assets
+Assets can not have scene object references
+Assets to ignore when validating.
+Assets/
+Assets/Assemblies/GGJ2026/Resource/Scenes/GameEntry.unity
+Assets/Assemblies/GGJ2026/Runtime/GamePlay/01Gaming/CardEffects
+Assets/Create/ParadoxNotion/NodeCanvas/New Task
+Assets/Create/Shader/URP/FullScreen Shader
+Assets/Create/Shader/URP/Unlit Shader
+Assets/Create/Toolkit/UIPanel
+Assets/DesertSafari/Logic/AudioManager/Runtime/FMODName.cs
+Assets/Editor Default Resources/FMOD/{filename}
+Assets/Editor/FMODMigrationUtil.cs
+Assets/FMODStudioCache.asset
+Assets/GoogleVR
+Assets/Plugins
+Assets/Plugins/{CPUAndLibPath(libInfo)}
+Assets/Plugins/Editor
+Assets/Plugins/Editor/FMOD
+Assets/Plugins/Editor/FMOD/Timeline
+Assets/Plugins/FMOD
+Assets/Plugins/FMOD/**/*.bundle text eol=lf
+Assets/Plugins/FMOD/**/Info.plist text eol=lf
+Assets/Plugins/FMOD/{subPath}.asset
+Assets/Plugins/FMOD/Cache/Editor/{cacheAssetName}.asset
+Assets/Plugins/FMOD/lib
+Assets/Plugins/FMOD/lib/{0}
+Assets/Plugins/FMOD/lib/{libInfo.platform}/{CPUAndLibPath(libInfo)}
+Assets/Plugins/FMOD/Resources
+Assets/Plugins/FMOD/Resources/FMODStudioCache.asset
+Assets/Plugins/FMOD/Runtime
+Assets/Plugins/UnityToolkit/Editor/ShaderTemplate/FullScreen.shader
+Assets/Plugins/UnityToolkit/Editor/ShaderTemplate/Unlit.shader
+Assets/ResonanceAudio
+Assets/Resouce/FMODBanks
+Assets/Resources/FMODStudioSettings.asset
+Assets/Resources_moved
+Assets/UIDatabase.asset
+Assign
+Assigned item is not addressable.
+assigned label does not exist.
+async UniTask<bool> Execute
+Async Upload Buffer Size
+Async Upload Persistent Buffer
+Async Upload Time Slice
+at
+at startup time.
+attenuationObject
+Attitude
+attribute with no migration target specified.\n
+attribute, but the {2} field doesn't exist.\n
+attributeType
+Audio
+Audio 1
+Audio Clip
+Audio File
+AudioSource Gizmo
+AudioSource Icon
+author
+Auto
+Auto Landscape Left
+Auto Landscape Right
+Auto Portrait
+Auto Portrait Upside Down
+AutoConvert
+AutoConvert: ({0} ➲ {1}){2}
+autoDestroyOwner
+AutoGroup
+Automatic Hierarchical Move
+Automatically adjust bufferTimeMultiplier for smooth results.\nSets a low multiplier on stable connections, and a high multiplier on jittery connections.
+automatically migrate values from this field to the <b>FMODUnity.EventReference</b> field
+AutomaticEventLoading
+AutomaticSampleLoading
+Autosize
+autoTick
+Awake() on Script called.
+axis
+axisConstraint
+B
+B. Indent Tag allows multiple lines of text to be nicely aligned with the bullets.
+B.<indent=4em>Indent Tag allows multiple lines of text to be nicely aligned with the bullets.
+b3ff7f
+b7716510a1f36934c87976f3a81dbf3d
+Back
+Back Button Leaves App
+background
+backWall
+BackWall
+bank
+Bank
+Bank Encryption Key
+Bank Import
+Bank refresh failed:
+bank stub:
+bank:/
+BankFolder
+BankIcon.png
+BankLoadType
+BankRefreshCooldown
+Banks
+banks in
+BanksToLoad
+Base Line
+Base Line (
+Base path {0} is not within the Assets folder
+baseComponentTypeArray
+baseLengthVal
+basePath
+Batch refactor missing nodes, tasks, parameters, types as well as missing reflection based methods, properties, fields and so on references. Note that changes made here are irreversible. Please proceed with caution.\n\n1) Hit Gather to fetch missing elements from the currently viewing graph in the editor.\n2) Rename elements serialization data to their new name (keep the same format).\n3) Hit Save to commit your changes.
+Battery Level
+Battery Status
+BBParameter is null
+Be careful! The assigned Text Asset contents will be completely replaced with the json serialization of this graph. The graph will also deserialize from the json contents of the Text Asset whenever the Text Asset is imported by Unity. You can remove the assigned file at any time.
+Begin @ {beginTime:F4}
+Behavior
+behaviour
+BEVEL_ON
+bf7fff
+Billboards Face Camera Position
+Bind (Self)
+Bind (Self)/
+Bind (Static)
+Bind Asset Graph
+Bind Card Container
+Bind Graph
+Bind To Owner
+Bind Variable
+Blackboard
+Blackboard Change
+Blackboard has duplicate names!
+Blackboard Variable not set.
+Blackboard Variables
+Blend Weights
+Bolt.Flow.Editor
+border
+Border.png
+bottom
+Bottom
+BottomCenter
+BottomLeft
+BottomRight
+Bound
+Bound (Self)
+Bound (Self)/
+Bound (Static)
+Bound Graph Change
+Bound Graph is saved with the GraphOwner and you can use direct scene references within it.\n\n
+Bound Graphs on prefabs can only be edited by opening the prefab in the prefab editor.
+Bound Variables Can't Be Exposed
+boundGraphObjectReferences
+boundGraphSerialization
+BoundingBox
+BoundingBox.cs
+bounds
+BoundsOctree.cs
+BoundsOctree{T}
+BoundsOctree{T}.Node.NumObjectsAllowed
+BoundsOctreeNode.cs
+box
+box find count:
+BoxFind
+Branch
+Break on
+Breakpoint
+Breakpoints Pause Editor
+Brightness
+Browse
+Browse...
+BrowserIcon.png
+BT
+buff
+buffer
+Buffer overflow
+Buffering
+Build
+Build Path
+Build path '{0}' does not contain any built banks.
+Build path '{0}' does not contain any platform sub-directories. Please check that the build path is correct.
+buildNumber
+Built in audio has been disabled
+Built In Data
+built-in platform
+bulletSpeed
+bus:/
+bus:/,
+but got
+but static plugins are only supported on the IL2CPP scripting backend
+but the assigned asset does not exist.
+but the corresponding EventReference field already has a value.\n
+button
+Button
+Button {0} Clicked
+ButtonLeft
+ButtonMid
+ButtonRight
+by default; the Optional attribute can then be used to exclude specific AssetLabelReferences from
+by distance as
+bytes.
+C. This block of text contains one line of text.
+C.<indent=4em>This block of text contains one line of text.
+c88d16e5272a4e241b0ef0ac2e53b73d
+Cache
+Call a function on a component and return whether or not the return value is equal to the check value
+Call Mode (Experimental)
+Callback Handler
+Called Resize(
+Calls a function that has signature of 'public Status NAME()' or 'public Status NAME(T)'. You should return Status.Success, Failure or Running within that function.
+camera
+Camera
+Camera Control - <#ffff00>Shift + RMB\n</color>Zoom - <#ffff00>Mouse wheel.
+Camera Target
+CameraSystem 新场景中有其他的 MainCamera 删除它 {cam.gameObject}
+can contain potentially contain cycles, so separated instance creation
+Can See
+Can See Any
+can_end_round
+can_wear_any_time
+Cancel
+Cancelled.
+canEndRound:
+Cannot access an empty buffer.
+Cannot access index {0}. Buffer is empty
+Cannot access index {0}. Buffer size is {1}
+Cannot add a single converter instance to
+Cannot be abstract type.
+Cannot call .First on an empty queue
+Cannot call Dequeue() on an empty queue
+Cannot call GetPriority() on a node which is not enqueued:
+Cannot call Remove() on a node which is not enqueued:
+Cannot call this command after System::init.
+Cannot call UpdatePriority() on a node which is not enqueued:
+Cannot change parameters when different events are selected
+Cannot create an instance of an interface or abstract type for
+Cannot find enum name
+Cannot take elements from an empty buffer.
+Can't add a 'null' Dictionary Key
+can't be added to
+Can't cast value '{0}' to blackboard variable of name '{1}' and type '{2}'
+Can't cast value of variable with name '{0}' to type '{1}'
+Can't Create a Connection without providing Source and Target Nodes
+Can't Create a Node without providing a Target Graph
+Cant create instance generator for
+Can't Duplicate a Connection without providing NewSource and NewTarget Nodes
+Can't duplicate a Node without providing a Target Graph
+Can't find Callback method '{0}'.
+Can't find ShowIf method '{0}'.
+Cant find transform with name '
+Can't Load graph because of different Graph type serialized and required.
+Can't open script of type '{0}', because a script with the same name does not exist.
+Can't paste Condition here. Incombatible Types.
+Can't paste Task here. Incombatible Types
+Can't resolve ITaskSystem for task
+Can't use FMOD_OPENMEMORY_POINT on non PCM source data, or non mp3/xma/adpcm data if FMOD_CREATECOMPRESSEDSAMPLE was used.
+Canvas
+canvasGroups
+canWearAnyTime:
+Cap Line
+Cap Line (
+Capability {GetType().Name} Setup called multiple times!
+Capability {GetType().Name} TickGroup cannot be changed after Setup!
+capacity
+Capacity
+Capture Delta Time
+Capture Framerate
+cards
+cardtable
+Catchup / Slowdown
+Catchup begins when the local timeline is moving too slow and getting too far away from remote time. Threshold is in frames worth of snapshots.\n\nThis needs to be positive.\n\nDon't modify unless you know what you are doing.
+Catchup/Slowdown is adjusted over n-second exponential moving average.
+category
+Category(?)
+Category...
+ceiling
+Ceiling
+center
+Center
+Center: {0}, Extents: {1}
+centerVal
+centimeters
+Change Emitter Bounds
+Change FMOD Platform Inheritance
+Change Generic Type
+Change the GUID on field <b>{0}</b>
+Change the path on field <b>{0}</b>
+Change Type
+Change Variable Type
+Changed.
+Changing frame counter anchor position.
+Changing the FNV hash size - xor-folding
+CHANNELS: real = {0}, total = {1}\n
+Character
+Character [
+Character '{1}' at position {2} is invalid - it must be a letter, a number, or an underscore ('_').
+Characters:
+Check a field on a script and return if it's equal or not to a value
+Check a property on a script and return if it's equal or not to the check value
+Check Collision
+Check Collision 2D
+Check Field
+Check for an invoked Signal with agent as the target. If Signal was invoked as global, then the target does not matter.
+Check Function
+Check Function (Desktop Only)
+Check if a boolean variable is true and if so, it is immediately reset to false.
+Check if a path exists for the agent and optionaly save the resulting path positions
+Check if an element is contained in the target list
+Check if an event is received and it's value is equal to specified value, then return true for one frame
+Check if an event is received and return true for one frame
+Check if an event is received and return true for one frame. Optionaly save the received event's value
+Check Mouse 2D
+Check Mouse Click 2D
+Check of agent is in line of sight with target by doing a linecast and optionaly save the distance
+Check Parameter Bool
+Check Parameter Float
+Check Parameter Int
+Check Property
+Check Property (Desktop Only)
+Check the parent state status. This condition is only meant to be used along with an FSM system.
+Check Trigger
+Check Trigger 2D
+Check Value
+Check whether or not a variable is null
+checkBounds
+CheckDuplicateBundleDependenciesValidator.cs
+CheckFunction Error
+CheckProperty Error
+checkRay
+CheckResourcesToAddressableDuplicateDependenciesValidator.cs
+Checks a condition and returns Success or Failure.
+Checks the current speed of the agent against a value based on it's Rigidbody velocity
+Checks whether the target is in the view angle of the agent
+child = cur.items[{0}]
+Child creation failed for an unknown reason. Early exit.
+Child octree array must be length 8. Was length:
+child.id + child.name
+child.isOfExactType(\"EventFolder\")
+childOctrees
+Choice
+Choose an update task to perform:
+Choose how to access your FMOD Studio content:
+Circular buffer cannot have negative or zero capacity.
+CircularBuffer{T}
+ClampPosition, transform.position:
+class {0}
+Classes/
+Classes/System/Object
+ClassFMOD
+Clear
+Clear <b>'{0}'</b> from the <b>{1}</b> field
+Clear Canvas
+Clear List {0}
+Clear On Play
+Click
+Click {0} to search your project for obsolete event references.
+Click at POS:
+click to continue ...
+Client {connectId} try to change owner of entity {req.identityId} but it's not the owner
+Client {connectId} try to destroy entity {req.id} but it's not the owner
+Client {connectionId} connected
+Client {connectionId} disconnected
+Client Recv Exception:
+Client Recv: failed to connect to ip=
+Client.Send: message too big:
+Client.Send: not connected!
+Client.Send: sendPipe reached limit of {SendQueueLimit}. This can happen if we call send faster than the network can process messages. Disconnecting to avoid ever growing memory & latency.
+clipping
+Close
+Closing
+cloudBuild
+Codec Counts
+Collapse All
+Collapse Children
+Collapse Generics In Browser
+Collapse Info
+COLLAPSED
+collection
+Collections/Dictionary (T)/
+Collections/List (T)/
+collider
+collidingWith
+Collision Tag
+CollisionTag
+color
+Colorized
+colorKeys
+com.nicoier.unitytoolkit
+com.unity3d.player.UnityPlayer
+comments
+Comments...
+Community
+Compare Value To
+comparer
+Comparison
+Compensate Sensors
+Complements
+complete
+Complete
+component
+Component Type
+components
+Composites
+Composition Cursor Position
+Composition String
+Condition
+Condition Failed
+Condition.Check when enabled = false
+Conditional
+conditionList
+Conditions (optional)
+Config/Luban/{name}.json
+Confirm Bulk Changes
+connectId
+Connection
+Connection already has a Condition assigned '{0}'. Replace assigned condition with pasted condition '{1}'?
+connection id limit reached:
+Connection Inspector
+Connection Style/Direct
+Connection Style/Hard
+Connection Style/Soft
+Connection Style/Softer
+connectionId!=0
+connections
+Console
+Console *
+console.infoicon
+console.infoicon.sml
+console.warnicon.sml
+Constant Buffer Offset Alignment
+contains
+content
+Content
+contentOffset
+context
+Context Menu
+ContinuousParameterIcon.png
+Control
+Control Graph Owner
+Convenience Converters
+Convert
+Convert to SubTree
+Cooled
+Cooling...
+copiedReferencesDict
+Copy
+Copy {sourcePath} to {targetPath}
+Copy Assigned Condition
+Copy Assigned Task
+Copy New Native Libraries
+Copy Node
+Copy of
+Copy Selected Nodes
+Copy Texture Support
+Copy the new FMOD native libraries to the correct location and enable them.
+Copy To Clipboard
+CopyIcon.png
+Copyright © NicoIer@163.com 2022
+Core Audio
+Cores
+Couldn't connect to the specified host.
+Couldn't find a line starting with '{GuidPrefix}' in {filePath}
+Couldn't perform seek operation.  This is a limitation of the medium (ie netstreams) or the file format.
+count
+Count is invalid.
+CPU
+CPU: dsp = {0:F1}%, studio = {1:F1}%\n
+Create
+CREATE
+Create a Bound or an Asset Graph?\n\n
+Create a new Vector out of 3 floats and save it to the blackboard
+Create Asset of type
+Create Blackboard
+Create Connection
+Create Event
+Create External Serialization Text Asset
+Create Graph
+Create Group
+CREATE NEW
+Create New Event in Studio
+Create New Group
+Create Node
+Create Studio Bank Loader
+Create Studio Event Emitter
+Create Studio Global Parameter Trigger
+Create Text Asset
+Create UIDatabase
+Create UIDatabase.asset in Assets folder,You can move it to other folder or modify it in the editor.
+Create UIPanel
+Create UIRoot
+Create up to 3 floats from a Vector and save them to blackboard
+Created stable hash {(ushort)hash} for {text}
+CreateNested
+Creating {0}
+Creating new Connections from a 'MissingNode' is not allowed. Please resolve the MissingNode node first
+CrossYellow.png
+cs
+cs Script Icon
+culture
+CultureInfo
+cur = studio.project.lookup(\"{0}\");
+cur.items.length;
+Current =
+Current Count:
+Current Element
+Current Index
+Current Level
+Current Quality Level
+Current Resolution
+currentActivity
+Currently dragging
+Cursor Lock State
+Cursor Visible
+Curve
+Curve Tween
+CurveEditorBackground
+CustomYieldInstruction
+Cut
+Cutouts
+D.<color=#ff0000>You selected the wrong answer</color>.
+D.<indent=4em><#ff0000>You selected the wrong answer.
+d__Help
+d__Popup
+d_console.erroricon
+d_console.erroricon.sml
+d_console.infoIcon.sml
+d_console.warnicon
+d_console.warnicon.sml
+d_CreateAddNew
+d_FilterByLabel
+d_PauseButton
+d_PlayButton
+d_ScaleTool
+d_StepButton
+d_ViewToolOrbit On
+d_winbtn_mac_close
+d_winbtn_win_max
+d2
+data
+Data received from connection {connectionId} cnt:{data.Count}
+data, please report an issue with an included test case.
+Data1
+Data2
+Data3
+Data4
+db3b3b
+dddddd
+de700ef3f37a49b58a57ae3addf01ad9
+Debug Bound Variable Value
+Debug Location
+Debug Log
+Debug Overlay
+Debugger
+Debugger window has been registered, can not create debugger window group.
+Debugger window has been registered.
+Debugger window is invalid.
+debuggerWindow
+Decompose Vector
+Decorate
+Decorators
+decreaseKey() got larger key value
+Decrement
+DeepCopyByExpressionTreeObj
+default
+Default
+defaultParameters
+Definition
+definition has not been encountered for object with id=
+Delete
+Delete (DEL)
+Delete {targetPath}
+Delete Bank
+Delete Bound Graph
+Delete Branch
+Delete FMOD Platform
+Delete missing reference
+Delete Node
+Delete Selected Nodes
+Delete Task
+Delete the default canvas child
+Delete Variable
+Delete Variable '
+Delete.png
+Delta Time
+deltaMovement
+deltaTime:{deltaTime} FPS:{FPS}
+dependencies
+derivedData
+desc
+desc:
+Descent Line
+Descent Line (
+description
+Description
+Description(?)
+DESIRE
+Desired Color Space
+Desires
+Desktop
+Destroy {0}
+DestroyImmediately is recomended if you are destroying objects in use of the framework.
+Development Build Only
+DEVELOPMENT_BUILD
+Device ID
+Device Model
+Device Name
+Device Orientation
+Device Type
+Device Unique ID
+Device Vendor
+Device Vendor ID
+Device Version
+Dialogue
+Dialogue Actor Parameters
+Dictionary Key removed due to duplicate found
+different MigrateTo values\n
+Direct Failure Chance
+direction
+Direction
+Directory {0} doesn't contain any banks.\nBuild the banks in Studio or check the path in the settings.
+Disable
+Disable built in audio
+Disable Existing Native Libraries
+Disable the existing FMOD native libraries so that Unity will not load them
+disableAction
+Disabled
+DisallowAddressableSubAssetFieldAttribute
+DisallowAddressableSubAssetFieldAttributeValidator.cs
+DiscreteParameterIcon.png
+Display a UI label on the agent's position if seconds to run is not 0 and also logs the message, which can also be mapped to any variable.
+displayName
+DisplayObjectContextMenu
+distance
+Distance
+Distance ({0}, {1}) {2} {3}
+Distance Any
+Distance within which the target can be seen (or rather sensed) regardless of view angle.
+Distance within which to look out for.
+DitherEffect
+DitherEffect Blit
+Divide
+DMA Failure.  See debug output for more information.
+Do not display this again
+Do you want to delete the
+Do you want to repair them now?
+Done
+Done Counting down.
+Done revealing the text.
+Don't Retrigger Running States
+Don't show again.
+Double Pass
+Double-click to rename
+Down
+Drag Add Item
+Drop Here to Enlist
+Drop Variable
+dropdownButton
+DropEffect
+DSP Buffer Count
+DSP Buffer Length
+DSP Buffer Settings
+DSP connection error.  Connection possibly caused a cyclic dependency or connected dsps with incompatible buffer counts.
+DSP connection error.  Couldn't find the DSP unit specified.
+DSP Format error.  A DSP unit may have attempted to connect to this network with the wrong format, or a matrix may have been set with the wrong size if the target unit has a specified channel map.
+DSP is already in the mixer's DSP network. It must be removed before being reinserted or released.
+DSP operation cannot be performed on a DSP of this type.
+DSP operation error.  Cannot perform operation on this DSP as it is reserved by the system.
+DSP return code from a DSP process query callback.  Tells mixer not to call the process callback and therefore not consume CPU.  Use this to optimize the DSP graph.
+DSP return code from a DSP process query callback.  Tells mixer silence would be produced from read, so go idle and not consume CPU.  Use this to optimize the DSP graph.
+Due to last deserialization attempt failure, this graph is protected from changes.\nAny change you make is not saved until the graph has deserialized successfully.\nPlease try restarting Unity to attempt deserialization again.\nIf you think this is a bug, please contact support.
+Duplicate
+Duplicate (CTRL+D)
+Duplicate Asset Isolation
+Duplicate Branch
+Duplicate Connection
+Duplicate Node
+Duplicate platform identifier: {0}
+Duplicate Selected Nodes
+Duplicate Task
+Duplicate Variable
+duration
+Dynamic
+Dynamic Adjustment
+Dynamic adjustment is computed over n-second exponential moving average standard deviation.
+Dynamic Parameter Variable '{0}' Encountered...
+Dynamic Plugins
+Dynamic Variable. Type of '{bbParam.varType.FriendlyName()}'
+e
+E
+E. This block of text contains three lines of text. The second line ends up outside the scrolling area.
+E.<indent=4em>This block of text contains three lines of text. The second line ends up outside the scrolling area.
+e7a046c753c3c3d4aacc91f6597f310d
+Edit
+EDIT {0}
+Edit Codec Channels
+Edit Color
+Edit FMOD Platform Properties
+Edit FMOD Platform Settings
+Edit Nested (Double Click)
+Editor
+EditorSettings Icon
+eed9a7
+eeeeee
+Elapsed Time
+elapsedLoops
+elapseSeconds
+elasticity
+Element
+Else
+email
+emaN
+Emitter
+Emitters
+EmojiOne.png
+Empty Task Name
+Enable
+Enable {targetPath}
+Enable Allocation Callstacks
+Enable API Error Logging
+Enable Binary Log
+Enable Memory Tracking
+Enable Strict Check
+Enable, Disable or Toggle one or more nodes with provided tag. In practise their incomming connections are disabled\nBeta Feature!
+enableAction
+enabled
+Enabled
+EnableErrorCallback
+EnableMemoryTracking
+encoding
+Encoding is invalid.
+EncryptionKey
+End
+End of current chunk reached while trying to read data.
+End of file unexpectedly reached while trying to read essential data (truncated?).
+End the dialogue in Success or Failure.\nNote: A Dialogue will anyway End in Succcess if it has reached a node without child connections. Thus this node is mostly useful if you want to end a Dialogue in Failure.
+End Turn Button Clicked
+End Word Region at [
+endValue
+endValueDegrees
+enemy
+Enemy Candidate Card: {cardData.config.Id}
+Enemy Round
+Ensure that Settings.Instance is not being called from an InitializeOnLoad method or class.
+Enter | Exit
+Enter Gaming State
+Enter State
+Enter text...
+Enter the Key-Value pair for Dialogue Actors involved in the Dialogue.\nThe reference Object must be an IDialogueActor or have an IDialogueActor component.\nReferencing a Dialogue Actor is optional.
+EnterState
+entities.ContainsKey(entity.id)
+entity
+entity != null
+Entity ID空间已耗尽！
+entity.components.Count > idx
+entry
+EnumConverter encountered an unknown JSON data type
+Enumerations/
+Equal
+Error
+Error creating hardware sound buffer.
+Error initializing output device, but more specifically, the output device is already in use and cannot be reused.
+Error initializing output device.
+Error loading file.
+Error repairing FMOD libraries:\n\n{e.Message}\n\nDo you want to try again?
+Error trying to allocate a channel.
+Error updating metadata for {folderPath}:\n\n{error}\n\nDo you want to try again?
+Error watching {0}: {1}
+Error while parsing:
+Error({0})
+Error: Please make a selection
+Event
+Event [{0}].value == {1}
+Event [{0}]\n{1} = EventValue
+Event '{0}' Send to '{1}'
+Event Not Found
+Event Play Trigger
+Event Received from ({0}): '{1}'
+Event Request
+Event Stop Trigger
+Event Type
+Event with name '{0}' on type '{1}', could not be resolved.
+event:
+event:/
+EventFolder
+EventIcon.png
+EventInstance::set3DAttributes
+eventLength
+EventLinkage
+eventName
+EventPlayTrigger
+eventReference
+EventReference
+EventReference.Find called before EventManager was initialized
+Events
+Events Renamed
+EventStopTrigger
+Everything
+Example <sprite=2> of using <sprite=7> <#ffa000>Graphics Inline</color> <sprite=5> with Text in <font=\"Bangers SDF\" material=\"Bangers SDF - Drop Shadow\">TextMesh<#40a0ff>Pro</color></font><sprite=0> and Unity<sprite=1>
+Example <sprite=2> of using <sprite=7> <#ffa000>Graphics Inline</color> <sprite=5> with Text in <font=\"Bangers SDF\" material=\"Bangers SDF - Drop Shadow\">TextMesh<#40a0ff>Pro</color></font><sprite=0> and Unity<sprite=2>
+Example <sprite=2> of using <sprite=7> <#ffa000>Graphics Inline</color> <sprite=5> with Text in <smallcaps>TextMesh</smallcaps><#40a0ff>Pro</color><sprite=0> and Unity 4.6 & 5.x <sprite=2>
+Example of <#ff8000>multiple</color>
+<#00ff00>lines</color> of text created
+with <#80ff80>TextMesh <#8080ff>Pro</color>!
+Exception
+Execute
+Execute {0} Selected Tasks
+Execute a Behaviour Tree OnEnter. OnExit that Behavior Tree will be stoped or paused based on the relevant specified setting. You can optionaly specify a Success Event and a Failure Event which will be sent when the BT's root node status returns either of the two. If so, use alongside with a CheckEvent on a transition.
+Execute a function on a script and save the return if any.\nIf function is an IEnumerator it will execute as a coroutine.
+Execute a number of Action Tasks OnEnter. All actions will be stoped OnExit. This state is Finished when all Actions are finished as well
+Execute a number of Actions repeatedly and in parallel to any other FSM state while the FSM is running. Conditions are optional. This is not a state.
+Execute a number of Actions when the FSM enters/starts and when it exits/stops. This is not a state.
+Execute a number of Actions when the FSM starts/enters, if Conditions are met. This is not a state.
+Execute a number of Actions when the FSM stops/exits, if Conditions are met. Note that the actions will only execute for 1 frame. This is not a state.
+Execute a number of Actions with optional conditional requirement and in parallel to any other state, as soon as the FSM is started. All actions will prematurely be stoped as soon as the FSM stops as well. This is not a state.
+Execute a Sub Behaviour Tree in parallel and for as long as this FSM is running.
+Execute a Sub Dialogue Tree. When that Dialogue Tree is finished, this node will continue either in Success or Failure if it has any connections. Useful for making reusable and self-contained Dialogue Trees.
+Execute a Sub FSM in parallel and for as long as this FSM is running.
+Execute a sub FSM OnEnter, and Stop that FSM OnExit. This state is Finished only when and if the sub FSM is finished as well.
+Execute an Action Task for the Dialogue Actor selected.
+Execute Function
+Execute Function (Desktop Only)
+Execute Function now supports static functions as well
+Execute the assigned Dialogue Tree OnEnter and stop it OnExit. Optionaly an event can be sent for whether the dialogue ended in Success or Failure. This can be controled by using the 'Finish' Dialogue Node inside the Dialogue Tree. Use a 'CheckEvent' condition to make use of those events. The 'Instigator' Actor of the Dialogue Tree will be set to this graph agent.
+Execute the first child node if a Condition is true, or the second one if that Condition is false. The Actor selected is used for the Condition check
+ExecuteFunction Error
+Executes a sub Behaviour Tree. The status of the root node in the SubTree will be returned.
+Executes a sub Dialogue Tree. Returns Running while the sub Dialogue Tree is active. You can Finish the Dialogue Tree with the 'Finish' node and return Success or Failure.
+Executes a sub FSM. Returns Running while the sub FSM is active. If a Success or Failure State is selected, then it will return Success or Failure as soon as the Nested FSM enters that state at which point the sub FSM will also be stoped. If the sub FSM ends otherwise, this node will return Success.
+Executes all children simultaneously and return Success or Failure depending on the selected Policy.
+Executes an action and returns Success or Failure when the action is finished.\nReturns Running until the action is finished.
+Executes and returns the child status only if the condition is true. Returns Failure if the condition is false.
+Executes and returns the child status. If the condition is or becomes true, the child is interrupted and returns Failure.
+Executes its children in order and returns Success if all children return Success. As soon as a child returns Failure, the Sequencer will stop and return Failure as well.
+Executes its childrfen in order and returns Failure if all children return Failure. As soon as a child returns Success, the Selector will stop and return Success as well.
+Executes one child based on the provided int or enum case and returns its status.
+Executes the decorated child as normal and returns an Optional status, thus making it optional to the parent node in regards to what status is returned.\nThis has the same effect as disabling the node, but instead it executes normaly.
+Executing these {0} tasks will change {1} prefabs and {2} scenes on disk.\n\n
+Executing: {0}
+Execution
+Exit Gaming State
+Expand All
+Expand Children
+Expand Info
+expected
+Expected : after key \"
+Expected initial [ when parsing an array
+Expected initial { when parsing an object
+expected number but got
+expected one of
+Explorer
+Export '{0}' Graph
+Export JSON
+Export JSON (Include SubGraphs)
+-exportPackage
+Exposed Graph Variable named '{0}' was not found
+Exposed Graph Variables. Use the arrows button to override/parametrize the variable. Doing this will not change the graph serialization. Prefab overrides are also supported.
+Exposed Public
+Extents
+External Serialization File
+Eye
+F
+F0
+f2
+F2
+f3
+f6ff00
+fadeOut
+Fading Counter ...
+Failed
+Failed to create layer:
+Failed to find entry field in UnityEditor.AddressableAssets.GUI.AddressableAssetEntryTreeViewItem type.
+Failed to find UnityEditor.AddressableAssets.GUI.AddressableAssetEntryTreeViewItem type.
+Failed to load UI panel: {typeof(T).Name}
+Failed to open {filePath} for editing
+Failed to open {infoPlistPath} for editing
+Failed to resolve Agent to requested type '
+Failed to resolve host: {address}
+Failed to resolve host: {hostname} reason: {exception}
+Failed to set {socket} RecvBufSize = {recvBufferSize} SendBufSize = {sendBufferSize}
+failedRestriction
+Failure
+Failure →
+Failure State
+false
+False
+FALSE
+Faster
+Fatal({0})
+FavOnly
+Favorite Icon
+fd7c55dab0fce234b8c25f6ffca523c1
+ff64cb
+ff6d53
+ffe4e1
+Field
+Field Change
+Field Or Property with name '{0}' on type '{1}', could not be resolved.
+Field Request
+Field Type
+Field with name '{0}' on type '{1}', could not be resolved.
+Field/Property Request
+Fields {0} on the {1} type have [FMODUnity.EventRef] attributes with the same MigrateTo value.\n
+File
+File Exists
+File not found.
+file:///android_asset
+filename
+filename.type
+fillViewRect
+Filter
+filterMode
+Filters the access of its child either a specific number of times, or every specific amount of time.
+filterType
+filterTypes
+find
+Find
+Find a transform child by name within the agent's transform
+Find Closest NavMesh Edge
+Find event references that use the obsolete [FMODUnity.EventRef] attribute
+Find Object
+Find the closes Navigation Mesh position to the target position
+Find the closest game object of tag to the agent
+Find:
+FINISH
+Finished executing tasks. New tasks may now be required. Please re-scan your project.
+Finished scanning. Please execute the tasks above.
+Finished Search
+Fire1
+First
+firstActivation
+Fix conflicting migration targets on fields <b>{0}</b>
+FixChoice
+Fixed
+Fixed Delta Time
+Fixed Time
+Fixed Unscaled Delta Time
+Fixed Unscaled Time
+fixedHeight
+fixedWidth
+Flee from {0}
+Flees away from the target
+FlipSelector
+Float
+Float[]
+floating text
+floatName
+floor
+Floor
+fmod
+FMOD
+FMOD Asset Sub Folder
+FMOD Bank Import Type Changed
+FMOD Bank Refresh Status
+FMOD Bank Sub Folder
+FMOD detected issues with this platform!\nSee the Console for details.
+FMOD Event Reference Updater
+FMOD Events
+FMOD File Reorganizer
+FMOD Find and Replace
+FMOD for Unity has been partially set up.
+FMOD for Unity has been set up successfully!
+FMOD for Unity has not finished being set up.\nLinking to a project or banks is required.
+FMOD Settings
+FMOD Setup Wizard
+FMOD Studio Debug
+FMOD Studio Integration Settings
+FMOD Studio not running
+FMOD Studio Project
+FMOD Studio Unity Integration
+FMOD Studio/FMOD Studio Bank Loader
+FMOD Studio/FMOD Studio Event Emitter
+FMOD Studio/FMOD Studio Global Parameter Trigger
+FMOD Studio/FMOD Studio Listener
+FMOD Studio/FMOD Studio Parameter Trigger
+FMOD Studio: Cannot open fmod_editor.log. Logging will be disabled for importing and previewing
+FMOD Studio: copy banks for platform {0} : copying banks from {1} to {2}
+FMOD Studio: copy banks for platform {0} : copying banks from {1} to {2} succeeded
+FMOD Studio: copy banks for platform {0} : Unsupported platform
+FMOD Studio: Creating editor system instance
+FMOD Studio: Destroying editor system instance
+FMOD Studio: Encountered Error: {0} {1}
+FMOD Studio: Script Client failed to connect - Check FMOD Studio is running
+FMOD Studio: Script Client returned
+FMOD Studio: Unable to load {0}: {1}
+FMOD was not initialized correctly to support this function.
+FMOD.Debug.Initialize
+fmod.jar
+FMOD.RESULT result;
+FMOD.Studio
+FMOD.Studio.System.create
+FMOD.Studio.System.getCoreSystem
+FMOD.Studio.System.Release
+FMOD.Studio.System.setAdvancedSettings
+FMOD.System.setAdvancedSettings
+FMOD.System.setCallback
+FMOD.System.setDSPBufferSize
+FMOD.System.setOutput
+FMOD.System.setSoftwareChannels
+FMOD.System.setSoftwareFormat
+FMOD.UnityIntegration.RuntimeManager
+FMOD/About Integration
+FMOD/Edit Settings
+FMOD/Event Browser
+FMOD/Event Track
+FMOD/Find and Replace
+FMOD/Generate Visual Scripting Units
+FMOD/Help/API Manual
+FMOD/Help/Getting Started
+FMOD/Help/Integration Manual
+FMOD/Help/Revision History
+FMOD/Help/Support Forum
+FMOD/Refresh Banks
+FMOD/Reorganize Plugin Files
+FMOD/Setup Wizard
+FMOD/Update Event References
+FMOD: {0} static plugins specified, but static plugins are only supported on the IL2CPP scripting backend
+FMOD: {0} static plugins specified, but the {1} class was not found.
+FMOD: {0} static plugins specified, but the {1}.{2} method was not found.
+FMOD: A component of type {0} in scene '{1}' on GameObject '{2}' has an
+FMOD: A Studio Event Emitter in scene '{0}' on GameObject '{1}' has an invalid event reference: {2}
+FMOD: A Studio Event Emitter in scene '{0}' on GameObject '{1}' is using the
+FMOD: Bank refresh failed: {0}
+FMOD: Cache updated.
+FMOD: Changing EventReference GUID to {0} to match path '{1}' on object '{2}' in scene '{3}'. {4}
+FMOD: Cleaning up duplicate platform: ID  = {0}, name = '{1}', type = {2}
+FMOD: Could not copy {0} to {1}
+FMOD: Could not delete {0}
+FMOD: Could not remove staging folder {0}
+FMOD: Couldn't find base folder by GUID ({0}) or path ({1})
+FMOD: Couldn't find base folder with GUID {0}; defaulting to {1}
+FMOD: Error platform {0} already added to build targets. : {1}
+FMOD: Error processing static plugins for platform {0}: {1}
+FMOD: Event cache is missing or in an old format; creating a new instance.
+FMOD: EventReference path '{0}' doesn't match GUID {1} on object '{2}' in scene '{3}'. {4}
+FMOD: Failed to update the GUID for {0}: {1}
+FMOD: Generating static plugin registration code in {0}
+FMOD: Platform {0} has {1} static plugins specified,
+FMOD: Removed obsolete file {0}
+FMOD: Removed obsolete folder {0}
+FMOD: Removed staging folder {0}
+FMOD: Removed temporary file {0}
+FMOD: Removing Il2CPP argument '{0}'
+FMOD: Replaced CRLF line endings with LF in {0}
+FMOD: Selected binaries for platform {0}{1}:
+FMOD: UI Camera
+FMOD: Updated bank stubs in {0} to match {1}
+FMOD: Updated the GUID for {0} to {1}
+FMOD: Updating bank stubs in {0} to match {1}
+FMOD: Updating bank stubs: Unsupported platform {0}
+FMOD: VRDebugOverlay
+fmod_editor.log
+FMODBanks
+FMODEventPlayable
+FMODLogoBlack.png
+FMODLogoWhite.png
+fmodOverlayLayer
+fmodstudio
+fmodstudio{0}.bundle
+FMODStudioCache
+fmodstudioL
+fmodstudioL.bundle
+fmodstudioL.dll
+FMODStudioSettings
+FMODStudioSettingsPlatform
+FMODUnity
+FMODUnity.{0}
+FMODUnityEditor
+FMODUnityResonance
+focused
+folder
+Folder Icon
+folder:
+FolderIconClosed.png
+FolderIconOpen.png
+Folders
+Foldout
+Follow Parameters
+font
+Font size
+Fonts & Materials/Anton SDF
+Fonts & Materials/Anton SDF - Drop Shadow
+Fonts & Materials/JOKERMAN SDF
+Fonts & Materials/LiberationSans SDF
+Fonts & Materials/LiberationSans SDF - Bevel
+Fonts & Materials/LiberationSans SDF - BEVEL
+Fonts & Materials/LiberationSans SDF - Drop Shadow
+Fonts & Materials/LiberationSans SDF - Overlay
+Fonts/ARIAL
+fontSize
+fontStyle
+for
+For Each\t
+For instance, imagine two prefabs in separate groups, both referencing the same material. Each group would then include the material
+Force Finish the current graph this Task is assigned to.
+format
+Format is invalid.
+Forward
+fostering a more robust and efficient development workflow.
+Found object
+Found playerLoop of type {playerLoop.type} with {playerLoop.subSystemList.Length} Functions:
+found.
+frame
+Frame Count
+Frame Counter
+frames
+Friendly Name
+from <b>'{1}'</b> to <b>'{2}'</b> (to match GUID <b>{3}</b>)
+from <b>{1}</b> to <b>{2}</b> (to match path <b>'{3}'</b>)
+FROM ANY STATE
+from degrees value
+fromValue
+frontWall
+FrontWall
+fsDirectConverter or fsConverter as your base type.
+FSM
+FSM Enter Actions
+FSM Exit Actions
+fspro
+Full Path
+Full Screen Mode
+FullProjectStrings.txt
+func
+Func Interpolate
+func2
+function() {
+                    var output =
+function(eventName, folderGuid) {
+                    event = studio.project.create(
+function(folderGuid, eventName) {
+                    var nameConflict = false;
+                    studio.project.lookup(folderGuid).items.forEach(function(val) {
+                        nameConflict |= val.name == eventName;
+                    });
+                    return nameConflict;
+                }
+function(parentGuid, folderName) {
+                    folderGuid =
+Gain (dB)
+Game Object
+GameData
+GameEditorWindow
+GameMgr State Change: {oldState?.GetType().Name} -> {newState.GetType().Name}
+GameObject
+GameObject Icon
+GameObject/UI/Loop Horizontal Scroll Rect
+GameObject/UI/Loop Vertical Scroll Rect
+GameObject/UI/UIRoot
+GameObject/UI/UnityToolkit/PolygonUI
+GameObject/UI/UnityToolkit/ProgressBar
+Gather
+GB
+Generate AOT Classes
+Generate AOTClasses.cs and link.xml Files
+Generate link.xml File
+Generated file: {filePath}
+GenerateEventConstClass
+Genuine
+Genuine Check Available
+Get
+Get {0} as {1}
+Get a property of a script and save it to the blackboard
+Get a variable of a script and save it to the blackboard
+Get Closer from '
+Get Distance to {0}
+Get Field
+Get hit info for ALL objects in the linecast, in Lists
+Get Property
+Get Property (Desktop Only)
+Get Property Error
+Get Scroll Delta as
+Get the closer game object to the agent from within a list of game objects and save it in the blackboard.
+Get Variable To String
+get_
+GetFromAgent Attribute failed to get the required Component of type '{0}' from '{1}'. Does it exist?
+GetLength
+GetObject '
+GetObjects '
+GetObjects in '
+Gets a lists of game objects that are in the physics overlap sphere at the position of the agent, excluding the agent
+GGJ2026/Config/SpriteConfig
+GGJ2026/LevelConfig
+Ghost/死水鬼.prefab
+ghosttable
+gizmoColor
+Global
+Global Maximum LOD
+Global Parameters
+Global Render Pipeline
+gradient
+Graph
+Graph Change
+Graph comments...
+Graph Inspector
+Graph is already Active and not Paused.
+Graph is already initialized.
+Graph Pan
+Graph Update ({0})
+graph.
+Graphics UV Starts At Top
+GraphOwner Initialize should have been called in runtime only
+Gravity
+Greater
+Greater Or Equal
+Grid Snap
+group
+Group To Add To
+GroupComments
+GroupRename
+Groups
+GroupTrack
+Guard
+Guid
+GUID
+GUID doesn't match path
+guid:
+gvraudio.bundle
+h
+h1
+h2
+Halt
+has already been marked as serialized
+has been selected.
+Has Dynamic Uniform Array Indexing In Fragment Shaders
+Has Hidden Surface Removal On GPU
+Has Mip Max Level
+HashSet<{typeof(T)}> is empty
+HasPlatforms
+HasSourceProject
+Heading Accuracy
+Health
+Heartbeat received from connection {connectionid}
+Hello World
+Hello World!
+Here you can specify frequently used types for your project and for easier access wherever you need to select a type, like for example when you create a new blackboard variable or using any refelection based actions. Furthermore, it is essential when working with AOT platforms like iOS or WebGL, that you generate an AOT Classes and link.xml files with the relevant button bellow. To add types in the list quicker, you can also Drag&Drop an object, or a Script file in this editor window.\n\nIf you save a preset in your 'Editor Default Resources/
+hex
+High-End Mobile
+Hober Parameters
+Horizontal
+Horizontal Accuracy
+Horizontal Scrolling is Enabled!
+hour
+hours
+hover
+HRD Display Support Flags
+html5
+http://www.codeandweb.com/texturepacker
+https://discord.gg/97q2Rjh
+https://fmod.com/docs/
+https://nicoier.github.io/
+https://nodecanvas.paradoxnotion.com
+https://nodecanvas.paradoxnotion.com/documentation/
+https://nodecanvas.paradoxnotion.com/downloads/
+https://nodecanvas.paradoxnotion.com/forums-page/
+https://paradoxnotion.com
+https://paradoxnotion.com/
+https://paradoxnotion.com/files/softwaremessageboard.txt
+https://qa.fmod.com/
+https://www.fmod.com/download
+I am a choice...
+IComparable
+id
+ID
+ID 01
+ID 02
+id:
+id_01
+id_02
+If
+if (atk.TryGetMask(out var mask) && cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))
+If <b>!</b>
+If a client can't process snapshots fast enough, don't store too many.
+If a duplicate with the same identifier is encountered, destroy the previous Global Blackboard component only, or the previous Global Blackboard gameobject entirely?
+If disabled, the validator will only display an error message if the AssetLabelReference is set, but the
+if empty
+If enabled, a transition to an already running state will not happen.
+If enabled, all subgraphs will be pre-initialized in Awake along with the root graph, but this may have a loading performance cost
+If enabled, bound graph prefab overrides in instances will not be possible
+If enabled, the condition is re-evaluated per frame and the child is aborted if the condition becomes false.
+If enabled, the Filter Decorator will return an Optional status when it is filtered. Otherwise it will return Failure.
+If enabled, the validator will display an error message if the AssetLabelReference is not set.
+If enabled, will continously evaluate utility weights and execute the child with the highest one accordingly. In this mode child return status does not matter.
+If enabled, will keep wandering forever. If not, only one wander point will be performed.
+If enabled, will revert back to the original graph agent.
+If false, the validator will only display an error message if the AssetReference is set,
+If true and the AssetReference is not marked with the Optional attribute,
+If true and the 'case' change while a child is running, that child will immediately be interrupted and the new child will be executed.
+If true, finished children are repeated until the Policy set is met, or until all children have had a chance to finish at least once.
+If true, the children order of execution is shuffled each time the Selector resets.
+If true, the children order of execution is shuffled each time the Sequencer resets.
+If true, the condition will be re-evaluated per frame.
+If true, the Global Blackboard will not be destroyed when another scene is loaded.
+If true, then higher priority children are re-evaluated per frame and if either returns Failure, then the Sequencer will immediately stop and return Failure as well.
+If true, then higher priority children are re-evaluated per frame and if either returns Success, then the Selector will immediately stop and return Success as well.
+If you are updating an existing FMOD installation, you may need to perform some update tasks.
+If you do not intend to use the built in Unity audio, you can choose to replace the Audio Listener with the FMOD Studio Listener.\n
+If you have the complete FMOD Studio project.
+If you have the complete FMOD Studio Project.
+If you have the contents of the <b>Build</b> folder for a single platform.
+If you have the contents of the <b>Build</b> folder for multiple platforms,
+If you have the contents of the Build folder for a single platform.
+If you have the contents of the Build folder for multiple platforms,
+Ignore
+Ignored GUIDs
+Ignoring type specifier. Field or type {0} can't hold and instance of type {1}
+image
+imagePosition
+IME Composition Mode
+IME Is Selected
+Implementation of '{0}' drawer attribute not found.
+Implemented Action
+Implemented Action (Desktop Only)
+ImplementedAction Error
+Import '{0}' Graph
+Import Failure
+Import Graph
+Import JSON
+Import Type
+ImportType
+in
+In '{bb.identifier}' Blackboard
+In comparison to a normal Sequencer which executes all its children until one fails, Step Sequencer executes its children one-by-one per Step Sequencer execution. The executed child status is returned regardless of Success or Failure.
+In Fixed Time Step
+In order to access your FMOD Studio content you need to locate the FMOD Studio Project
+In Parallel
+In PlayMode only, you can use this Utility to search and find GraphOwners in the scene which are actively running.
+In Sequence
+in view angle
+inadvertently deleted or moved. The validator also verifies if the assigned asset is addressable
+inches
+Increase Count When
+Increment
+index
+Index
+Index:
+IndexOutOfRangeException
+IndexSwitcher
+info
+Info({0})
+Information/Graphics
+Information/Input/Acceleration
+Information/Input/Compass
+Information/Input/Gyroscope
+Information/Input/Location
+Information/Input/Summary
+Information/Input/Touch
+Information/Other/Quality
+Information/Other/Scene
+Information/Other/Time
+Information/Other/Web Player
+Information/Screen
+Information/System
+init
+Init
+Initial Parameter Values
+Initialization
+Initialize should have been called in play mode only.
+initialWorldPos
+initialWorldSize
+innerBounds
+innerException
+Input
+Input (Legacy System)
+Input Options
+Input String
+InputValidator - Digits.asset
+InputValidator - Phone Numbers.asset
+Insert {0} in {1} at {2}
+Inspector
+Inspector Change
+instance
+Instance
+Instantiate
+Int32
+Int32[]
+inTangent
+Integer
+Integer[]
+Integration Manual
+intent
+intent:
+Interfaces/
+Internal Deserialization Error - Object
+Internal Error -
+Internal Error - Mismatched Enter/Exit
+InterNetwork
+InterNetworkV6
+Interrupt
+Interruptor
+Interupts decorated child node and returns Failure if the child node is still Running after the timeout period.
+invalid event reference in field '{3}': {4}
+invalid index {0}
+Invalid length for hex color provided
+Invalid slot index: {0}
+InvalidOperationException
+Invert
+Invert Condition
+Inverts Success to Failure and Failure to Success.
+Invoke
+Invoke a defined Signal with agent as the target and optionally global.
+ios
+iOS
+is
+is Active
+Is Enabled By User
+Is Full Screen
+Is In Transition
+is needed
+Is Web Player
+IsColliding(Octree.BoundingBox)
+isLooped
+It further checks the existence of the main asset at the assigned path, ensuring it hasn't been
+It validates whether an asset reference has been assigned, and if it's missing, raises an error.
+item
+Item
+itemEquality
+Iterate
+Iterates a list and executes its child once for each element in that list. Keeps iterating until the Termination Policy is met or until the whole list is iterated, in which case the last iteration child status is returned.
+Iteration:
+It's best to use the respective Condition for a type if existant since they support operations as well
+Java Audio Track
+JavaScript webaudio output
+JSON is null or empty on graph when deserializing.
+JUMP
+jumpPower
+K:
+KB
+kcp
+Kcp recv msg: {BitConverter.ToString(message.Array, message.Offset, message.Count)}
+kcp2k.Tests
+Key
+Key '{0}' already exists in Dictionary
+KeyNotFoundException
+keys
+keywords
+L
+label
+Label
+Label <i>{value}</i> has not been created as a label.
+LabeledParameterIcon.png
+labelRestrictions
+Lastly, it performs checks on any sub-object linked to the asset, making sure it hasn't gone missing.
+lastPlayedLevelIndex
+lastPlayedMap
+Latitude
+Layer
+Layer created:
+layerMask
+layers
+Layout/Extensions/NonDrawingGraphic
+left
+Left
+leftWall
+LeftWall
+Legacy Event
+LegacyRuntime.ttf
+length
+Length
+Less
+Less Or Equal
+LevelConfig
+LevelMeter.png
+LevelMeterOff.png
+lhs
+lib/linux/x86/libfmodstudio.so
+lib/linux/x86/libfmodstudioL.so
+lib{0}.so
+libfmodstudio{0}_xros.a
+libfmodstudio{0}_xrsimulator.a
+libfmodstudioL.so
+libfmodstudiounityplugin{0}.a
+libfmodstudiounityplugin{0}.bc
+libfmodstudiounitypluginsimulator{0}.a
+libgvraudio.a
+libresonanceaudio.a
+libresonanceaudio_xros.a
+libresonanceaudio_xrsimulator.a
+libresonanceaudiosimulator.a
+License
+LightmapEditorSelectedHighlight
+Line [
+link
+Link ID: \"
+Link Index:
+Linking
+Links:
+linux
+Linux
+List
+List Add Task
+List game object is null on Patrol Action Task.
+List is Empty
+List Remove Task
+List synced with file:
+List<{typeof(T)}> is empty
+Listed below are all the Unity Audio Sources found in the currently loaded scenes and the Assets directory.\nSelect an Audio Source and replace it with an FMOD Studio Event Emitter.
+Listener
+Listener Index
+ListenerMethod:
+Listeners
+Listeners found.
+Live Update
+Live Update Port
+Load
+Load Bank Sample Data
+Load Banks
+Load Blackboard [{0}]
+Load List Preset
+Load Preset
+Load Scene {0}
+Load Types Preset
+LoadEvent
+Loading plugin '{0}' from '{1}'
+Loading sample data for bank: {0}
+Loading...
+Loads the blackboard variables previously saved in the provided PlayerPrefs key if at all. Returns false if no saves found or load was failed
+Local simulation is behind by sendInterval * multiplier seconds.\n\nThis guarantees that we always have enough snapshots in the buffer to mitigate lags & jitter.\n\nIncrease this if the simulation isn't smooth. By default, it should be around 2.
+Local timeline acceleration in % while catching up.
+Local timeline slowdown in % while slowing down.
+localBlackboard
+LocalNetwork started.
+LocalNetwork stopped.
+Locate Bank
+Locate Build Folder
+Locate Studio Project
+Lock
+Lock Prefab Graph Overrides
+LockScroll
+LOD Bias
+Log
+Log '
+Log Events Info
+Log Variables Info
+log():
+Logging Level
+LoggingLevel
+logMessage
+Logs the value of a variable in the console
+logType
+Longitude
+LookAt
+Loop Horizontal Scroll Rect
+Loop Vertical Scroll Rect
+loosenessVal
+LOS with
+Low-End Mobile
+Ludiq.Core.Runtime
+M:{methodInfo.DeclaringType.FullName}.{methodInfo.Name}
+M:{methodInfo.DeclaringType.FullName}.{methodInfo.Name}({parametersString})
+m_DefaultStack
+m_DisableAudio
+m_GUID
+m_MenuItems
+m_RendererDataList
+mac
+macOS
+MacroIn
+MacroOut
+Magnetic Heading
+Main- and Sub Asset Changed
+Main Asset Changed
+Main Camera is null
+MainCamera
+Make Addressable
+Make Notes
+Make some connections first
+Make the selected Dialogue Actor talk. You can make the text more dynamic by using variable names in square brackets\ne.g. [myVarName] or [Global/myVarName]
+Makes the agent wander randomly within the navigation map
+Manual
+Manual Changes Required
+Manual task:
+Manually
+manual-tasks
+Map SubGraph actor parameters from this graph actor parameters. Leaving [NONE] will not affect the parameter.
+Map SubGraph exposed variables to this graph variables.\nUse the arrow buttons on the right of each parameter to enable WriteIn and/or ReadOut. WriteIn takes place when the SubGraph starts. ReadOut takes place continously while the SubGraph is running.
+margin
+Marshal Cached HGlobal Size
+Mask/Bar
+mask_to_card_effect
+masktable
+maskToCardEffect:
+Master Texture Limit
+masterBankFolder = studio.project.workspace.masterBankFolder;
+masterBankFolder.items.length;
+masterBankFolder.items[{1}].id;
+masterBankFolder.items[{1}].isOfExactType(\"MasterBank\");
+MathematicsDrawers.cs
+MathExtensions.cs
+MatrixDrawer
+max
+Max
+Max Compute Buffer Inputs Compute
+Max Compute Buffer Inputs Domain
+Max Compute Buffer Inputs Fragment
+Max Compute Buffer Inputs Geometry
+Max Compute Buffer Inputs Hull
+Max Compute Buffer Inputs Vertex
+Max Compute Work Group Size
+Max Compute Work Group Size X
+Max Compute Work Group Size Y
+Max Compute Work Group Size Z
+Max Cubemap Size
+Max Queued Frames
+Max Samples Number Per Frame
+Max Size must be greater than 0
+Max Texture Size
+Max Times
+Max Used Memory
+maxDistance
+Maximum
+Maximum Delta Time
+Maximum LOD Level
+Maximum Particle Delta Time
+maxNodes
+MB
+Mean Line
+Mean Line (
+Mec.Bool
+Mec.Float
+Mec.Int
+Mec.Is In Transition
+Mec.SetBool {0} to {1}
+Mec.SetFloat {0} to {1}
+Mec.SetInt {0} to {1}
+Mec.SetLookAt
+Mec.SetTrigger {0}
+Media was ejected while reading.
+MemberInfo is neither Field nor Property
+MemberwiseClone
+Memory Size
+MEMORY: cur = {0}MB, max = {1}MB\n
+mengpo_soup_effect
+mengpoSoupEffect:
+mengpotable
+Menu Item
+menuItems
+Merge
+Merge can accept multiple input connections and thus possible to re-use leaf nodes from multiple parents. Please note that this is experimental and can result in unexpected behaviour.
+message
+Message {0}()
+Message {0}({1})
+Message {0}({1}) to all {2}s
+message if they are not set. It can also be configured to require that all AssetLabelReferences be set
+message. Whether or not it does this is
+                // dependent on the firewall, private/public settings, etc.
+                // On localhost, however, it will pretty much always send this
+                // packet back.
+                //
+                // Now, on Windows (and only on Windows), by default, a received
+                // ICMP Port Unreachable message will close the UDP socket that
+                // sent it; hence, the next time you try to receive on the
+                // socket, it will throw an exception because the socket has
+                // been closed by the OS.
+                //
+                // Obviously, this causes a headache in the multi-client,
+                // single-server socket set-up you have here, but luckily there
+                // is a fix:
+                //
+                // You need to utilise the not-often-required SIO_UDP_CONNRESET
+                // Winsock control code, which turns off this built-in behaviour
+                // of automatically closing the socket.
+                //
+                // Note that this ioctl code is only supported on Windows
+                // (XP and later), not on Linux, since it is provided by the
+                // Winsock extensions. Of course, since the described behavior
+                // is only the default behavior on Windows, this omission is not
+                // a major loss. If you are attempting to create a
+                // cross-platform library, you should cordon this off as
+                // Windows-specific code.
+meta
+Meta
+Meta Data
+Metadata
+Meter Channel Ordering
+MeterChannelOrdering
+Method
+Method Request
+Method with name '{0}' on type '{1}', could not be resolved.
+Middle
+Migration target <b>{0}</b> is missing
+min
+Min
+Min Constant Buffer Offset Alignment
+Min OpenGLES Version
+miniButton
+Minimap
+Minimum
+Minimum node size must be at least as big as the initial world size.
+MiniPopup
+minKeyValue
+minLength
+minNodeSize
+minSizeVal
+minute
+minutes
+Mirror: adding Network[Early/Late]Update to Unity...
+Mismatched indeces
+Missing
+Missing Definition
+Missing Method
+Missing method '{0}'
+Missing Method '{0}'
+Missing Node
+Missing Node '{0}'
+Missing Property
+Missing property '{0}'
+Missing Property '{0}'
+Missing Reflected Info '{0}'
+Missing Task '{0}'
+MISSING TYPE
+Missing type in Preferred Types Editor. Type removed.
+Missing Variable. Type of '{bbParam.varType.FriendlyName()}'
+MissingAddressableGroupReferenceValidator.cs
+Mixed...
+Mobile
+MOD
+mode
+ModelCenter.Register<{type}>() failed, model already registered
+Modify Variable
+Monitor
+Monitors the decorated child for a returned Status and executes an Action when that is the case.\nThe final Status returned to the parent can either be the original decorated child Status, or the new decorator Action Status.
+Mono Heap Size
+Mono Used Size
+monsterPos
+monsterVec
+MotionBlurKeywordHandler's motionBlurFeature is not referenced! Please assign it in inspector.
+Mouse Position
+Mouse Position:
+Mouse Present
+Mouse Scroll Delta
+Mouse ScrollWheel
+Mouse X
+Mouse Y
+Move
+Move & turn the agent based on input values provided ranging from -1 to 1, per second (using delta time)
+Move <b>'{0}'</b> from <b>{1}</b> to <b>{2}</b>
+Move Canvas Group
+Move FMOD for Unity files to match the latest layout.
+Move Node
+Move prefab override <b>'{0}'</b> from <b>{1}</b> to <b>{2}</b>
+Move Randomly or Progressively between various game object positions taken from the list provided
+Moved to {0}
+Movement
+Movement/Direct
+Movement/Pathfinding
+Moves the agent away from target per frame without pathfinding
+Moves the agent towards to target per frame without pathfinding
+Moving {0} to {1}
+ms-appx:///Data/StreamingAssets
+msg
+msg.idx != null
+MTU must be higher than 50 and higher than OVERHEAD
+Multi Threaded
+Multi Touch Enabled
+Multiple Choice
+Multiple Choice Node has no available options. Dialogue Ends.
+multiple fsConverters -- please construct a new instance for
+Multiple Platform Build
+Multiple Task Condition
+Multiply
+Must inherit AssetReference
+Mutators (beta)
+my
+myScrollRect
+N/A
+N0
+name
+Name
+Name Conflict
+Name...
+name:
+namespace
+Namespace
+namespace FMOD
+namespace FMODUnity
+namespace GGJ2026.GamePlay
+namespace ParadoxNotion.Internal{
+NC Task Wizard
+nearby
+needs a
+Negate
+nested
+netType
+Network is already running.
+Network is not running.
+NetworkComponentUpdate.entityId is null
+NetworkComponentUpdate.idx is null
+NetworkEarlyUpdate {Time.time}
+NetworkLateUpdate {Time.time}
+NetworkManager:[{this}] is already running
+NetworkManager:[{this}] is not running
+NetworkServer:[{this}] is running
+NetworkServer:[{this}] is stopped
+NetworkTimeClient is already running
+NetworkTimeServer Start At {ip}:{port} {DateTime.Now:yyyy-MM-dd HH:mm:ss}
+Never
+never accessed by the same user group, such as region-specific assets, these duplications might be desired or at least inconsequential.
+Never Sleep
+New
+new {0} (
+New Action Task
+New Actor Parameter
+New Asset Graph
+New Bound Graph
+New Condition Task
+New FMOD Studio Bank Loader
+New FMOD Studio Emitter
+New FMOD Studio Global Parameter Trigger
+New Group
+new KcpConfig(DualMode=false)
+New Local Graph
+New Node
+New playerLoop of type {playerLoop.type} with {playerLoop.subSystemList.Length} Functions:
+New queue size cannot be smaller than 1
+New SubGraph
+New Task
+New Task is placed under:
+New Variable
+New Vector as
+new{0}
+newOwner
+Next
+Next step:
+Next Turn
+nicoier
+nicoier  找不到Global Volume 是否存在时序问题
+nicoier@163.com
+no
+No
+NO
+No {0} derived types found in Preferred Types List
+No Action Selected
+No Actions
+No Agent
+No Blackboard assigned. This is fine if you only want to use Graph Blackboard Variables.
+No closing ] for array
+No closing } for object
+No condition is true. Dialogue Ends.
+No Conditions
+No Converter available for {0}
+No converter for {0}
+No data to load blackboard variables from key
+No database references provided for serialization
+No Description
+No Documentation
+No Documentation Found
+no domain reload
+No errors.
+No Event Selected
+No Field Selected
+No FMOD platform found for build target {0}.
+No Graph is currently open in the Graph Editor
+No Graph is currently open in the Graph Editor.
+No graph is open in the Graph Editor
+No GraphOwner is actively running.
+No handler for message {id}
+No handler for message {typeof(T).Name}
+No input
+No methMethodd selected
+No method selected
+No Method selected
+No Method Selected
+No missing BB Parameters found.
+No missing recoverable elements found.
+No missing reflected references found.
+No Namespace
+No Namespace/
+No Options Available
+No property named \"
+No property selected
+No Property selected
+No Property Selected
+No required tasks found. Event references are up to date.
+No results to display with current search and filter combination
+No selection in Graph Editor
+No Sound
+No State with name '
+No Sub Dialogue Tree assigned!
+No sync file found in '.../Assets/Editor Default Resources'. Types are currently saved in Unity EditorPrefs only.
+No Task
+No tasks.
+No Transition
+NO TYPE PROVIDED!
+No Unity Audio Sources have been found!
+No Variable of name '{0}' and type '{1}' exists on Blackboard '{2}'. Adding new instead...
+No Variable of name '{0}' and type '{1}' exists on Blackboard '{2}'. Returning default T...
+No!
+NO!
+node
+Node already has a Task assigned '{0}'. Replace assigned task with pasted task '{1}'?
+Node can't connect to itself.
+Node Inspector
+Node is already enqueued:
+Node is not part of this graph.
+Node Tag
+Node Toggler
+node.Contains was called on a node from another queue.  Please call originalQueue.ResetNode() first
+node.Enqueue was called on a node from another queue.  Please call originalQueue.ResetNode() first
+node.QueueIndex has been corrupted. Did you change it manually?
+node.QueueIndex has been corrupted. Did you change it manually? Or add this node to another queue?
+node.Remove was called on a node from another queue
+node.ResetNode was called on a node from another queue
+node.ResetNode was called on a node that is still in the queue
+node.UpdatePriority was called on a node from another queue
+Node: '{0}' | ID: '{1}' | Graph Type: '{2}' | Context Object: '{3}'
+NodeCanvas
+NODECANVAS
+NodeCanvas.EditorPreferences
+NodeCanvas.Tasks.Actions
+NodeCanvas.Tasks.Conditions
+NodeCanvas/Behaviour Tree Owner
+NodeCanvas/Dialogue Actor
+NodeCanvas/Dialogue Tree Controller
+NodeCanvas/FSM Owner
+NodeCanvas/Standalone Action List (Bonus)
+nodes
+Non Addressables
+None
+NONE
+None (Addressable [{string.Join(
+None (Addressable {this.targetType.GetNiceName()})
+None (Addressable Asset)
+NonInspectable ({0})
+Non-Rigidbody Velocity
+nonRigidbodyVelocity
+NonRigidbodyVelocity
+normal
+Normal
+Normalize
+NOT
+Not enough memory or resources.
+Not Equal
+not found in the FMOD project.
+NOT SET
+Note that duplicate assets may not always be an issue
+Note that duplicate assets may not always be an issue. If assets will never be requested by the same set of users (for example, region-specific assets), then duplicate dependencies may be desired, or at least inconsequential. Each Project is unique, so fixing duplicate asset dependencies should be evaluated on a case by case basis
+Note that this is slow.\nAction will end in Failure if no objects are found
+Note that this is very slow
+NotFound.png
+Nothing
+Nothing to do here.
+NotImplementedException
+NPC
+NPOT Support
+null
+NULL
+Null Dictionary
+Null Enum
+Null ITaskSystem set
+Null List
+Null NodeReference Instance
+Null nodes
+NULL Variable!
+NullReferenceException
+numJumps
+NumObjectsAllowed
+obj
+objBounds
+objBoundsCenter
+Object Editor
+Object is not an IDialogueActor and none of the components attached is an IDialogueActor either.
+objPos
+obsolete
+obsolete [FMODUnity.EventRef] attribute on field {3}. {4}
+obsolete Event field. {2}
+OdinAddressableReflection.cs
+OdinAddressableReflectionValidator.cs
+OK
+oldOwner
+on
+On Disable
+On Enable
+On FSM Enter
+On FSM Exit
+On FSM Update
+on type
+On Variable Changed
+onActive
+OnBeginDrag
+OnBeginDrag, isDragging:
+onComplete
+One
+OnEnter Actions ({0})
+Oneshot
+OnExit Actions ({0})
+OnFinish
+OnFinish (This is never triggered)
+onFocused
+OnGamingStateChanged: EnemyRound
+OnGamingStateChanged: PlayerRound
+onHover
+OnLocalPlayerWearMaskEvent: maskID={args.maskID}
+Only a failed result can be converted to an exception
+Only increase count if the selected status is returned from the child.
+Only supported on the IL2CPP scripting backend
+onNormal
+OnPointerEnter()
+OnPointerExit()
+OnPointerUp()
+OnTaskInspectorGUI
+OnUICardVisualEndDrag: screenPoint
+OnUICardVisualEndDrag: use card
+onUpdate
+OnUpdate Actions ({0})
+op_
+op_Addition
+op_BitwiseAnd
+op_BitwiseOR
+op_Decrement
+op_Division
+op_Equality
+op_ExclusiveOr
+op_Explicit
+op_False
+op_GreaterThan
+op_GreaterThanOrEqual
+op_Implicit
+op_Increment
+op_Inequality
+op_LeftShift
+op_LessThan
+op_LessThanOrEqual
+op_LogicalNot
+op_Modulus
+op_Multiply
+op_OnesComplement
+op_RightShift
+op_Subtraction
+op_True
+op_UnaryNegation
+op_UnaryPlus
+Open
+Open Addressables Labels
+Open External Inspector
+Open Graph Console
+Open Graph Explorer
+Open Graph Refactor
+Open Groups Window
+Open In Browser
+Open Label Settings
+Open Label Window
+Open Prefab
+Open Prefab And Edit
+Open Preferred Types Editor...
+Open Script
+Open Settings Window
+Open UIPanelDatabase not implemented yet.
+OpenSL ES
+Operating System
+Operating System Family
+Operation could not be performed because specified sound/DSP connection is not ready.
+Operation on a non-blocking socket could not complete immediately.
+Option A
+Optional
+Optional Parent Asset Blackboard to 'inherit' variables from.
+Optional When Filtered
+OR
+Or add the same node to two different queues?)
+or the .bank files that FMOD Studio produces, and configure a few other settings.
+org.fmod.FMOD
+origin
+Origin
+Origin: {0}, Dir: {1}
+original
+Original
+OS
+OSX
+other
+out
+out():
+outerBounds
+Output Mode
+Output sub-directory:
+outputType
+outTangent
+overflow
+Override Agent
+Override Value
+Override Variable
+overrideAgent
+OverrideAttenuation
+OverrideMaxDistance
+OverrideMinDistance
+Overview
+Overwrite file?
+Owner System is null!
+P0
+Packages
+Packages/
+packet.type != null
+padding
+Pages:
+panel
+Panel {uiPanel.GetType().Name} SortingOrder {uiPanel.GetSortingOrder()}
+Panel already opened
+Panning
+ParadoxNotion.{0}.PreferedTypes
+ParadoxNotion.ContextBrowserPreferences_2
+ParadoxNotion/CanvasCore/Blackboard Asset
+ParadoxNotion/CanvasCore/Signal Definition
+ParadoxNotion/NodeCanvas/Behaviour Tree Asset
+ParadoxNotion/NodeCanvas/Dialogue Actor
+ParadoxNotion/NodeCanvas/Dialogue Tree Asset
+ParadoxNotion/NodeCanvas/FSM Asset
+Parallel
+Parallel FSM
+Parallel Sub Behaviour Tree
+Parallel Sub FSM
+Parallel Tree
+parameter
+Parameter
+Parameter {0} (of type '{1}') failed to promote to a Variable in Blackboard '{2}'.
+Parameter '{0}' (of type '{1}') promoted to a Variable in Blackboard '{2}'.
+Parameter '{0}' failed to promote to a variable, because Blackboard named '{1}' could not be found.
+Parameter Automations
+Parameter Not Found
+parameter:/
+parameterAutomation
+parameterAutomation.slot{0:D2}
+parameterLinks
+parameters
+Parameters
+Parameters to adjust the reverb properties of the room.
+params
+Params
+Parent
+Parent Asset Blackboard
+Particle Raycast Budget
+Pass
+Paste
+Paste ({0})
+Paste Assigned Condition
+Paste Assigned Condition ({0})
+Paste Assigned Task
+Paste Condition
+Paste Node(s) ({0})
+Paste Task
+path
+Path
+Path doesn't match GUID
+Path is invalid.
+pathMode
+pathType
+Pause
+Pending
+Per Second
+Physics
+pivot
+Pixel Light Count
+pixels
+placeholder
+Placeholder created via Unity
+platform
+Platform
+Platform Bank Sizes
+Platform Default
+platform group
+platform settings in the FMOD Studio build preferences.
+Platform Specific
+platforms/linux/lib/x86/libfmodstudio.so
+platforms/linux/lib/x86/libfmodstudioL.so
+Play
+Play Animation
+Play On Awake
+PlayAudio
+player
+playerData
+PlayEvent
+playInEditor
+Plays a 'Beep' in editor only
+Please ensure you have committed any outstanding changes to source control before continuing!
+Please give the new task a name
+Please make a selection
+Please override CreateInstance for
+Please read the logs for more information
+please register model<{nameof(TModel)}> first
+Please resolve the MissingAction issue by either replacing the action, importing the missing action type, or refactoring the type in GraphRefactor.
+Please resolve the MissingCondition issue by either replacing the condition, importing the missing condition type, or refactoring the type in GraphRefactor.
+Please resolve the MissingConnection issue by either replacing the connection, importing the missing connection type, or refactoring the type in GraphRefactor.
+Please resolve the MissingNode issue by either replacing the node, importing the missing node type, or refactoring the type in GraphRefactor.
+Please run {0} to resolve this issue.
+Please run the {2} menu command.\n
+Please select a folder in the Project view
+Please select a GraphOwner GameObject or a Graph Asset.
+Please use the [fsForward(...)] attribute.
+Plugin name '{0}' is not valid.
+Plugin name '{0}' is not valid. Names must start with a letter or an underscore ('_').
+Plugins
+Plugins are not implemented on platform {0}
+Plugins/Android/fmod.jar
+Plugins/Android/libs
+Plugins/FMOD/src/Runtime/wrapper
+Plugins/FMOD/Wrapper
+Plugins/iOS
+Plugins/tvOS
+Plugins/UWP
+Plugins/WebGL
+point
+PointOctree.cs
+PointOctree{T}
+PointOctree{T}.Node.NumObjectsAllowed
+PointOctreeNode.cs
+Pop
+Popup
+Port must be between 1 and 65535.
+port=
+position
+position as
+Positive
+postWrapMode
+Prefab Bound Graph just got overridden!
+Prefab Icon
+prefab_path
+PrefabModel Icon
+prefabPath:
+Prefabs
+PrefabVariant Icon
+Preferred Types
+PreferredTypes
+PreferredTypes.typePrefs
+Prefs
+Preload
+Preload Sample Data
+PreloadSamples
+Preserve Frame Buffer Alpha
+Preview Scene Camera
+Preview.png
+PreviewEmitter.png
+preWrapMode
+priority
+Priority
+priorityComparer
+private static extern FMOD.RESULT FMOD5_System_RegisterDSP(IntPtr system, IntPtr description, IntPtr handle);
+private static extern IntPtr {0}();
+ProbabilitySelector
+Process {0} Tasks
+Processing Task {0} of {1}
+Processor Count
+Processor Frequency
+Processor Type
+Profiler/Memory/All
+Profiler/Memory/AnimationClip
+Profiler/Memory/AudioClip
+Profiler/Memory/Font
+Profiler/Memory/Material
+Profiler/Memory/Mesh
+Profiler/Memory/ScriptableObject
+Profiler/Memory/Shader
+Profiler/Memory/Summary
+Profiler/Memory/TextAsset
+Profiler/Memory/Texture
+Profiler/Reference Pool
+Profiler/Summary
+Project Platform
+ProjectSettings/AudioManager.asset
+ProjectSettings/TagManager.asset
+Promote Defined Parameters To Variables
+Promote Missing Parameters
+Promote Missing Parameters To Variables/
+Promote To Variable
+Promote Variable
+Promote Variable in '{bb.identifier}' Blackboard
+Promote Variables
+Prompt a Dialogue Multiple Choice. A choice will be available if the choice condition(s) are true or there is no choice conditions. The Actor selected is used for the condition checks and will also Say the selection if the option is checked.
+Prompt Me
+property
+Property
+Property Request
+Property Type
+Property with name '{0}' on type '{1}', could not be resolved.
+propertyID
+Protects the decorated child from running if another Guard with the same token is already guarding (Running) that token.\nGuarding is global for all of the agent Behaviour Trees.
+Proxy authentication is required to access the specified resource.
+PS4
+Pts
+pts - Lorem ipsum dolor sit...
+public async UniTask<bool> Execute(CardData cardData, IEntityController atk, IEntityController tar)
+public class {name} : ICardEffectExecutor
+public FMODUnity.EventReference {2};\n
+public FMODUnity.EventReference yourNewFieldName;\n
+public static class Bank
+public static class Event
+public static class FMODName
+public static class GlobalParameter
+public static class Snapshot
+public static void {0}(FMOD.System coreSystem, Action<FMOD.RESULT, string> reportResult)
+publicReleaseRefSpec
+Pulse Audio
+punch
+Pushing {panel.GetType().Name}
+Quaternion({x}, {y}, {z}, {w})
+Queue has been corrupted (Did you update a node priority manually instead of calling UpdatePriority()?
+Queue is full - node cannot be added:
+Queue size cannot be smaller than 1
+Queue total {total}>{QueueDisconnectThreshold}. rcv_queue={kcp.rcv_queue.Count} snd_queue={kcp.snd_queue.Count} rcv_buf={kcp.rcv_buf.Count} snd_buf={kcp.snd_buf.Count}\n
+Quick way to execute the left or the right child, based on a Condition Task.
+radius
+Raised
+Random
+Random(
+randomness
+randomnessMode
+Raw Vector
+ray
+Ray.cs
+Reached maximum audible playback count for this sound's soundgroup.
+Read (Out)
+ReadMessageBlocking: payloadBuffer needs to be of size 4 + MaxMessageSize = {4 + MaxMessageSize} instead of {payloadBuffer.Length}
+ReadMessageBlocking: possible header attack with a header of:
+ready
+Ready
+Real Channel Count
+realElapseSeconds
+Realtime Reflection Probes
+Realtime Since Startup
+reason:
+reason=
+Receive ispeek for negative len is not supported!
+ReceiveLoop: finished receive function for connectionId=
+receivePipe reached limit of {QueueLimit} for connectionId {connectionId}. This can happen if network messages come in way faster than we manage to process them. Disconnecting this connection for load balancing.
+Record RenderGraph
+Recoverables
+ref
+Refactor
+Refactor only works in editor mode. Please exit play mode.
+reference
+Reference is invalid.
+Reference Pool Count
+Reference type '{0}' is invalid.
+Reference type is invalid.
+Reference type is not a non-abstract class type.
+referenceType
+ReferenceType is invalid.
+Refill
+RefillFromEnd
+Reflection
+reflectivity
+Reflectivity
+Refresh
+Refresh Banks
+Refresh Banks Now
+Refreshing banks
+Refreshing banks now...
+Register
+RegisterAssetReferenceAttributeForwardToChildAttribute
+RegisterStaticPlugins.cs
+relativeCenter
+releaseReferenceCount
+ReloadBaseTypes
+Remap
+Remaps the child status to another status. Used to either invert the child's return status or to always return a specific status.
+Remove
+Remove '{0}'
+Remove {0} From {1}
+Remove {StagingFolder}
+Remove an element from the target list
+Remove Connection
+Remove empty field <b>{0}</b>
+Remove field <b>{0}</b>
+Remove Item
+Remove Override
+Remove Sub Asset
+Remove Sub-Asset
+Remove Variable
+Remove(T, BoundingBox)
+Remove(T, Vector3)
+remove_
+removeReferenceCount
+Removing empty folder {0}
+Rename
+ReNamePanel
+Rendered Frame Count
+rendererFeatures
+Rendering Threading Mode
+Reorder Item
+Re-Ordering Is Disabled
+Reorganize Plugin Files
+Repair
+Repair FMOD Libraries
+Repair: set GUID to {0}
+Repair: set path to {0}
+Repair: set path to '{0}'
+Repeat
+Repeat Forever
+Repeat State Actions
+repeaterMode
+Repeats the child either x times or until it returns the specified status, or forever.
+Replace
+Replace All
+Replace Unity
+Replace:
+reportResult(result, \"Registering static plugin '{0}'\");
+req
+requires a <
+requiresReset
+Reset
+Reset Defaults
+Reset Preferred Types
+resolution
+Resolution Scaling Fixed DPI Factor
+Resonance Audio Listener
+resonanceaudio.bundle
+ResonanceAudio/FmodResonanceAudioRoom
+Resources
+Restart Unity
+Restart Unity so that it releases its lock on the existing FMOD native libraries.
+Restriction failed:
+restrictions
+result
+result = FMOD5_System_RegisterDSP(coreSystem.handle, {0}(), IntPtr.Zero);
+results
+Results is invalid.
+Return
+return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
+return false;
+Return true or false based on the probability settings. The chance is rolled for once whenever the condition is enabled.
+returns
+Returns
+Returns Running until the assigned condition becomes true, after which the decorated child is executed.
+Returns true when the selected event is triggered on the selected agent.\nYou can use this for both GUI and 3D objects.\nPlease make sure that Unity Event Systems are setup correctly
+Re-Validate Graph
+Reverb Properties
+Reverb properties cannot be set on this channel because a parent channelgroup owns the reverb connection.
+reverb unaffected.
+reverbBrightness
+ReverbBrightness
+reverbGainDb
+ReverbGainDb
+reverbTime
+ReverbTime
+Reverse direction for dragging
+Revert
+Revert Exposed Parameter
+Revert FMOD Platform Properties
+Revert Graph
+Revert Graph From Prefab
+Revert Prefab Modification
+Revert Variable From Prefab
+revertToOriginal
+RGBA8888
+rhs
+richText
+richTextEnabled
+right
+Right
+rightWall
+RightWall
+Room surface materials to calculate the acoustic properties of the room.
+Root Switcher
+Rotate the agent away from target per frame
+Rotate the agent towards the target per frame
+rotated
+Rotation Parameters
+Rotation Rate
+Rotation Rate Unbiased
+rotationSnapThreshold
+Runtime Debug Bound Value
+s
+Safe Area
+Safety buffer that is always added to the dynamic bufferTimeMultiplier adjustment.
+Sample
+Sample Rate
+Save
+Save As
+Save Blackboard [{0}]
+Save List Preset
+Save Preset
+Save Return Value
+Save To Asset
+Save Types Preset
+Save Value As
+SaveLog
+savePolicy
+Saves the blackboard variables in the provided key and to be loaded later on
+Say
+Say Selection
+scale
+Scale Canvas Group
+Scale Parameters
+Scan
+Scan Graph for Serialized Struct Types
+Scan Results:
+Scene Count
+Scene Count In Build Settings
+scene modifications.
+Scene View camera is named 'SceneCamera'. Inspector preview for materials, models, and prefabs is named 'Preview Scene Camera'. You can add your own custom cameras like MinimapCamera.
+SceneAsset Icon
+SceneCamera
+Scenes
+scrambleChars
+scrambleMode
+Screen DPI
+Screen Orientation
+Script
+ScriptableObject Icon
+ScriptableObjects
+Scroll With Speed
+Scroll Within Time
+ScrollRect.value
+Search
+Search for logs
+Search Icon
+Search Root
+SearchIcon
+SearchIconBlack.png
+Searching {0}
+SearchToolbar
+sec.
+second
+seconds
+See LICENSE.TXT for additional license information.
+See the <link="ID_01"><u><#40A0FF>online documentation</color></u></link> for more information <a href="http://url...">about this product</a> \U0001F60A
+See the <link="ID_01"><u><#40A0FF>online documentation</color></u></link> for more information <u><link="ID_02">about this product</link></u>.
+Seek
+Seek (GameObject)
+Seek (Vector3)
+Seems to be ok!
+Select
+Select a '
+Select a child to execute based on it's chance to be selected. An optional pre-Condition Task can be assigned to filter the child in or out of the selection probability.\nThe actor selected will be used for the condition checks.
+Select a target node to jump to.\nFor your convenience in identifying nodes in the dropdown, please give a Tag name to the nodes you want to use in this way.
+Select Action Method
+Select Derived Type
+Select Event
+Select Field
+Select FMOD Bank
+Select Graph
+Select Method
+Select Option
+Select Owner
+Select Property
+Select Sub Asset
+Select Target Variable Type
+Select the output sub-directory and surround speaker mode that match the project
+Select the speaker mode that matches the project
+Select Type
+Select Words or Links to interact with them or Hold Shift Key to interact with individual Characters.
+Selected Action Method:
+Selected Event
+Selected Type
+Selected values:\n
+SelectedAlt.png
+selectionMode
+Selector
+Selects a child to execute based on its chance to be selected and returns Success if the child returns Success, otherwise picks another child.\nReturns Failure if all children return Failure, or a direct 'Failure Chance' is introduced.
+Send a Graph Event to multiple gameobjects which should have a GraphOwner component attached.
+Send a graph event with T value. If global is true, all graph owners in scene will receive this event. Use along with the 'Check Event' Condition
+Send a graph event. If global is true, all graph owners in scene will receive this event. Use along with the 'Check Event' Condition
+Send a Unity message to all game objects with a component of the specified type.\nNotice: This is slow and should not be called per-fame.
+Send Event [
+Send Event [{0}] to {1}
+Send Event [{0}]({1}) to {2}
+Send len={len} requires {count} fragments, but kcp can only handle up to {FRG_MAX} fragments.
+Send: stream.Write exception:
+Sending events to standalone action lists has no effect
+sendInterval={sendInterval:F3} bufferTime={bufferTime:F3} drift={drift:F3} driftEma={driftEma.Value:F3} timescale={localTimescale:F3} deliveryIntervalEma={deliveryTimeEma.Value:F3}
+sendInterval={sendInterval:F3} jitter std={jitterStandardDeviation:F3} => that is ~{multiples:F1} x sendInterval + {dynamicAdjustmentTolerance} => dynamic bufferTimeMultiplier={safezone}
+SendLoop Exception: connectionId=
+SendMessage to the agent, optionaly with an argument
+Sends an event to all GraphOwners within range of the agent and over time like a shockwave.
+separator
+Separator (Double Click To Rename)
+Separator Added
+Separator Rename
+Sequencer
+Serialization
+Set
+Set '
+Set {socket} RecvBuf = {initialReceive}=>{socket.ReceiveBufferSize} ({socket.ReceiveBufferSize / initialReceive}x) SendBuf = {initialSend}=>{socket.SendBufferSize} ({socket.SendBufferSize / initialSend}x)
+Set a blackboard boolean variable
+Set a blackboard boolean variable at random between min and max value
+Set a blackboard float variable
+Set a blackboard float variable at random between min and max value
+Set a blackboard integer variable
+Set a blackboard integer variable at random between min and max value
+Set a blackboard Vector3 variable
+Set a property on a script
+Set a variable on a script
+Set Active
+Set another Agent for the rest of the Tree dynamicaly from this point and on. All nodes under this will be executed with the new agent. You can also use this decorator to revert back to the original graph agent.
+Set Blackboard != Owner Blackboard
+Set Enabled
+Set Field
+Set FMOD Platform Inheritance
+Set Generic Type
+Set IK
+Set Integer
+Set Integer Random
+Set Layer
+Set Layer Weight
+Set Look At
+Set Node Reference
+Set Parameter Bool
+Set Parameter Float
+Set Parameter Integer
+Set Parameter Trigger
+Set Property
+Set Property (Desktop Only)
+Set Read Out
+Set Reflection Member
+Set Source
+Set Start
+Set Target
+Set the gameobject active state.
+Set the monobehaviour's enabled state.
+Set the Renderer active state, thus making the object visible or invisible.
+Set the vector property to (0, 0, 1)
+Set the vector property to (0, 0, -1)
+Set the vector property to (0, 0, 1, 0)
+Set the vector property to (0, 0, -1, 0)
+Set the vector to (0, 0)
+Set the vector to (0, 0, 0)
+Set the vector to (0, 0, 0, 0)
+Set the vector to (0, 1)
+Set the vector to (0, -1)
+Set the vector to (0, 1, 0)
+Set the vector to (0, -1, 0)
+Set the vector to (0, 1, 0, 0)
+Set the vector to (0, -1, 0, 0)
+Set the vector to (1, 0)
+Set the vector to (-1, 0)
+Set the vector to (1, 0, 0)
+Set the vector to (-1, 0, 0)
+Set the vector to (1, 0, 0, 0)
+Set the vector to (-1, 0, 0, 0)
+Set the vector to (1, 1)
+Set the vector to (1, 1, 1)
+Set the vector to (1, 1, 1, 1)
+Set To Null
+Set to Value of '{0}'
+Set Type
+Set Value
+Set Visibility
+Set Write In
+set_
+SetActive
+SetBoundGraphReference method is an Editor only method!
+SetProperty Error
+Sets the room dimensions.
+Setting Parameter Type '{0}' back to Variable Type '{1}' is not possible.
+Settings instance has not been initialized. Unable to continue build.
+SettingsIcon
+SetValue
+Shader Level
+Shader Model {0}.{1}
+Shadow Cascade 2 Split
+Shadow Cascade 4 Split
+Shadow Cascades
+Shadow Distance
+Shadow Near Plane Offset
+Shadow Projection
+Shadow Quality
+Shadow Resolution
+Shadowmask Mode
+Shared subsounds cannot be replaced or moved from their parent stream, such as when the parent stream is an FSB file.
+Shield
+Shift Left
+Shift Right
+Should the iteration start from the begining after the Iterator node resets?
+Shout Event [{0}]
+Show Comments
+Show Event in FMOD Studio
+Show Full Class Name
+Show Grid
+Show Hierarchy Icons
+Show Json
+Show JSON
+Show Node IDs
+Show Node Running Times
+Show Status Window
+Show Summary Info
+Show Type Names
+ShowBankRefreshWindow
+ShurikenEffectBg
+Simple <color=yellow>example</color> of text created with <#80ff80>TextMesh <#8080ff>Pro</color>!
+Simply use to debug return true or false by inverting the condition if needed
+Simulate Mouse With Touches
+Single
+Single Pass
+Single Platform Build
+Single[]
+Singleton<{typeof(T).Name}>.OnInit() -> {gameObject.name}
+Singleton<{typeof(T).Name}>.Singleton -> {typeof(T).Name} is null
+Sirenix ApS
+size
+Size
+sizeHint
+Skin Weights
+Sleep Timeout
+SlicedBackground
+SlicedBackground2
+Slider - Camera Zoom
+Slider - Smoothing Value
+Slot
+slot {0:D2}:
+slot 00:
+Slot{0:D2}
+slot00
+slot01
+slot02
+slot03
+slot04
+slot05
+slot06
+slot07
+slot08
+slot09
+slot10
+slot11
+slot12
+slot13
+slot14
+slot15
+Slowdown begins when the local timeline is moving too fast towards remote time. Threshold is in frames worth of snapshots.\n\nThis needs to be negative.\n\nDon't modify unless you know what you are doing.
+Slower
+smartupdate
+Smooth Delta Time
+snapping
+snapshot
+snapshot:
+snapshot:/
+SnapshotIcon.png
+Snapshots
+so that FMOD can locate required files.\n\n
+Soft Masking
+<size=25%>Move the text object relative to the parent with the 2D Rect Mask.</size>
+Soft Particles
+Soft Vegetation
+SoftDelete
+Software
+Some events have been renamed in FMOD Studio. Do you want to run {0}
+Something in FMOD hasn't been implemented when it should be. Contact support.
+Sort
+Sould the BT repeat?
+Soundcard does not support the specified format.
+Source Control
+Source node can have no more out connections.
+Source Type
+Source Value
+sourceBankPath
+SourceBankPathUnformatted
+sourceProjectPath
+sourceSize
+Spaces:
+Spawning TextMesh Objects.
+Speaker Mode
+special case
+specific label restrictions set through the AssetReferenceUILabelRestriction attribute.
+Specified Banks
+Specified instance in FMOD_REVERB_PROPERTIES couldn't be set. Most likely because it is an invalid instance number or the reverb doesn't exist.
+specifiedTagOnly
+Specify when (if) the behaviour is updated. Changes to this only work when the behaviour starts, or re-starts
+Speed
+Sprite [
+SpriteConfig
+Sprites:
+spriteSourceSize
+src
+src/Editor
+stack
+Stacked Call Mode will push the current state to the stack and pop return to it later when another finished state without outgoing transitions has been encountered within the FSM. If you decide to use this feature make sure that you are not cycle stacking states.\nA Clean transition will clear the FSM stack.
+stackTrack
+Start
+Start Dialogue {0}
+Start Word Region at [
+Start, Resume, Pause, Stop a GraphOwner's behaviour
+StartGraph called with blackboard parameter being the same as the graph blackboard
+StartGraph should have been called in play mode only.
+startIndex
+startItem
+startPos
+Starts the Dialogue Tree assigned on a Dialogue Tree Controller object with specified agent used for 'Instigator'.
+State == {0}
+State stack exceeds 5. Ensure that you are not cycling stack calls
+States are already connected together. Consider using multiple conditions on an existing transition instead
+static
+Static plugin {0} has no name and will be ignored.
+Static Plugins
+StaticPluginManager
+Status
+StencilRT_A
+StencilRT_B
+StencilWritePass-{renderPassEvent}
+Step Sequencer
+StepIterator
+Stereo
+stick
+Stop Events Outside Max Distance
+Stop Mode
+StopEvent
+StopEventsOutsideMaxDistance
+Stopped dragging
+stopType
+StopType
+storageType
+Store the currently iterated list element in a variable.
+Store the currently iterated list index in a variable.
+Stores the agent gameobject on the blackboard.
+Stream
+Streamed Bytes
+Streaming
+strength
+stretchHeight
+stretchWidth
+strings.bank
+Structs/
+Stub
+Studio Bank Loader
+Studio Project Path
+studio.project.build();
+studio.project.lookup(\"{0}\").relationships.banks.add(studio.project.lookup(\"{1}\"));
+studio.project.workspace.masterEventFolder.id
+studio.project.workspace.masterEventFolder.id;
+studio.window.navigateTo(studio.project.lookup(\"{0}\"))
+Studio::System::initialize
+StudioIcon.png
+StyleSheet/StyleSheetDark
+StyleSheet/StyleSheetLight
+Stylus Touch Supported
+sub asset
+Sub Asset Changed
+Sub BehaviourTree
+Sub Dialogue
+Sub Dialogue Tree
+Sub FSM
+Sub Option Change
+Sub Tree
+Sub{0}\n{1}
+Sub-asset references is not allowed on this field.
+SubGraph Actor Parameters Mapping
+SubGraph can't be itself.
+SubGraph has no exposed public variables. You can make variables exposed public through the 'gear' menu of a variable.
+SubGraph Variables Mapping
+SubGraphs
+Subtitles
+subtitles
+subtitles
+Subtract
+Succeeded
+Success
+Success →
+Success State
+summary
+Sunny Days!
+Support
+Support Resolutions
+Supported
+Supported Random Write Target Count
+Supported Render Target Count
+Supports 2D Array Textures
+Supports 32bits Index Buffer
+Supports 3D Render Textures
+Supports 3D Textures
+Supports Accelerometer
+Supports Async Compute
+Supports Async GPU Readback
+Supports Audio
+Supports Compressed 3D Textures
+Supports Compute Shader
+Supports Conservative Raster
+Supports Cubemap Array Textures
+Supports Geometry Shaders
+Supports GPU Fence
+Supports GPU Recorder
+Supports Graphics Fence
+Supports Gyroscope
+Supports Hardware Quad Topology
+Supports Image Effects
+Supports Instancing
+Supports Location Service
+Supports Mip Streaming
+Supports Motion Vectors
+Supports Multi-sample Auto Resolve
+Supports Multi-sampled 2D Array Textures
+Supports Multi-sampled Textures
+Supports Multiview
+Supports Raw Shadow Depth Sampling
+Supports Ray Tracing
+Supports Render Target Array Index From Vertex Shader
+Supports Render Textures
+Supports Render To Cubemap
+Supports Separated Render Targets Blend
+Supports Set Constant Buffer
+Supports Shadows
+Supports Sparse Textures
+Supports Stencil
+Supports Tessellation Shaders
+Supports Texture Wrap Mirror Once
+Supports Vibration
+Surface Material
+Surface material used to calculate the acoustic properties of the room.
+Surface Materials
+Surround 5.1
+Surround 7.1
+Surround 7.1.4
+Surround speaker mode:
+Switch
+Switch Behaviour {0}
+Switch FSM {0}
+Switch the entire Behaviour Tree of BehaviourTreeOwner
+Switch the entire FSM of FSMTreeOwner
+Switch the root node of the behaviour tree to a new one defined by tag\nBeta Feature!
+Switch To '
+SwitchSettingsMigration
+System Events
+System Memory Size
+System Setting
+System.Object
+System.Threading.Tasks.Task
+System::getBus
+T
+T:[{type}] must be an interface
+t:{0}
+t:{filterType.Name}
+T:{type.FullName}
+t:GameObject
+t:Prefab
+t:Scene
+t:ScriptableObject
+T1
+T10
+T11
+T12
+T13
+T14
+T15
+T16
+T2
+T3
+T4
+T5
+T6
+T7
+T8
+T9
+Tag
+Tag...
+Take Sample
+Take Sample for {0}
+tangentMode
+Target
+Target Blackboard
+Target In Line Of Sight
+Target In Line Of Sight 2D
+Target In View Angle
+Target In View Angle 2D
+Target node can have no more in connections.
+Target node of GOTO node is null
+Target Node of Jumper node is null
+Target Variable is not typeof T
+Target Within Distance
+Target Within Distance 2D
+TargetAssetPath
+TargetBankFolder
+TargetType of [fsMigrateToAttribute] must implement IMigratable<T> with T being the target type
+Task
+Task #
+Task Action
+Task Condition
+Task Inspector
+Task is obsolete: '{0}'
+Task Name
+Task Type
+tcp4
+Telepathy Client can not create connection because an existing connection is connecting or connected
+Temp Allocator Size
+template
+Template.ParameterAutomation
+Template.ParameterLinks
+Termination Policy
+Test Play Hit Effect
+TestFailed
+TestNormal
+TestPassed
+text
+Text -
+Text Mesh<color=#0050FF>        The count is: </color>
+TextArea
+textColor
+textComponent
+textField
+textHelper
+TextMesh <#0050FF>Pro!</color>  The count is: {0}
+TextMeshPro/Distance Field
+TextMeshPro/Input Validators/Digits
+TextMeshPro/Input Validators/Phone Numbers
+TextMeshPro/Mobile/Distance Field SSD
+Texture Streaming Add All Cameras
+Texture Streaming Enabled
+Texture Streaming Max File IO Requests
+Texture Streaming Max Level Reduction
+Texture Streaming Memory Budget
+Texture Streaming Renderers Per Frame
+The {0} field on component {1} has an [FMODUnity.EventRef(MigrateTo=\"{2}\")]
+The {0} field on component {1} has an [FMODUnity.EventRef]
+The {0} field on component {1} has value '{2}',
+The {0} field on component {1} is empty.\n
+The <#0050FF>count is: </color>
+The <#0050FF>count is: </color>{0:2}
+The <#0050FF>count is: </color>{0}
+The <#ffff80>Linked</color> Overflow text mode makes it possible to <#ffff80>link</color> text objects together to allow text to flow from one object to another.
+
+As the text fills a given text container, the text exceeding this container will automatically flow to the <#ffff80>linked</color> text object.
+
+This feature is located in the text Overflow options and available with both TextMeshPro components.
+
+The text Overflow - Linked mode makes it possible to create sophisticated text layout similar to those seen in magazines and web pages.
+the <b>{0}</b> command to scan your project for similar issues and fix them all.
+The <color=#0050FF>count is: </color>
+The agent is type of Transform so that Triggers can either work with a Collider or a Rigidbody attached.
+The asset cannot be moved into a 'Resources' folder
+The asset must be inside the 'Assets' folder
+The Bound Graph is Prefab Locked!\nChanges you make are not saved!\nUnlock the Prefab Instance, or Edit the Prefab Asset.
+The build path '{0}' does not exist.
+The build path has not been set.
+The condition for when to terminate the iteration and return status.
+The count is <#0080ff>{0}</color>
+the definition of the {0} type
+The distance to flee at.
+The distance to keep from each wander point.
+The error occurred because the sound referenced contains subsounds when it shouldn't have, or it doesn't contain subsounds when it should have.  The operation may also not be able to be performed on a parent sound.
+The event {0} already exists under {1}
+The event to send when the BT finish in Failure.
+The event to send when the BT finish in Success.
+The event to send when the Dialogue Tree finish in Failure.
+The event to send when the Dialogue Tree finished in Success.
+The FMOD banks are up to date.
+The FMOD source banks changed {0} ago.
+The FMOD Studio project '{0}' does not contain any built banks. Please build your project in FMOD Studio.
+The FMOD Studio project path '{0}' does not exist.
+The FMOD Studio project path must be set to an .fspro file.
+The folder is valid
+The following FMOD libraries contain incorrect line endings, and need to be repaired:\n\n
+The following struct types serialized in the graph were found that are not already in your Preferred Types List\n\n\n----\n
+The group name cannot be empty
+The GUID on this EventReference doesn't match the path.\n
+The HTTP request timed out.
+The larger title line is done using the <<#a0ffa0>size=120%</color>> tag. Alignment of the tag examples is done using the <<#a0ffa0>pos=xx.x</color>> tag.
+The length provided exceed the allowable limit.
+The list to iterate.
+The live update connection failed due to the game already being connected.
+The live update connection failed due to the game data being out of sync with the tool.
+The live update connection timed out.
+The margin tag can be defined in <#80ff80>pixel units</color> (px), <#80ff80>font units</color> (em) and as <#80ff80>percentage</color> (%) of the width of the text container.
+The max ammount of times to allow the child to execute until the tree is completely restarted.
+The maximum allowed iterations. Leave at -1 to iterate the whole list.
+The metadata for the {folderPath} folder needs to be updated
+The mode to use for patrol (progressive or random)
+The mode to use.
+The new agent to use.
+The output device has no drivers installed.  If pre-init, FMOD_OUTPUT_NOSOUND is selected as the output mode.  If post-init, the function just fails.
+The parameter is set to Read Out, but is not linked to any Variable.
+The passed dictionary is null.
+The path on this EventReference doesn't match the GUID.\n
+The policy determines when the Parallel node will end and return its Status.
+The previously assigned main asset with path <b>'{assetPath}'</b> is missing. GUID <b>'{assetReference.AssetGUID}'</b>
+The previously assigned sub asset with name <b>'{assetReference.SubObjectName}'</b> is missing.
+The reference has been released.
+The requested event, bus or vca could not be found.
+The retrieved string is too long to fit in the supplied buffer and has been truncated.
+The Scroll Rect is active!
+The selected {0} does not have a {1} assigned.\n Please create or assign a new one in its inspector.
+The selection mode used.
+The severity of the validation result.
+The sound created exceeds the allowable input channel count.  This can be increased using the 'maxinputchannels' parameter in System::setSoftwareFormat.
+The specified bank has already been loaded.
+The specified channel has been reused to play another sound.
+The specified recording driver has been disconnected.
+The specified resource is already locked.
+The specified resource is not loaded, so it can't be unloaded.
+The specified resource is not locked, so it can't be unlocked.
+The specified resource requires authentication or is forbidden.
+The specified tag could not be found or there are no tags.
+The specified URL couldn't be resolved.
+The speed to flee.
+The speed to wander with.
+The status that will be returned if the assigned condition is or becomes false.
+The Status to monitor for.
+The Status to return after (and if) the Action is executed.
+The Studio::System object is not yet initialized.
+The Super Action State provides finer control on when to execute actions. This state is never Finished by it's own if there is any Actions in the OnUpdate list and thus OnFinish transitions will never be called in that case. OnExit Actions are only called for 1 frame when the state exits.
+The syncpoint did not come from this sound handle.
+The target to flee from.
+The time to disallow execution for.
+The timeout period in seconds.
+The transitions of this node will be constantly checked. If any becomes true, that transition will take place. This is not a state.
+The Ultimate Text Solution for Unity
+the validator will display an error message if the AssetReference is not set.
+The vectors passed in are not unit length, or perpendicular.
+The version number of this file format is not supported.
+The weights of the children.
+Then
+There are {0} files missing. Select them above for more information.
+There are {0} FMOD binaries missing for build target {1}
+There are a number of files produced by FMOD for Unity that should be ignored by source control. Here is an example of what you should add to your source control ignore file:
+There are more than 200 results. Please try refine your search input.
+There are no connections on the Dialogue Condition Node
+There are no connections to the Multiple Choice Node!
+There exist more than one Global Blackboards with same identifier name '{0}'. The old one will now be destroyed.
+There is a file missing. Select it above for more information.
+There is a version mismatch between the FMOD header and either the FMOD Studio library or the FMOD Low Level library.
+There is an FMOD binary missing for build target {0}
+There is no Behaviour Tree assigned
+There is no Conidition on the Dialoge Condition Node
+These duplications mean that data will be included in both the application build and the addressables build.\n\n
+They started dragging
+This {typeof(T).GetNiceName()} field has been marked as not allowing sub assets, but the target type '{this.targetType.GetNiceName()}' is not a valid main asset for {typeof(T).GetNiceName()}, so the target value *must* be a sub asset. Therefore sub assets have been enabled. (Valid main asset types for {typeof(T).GetNiceName()} are: {string.Join(
+This block of text is <#f0af80>Justified</color> on the left and right side.
+This block of text is
+<#8080ff>Left</color> justified.
+This block of text is
+<#80ff80>Right</color> justified.
+This block of text is
+<#ff8000>Center</color> justified.
+This command failed because System::init or System::setDriver was not called.
+This comprehensive validation system prevents hard-to-spot bugs and errors,
+This console will catch graph related logs and display them here instead of the normal Unity console, thus save bloat from the Unity console.\nFurthermore, any log displayed here can be clicked to focus the relevant graph element that the log relates to automatically.\nIt is recommended to dock this console below the Graph Editor for easier debugging.
+This event has been moved in FMOD Studio.\n
+This field has the <b>[FMODUnity.EventRef]</b> attribute, which is obsolete.\n
+This involves a few steps:
+This is a dialogue text
+This is a dialogue text...
+This is an example of using a <#ff4f00>Scrollbar</color> with the <b><size=150%>TextMesh<#4080ff>Pro</color></size></b> Text Input Field.
+
+The Scrollbar position and size adjusts automatically as new text is added.
+
+The Home and End keys move the caret to the start or end of each line.
+
+You can now also use Page Up and Page Down to navigate through the text.
+
+Holding down shift allows for multiple lines of text to be selected.
+
+Double clicks on words to select them.​
+This is an example of using the <#ffff80><indent></color> tag in TextMesh<#40a0ff>Pro</color> to create bullets and numbered lists.
+
+<sprite="DropCap Numbers" index=11><indent=3em>For these bullets, I am making creative use of the <#ffff80><sprite></color> tag to use sprites instead of plain bullets or numbers.</indent>
+
+<sprite="DropCap Numbers" index=12><indent=3em>By using the <#ffff80><indent></color> tag, we can indent the text to make room for the sprites.
+
+\u2022<indent=4em>Multiple levels of indentation is also possible.</indent>
+
+\u2022<indent=4em>This is placeholder text for another sub item in our list.</indent></indent>
+
+<sprite="DropCap Numbers" index=13><indent=3em>Using the <#ffff80><noparse></indent></noparse></color> tag, we can go back to the previous level of indentation.</indent>
+
+Despite the sophisticated layout of this text, the use of sprites and indentation, this is still a single text object.
+This is an example of using the <#ffffff>TextMesh<#40a0ff>Pro</color></color> <#ffff00>maxVisibleCharacters</color> and <#ffff00>maxVisibleLines</color> properties to control how many characters or lines of text will be displayed. This can be used to create <#80ff80>Reveal</color> or <#80ff80>Teletype FX</color> or even to simulate an <#80ff80>Old Computer Terminal</color>.
+
+This implementation does not involve any string manipulations and thus is allocation free. It also works with word wrapping to avoid cutting off words as they are revealed. This also supports the numerous rich text tags available in <#ffffff>TextMesh<#40a0ff>Pro</color></color>.
+This is an example showing how TextMesh Pro! can handle <#ffff00>word wrapping</color>.
+This is an Exposed Public variable of the graph local blackboard. You can use the arrows button on the right side to override/parametrize the default value.
+This is an obsolete Task:\n\"{0}\"
+This is no longer used nor required
+This is not a state and as such it never finish, thus OnFinish transitions are never called.\nPlease add a condition in all transitions of this node.
+This node has no functionality and you can use this for organization.\nIn comparison to an empty Action State, Transitions here are immediately evaluated in the same frame that this node is entered.
+This setup wizard will help you configure your project to use FMOD.
+This subsound is already being used by another sound, you cannot have more than one parent to a sound.  Null out the other parent's entry first.
+This validator detects potential duplicate asset dependencies in an addressable group, without the need for a build.
+This validator ensures that AssetLabelReferences marked with the Required attribute display an error
+This validator identifies dependencies that are duplicated in both addressable groups and the \"Resources\" folder.\n\n
+This validator provides robust integrity checks for your asset references within Unity.
+This version works in destop/JIT platform only.\n\nCall a function with none or up to 6 parameters on a component and return whether or not the return value is equal to the check value
+This version works in destop/JIT platform only.\n\nCalls a function that has signature of 'public Status NAME()' or 'public Status NAME(T)'. You should return Status.Success, Failure or Running within that function.
+This version works in destop/JIT platform only.\n\nCheck a property on a script and return if it's equal or not to the check value
+This version works in destop/JIT platform only.\n\nExecute a function on a script, of up to 6 parameters and save the return if any. If function is an IEnumerator it will execute as a coroutine.
+This version works in destop/JIT platform only.\n\nGet a property of a script and save it to the blackboard
+This version works in destop/JIT platform only.\n\nSet a property on a script.
+This will create a new SubTree out of this branch.\nAre you sure?
+This will delete all nodes of the currently viewing graph!\nAre you sure?
+This will disable these native libraries:{string.Join(string.Empty, paths)}
+This will do the following:\n* {string.Join(
+This will fill the target Blackboard with a Variable for each defined missing Parameter in the graph.\nContinue?
+This will make a local copy of the graph, bound to the owner.\n\nThis allows you to make local changes and assign scene object references directly.\n\nNote that you can also use scene object references through the use of Blackboard Variables.\n\nBind Graph?
+This will restart Unity. You will be prompted to save your work if you have unsaved
+Thread Affinity
+Threads
+Tick True
+TickGreen.png
+time
+Time
+Time Scale
+Time Since Level Load
+Timeout
+Timeout {0}/{1}
+timer
+Timer
+TimerManager
+Times
+Timestamp
+Tip
+TItem
+title
+Title
+TKey
+to
+To address this, the material should be marked as Addressable, either with one of the prefabs or in a distinct group.\n\n
+To complete the installation, we need to update the FMOD native libraries.\n
+to find and update any references to them?
+to move the asset outside of the \"Resources\" folder.
+To resolve this issue:\n
+toggle
+Toggle
+Toggle Mode
+toleranceMs
+Too many items to fit circular buffer
+ToolbarSeachCancelButton
+ToolbarSeachTextField
+ToolbarSearchCancelButton
+ToolbarSearchTextField
+Toolkit
+Toolkit for Unity
+Toolkit/AnimationCurve
+Toolkit/UIDatabase
+ToolkitTest
+tools
+Tools/EditorWindow
+Tools/ParadoxNotion/NodeCanvas/Active Owners Overview
+Tools/ParadoxNotion/NodeCanvas/Create/Behaviour Tree Asset
+Tools/ParadoxNotion/NodeCanvas/Create/Global Scene Blackboard
+Tools/ParadoxNotion/NodeCanvas/Create/New Task
+Tools/ParadoxNotion/NodeCanvas/Create/Standalone Action List
+Tools/ParadoxNotion/NodeCanvas/Create/State Machine Asset
+Tools/ParadoxNotion/NodeCanvas/External Inspector Panel
+Tools/ParadoxNotion/NodeCanvas/Graph Console
+Tools/ParadoxNotion/NodeCanvas/Graph Explorer
+Tools/ParadoxNotion/NodeCanvas/Graph Refactor
+Tools/ParadoxNotion/NodeCanvas/Preferred Types Editor
+Tools/ParadoxNotion/NodeCanvas/Website...
+Tools/ParadoxNotion/NodeCanvas/Welcome Window
+Tools/Quick Open Scene &q
+top
+Top
+TopCenter
+TopLeft
+TopRight
+Total Allocated Memory
+Total count, negative means INFINITE mode
+Total Reserved Memory
+Total Unused Reserved Memory
+totalMaps
+Touch Count
+Touch Pressure Supported
+Touch Supported
+Touches
+towards
+TParam
+TPriority
+Transform
+Transitions
+translation
+transportOpen.png
+TransportPlayButtonOff.png
+TransportPlayButtonOn.png
+TransportStopButtonOff.png
+TransportStopButtonOn.png
+TResult
+Tried to call a command on a 2d sound when the command was meant for 3d sound.
+Tried to call a function on a data type that does not allow this type of functionality (ie calling Sound::lock on a streaming sound).
+Tried to call a function on a thread that is not supported.
+Tried to Enter Null State
+Tried to EnterState on an FSM that was not running
+Tried to use a feature that requires hardware support.
+Trigger
+Trigger {0}
+Trigger Once
+TriggerEvent
+TriggerOnce
+Triggers a boolean variable for 1 frame to True then back to False
+trimmed
+true
+TRUE
+True Heading
+True, {0}
+Try Again
+TryGetComp failed for type:
+TryGetConfig failed for type:
+Trying to release an object that has already been released to the pool.
+Trying to validate...
+TType
+TVolumeComponent
+tvos
+txt
+type
+Type
+Type '{0}' Added!
+Type '{0}' is already in the list.
+Type '{0}' not found for Blackboard Variable '{1}' Binding.
+Type '{0}' Removed.
+Type converter requires a string
+Type is invalid.
+Type must implement IMigratable<T> for each one of the types specified in the [fsMigrateVersionsAttribute] or [fsMigrateToAttribute]\n
+Type Name
+Type name is invalid.
+Type Request
+Type Request Bug. Please report. :-(
+Type with name '{0}' could not be resolved.
+Type with name '{0}' was resolved using a fallback resolution (DeserializeFromAttribute).
+Type with name '{0}' was resolved using a fallback resolution (Generics).
+Type with name '{0}' was resolved using a fallback resolution (NoNamespace).
+type:
+Type: {0}
+TypeIcons/Explicit/
+TypeIcons/Implicit/
+typeName
+typeOptions
+typePrefs
+UGUI
+UI
+UI/{name}/{name}.prefab
+UI/{typeof(T).Name}.prefab
+UI/Loop Horizontal Scroll Rect
+UI/Loop Horizontal Scroll Rect(MultiPrefab)
+UI/Loop Vertical Scroll Rect
+UI/Loop Vertical Scroll Rect(MultiPrefab)
+UI/Skin/Background.psd
+UI/Skin/Checkmark.psd
+UI/Skin/DropdownArrow.psd
+UI/Skin/InputFieldBackground.psd
+UI/Skin/Knob.psd
+UI/Skin/UIMask.psd
+UI/Skin/UISprite.psd
+UICardVisual Bind
+UICardVisual UnBind
+UIDatabase
+UIFramework
+UIRoot
+UIRoot already exists
+Unable to add converter
+Unable to cast <
+Unable to find member \"
+Unable to find type
+Unavailable
+UnBind
+UnBind Variable
+under
+UNDERLAY_ON
+UndoRedoPerformed
+Unexpected end of input
+Unexpected end of input after \\
+Unexpected end of input when parsing an array
+Unexpected end of input when parsing an object
+Unhandled primitive type
+unity
+Unity
+Unity Audio
+Unity Sources
+Unity Toolkit
+UNITY_BOLT_EXIST
+UNITY_EDITOR
+UnityEditor
+UnityEditor.
+UnityEditor.AddressableAssets.GUI.AddressableAssetsWindow
+UnityEditor.AddressableAssets.GUI.AssetEntryTreeViewItem
+UnityEditor.FindDependencies
+UnityEngine.InputSystem
+UnityObject
+UnityToolkit.Editor
+UnityToolkit/PanelPrefab
+UnityToolkit/PolygonUI
+UnityToolkit/ProgressBar
+UnityToolkit/UIRoot
+Universal/
+Unknown
+Unknown data type
+Unknown error.
+unknown JSON data type
+Unlit Shader
+Unload
+UnloadEvent
+UnLock
+unlockedMaps
+Unpack error: {e}
+UnpackCompressed error: {e}
+Unrecognised Build Target
+Unrecognised build target:
+Unrecognised column:
+Unrecognised file layout:
+Unrecognised thread type '
+Unrecognized AssetType:
+Unrecognized EventLinkage:
+Unrecognized SavePolicy:
+Unscaled Delta Time
+Unscaled Time
+Unsupported file or audio format.
+Unsupported list mode:
+Untagged
+Until
+unusedReferenceCount
+up
+Up
+Update Event References
+Update FMOD Folder Metadata
+Update Interval
+Update interval is invalid.
+Update Metadata
+Updated comments for: {filePath}
+UpdateGraph called in a non-running, non-paused graph. StartGraph() or StartBehaviour() should be called first.
+Updating
+upgrading
+UpwardsArrow
+uri
+url
+Use <font="Anton SDF" material="Anton SDF - Drop Shadow"><#ffff80>multiple fonts</color></font> and <#ffff80>Sprites</color> <sprite=1> per text object.
+Use 'Check'
+Use CheckVariable(T)
+Use Count property instead.
+Use Debug Log Text
+Use Defaults
+Use 'Execute'
+Use Get Property instead
+Use GetVariableValue
+Use 'Graph.StartGraph' with the 'Graph.UpdateMode' parameter.
+Use Jumpers instead
+Use On FSM Enter and On FSM Exit nodes
+Use On FSM Update node
+Use OnDrawGizmosSelected
+Use Self ({0})
+Use SetVariableValue
+Use Sound.readData(byte[], out uint) or Sound.readData(byte[]) instead.
+Use the eventReference field instead
+Use the EventReference field instead.
+Use the EventReference struct instead
+Use this to get a variable on any blackboard by overriding the agent
+Use this to set a variable on any blackboard by overriding the agent
+UseCardOperation: {cardData.config.Id}
+Used for Utility AI, the Priority Selector executes the child with the highest utility weight. If it fails, the Priority Selector will continue with the next highest utility weight child until one Succeeds, or until all Fail (similar to how a normal Selector does).\n\nEach child branch represents a desire, where each desire has one or more consideration which are all averaged.\nConsiderations are a pair of input value and curve, which together produce the consideration utility weight.\n\nIf Dynamic option is enabled, will continously evaluate utility weights and execute the child with the highest one regardless of what status the children return.
+Used Heap Size
+User Acceleration
+User Interface
+userData
+useRealTime
+user-guide
+Uses Load Store Actions
+Uses Reversed ZBuffer
+Using <#80ff80>Hy\u00ADphen\u00ADa\u00ADtion</color> can help <#80ff80>im\u00ADprove</color> the <#80ff80>read\u00ADability</color> of text. This is a <#ffff80>well-known</color> fact.
+using cfg;
+using Cysharp.Threading.Tasks;
+using NodeCanvas.Framework;\n
+using ParadoxNotion.Design;\n
+using System.Runtime.InteropServices;
+using System;
+Using the FMOD Studio project at:
+Using the multiple platform build at:
+Using the single platform build at:
+usingReferenceCount
+uwp
+UWP
+V:
+Validation
+validation.
+value
+Value
+Value Changed on Client:
+Value Changed on Server:
+Value is invalid.
+Value passed in was a NaN, Inf or denormalized float.
+value:
+Values
+Variable
+Variable Added
+Variable Name Change
+Variable Value Change
+Variable with name '{0}' already exists in blackboard '{1}', but is of a different type! Returning null instead of new.
+Variable with name '{0}' already exists in blackboard '{1}'. Returning existing instead of new.
+Vector2
+Vector2({x}, {y})
+Vector3({x}, {y}, {z})
+version
+Version: {0}\n\nCopyright \u00A9 Firelight Technologies Pty, Ltd. 2014-2025 \n\n
+Vertical
+Vertical Accuracy
+Vertical Scrolling is Enabled!
+vh
+vibrato
+View Documentation
+Virtual Channel Count
+visionos
+visionOS
+volume
+VOLUME: RMS = {0:f2}db\n
+volumeManager
+VolumeManager already contains {typeof(TVolumeComponent)}
+VolumeStack already contains {typeof(TVolumeComponent)}
+VR
+VSync Count
+w
+W
+w:
+Wait {0} sec.
+Wait Object '{0}' Click. Save As {1}
+Warning
+Warning({0})
+Wav Writer
+We recommend that you disable the built-in Unity audio for all platforms, to prevent it from consuming system audio resources that the FMOD Engine needs.
+Web Security Enabled
+Web Security Host URL
+WebGL
+Weight
+Welcome
+Welcome and thank you for purchasing {0}! Following are a few important links to get you started:
+Welcome to FMOD for Unity {0}.
+welcome-revision-history
+What to return in case the token is already guarded by another Guard.
+What will happen to the BT when this state exits.
+What will happen to the sub FSM when this state exits.
+What will happen when the GraphOwner is disabled
+What will happen when the GraphOwner is enabled
+when parsing a string
+When the graph will first activate. Async mode will load the graph on a separate thread (thus no spikes), but the graph will activate a few frames later.
+while ( HasValue() && Character() != '\"' ) {
+                char c = Character();
+
+                // escape if necessary
+                if ( c == '\\' ) {
+                    char unescaped;
+                    var fail = TryUnescapeChar(out unescaped);
+                    if ( fail.Failed ) {
+                        str = string.Empty;
+                        return fail;
+                    }
+
+                    _cachedStringBuilder.Append(unescaped);
+                }
+
+                // no escaping necessary
+                else {
+                    _cachedStringBuilder.Append(c);
+
+                    // get the next character
+                    if ( TryMoveNext() == false ) {
+                        str = string.Empty;
+                        return MakeFailure(
+Whole Namespaces/
+Will be migrated to <b>{0}</b>
+Will continue with the first child node which condition returns true. The Dialogue Actor selected will be used for the checks
+Will return true after a specific amount of time has passed and false while still counting down
+Will sort the gameobjects in the target list by their distance to the agent (closer first) and save that list to the blackboard
+Will subscribe to a public event of Action type and return true when the event is raised.\n(eg public event System.Action [name])
+Will subscribe to a public event of Action<T> type and return true when the event is raised and it's value is equal to provided value as well.\n(eg public event System.Action<T> [name])
+Will subscribe to a public event of Action<T> type and return true when the event is raised.\n(eg public event System.Action<T> [name])
+Will subscribe to a public UnityEvent and return true when that event is raised.
+Will subscribe to a public UnityEvent<T> and return true when that event is raised and it's value is equal to provided value as well.
+Will subscribe to a public UnityEvent<T> and return true when that event is raised.
+win
+window
+Window/General/Inspector
+Windows
+Windows Audio Session API
+Windows Sonic
+with an unmodified Full Json implementation and unmodified serialization
+with each platform in its own subdirectory.
+with FMOD Audio Listener.
+with ID [
+withCallbacks
+Word [
+Word Index: <#ffff00>
+Word Position:
+Words:
+wordWrap
+Works like a normal Selector, but when a child returns Success, that child will be moved to the end.\nAs a result, previously Failed children will always be checked first and recently Successful children last.
+World
+World POS:
+Would you like to refresh banks?
+Wrench.png
+Write (In)
+x
+X
+x:
+X2
+x64
+x86
+x86/fmodstudio
+x86/gvraudio.dll
+x86/resonanceaudio.dll
+x86_64
+x86_64/fmodstudio
+x86_64/gvraudio.dll
+x86_64/libfmod.so
+x86_64/libfmodL.so
+x86_64/libfmodstudio{0}.so
+x86_64/libgvraudio.so
+x86_64/libresonanceaudio.so
+x86_64/resonanceaudio.dll
+XBox One
+xMax
+xMin
+xml
+XOR
+XXX
+y
+Y
+y:
+yes
+Yes
+YES
+yMax
+yMin
+You can click the repair button to update the GUID to match the path, or run the
+You can click the repair button to update the path to match the GUID, or run the
+You can click the repair button to update the path to the new location, or run
+You can convert from one type to the other at any time.
+You can decide to simply ignore these duplicated dependencies if this behavior is desired, or use the provided fix
+You can either use a parameter name OR hashID. Leave the parameter name empty or none to use hashID instead.
+You can use a variable inline with the text by using brackets likeso: [myVarName] or [Global/myVarName].\nThe bracket will be replaced with the variable value ToString
+You can't pass a NULL string to DOText: an empty string will be used instead to avoid errors
+You can't use AddVariable with a null value. Use AddVariable(string, Type) to add the new variable first
+You can't view sub-graphs in play mode until they are initialized to avoid editing asset references accidentally
+You have selected link <#ffff00>
+You have tried to start a graph which is an asset, not an instance! You should Instantiate the graph first.
+You may need to install a platform specific integration package from {1}.
+You must set screen DPI first.
+You tried to Get a Property Bound Variable '{0}', but the Bound Property '{1}' is Write Only!
+You tried to Set a Property Bound Variable '{0}', but the Bound Property '{1}' is Read Only!
+Your Round
+You've tried to start a graph with null Agent.
+You've tried to start graph without a 'Start' node.
+z
+Z
+z:
+Zero
+zoomFactor
+万我
+万我 damage times increased to {cardData.config.Value[1]}
+傩戏开场！
+养神
+写入数据key[{key}],类型[{typeof(T)}],路径[{path}]
+凝魂
+判官笔
+加载本地存档完成
+动画参数
+勾魂
+十殿齐发
+卡牌效果生成器
+发送网络实体{networkEntity}给客户端{connectId} 因为客户端刚刚连接
+受击时闪烁的目标颜色，通常是纯白色或亮红色
+受到{0}点伤害，然后使你下一次受到的伤害改为{1}。打出后有{2}%几率结束回合。
+受到{0}点伤害，然后使你下一次受到的伤害改为{1}。打出后有{2}%几率结束回合。敌人的死期减少{3}。
+受到{0}点伤害，然后摸{1}张牌。
+向服务器发送对时请求
+吸魂
+壮魂
+存档系统
+孟婆汤中的功能牌+1。
+孟婆汤中的攻击牌+1。
+孟婆汤中的请神牌+1。
+实体{req.component.entityId}不存在
+实体{req.id}不存在
+实体{req.identityId}不存在
+客户端{connectId}尝试更改实体{req.identityId}的所有者，但它不是所有者
+客户端{connectId}尝试更改实体{req.identityId}的所有者，但目标客户端{req.target}不存在
+客户端{connectId}尝试更新实体{entity}，但它不是所有者
+客户端{connectId}尝试更新实体{entity}的组件，但它不是所有者
+客户端{connectId}尝试生成一个属于客户端{req.owner}的网络实体
+客户端{connectId}尝试销毁实体{req.id}，但它不是所有者
+客户端{connectId}断开连接，销毁其NetworkEntityMgr
+客户端{connectId}连接,为其创建一个NetworkEntityMgr
+对时服务器拒绝连接 重新连接
+对本我造成{0}点伤害，自己恢复{1}点生命。打出后有{2}%几率结束回合。
+对自己造成{0}点伤害。打出后有{1}%几率结束回合。
+已广播: {data.Length} 个字节 [{DateTime.Now:T}]
+已快速打开场景:
+已有神助
+弹性，0-1之间。1表示完全弹回，0表示不弹回。
+弹性缩放设置 (Punch Scale Settings)
+强击
+强心
+强炼魂
+强魂万我
+当前有结束回合的操作在队列中，无法添加新的操作
+当前面具
+恢复{0}点生命。如果本回合中你打出过此牌的次数不小于{1}，有{2}%几率结束回合。
+慷慨
+我是拔舌鬼
+我是水鬼
+戴上时施加死期
+抓手工具
+拘魂
+拜托了 二郎神大人
+拜托了！神灵们
+提升关卡
+插图
+摸{0}张牌。
+操作队列中已存在相同操作，无法重复添加
+敌人执行操作：{operation}
+敌人的死期减少{0}。打出后有{1}%几率结束回合。
+敌人获得死期效果，倒计时为{0}。已有则无事发生。打出后有{1}%几率结束回合。
+文字收集
+旋转微调
+无事发生。打出后有{0}%几率结束回合。
+无法识别的实体控制器
+是否反向面向相机（有些模型初始背对相机）
+是否启用位置震动
+是否启用弹性缩放
+暂作抵抗
+更新实体{entity.id}的组件{req.component.idx}
+最真实的自己
+服务器为其他人[{spawn.owner}]生成了一个实体:{entity}
+服务器为本地客户端生成了一个实体:{entity}
+杀
+材料：红
+材料：蓝
+材料：黄
+此牌无效。
+死期: {(int)buffInfo.parameters}\n
+死期效果触发，{entity} 被击杀
+没有找到本地存档，创建默认存档
+游戏开始
+漫天冥气
+炼魂
+玩家切换面具:
+玩家可抽的牌组为空，无法抽牌
+生成网络实体{entity.id}，所有者{entity.owner}
+白\n
+白无常回血
+直到你的下个回合结束时，当你造成伤害时，你获得{0}点护甲。
+直到你的回合结束时，随机佩戴一个面具（从十殿阎罗、孟婆、二郎真君中随机选择）。
+看破
+确定
+碎魂
+类型
+组件引用
+组件的identityId不能为空
+组件的idx不能为空
+结束回合操作执行时，玩家操作队列不为空
+缩放效果持续时间
+缩放的强度向量。X和Y值越大，形变越夸张。(0.2, 0.2, 0) 是个不错的初始值
+网络对时误差达到容忍度 停止对时
+聚魂
+自力更生
+获得{0}点护甲，摸{1}张牌。
+获得{0}点护甲，然后摸{1}张牌。
+获得{0}点护甲。
+获得{0}点护甲。打出后有{1}%几率结束回合。
+视为打出本回合中你上一次打出的牌。打出后有{0}%几率结束回合。
+视觉反馈
+警告
+设置
+请勿勾选Canvas的Override Sorting
+读取数据key[{key}],类型[{typeof(T)}],路径[{path}]
+轻击
+过关！！！！！
+进入游戏场景
+通关最后一关，回到第一关
+造成{0}点伤害，摸{1}张牌。
+造成{0}点伤害，有{1}%几率斩杀对手。打出后有{2}%几率结束回合。
+造成{0}点伤害，有{1}%几率斩杀对手。打出后有{2}%几率结束回合。有{3}%的概率额外打出一次此牌。
+造成{0}点伤害，获得{1}点护甲，摸{2}张牌。
+造成{0}点伤害，获得{1}点护甲。
+造成{0}点伤害，重复{1}次，有{2}%的概率使伤害次数增加{3}。打出后伤害次数永久增加{4}，并且有{5}%几率结束回合。
+造成{0}点伤害，重复{1}次。打出后伤害次数永久增加{2}，并且有{3}%几率结束回合。
+造成{0}点伤害，重复{1}次。打出后伤害次数永久增加{2}，并且有{3}%几率结束回合。若你造成的伤害次数不小于{4}，受到伤害的敌人死期减少{5}。
+造成{0}点伤害，重复{1}次。打出后有{2}%几率结束回合。
+造成{0}点伤害。
+造成{0}点伤害。打出后有{1}%几率结束回合。
+造成{0}点伤害。若有敌人因此牌的伤害死亡，你恢复{1}点生命。
+造成{0}点伤害。若有敌人因此牌的伤害死亡，你恢复{1}点生命。有{2}%的概率额外打出一次此牌。
+造成一点伤害
+销毁属于客户端{connectId}的网络实体{entity}
+销毁网络实体{entity.id}，所有者{entity.owner}
+闪烁次数，设为 2 可能会有更强烈的视觉残留
+阎王压迫
+随机切换一个律令（可能重复）。
+震动强度，数值越大晃动越剧烈
+震动持续时间
+震动设置 (Shake Position Settings)
+震动频率，数值越大越急促
+震慑
+静心
+面板的排序顺序 越大越优先显示
+颜色从闪烁变回原色的持续时间
+颜色闪烁设置 (Flash Settings)
+驱罪为己
+魂归我用
+黑\n
+黑白无常
+黑白相连

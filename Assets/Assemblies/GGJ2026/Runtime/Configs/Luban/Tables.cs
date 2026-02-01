@@ -18,6 +18,7 @@ public partial class Tables
     public GhostTable GhostTable {get; }
     public MaskTable MaskTable {get; }
     public MengpoTable MengpoTable {get; }
+    public BuffTable BuffTable {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
@@ -25,6 +26,7 @@ public partial class Tables
         GhostTable = new GhostTable(loader("ghosttable"));
         MaskTable = new MaskTable(loader("masktable"));
         MengpoTable = new MengpoTable(loader("mengpotable"));
+        BuffTable = new BuffTable(loader("bufftable"));
         ResolveRef();
     }
     
@@ -34,6 +36,7 @@ public partial class Tables
         GhostTable.ResolveRef(this);
         MaskTable.ResolveRef(this);
         MengpoTable.ResolveRef(this);
+        BuffTable.ResolveRef(this);
     }
 }
 
