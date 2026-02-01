@@ -361,8 +361,21 @@ namespace GGJ2026.GamePlay
             GameObject go = Instantiate(damagePopupPrefab, position, Quaternion.identity);
             DamagePopup popup = go.GetComponent<DamagePopup>();
 
+            
+            bool isCritical = amount > 50;
             // 异步执行播放，不需要等待它结束才走后面的逻辑，所以用 Forget()
-            popup.Play(amount, amount > 50).Forget();
+            popup.Play(amount, isCritical).Forget();
+
+            if (isCritical)
+            {
+                CameraShake.Instance.Shake(1);
+            }
+            else
+            {
+                CameraShake.Instance.Shake();
+            }
+            
+            
         }
     }
 }
