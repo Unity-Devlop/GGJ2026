@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2263631905483287698}
   - component: {fileID: 5535934781951213901}
   - component: {fileID: -6301866753214848076}
+  - component: {fileID: 2511449467559140739}
   m_Layer: 0
   m_Name: "\u4E8C\u90CE\u795E\u9762\u5177"
   m_TagString: Untagged
@@ -105,3 +106,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.AnimationTime
   time: 1
+--- !u!95 &2511449467559140739
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4251799685524017306}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c9af1367dbcc6d42877d87fd57a72ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
