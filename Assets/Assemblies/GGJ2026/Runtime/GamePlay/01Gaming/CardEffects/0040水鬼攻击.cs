@@ -23,7 +23,6 @@ namespace GGJ2026.GamePlay
             await tar.TakeDamage(atk, cardData.config.Value[0]);
             await atk.OnApplyDamageTo(tar, cardData.config.Value[0]);
 
-            // [0,100)
             if (Random.Range(0, 100) < cardData.config.Value[1])
             {
                 return true;

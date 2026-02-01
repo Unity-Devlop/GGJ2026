@@ -1,4 +1,3 @@
-// c#
 using cfg;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -10,7 +9,7 @@ namespace GGJ2026.GamePlay
     {
         public async UniTask<bool> Execute(CardData cardData, IEntityController atk, IEntityController tar)
         {
-            // 无事发生。打出后有{1}%几率结束回合。
+            // 无事发生。打出后有{0}%几率结束回合。
 
             if (atk.TryGetMask(out var mask) &&
                 cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))

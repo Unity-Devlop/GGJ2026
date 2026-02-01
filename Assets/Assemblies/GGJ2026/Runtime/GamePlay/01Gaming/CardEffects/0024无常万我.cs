@@ -25,15 +25,12 @@ namespace GGJ2026.GamePlay
                 await atk.OnApplyDamageTo(tar, cardData.config.Value[0]);
             }
 
-            // 有概率增加伤害次数
             if (UnityEngine.Random.Range(0, 100) < cardData.config.Value[2])
             {
                 cardData.config.Value[1] += cardData.config.Value[3];
             }
 
-            // 永久增加伤害次数
             cardData.config.Value[1] += cardData.config.Value[4];
-            // 结束回合概率
             if (UnityEngine.Random.Range(0, 100) < cardData.config.Value[5])
             {
                 return true;

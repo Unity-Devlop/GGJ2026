@@ -9,6 +9,7 @@ namespace GGJ2026.GamePlay
         public async UniTask<bool> Execute(CardData cardData, IEntityController atk, IEntityController tar)
         {
             // 直到你的下个回合结束时，当你造成伤害时，你获得{0}点护甲。
+            //孟婆面具: 孟婆汤中的请神牌+1。
 
             if (atk.TryGetMask(out var mask) &&
                 cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))

@@ -1,4 +1,3 @@
-// c#
 
 using cfg;
 using Cysharp.Threading.Tasks;
@@ -24,7 +23,6 @@ namespace GGJ2026.GamePlay
 
             int damage = cardData.config.Value[0];
 
-            // 在造成伤害前触发钩子
             await atk.OnApplyDamageTo(tar, damage);
 
             await tar.TakeDamage(atk, damage);

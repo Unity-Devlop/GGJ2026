@@ -9,6 +9,8 @@ namespace GGJ2026.GamePlay
         public async UniTask<bool> Execute(CardData cardData, IEntityController atk, IEntityController tar)
         {
             // 受到{0}点伤害，然后摸{1}张牌。
+            //阎王面具: 获得{0}点护甲，然后摸{1}张牌。
+            //孟婆面具: 孟婆汤中的功能牌+1。
 
             if (atk.TryGetMask(out var mask) &&
                 cardData.config.MaskToCardEffect.TryGetValue(mask, out var newCardEffectId))

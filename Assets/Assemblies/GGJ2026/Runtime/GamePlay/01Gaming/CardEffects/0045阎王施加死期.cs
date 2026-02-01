@@ -1,4 +1,3 @@
-// c#
 
 using cfg;
 using Cysharp.Threading.Tasks;
@@ -22,7 +21,6 @@ namespace GGJ2026.GamePlay
             await atk.UseCard(cardData);
             await tar.TakeCard(cardData);
 
-            // 若目标未处于死期，则施加倒计时（按实际接口调整方法名）
             int period = cardData.config.Value[0];
             await tar.AddBuff(BuffEnum.死期, period);
 
