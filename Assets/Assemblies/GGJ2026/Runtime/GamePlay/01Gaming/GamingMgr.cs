@@ -97,9 +97,18 @@ namespace GGJ2026.GamePlay
 
             while (true)
             {
-                isGameOver = playerController.IsDead() || enemyController.IsDead();
-                isGameWin = enemyController.IsDead() && !playerController.IsDead();
-                if (isGameOver) break;
+                var over = playerController.IsDead() || enemyController.IsDead();
+                var win = enemyController.IsDead() && !playerController.IsDead();
+                if (over)
+                {
+                    await UniTask.Delay(TimeSpan.FromSeconds(1f));
+                    isGameOver = true;
+                    isGameWin = win;
+                    break;
+                }
+
+                isGameOver = false;
+                isGameWin = false;
 
                 if (currentGamingState == GamingState.PlayerRound)
                 {
@@ -357,16 +366,13 @@ namespace GGJ2026.GamePlay
 
         public GameObject damagePopupPrefab;
 
-        public void OnEntityTakeDamage(Vector3 position, int amount)
+        public async UniTask OnEntityTakeDamage(Vector3 position, int amount)
         {
             // 实例化 Prefab
             GameObject go = Instantiate(damagePopupPrefab, position, Quaternion.identity);
             DamagePopup popup = go.GetComponent<DamagePopup>();
-
-            
             bool isCritical = amount > 50;
-            // 异步执行播放，不需要等待它结束才走后面的逻辑，所以用 Forget()
-            popup.Play(amount, isCritical).Forget();
+
 
             if (isCritical)
             {
@@ -376,8 +382,10 @@ namespace GGJ2026.GamePlay
             {
                 CameraShake.Instance.Shake();
             }
-            
-            
+
+
+            // 异步执行播放，不需要等待它结束才走后面的逻辑，所以用 Forget()
+            await popup.Play(amount, isCritical);
         }
     }
 }

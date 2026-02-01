@@ -59,12 +59,11 @@ namespace GGJ2026.GamePlay
             throw new NotImplementedException();
         }
 
-        public UniTask OnceKill()
+        public async UniTask OnceKill()
         {
-            GamingMgr.Singleton.OnEntityTakeDamage(transform.position, 9999);
             data.property.health.Value = 0;
             RuntimeManager.PlayOneShot(Global.refHolder.dead);
-            return UniTask.CompletedTask;
+            await GamingMgr.Singleton.OnEntityTakeDamage(transform.position, 9999);
         }
 
         public bool IsDead()
@@ -227,14 +226,13 @@ namespace GGJ2026.GamePlay
                 data.property.shield -= shieldDamage;
                 RuntimeManager.PlayOneShot(Global.refHolder.defence);
 
-                GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageToHealth);
-
                 data.property.health.Value -= damageToHealth;
+                await GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageToHealth);
             }
             else
             {
-                GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageValue);
                 data.property.health.Value -= damageValue;
+                await GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageValue);
             }
 
             if (data.property.health.Value <= 0)
@@ -249,6 +247,7 @@ namespace GGJ2026.GamePlay
         public async UniTask GainShield(int value)
         {
             data.property.shield += value;
+            await UniTask.Delay(TimeSpan.FromSeconds(0.2f));
         }
 
         public async UniTask SwitchMask(MaskEnum id)
@@ -398,7 +397,7 @@ namespace GGJ2026.GamePlay
                 default:
                     throw new ArgumentOutOfRangeException(nameof(id), id, null);
             }
-            
+
             await UniTask.Delay(TimeSpan.FromSeconds(2f));
         }
 

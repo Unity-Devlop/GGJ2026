@@ -222,13 +222,13 @@ namespace GGJ2026.GamePlay
                 data.property.shield -= shieldDamage;
 
                 RuntimeManager.PlayOneShot(Global.refHolder.defence);
-                GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageToHealth);
                 data.property.health.Value -= damageToHealth;
+                await GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageToHealth);
             }
             else
             {
-                GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageValue);
                 data.property.health.Value -= damageValue;
+                await GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageValue);
             }
 
             if (data.property.health.Value <= 0)
