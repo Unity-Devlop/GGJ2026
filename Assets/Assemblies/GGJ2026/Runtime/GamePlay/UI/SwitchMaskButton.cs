@@ -2,12 +2,13 @@ using System;
 using cfg;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace GGJ2026.GamePlay
 {
     [RequireComponent(typeof(Button))]
-    public class SwitchMaskButton : MonoBehaviour
+    public class SwitchMaskButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
     {
         [Sirenix.OdinInspector.ReadOnly, Sirenix.OdinInspector.ShowInInspector]
         private MaskEnum id;
@@ -44,6 +45,16 @@ namespace GGJ2026.GamePlay
         {
             this.id = id;
             nameText.text = id.ToString();
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            Global.Event.Invoke<OnMaskButtonPointerEnter>(new OnMaskButtonPointerEnter(id));
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            Global.Event.Invoke<OnMaskButtonPointerExit>(new OnMaskButtonPointerExit(id));
         }
     }
 }

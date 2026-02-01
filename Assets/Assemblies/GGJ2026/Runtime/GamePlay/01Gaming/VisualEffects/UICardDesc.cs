@@ -21,6 +21,8 @@ namespace GGJ2026.GamePlay
 
             Global.Event.Listen<OnUICardVisualPointerEnter>(OnUICardVisualPointerEnter);
             Global.Event.Listen<OnUICardVisualPointerExit>(OnUICardVisualPointerExit);
+            Global.Event.Listen<OnMaskButtonPointerEnter>(OnMaskButtonPointerEnter);
+            Global.Event.Listen<OnMaskButtonPointerExit>(OnMaskButtonPointerExit);
 
 
             gameObject.SetActive(false);
@@ -75,6 +77,27 @@ namespace GGJ2026.GamePlay
         {
             Global.Event.UnListen<OnUICardVisualPointerEnter>(OnUICardVisualPointerEnter);
             Global.Event.UnListen<OnUICardVisualPointerExit>(OnUICardVisualPointerExit);
+            Global.Event.UnListen<OnMaskButtonPointerEnter>(OnMaskButtonPointerEnter);
+            Global.Event.UnListen<OnMaskButtonPointerExit>(OnMaskButtonPointerExit);
+        }
+
+        private void OnMaskButtonPointerExit(in OnMaskButtonPointerExit args)
+        {
+            descText.text = string.Empty;
+            _canvasGroup.alpha = 0;
+            gameObject.SetActive(false);
+            _bounceEffectCts?.Cancel();
+        }
+
+        private void OnMaskButtonPointerEnter(in OnMaskButtonPointerEnter args)
+        {
+            descText.text = Global.tables.MaskTable.Get(args.maskID).Desc;
+
+            gameObject.SetActive(true);
+            _canvasGroup.alpha = 1;
+            _bounceEffectCts?.Cancel();
+            _bounceEffectCts = new CancellationTokenSource();
+            _charBounceEffect.PlayWaveEffect(_bounceEffectCts.Token).Forget();
         }
     }
 }

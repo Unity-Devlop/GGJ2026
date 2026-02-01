@@ -74,4 +74,24 @@ namespace GGJ2026.GamePlay
             maskID = id;
         }
     }
+
+    public readonly struct OnMaskButtonPointerEnter
+    {
+        public readonly MaskEnum maskID;
+
+        public OnMaskButtonPointerEnter(MaskEnum id)
+        {
+            maskID = id;
+        }
+    }
+    
+    public readonly struct OnMaskButtonPointerExit
+    {
+        public readonly MaskEnum maskID;
+
+        public OnMaskButtonPointerExit(MaskEnum id)
+        {
+            maskID = id;
+        }
+    }
 }
