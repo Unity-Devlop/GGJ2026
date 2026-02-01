@@ -29,7 +29,7 @@ namespace GGJ2026.GamePlay
                 Debug.Log("End Turn Button Clicked");
                 endTurnButton.enabled = false;
                 await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
-                await GamingMgr.Singleton.PushPlayerOperation(new EndTurnOperation());
+                GamingMgr.Singleton.PushPlayerOperation(new EndTurnOperation());
                 endTurnButton.enabled = true;
             });
         }
@@ -84,14 +84,9 @@ namespace GGJ2026.GamePlay
         }
 
 
-        private HashSet<CardData> _endDragProcessedCards = new HashSet<CardData>();
 
         private void OnUICardVisualEndDrag(in OnUICardVisualEndDrag args)
         {
-            if (_endDragProcessedCards.Contains(args.data))
-            {
-                return;
-            }
 
             Vector3 screenPoint = UIRoot.Singleton.UICamera.WorldToScreenPoint(args.visual.transform.position);
             Debug.Log("OnUICardVisualEndDrag: screenPoint " + screenPoint);
@@ -100,13 +95,10 @@ namespace GGJ2026.GamePlay
             {
                 RuntimeManager.PlayOneShot(Global.refHolder.useCard);
                 Debug.Log("OnUICardVisualEndDrag: use card " + args.data);
-                var data = args.data;
-                _endDragProcessedCards.Add(data);
-                GamingMgr.Singleton.PushPlayerOperation(new UseCardOperation(args.data)).ContinueWith(b =>
+                if (GamingMgr.Singleton.PushPlayerOperation(new UseCardOperation(args.data)))
                 {
-                    cardContainer.RemoveCard(data);
-                    _endDragProcessedCards.Remove(data);
-                });
+                    cardContainer.RemoveCard(args.data);
+                }
             }
         }
     }

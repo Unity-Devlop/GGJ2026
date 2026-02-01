@@ -107,6 +107,7 @@ namespace GGJ2026.GamePlay
                     while (playerOperationQueue.Count > 0)
                     {
                         var operation = playerOperationQueue.Dequeue();
+                        await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
                         if (operation is UseCardOperation useCardOperation)
                         {
                             var cardData = useCardOperation.cardData;
@@ -153,6 +154,7 @@ namespace GGJ2026.GamePlay
 
                     while (true)
                     {
+                        await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
                         var operation = await enemyController.GetNextOperation();
                         Debug.Log($"敌人执行操作：{operation}");
                         if (operation is UseCardOperation useCardOperation)
@@ -283,7 +285,7 @@ namespace GGJ2026.GamePlay
         }
 
 
-        public async UniTask<bool> PushPlayerOperation(IOperation operation)
+        public bool PushPlayerOperation(IOperation operation)
         {
             if (playerOperationQueue.Contains(operation))
             {
@@ -301,7 +303,6 @@ namespace GGJ2026.GamePlay
                 }
             }
 
-            await UniTask.Delay(TimeSpan.FromSeconds(0.2f));
             playerOperationQueue.Enqueue(operation);
             return currentGamingState == GamingState.PlayerRound;
         }
