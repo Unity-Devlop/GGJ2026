@@ -1154,8 +1154,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -118.2876, y: 0}
-  m_SizeDelta: {x: 1683.4248, y: 246.8764}
+  m_AnchoredPosition: {x: -87.471, y: -76}
+  m_SizeDelta: {x: 1683.4, y: 246.8764}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &5001458839587440871
 CanvasRenderer:
@@ -1213,9 +1213,9 @@ MonoBehaviour:
   slotRoot: {fileID: 9078401921464448597}
   visualRoot: {fileID: 5538969196174653246}
   autoSizing: 1
-  standardWidth: 100
+  standardWidth: 150
   standardHeight: 235
-  standardCount: 8
+  standardCount: 6
 --- !u!114 &9080049398808721368
 MonoBehaviour:
   m_ObjectHideFlags: 0
