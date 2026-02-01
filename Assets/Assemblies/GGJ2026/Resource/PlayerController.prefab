@@ -1469,6 +1469,7 @@ MonoBehaviour:
       value: {fileID: 5135523988325348875}
     - key: 2
       value: {fileID: 211480807642004507}
+  _blackAndWhiteMask: {fileID: 2290041533170286060}
 --- !u!114 &3324635055274530432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1800,6 +1801,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4433979701148166406, guid: a7c8987336b574f62b21c252ebf2ab95, type: 3}
   m_PrefabInstance: {fileID: 4568899242108310813}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2290041533170286060 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2350915304368613617, guid: a7c8987336b574f62b21c252ebf2ab95, type: 3}
+  m_PrefabInstance: {fileID: 4568899242108310813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211480807642004507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf79bb00152f4c3c8ab322b9a39707ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "GGJ2026::GGJ2026.GamePlay.\u9ED1\u767D\u65E0\u5E38\u9762\u5177"
 --- !u!4 &4159987015151921320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 494485017925582261, guid: a7c8987336b574f62b21c252ebf2ab95, type: 3}

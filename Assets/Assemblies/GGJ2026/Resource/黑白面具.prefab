@@ -192,6 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494485017925582261}
   - component: {fileID: -4262551332134779054}
+  - component: {fileID: 2350915304368613617}
   m_Layer: 0
   m_Name: "\u9ED1\u767D\u9762\u5177"
   m_TagString: Untagged
@@ -229,3 +230,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.AnimationTime
   time: 1
+--- !u!114 &2350915304368613617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4433979701148166406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf79bb00152f4c3c8ab322b9a39707ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "GGJ2026::GGJ2026.GamePlay.\u9ED1\u767D\u65E0\u5E38\u9762\u5177"
+  blackMask: {fileID: 1408396454059673732}
+  whiteMask: {fileID: 4178758269029447770}

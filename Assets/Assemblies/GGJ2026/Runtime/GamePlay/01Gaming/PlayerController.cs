@@ -39,6 +39,8 @@ namespace GGJ2026.GamePlay
         [SerializeField] private SerializableDictionary<MaskEnum, GameObject> maskVisuals =
             new SerializableDictionary<MaskEnum, GameObject>();
 
+        [SerializeField] private 黑白无常面具 _blackAndWhiteMask;
+
         private void Awake()
         {
             _propertyShower = GetComponent<EntityPropertyShower>();
@@ -49,6 +51,7 @@ namespace GGJ2026.GamePlay
         {
             this.data = playerData;
             _propertyShower.Bind(this.data.property);
+            data.property.health.Register(OnHealthChanged);
         }
 
         public UniTask OnceKill()
@@ -113,6 +116,7 @@ namespace GGJ2026.GamePlay
             _buffs.Clear();
             thisRoundUseCardCount.Clear();
             lastUsedCardThisRound = CardEnum.None;
+            
         }
 
 
@@ -279,18 +283,21 @@ namespace GGJ2026.GamePlay
                         RemoveBuff(BuffEnum.黑无常);
                         RemoveBuff(BuffEnum.白无常);
                         await AddBuff(BuffEnum.白无常, null);
+                        _blackAndWhiteMask.SwitchToWhite();
                     }
                     else if (ContainsBuff(BuffEnum.白无常))
                     {
                         RemoveBuff(BuffEnum.黑无常);
                         RemoveBuff(BuffEnum.白无常);
                         await AddBuff(BuffEnum.黑无常, null);
+                        _blackAndWhiteMask.SwitchToBlack();
                     }
                     else
                     {
                         RemoveBuff(BuffEnum.黑无常);
                         RemoveBuff(BuffEnum.白无常);
                         await AddBuff(BuffEnum.黑无常, null);
+                        _blackAndWhiteMask.SwitchToBlack();
                     }
 
                     break;
