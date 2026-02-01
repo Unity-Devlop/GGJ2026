@@ -103,6 +103,7 @@ namespace GGJ2026.GamePlay
             enemyController.Bind(enemyData);
 
 
+            UIRoot.Singleton.DisposeAll();
             gamePlayPanel = UIRoot.Singleton.OpenPanel<GamePlayPanel>();
 
             gamePlayPanel.Bind(playerData);
