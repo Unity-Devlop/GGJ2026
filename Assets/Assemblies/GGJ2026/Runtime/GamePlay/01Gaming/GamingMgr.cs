@@ -5,6 +5,7 @@ using cfg;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.InputSystem;
 using UnityToolkit;
 
 namespace GGJ2026.GamePlay
@@ -55,6 +56,32 @@ namespace GGJ2026.GamePlay
         private EnemyData enemyData;
 
         private GamePlayPanel gamePlayPanel;
+
+        public PlayerTag playerTag { get; private set; }
+        public EnemyTag enemyTag { get; private set; }
+
+        private void Update()
+        {
+            // 将鼠标屏幕坐标转为世界坐标
+            Vector2 mousePos = Global.cameraSystem.mainCamera.ScreenToWorldPoint(Pointer.current.position.value);
+
+            // 发射一条长度极短的射线（或者直接点检测）
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+            playerTag = null;
+            enemyTag = null;
+            if (hit.collider == null) return;
+            if (hit.collider.TryGetComponent<PlayerTag>(out var sr))
+            {
+                Debug.Log("找到PlayerTag");
+                playerTag = sr;
+            }
+            else if (hit.collider.TryGetComponent<EnemyTag>(out var er))
+            {
+                Debug.Log("找到EnemyTag");
+                enemyTag = er;
+            }
+        }
 
         private async UniTask GameFlow()
         {
