@@ -394,7 +394,7 @@
     "desc": "获得{0}点护甲。打出后有{1}%几率结束回合。",
     "value": [
       3,
-      70
+      60
     ],
     "can_end_round": true,
     "mask_to_card_effect": []

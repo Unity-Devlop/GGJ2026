@@ -1,12 +1,37 @@
 [
   {
     "id": 0,
-    "desc": "我是水鬼",
-    "prefab_path": "Ghost/死水鬼.prefab"
+    "desc": "水鬼，在地府中最常见的鬼怪。\n弱的一批，随便打打就能过——你该不会打不过吧？",
+    "prefab_path": "Ghost/水鬼.prefab"
   },
   {
     "id": 1,
-    "desc": "我是拔舌鬼",
-    "prefab_path": "Ghost/死水鬼.prefab"
+    "desc": "在拔舌地狱中遭遇极刑的鬼怪。\n它的攻击连续不断，而且招惹它时会增加它的力量。",
+    "prefab_path": "Ghost/拔舌鬼.prefab"
+  },
+  {
+    "id": 2,
+    "desc": "“叮铃铛铛”，当铜钱在地狱中回响，鬼差们最不愿意面对的穷鬼登场。\n它会不停吸取敌人的生命，将敌人的财运化为己用。",
+    "prefab_path": "Ghost/穷鬼.prefab"
+  },
+  {
+    "id": 3,
+    "desc": "巨大而沉重的铜柱是它的特征。\n如果有办法绕过铜柱的防御直接攻击其本体，或许就能一击必杀？",
+    "prefab_path": "Ghost/铜柱鬼.prefab"
+  },
+  {
+    "id": 4,
+    "desc": "一动不动，无法挪移的肉山鬼。\n要想个办法撼动它才行……",
+    "prefab_path": "Ghost/肉山鬼.prefab"
+  },
+  {
+    "id": 5,
+    "desc": "什么？是阎王？你真的能战胜对手吗？",
+    "prefab_path": "Ghost/阎王.prefab"
+  },
+  {
+    "id": 6,
+    "desc": "鬼魂们最怕遭遇的鬼差，白无常勾魂，黑无常索命。",
+    "prefab_path": "Ghost/黑白无常.prefab"
   }
 ]
