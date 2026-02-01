@@ -151,8 +151,7 @@ namespace GGJ2026.GamePlay
                     {
                         currentGamingState = GamingState.EnemyRound;
                         await Global.Event.Invoke<GamingState, UniTask>(currentGamingState);
-                        Assert.IsTrue(playerOperationQueue.Count == 0,
-                            "结束回合操作执行时，玩家操作队列不为空");
+                        playerOperationQueue.Clear();
                         await playerController.TurnEnd();
                         await enemyController.TurnStart();
                     }
