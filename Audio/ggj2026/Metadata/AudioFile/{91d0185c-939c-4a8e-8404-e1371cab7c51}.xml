@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{91d0185c-939c-4a8e-8404-e1371cab7c51}">
+		<property name="assetPath">
+			<value>回合开始.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.3560833333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d59981ef-3f6c-479f-959e-0cb47e81a6ed}</destination>
+		</relationship>
+	</object>
+</objects>

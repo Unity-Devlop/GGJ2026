@@ -27,5 +27,7 @@ namespace GGJ2026
         public EventReference 受击;
         public EventReference 二郎神;
         public EventReference uiClick;
+        public EventReference roundStart;
+        public EventReference roundEnd;
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using FMODUnity;
 using UnityEngine;
@@ -18,18 +19,17 @@ namespace GGJ2026.GamePlay
         [SerializeField] private UICardDesc cardDesc;
 
         private PlayerData _playerData;
-        
+
         [SerializeField] private Button endTurnButton;
 
         private void Awake()
         {
-            
             endTurnButton.onClick.AddListener(async () =>
             {
                 Debug.Log("End Turn Button Clicked");
                 endTurnButton.enabled = false;
                 await UniTask.Delay(TimeSpan.FromSeconds(0.5f));
-                GamingMgr.Singleton.PushPlayerOperation(new EndTurnOperation());
+                await GamingMgr.Singleton.PushPlayerOperation(new EndTurnOperation());
                 endTurnButton.enabled = true;
             });
         }
@@ -51,7 +51,6 @@ namespace GGJ2026.GamePlay
 
         private UniTask OnGamingStateChanged(in GamingMgr.GamingState args)
         {
-            
             endTurnButton.gameObject.SetActive(args == GamingMgr.GamingState.PlayerRound);
             switch (args)
             {
@@ -59,10 +58,12 @@ namespace GGJ2026.GamePlay
                     break;
                 case GamingMgr.GamingState.PlayerRound:
                     Debug.Log("OnGamingStateChanged: PlayerRound");
+                    RuntimeManager.PlayOneShot(Global.refHolder.roundStart);
                     return playerStartUIEffect.PlayEffect();
                     break;
                 case GamingMgr.GamingState.EnemyRound:
                     Debug.Log("OnGamingStateChanged: EnemyRound");
+                    RuntimeManager.PlayOneShot(Global.refHolder.roundEnd);
                     return enemyStartUIEffect.PlayEffectAsync();
                     break;
                 case GamingMgr.GamingState.GameOver:
@@ -82,8 +83,16 @@ namespace GGJ2026.GamePlay
             _playerData = null;
         }
 
+
+        private HashSet<CardData> _endDragProcessedCards = new HashSet<CardData>();
+
         private void OnUICardVisualEndDrag(in OnUICardVisualEndDrag args)
         {
+            if (_endDragProcessedCards.Contains(args.data))
+            {
+                return;
+            }
+
             Vector3 screenPoint = UIRoot.Singleton.UICamera.WorldToScreenPoint(args.visual.transform.position);
             Debug.Log("OnUICardVisualEndDrag: screenPoint " + screenPoint);
             if (RectTransformUtility.RectangleContainsScreenPoint(useCardArea,
@@ -91,12 +100,14 @@ namespace GGJ2026.GamePlay
             {
                 RuntimeManager.PlayOneShot(Global.refHolder.useCard);
                 Debug.Log("OnUICardVisualEndDrag: use card " + args.data);
-                if (GamingMgr.Singleton.PushPlayerOperation(new UseCardOperation(args.data)))
+                var data = args.data;
+                _endDragProcessedCards.Add(data);
+                GamingMgr.Singleton.PushPlayerOperation(new UseCardOperation(args.data)).ContinueWith(b =>
                 {
-                    cardContainer.RemoveCard(args.data);
-                }
+                    cardContainer.RemoveCard(data);
+                    _endDragProcessedCards.Remove(data);
+                });
             }
         }
     }
-
 }
