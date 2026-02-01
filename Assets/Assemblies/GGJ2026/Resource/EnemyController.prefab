@@ -214,10 +214,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3150143152406908426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23.999977, y: -492}
-  m_SizeDelta: {x: 2, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &944079060474516395
 MeshRenderer:
@@ -387,6 +387,7 @@ GameObject:
   - component: {fileID: 1388672979798773161}
   - component: {fileID: 4056383688102797115}
   - component: {fileID: 8144832999014061986}
+  - component: {fileID: 2247207351449430413}
   m_Layer: 0
   m_Name: Intent
   m_TagString: Untagged
@@ -498,6 +499,22 @@ MonoBehaviour:
   useMainCamera: 1
   targetCamera: {fileID: 0}
   flip: 0
+--- !u!114 &2247207351449430413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368601997032865729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeb7552fc4043d8bd44da77ae411886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.Billboard
+  billboardType: 1
+  useMainCamera: 1
+  targetCamera: {fileID: 0}
+  flip: 0
 --- !u!1 &1568260775866733717
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +607,7 @@ GameObject:
   - component: {fileID: 817526067291445087}
   - component: {fileID: 2348219331372832183}
   - component: {fileID: 6674869651869958341}
+  - component: {fileID: 644533683914906759}
   m_Layer: 0
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -682,6 +700,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
 --- !u!114 &6674869651869958341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794303428612644501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeb7552fc4043d8bd44da77ae411886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.Billboard
+  billboardType: 1
+  useMainCamera: 1
+  targetCamera: {fileID: 0}
+  flip: 0
+--- !u!114 &644533683914906759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -63,23 +63,28 @@ namespace GGJ2026.GamePlay
         private void Update()
         {
             // 将鼠标屏幕坐标转为世界坐标
-            Vector2 mousePos = Global.cameraSystem.mainCamera.ScreenToWorldPoint(Pointer.current.position.value);
+            var world = Global.cameraSystem.mainCamera.ScreenToWorldPoint(Pointer.current.position.value);
 
             // 发射一条长度极短的射线（或者直接点检测）
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
             playerTag = null;
             enemyTag = null;
-            if (hit.collider == null) return;
-            if (hit.collider.TryGetComponent<PlayerTag>(out var sr))
+            Debug.DrawLine(Global.cameraSystem.mainCamera.transform.position,
+                world, Color.red, 10);
+            Debug.Log("发射射线检测PlayerTag和EnemyTag");
+            if (Physics.Raycast(Global.cameraSystem.mainCamera.transform.position,
+                    world - Global.cameraSystem.mainCamera.transform.position, out var hit, 100f))
             {
-                Debug.Log("找到PlayerTag");
-                playerTag = sr;
-            }
-            else if (hit.collider.TryGetComponent<EnemyTag>(out var er))
-            {
-                Debug.Log("找到EnemyTag");
-                enemyTag = er;
+                if (hit.collider.TryGetComponent<PlayerTag>(out var sr))
+                {
+                    Debug.Log("找到PlayerTag");
+                    playerTag = sr;
+                }
+                else if (hit.collider.TryGetComponent<EnemyTag>(out var er))
+                {
+                    Debug.Log("找到EnemyTag");
+                    enemyTag = er;
+                }
             }
         }
 
