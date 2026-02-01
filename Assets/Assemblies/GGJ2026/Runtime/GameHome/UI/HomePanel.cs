@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,7 @@ namespace GGJ2026.Home
 
         private void OnStartButtonClicked()
         {
+            RuntimeManager.PlayOneShot(Global.refHolder.uiClick);
             Global.gameFlow.stateMachine.Change<GamePlayState>();
         }
     }

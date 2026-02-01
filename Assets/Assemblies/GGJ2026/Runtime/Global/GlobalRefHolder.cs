@@ -19,5 +19,13 @@ namespace GGJ2026
         public EventReference blackWhiteLaugh;
         public EventReference whiteLaugh;
         public EventReference blackLaugh;
+        public EventReference dead;
+        public EventReference 阎罗;
+        public EventReference 阎王出场;
+        public EventReference 死期已到;
+        public EventReference 孟婆;
+        public EventReference 受击;
+        public EventReference 二郎神;
+        public EventReference uiClick;
     }
 }
