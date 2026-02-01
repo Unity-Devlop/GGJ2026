@@ -1,4 +1,3 @@
-// c#
 using cfg;
 using Cysharp.Threading.Tasks;
 

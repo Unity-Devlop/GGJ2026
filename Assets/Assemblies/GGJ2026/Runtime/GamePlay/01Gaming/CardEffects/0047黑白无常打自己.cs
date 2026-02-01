@@ -1,4 +1,3 @@
-// c#
 
 using cfg;
 using Cysharp.Threading.Tasks;
@@ -19,19 +18,15 @@ namespace GGJ2026.GamePlay
                 return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, atk);
             }
 
-            // 自己打出并接牌
             await atk.UseCard(cardData);
             await atk.TakeCard(cardData);
 
             int damage = cardData.config.Value[0];
 
-            // 自伤前触发钩子（按实际接口调整参数）
             await atk.OnApplyDamageTo(atk, damage);
 
-            // 造成自伤
             await atk.TakeDamage(atk, damage);
 
-            // 按概率结束回合
             return Random.Range(0, 100) < cardData.config.Value[1];
         }
     }
