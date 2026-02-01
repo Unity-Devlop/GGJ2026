@@ -496,6 +496,20 @@ MonoBehaviour:
       Data3: -409134940
       Data4: 1201741377
     Path: "event:/ui\u70B9\u51FB"
+  roundStart:
+    Guid:
+      Data1: 1803583552
+      Data2: 1241588068
+      Data3: -1476816224
+      Data4: -568117185
+    Path: "event:/\u56DE\u5408\u5F00\u59CB"
+  roundEnd:
+    Guid:
+      Data1: 1179108586
+      Data2: 1317748571
+      Data3: -1633166704
+      Data4: -602695000
+    Path: "event:/\u56DE\u5408\u7ED3\u675F"
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3a32ebf1-fdbd-40b4-80ef-92913ca5ab33}">
+		<property name="assetPath">
+			<value>回合结束.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.71158333333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d59981ef-3f6c-479f-959e-0cb47e81a6ed}</destination>
+		</relationship>
+	</object>
+</objects>

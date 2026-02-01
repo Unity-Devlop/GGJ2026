@@ -261,7 +261,9 @@ namespace GGJ2026.GamePlay
 
             if (id == MaskEnum.阎王面具)
             {
+                RuntimeManager.PlayOneShot(Global.refHolder.阎王出场);
                 ColorEffectController.Instance.PlayUltimateColor();
+                await UniTask.Delay(TimeSpan.FromSeconds(1f));
             }
             else
             {
@@ -292,12 +294,6 @@ namespace GGJ2026.GamePlay
                 }
             }
 
-            if (target != null)
-            {
-                float time = target.GetComponent<AnimationTime>().time;
-                await UniTask.Delay(TimeSpan.FromSeconds(time));
-            }
-
 
             var enemy = GamingMgr.Singleton.GetEnemyEntity(this);
             if (data.currentMask == MaskEnum.阎王面具)
@@ -318,7 +314,6 @@ namespace GGJ2026.GamePlay
                 case MaskEnum.本我:
                     break;
                 case MaskEnum.阎王面具:
-                    RuntimeManager.PlayOneShot(Global.refHolder.阎王出场);
                     break;
                 case MaskEnum.无常面具:
                     break;
@@ -333,6 +328,12 @@ namespace GGJ2026.GamePlay
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(id), id, null);
+            }
+
+            if (target != null)
+            {
+                float time = target.GetComponent<AnimationTime>().time;
+                await UniTask.Delay(TimeSpan.FromSeconds(time));
             }
 
             switch (id)
@@ -393,6 +394,8 @@ namespace GGJ2026.GamePlay
                 default:
                     throw new ArgumentOutOfRangeException(nameof(id), id, null);
             }
+            
+            await UniTask.Delay(TimeSpan.FromSeconds(2f));
         }
 
         private bool ContainsBuff(BuffEnum buffEnum)
