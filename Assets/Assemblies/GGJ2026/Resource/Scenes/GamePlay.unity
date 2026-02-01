@@ -201,7 +201,7 @@ MonoBehaviour:
   playerController: {fileID: 2008996154}
   enemyController: {fileID: 114005679}
   isGameWin: 0
-  damagePopupPrefab: {fileID: 0}
+  damagePopupPrefab: {fileID: 8337544952168019516, guid: 6a0e514be64594d178dc5779fef730b6, type: 3}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,45 +286,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &652103799
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Height Fog Global
-  m_Shader: {fileID: 4800000, guid: 3a7ef1b66bafb7a448a880ef76d2e6e6, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs: []
-    m_Ints: []
-    m_Floats:
-    - _AdvancedCat: 1
-    - _AlphaCutoff: 0.5
-    - _Banner: 1
-    - _DirectionalCat: 1
-    - _FogAxisMode: 1
-    - _FogCat: 1
-    - _HeightFogGlobal: 1
-    - _IsHeightFogShader: 1
-    - _NoiseCat: 1
-    - _SkyboxCat: 1
-    m_Colors:
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &811676577
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1412439536}
   - component: {fileID: 1412439535}
+  - component: {fileID: 1412439537}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -501,6 +463,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1412439537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412439534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea3a5038e3d4db19bc0bb9a0e933100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.ColorEffectController
 --- !u!1 &1743445748
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1743445751}
   - component: {fileID: 1743445750}
-  - component: {fileID: 1743445749}
+  - component: {fileID: 1743445752}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -519,37 +493,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1743445749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743445748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886251e9a18ece04ea8e61686c173e1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePositionComposer
-  CameraDistance: 10
-  DeadZoneDepth: 0
-  Composition:
-    ScreenPosition: {x: 0, y: 0.00092589855}
-    DeadZone:
-      Enabled: 0
-      Size: {x: 0.2, y: 0.2}
-    HardLimits:
-      Enabled: 0
-      Size: {x: 0.8, y: 0.8}
-      Offset: {x: 0, y: 0}
-  CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 1, y: 1, z: 1}
-  Lookahead:
-    Enabled: 0
-    Time: 0
-    Smoothing: 0
-    IgnoreY: 0
 --- !u!114 &1743445750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +513,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 207224634}
+    TrackingTarget: {fileID: 0}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -601,165 +544,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743445748}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18232132, y: 0, z: 0, w: 0.983239}
-  m_LocalPosition: {x: 0, y: 3.5952892, z: -9.331346}
+  m_LocalRotation: {x: 0.0748917, y: 0, z: 0, w: 0.9971917}
+  m_LocalPosition: {x: 0, y: 1.68, z: -9.889357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 207224634}
-  m_LocalEulerAnglesHint: {x: 21.01, y: 0, z: 0}
---- !u!1 &1790950446
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1790950450}
-  - component: {fileID: 1790950449}
-  - component: {fileID: 1790950448}
-  - component: {fileID: 1790950447}
-  m_Layer: 0
-  m_Name: Height Fog Global
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1790950447
+  m_LocalEulerAnglesHint: {x: 8.59, y: 0, z: 0}
+--- !u!114 &1743445752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790950446}
+  m_GameObject: {fileID: 1743445748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8023d2ae1fcb2948a39527720c2087b, type: 3}
+  m_Script: {fileID: 11500000, guid: 591f179b0b4a4c4f8c6e7e37ea989d5c, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  styledBanner: 0
-  categoryScene: 1
-  mainCamera: {fileID: 0}
-  mainDirectional: {fileID: 811676578}
-  categoryMode: 1
-  fogMode: 10
-  messagePreset: 0
-  messageTimeOfDay: 0
-  presetMaterial: {fileID: 0}
-  presetDay: {fileID: 0}
-  presetNight: {fileID: 0}
-  timeOfDay: 0
-  categoryFog: 1
-  fogIntensity: 1
-  fogAxisMode: 1
-  fogLayersMode: 10
-  fogColorStart: {r: 0, g: 0.58431387, b: 1, a: 1}
-  fogColorEnd: {r: 0.8862745, g: 1.1921569, b: 1.4980392, a: 1}
-  fogColorDuo: 1
-  fogDistanceStart: -60
-  fogDistanceEnd: 60
-  fogDistanceFalloff: 1
-  fogHeightStart: 0
-  fogHeightEnd: 15
-  fogHeightFalloff: 1
-  categorySkybox: 1
-  skyboxFogIntensity: 1
-  skyboxFogHeight: 1
-  skyboxFogFalloff: 1
-  skyboxFogOffset: 0
-  skyboxFogBottom: 0
-  skyboxFogFill: 0
-  categoryDirectional: 1
-  directionalIntensity: 1
-  directionalFalloff: 1
-  directionalColor: {r: 1, g: 0.53189665, b: 0.25, a: 1}
-  categoryNoise: 1
-  noiseIntensity: 1
-  noiseDistanceEnd: 30
-  noiseScale: 30
-  noiseSpeed: {x: 0.5, y: 0.5, z: 0}
-  categoryAdvanced: 1
-  manualPositionAndScale: 0
-  renderPriority: 1
-  styledSpace0: 0
-  overrideMaterial: {fileID: 0}
-  overrideCamToVolumeDistance: 1
-  overrideVolumeDistanceFade: 0
-  version: 0
---- !u!23 &1790950448
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790950446}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 652103799}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1790950449
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790950446}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1790950450
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790950446}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 50}
-  m_LocalScale: {x: 999, y: 999, z: 999}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.CameraShake
+  defaultDuration: 0.2
+  defaultStrength: 0.5
+  defaultVibrato: 10
+  defaultRandomness: 90
 --- !u!4 &2008996153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1750287586517336546, guid: 7058caf548ebe48fd86addfe662892f3, type: 3}
@@ -794,7 +601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7933795316333611800, guid: 8e793f89094168a49af92c222a464782, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.02
       objectReference: {fileID: 0}
     - target: {fileID: 7933795316333611800, guid: 8e793f89094168a49af92c222a464782, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1189,7 +996,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 811676579}
-  - {fileID: 1790950450}
   - {fileID: 619394802}
   - {fileID: 207224634}
   - {fileID: 1412439536}
