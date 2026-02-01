@@ -2,6 +2,7 @@ using System;
 using cfg;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using FMODUnity;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -165,6 +166,7 @@ namespace GGJ2026.GamePlay
 
         protected virtual void PointerEnter(UICard card)
         {
+            RuntimeManager.PlayOneShot(Global.refHolder.selectCard);
             Global.Event.Invoke(new OnUICardVisualPointerEnter(this));
             DOTween.Kill(2, true);
             shakeContainer.DOPunchRotation(Vector3.forward * hoverPunchAngle, hoverTransition, 20, 1).SetId(2);

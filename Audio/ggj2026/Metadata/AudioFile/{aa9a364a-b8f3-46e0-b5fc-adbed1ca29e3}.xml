@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{aa9a364a-b8f3-46e0-b5fc-adbed1ca29e3}">
+		<property name="assetPath">
+			<value>出牌.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.49262499999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d59981ef-3f6c-479f-959e-0cb47e81a6ed}</destination>
+		</relationship>
+	</object>
+</objects>

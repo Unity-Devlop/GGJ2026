@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using cfg;
 using Cysharp.Threading.Tasks;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -209,6 +210,9 @@ namespace GGJ2026.GamePlay
         {
             BuffEffects.ProcessTakeDamageBuffs(sender, this, ref damageValue);
             BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(sender, this, ref ignoreShield);
+
+            RuntimeManager.PlayOneShot(Global.refHolder.attack);
+
             if (data.property.shield > 0 && !ignoreShield)
             {
                 // 先扣护甲 扣完护甲如果还有伤害再扣血量
@@ -216,6 +220,7 @@ namespace GGJ2026.GamePlay
                 int damageToHealth = damageValue - shieldDamage;
                 data.property.shield -= shieldDamage;
 
+                RuntimeManager.PlayOneShot(Global.refHolder.defence);
                 GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageToHealth);
                 data.property.health.Value -= damageToHealth;
             }

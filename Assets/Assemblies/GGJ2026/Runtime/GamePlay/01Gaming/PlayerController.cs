@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using cfg;
 using Cysharp.Threading.Tasks;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 using UnityToolkit;
@@ -116,7 +117,6 @@ namespace GGJ2026.GamePlay
 
         public void UnBind()
         {
-            
             ColorEffectController.Instance.ResetColor();
             data = null;
             _propertyShower.UnBind();
@@ -207,14 +207,18 @@ namespace GGJ2026.GamePlay
             BuffEffects.ProcessTakeDamageBuffs(sender, this, ref damageValue);
             BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(sender, this, ref ignoreShield);
 
+            RuntimeManager.PlayOneShot(Global.refHolder.attack);
+
             if (data.property.shield > 0 && !ignoreShield)
             {
                 // 先扣护甲 扣完护甲如果还有伤害再扣血量
                 int shieldDamage = Math.Min(data.property.shield, damageValue);
                 int damageToHealth = damageValue - shieldDamage;
                 data.property.shield -= shieldDamage;
+                RuntimeManager.PlayOneShot(Global.refHolder.defence);
 
                 GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageToHealth);
+
                 data.property.health.Value -= damageToHealth;
             }
             else
@@ -248,7 +252,6 @@ namespace GGJ2026.GamePlay
             {
                 ColorEffectController.Instance.ResetColor();
             }
-            
 
 
             foreach (var (maskId, go) in maskVisuals)
@@ -303,13 +306,13 @@ namespace GGJ2026.GamePlay
                     await enemy.AddBuff(BuffEnum.死期, 5);
                     break;
                 case MaskEnum.无常面具:
-                    // TODO 默认黑 点自己切白
                     if (ContainsBuff(BuffEnum.黑无常))
                     {
                         RemoveBuff(BuffEnum.黑无常);
                         RemoveBuff(BuffEnum.白无常);
                         await AddBuff(BuffEnum.白无常, null);
                         _blackAndWhiteMask.SwitchToWhite();
+                        RuntimeManager.PlayOneShot(Global.refHolder.whiteLaugh);
                     }
                     else if (ContainsBuff(BuffEnum.白无常))
                     {
@@ -317,12 +320,14 @@ namespace GGJ2026.GamePlay
                         RemoveBuff(BuffEnum.白无常);
                         await AddBuff(BuffEnum.黑无常, null);
                         _blackAndWhiteMask.SwitchToBlack();
+                        RuntimeManager.PlayOneShot(Global.refHolder.blackLaugh);
                     }
                     else
                     {
                         RemoveBuff(BuffEnum.黑无常);
                         RemoveBuff(BuffEnum.白无常);
                         await AddBuff(BuffEnum.黑无常, null);
+                        RuntimeManager.PlayOneShot(Global.refHolder.blackWhiteLaugh);
                         _blackAndWhiteMask.SwitchToBlack();
                     }
 

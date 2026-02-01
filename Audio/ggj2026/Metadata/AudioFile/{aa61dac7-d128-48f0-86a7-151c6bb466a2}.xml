@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{aa61dac7-d128-48f0-86a7-151c6bb466a2}">
+		<property name="assetPath">
+			<value>受击 .wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.39277083333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d59981ef-3f6c-479f-959e-0cb47e81a6ed}</destination>
+		</relationship>
+	</object>
+</objects>
