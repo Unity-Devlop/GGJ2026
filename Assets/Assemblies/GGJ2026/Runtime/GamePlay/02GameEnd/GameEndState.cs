@@ -12,16 +12,34 @@ namespace GGJ2026.GamePlay
         public void OnEnter(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
             // throw new System.NotImplementedException();
-            UIRoot.Singleton.OpenPanel<CompleteLevelPanel>();
+            if (GamingMgr.Singleton.isGameWin)
+            {
+                UIRoot.Singleton.OpenPanel<CompleteLevelPanel>();
+            }
+            else
+            {
+                UIRoot.Singleton.OpenPanel<FailedLevelPanel>();
+            }
         }
 
         public void Transition(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
-            if(UIRoot.Singleton.GetOpenedPanel(out CompleteLevelPanel panel))
+            if (UIRoot.Singleton.GetOpenedPanel(out CompleteLevelPanel panel))
             {
                 if (panel.IsConfirmed)
                 {
+                    UIRoot.Singleton.Dispose<CompleteLevelPanel>();
+                    UIRoot.Singleton.Dispose<FailedLevelPanel>();
                     stateMachine.Change<GameStartState>();
+                }
+            }
+            else if (UIRoot.Singleton.GetOpenedPanel(out FailedLevelPanel failedLevelPanel))
+            {
+                if (failedLevelPanel.isConfirmed)
+                {
+                    UIRoot.Singleton.Dispose<CompleteLevelPanel>();
+                    UIRoot.Singleton.Dispose<FailedLevelPanel>();
+                    Global.gameFlow.stateMachine.Change<HomeState>();
                 }
             }
         }
@@ -34,6 +52,7 @@ namespace GGJ2026.GamePlay
         public void OnExit(GameMgr owner, IStateMachine<GameMgr> stateMachine)
         {
             UIRoot.Singleton.Dispose<CompleteLevelPanel>();
+            UIRoot.Singleton.Dispose<FailedLevelPanel>();
         }
     }
 }

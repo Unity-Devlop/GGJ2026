@@ -14,7 +14,7 @@ namespace GGJ2026.GamePlay
     [RequireComponent(typeof(EntityPropertyShower))]
     public class PlayerController : MonoBehaviour, IEntityController
     {
-        [Sirenix.OdinInspector.ShowInInspector, Sirenix.OdinInspector.ReadOnly]
+        [Sirenix.OdinInspector.ShowInInspector]
         public PlayerData data { get; private set; }
 
         private EntityPropertyShower _propertyShower;
@@ -154,6 +154,7 @@ namespace GGJ2026.GamePlay
             thisRoundUseCardCount.TryAdd(cardData.id, 0);
             thisRoundUseCardCount[cardData.id]++;
             lastUsedCardThisRound = cardData.id;
+            await transform.PlayAttackAnimation(true);
         }
 
         public async UniTask TurnStart()
