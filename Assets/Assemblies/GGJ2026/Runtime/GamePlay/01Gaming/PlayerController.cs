@@ -152,7 +152,7 @@ namespace GGJ2026.GamePlay
         {
             lastUsedCardThisRound = CardEnum.None;
             thisRoundUseCardCount.Clear();
-            await DrawCards(1);
+            await DrawCards(3);
             await UniTask.CompletedTask;
         }
 
