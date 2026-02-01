@@ -130,4 +130,24 @@ namespace GGJ2026.GamePlay
             buffID = id;
         }
     }
+
+    public struct OnPointerEnterPlayerTagEvent
+    {
+        public IEntityController entityController;
+    }
+
+    public struct OnPointerExitPlayerTagEvent
+    {
+        public IEntityController entityController;
+    }
+
+    public struct OnPointerEnterEnemyTagEvent
+    {
+        public IEntityController entityController;
+    }
+
+    public struct OnPointerExitEnemyTagEvent
+    {
+        public IEntityController entityController;
+    }
 }

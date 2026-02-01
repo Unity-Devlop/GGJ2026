@@ -350,6 +350,11 @@ namespace GGJ2026.GamePlay
             data.property.shield = 0;
             return UniTask.CompletedTask;
         }
+
+        public string GetName()
+        {
+            return "你";
+        }
 #if UNITY_EDITOR
         private void OnValidate()
         {

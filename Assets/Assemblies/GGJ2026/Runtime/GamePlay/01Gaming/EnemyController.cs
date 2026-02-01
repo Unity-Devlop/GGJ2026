@@ -135,6 +135,17 @@ namespace GGJ2026.GamePlay
             return UniTask.CompletedTask;
         }
 
+        public string GetName()
+        {
+            if (data == null)
+            {
+                return "这是敌人";
+            }
+
+            var cfg = Global.tables.GhostTable.Get(data.id);
+            return cfg.Id.ToString();
+        }
+
 
         public async UniTask StartThinking()
         {

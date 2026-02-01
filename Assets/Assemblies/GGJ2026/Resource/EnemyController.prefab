@@ -193,13 +193,13 @@ GameObject:
   - component: {fileID: 944079060474516395}
   - component: {fileID: 3474931562494171482}
   - component: {fileID: 6266239370078739654}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BuffTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8453621646946032359
 RectTransform:
   m_ObjectHideFlags: 0
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 5250402031297219349}
   - component: {fileID: 7681415669739318432}
   - component: {fileID: 3455468340667220397}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: layout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 2348219331372832183}
   - component: {fileID: 6674869651869958341}
   - component: {fileID: 644533683914906759}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,7 +742,7 @@ GameObject:
   - component: {fileID: 3918940422244047181}
   - component: {fileID: 4186719959525693210}
   - component: {fileID: 6462429188898217874}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -999,7 +999,7 @@ GameObject:
   - component: {fileID: 5321320781926263658}
   - component: {fileID: 160957593750884796}
   - component: {fileID: 6077332075406064169}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: healthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,7 +1149,7 @@ GameObject:
   - component: {fileID: 2007320287006604382}
   - component: {fileID: 2257607055947402593}
   - component: {fileID: 3768262682992136298}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1665,7 +1665,7 @@ GameObject:
   - component: {fileID: 2661433110527996935}
   - component: {fileID: 4360360546394953496}
   - component: {fileID: 2328092287641238063}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: shieldText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
