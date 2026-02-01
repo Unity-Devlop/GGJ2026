@@ -179,7 +179,7 @@ namespace GGJ2026.GamePlay
             if (data.candidateCards.Count > 0)
             {
                 var nextCard = data.candidateCards[currentOperationIndex % data.candidateCards.Count];
-                _enemyIntent.SetIntent(nextCard.config.Intent);
+                _enemyIntent.SetIntent(nextCard.config.Type);
             }
         }
 
