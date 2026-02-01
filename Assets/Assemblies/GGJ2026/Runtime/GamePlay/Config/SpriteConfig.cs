@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using cfg;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityToolkit;
 
 namespace GGJ2026.GamePlay
@@ -21,5 +22,7 @@ namespace GGJ2026.GamePlay
 
         public SerializableDictionary<CardEnum, Sprite> cardMangaSprites;
         public SerializableDictionary<CardTypeEnum, Sprite> cardTypeSprites;
+        public SerializableDictionary<MaskEnum, Sprite> maskSprites;
+        public Sprite[] mask黑白无常Icon = new Sprite[2];
     }
 }

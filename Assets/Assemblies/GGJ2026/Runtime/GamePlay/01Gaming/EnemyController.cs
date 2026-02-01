@@ -179,7 +179,7 @@ namespace GGJ2026.GamePlay
             if (data.candidateCards.Count > 0)
             {
                 var nextCard = data.candidateCards[currentOperationIndex % data.candidateCards.Count];
-                _enemyIntent.SetIntent(nextCard.config.Intent);
+                _enemyIntent.SetIntent(nextCard.config.Type);
             }
         }
 
@@ -215,10 +215,13 @@ namespace GGJ2026.GamePlay
                 int shieldDamage = Math.Min(data.property.shield, damageValue);
                 int damageToHealth = damageValue - shieldDamage;
                 data.property.shield -= shieldDamage;
+
+                GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageToHealth);
                 data.property.health.Value -= damageToHealth;
             }
             else
             {
+                GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageValue);
                 data.property.health.Value -= damageValue;
             }
 
@@ -228,6 +231,7 @@ namespace GGJ2026.GamePlay
 
         public UniTask OnceKill()
         {
+            GamingMgr.Singleton.OnEntityTakeDamage(transform.position, 9999);
             data.property.health.Value = 0;
             return UniTask.CompletedTask;
         }

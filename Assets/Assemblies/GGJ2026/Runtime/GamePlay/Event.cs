@@ -150,4 +150,24 @@ namespace GGJ2026.GamePlay
     {
         public IEntityController entityController;
     }
+
+    public struct OnEnemyIntentPointerEnterEvent
+    {
+        public CardTypeEnum intent;
+
+        public OnEnemyIntentPointerEnterEvent(CardTypeEnum it)
+        {
+            intent = it;
+        }
+    }
+    
+    public struct OnEnemyIntentPointerExitEvent
+    {
+        public CardTypeEnum intent;
+
+        public OnEnemyIntentPointerExitEvent(CardTypeEnum it)
+        {
+            intent = it;
+        }
+    }
 }

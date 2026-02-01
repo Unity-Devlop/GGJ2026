@@ -39,6 +39,8 @@ namespace GGJ2026.GamePlay
         [SerializeField] private SerializableDictionary<MaskEnum, GameObject> maskVisuals =
             new SerializableDictionary<MaskEnum, GameObject>();
 
+        [SerializeField] private 黑白无常面具 _blackAndWhiteMask;
+
         private void Awake()
         {
             _propertyShower = GetComponent<EntityPropertyShower>();
@@ -47,12 +49,18 @@ namespace GGJ2026.GamePlay
 
         public void Bind(PlayerData playerData)
         {
-            this.data = playerData;
-            _propertyShower.Bind(this.data.property);
+            data = playerData;
+            _propertyShower.Bind(data.property);
+        }
+
+        private void OnHealthChanged(Property<int> obj)
+        {
+            throw new NotImplementedException();
         }
 
         public UniTask OnceKill()
         {
+            GamingMgr.Singleton.OnEntityTakeDamage(transform.position, 9999);
             data.property.health.Value = 0;
             return UniTask.CompletedTask;
         }
@@ -108,8 +116,17 @@ namespace GGJ2026.GamePlay
 
         public void UnBind()
         {
+            
+            ColorEffectController.Instance.ResetColor();
             data = null;
             _propertyShower.UnBind();
+
+            for (var i = _buffs.Count - 1; i >= 0; i--)
+            {
+                var buff = _buffs[i];
+                RemoveBuff(buff.buffEnum);
+            }
+
             _buffs.Clear();
             thisRoundUseCardCount.Clear();
             lastUsedCardThisRound = CardEnum.None;
@@ -196,10 +213,13 @@ namespace GGJ2026.GamePlay
                 int shieldDamage = Math.Min(data.property.shield, damageValue);
                 int damageToHealth = damageValue - shieldDamage;
                 data.property.shield -= shieldDamage;
+
+                GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageToHealth);
                 data.property.health.Value -= damageToHealth;
             }
             else
             {
+                GamingMgr.Singleton.OnEntityTakeDamage(transform.position, damageValue);
                 data.property.health.Value -= damageValue;
             }
 
@@ -219,6 +239,16 @@ namespace GGJ2026.GamePlay
                 new OnLocalPlayerWearMaskEvent(id));
             Debug.Log("玩家切换面具: " + id);
             maskText.text = id.ToString();
+
+            if (id == MaskEnum.阎王面具)
+            {
+                ColorEffectController.Instance.PlayUltimateColor();
+            }
+            else
+            {
+                ColorEffectController.Instance.ResetColor();
+            }
+            
 
 
             foreach (var (maskId, go) in maskVisuals)
@@ -257,6 +287,12 @@ namespace GGJ2026.GamePlay
                 enemy.RemoveBuff(BuffEnum.死期);
             }
 
+            if (data.currentMask == MaskEnum.二郎神面具)
+            {
+                RemoveBuff(BuffEnum.二郎神);
+            }
+
+
             data.currentMask = id;
 
             switch (id)
@@ -273,18 +309,21 @@ namespace GGJ2026.GamePlay
                         RemoveBuff(BuffEnum.黑无常);
                         RemoveBuff(BuffEnum.白无常);
                         await AddBuff(BuffEnum.白无常, null);
+                        _blackAndWhiteMask.SwitchToWhite();
                     }
                     else if (ContainsBuff(BuffEnum.白无常))
                     {
                         RemoveBuff(BuffEnum.黑无常);
                         RemoveBuff(BuffEnum.白无常);
                         await AddBuff(BuffEnum.黑无常, null);
+                        _blackAndWhiteMask.SwitchToBlack();
                     }
                     else
                     {
                         RemoveBuff(BuffEnum.黑无常);
                         RemoveBuff(BuffEnum.白无常);
                         await AddBuff(BuffEnum.黑无常, null);
+                        _blackAndWhiteMask.SwitchToBlack();
                     }
 
                     break;
@@ -307,6 +346,7 @@ namespace GGJ2026.GamePlay
                 case MaskEnum.孟婆面具:
                     break;
                 case MaskEnum.二郎神面具:
+                    await AddBuff(BuffEnum.二郎神, null);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(id), id, null);

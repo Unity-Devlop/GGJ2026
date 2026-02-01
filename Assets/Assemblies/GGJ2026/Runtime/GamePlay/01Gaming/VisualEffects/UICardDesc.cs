@@ -33,6 +33,8 @@ namespace GGJ2026.GamePlay
             Global.Event.Listen<OnPointerExitPlayerTagEvent>(OnPointerExitPlayerTagEvent);
             Global.Event.Listen<OnPointerEnterEnemyTagEvent>(OnPointerEnterEnemyTagEvent);
             Global.Event.Listen<OnPointerExitEnemyTagEvent>(OnPointerExitEnemyTagEvent);
+            Global.Event.Listen<OnEnemyIntentPointerEnterEvent>(OnPointerEnterEnemyIntentEvent);
+            Global.Event.Listen<OnEnemyIntentPointerExitEvent>(OnPointerExitEnemyIntentEvent);
 
             gameObject.SetActive(false);
         }
@@ -54,6 +56,27 @@ namespace GGJ2026.GamePlay
             Global.Event.UnListen<OnPointerExitPlayerTagEvent>(OnPointerExitPlayerTagEvent);
             Global.Event.UnListen<OnPointerEnterEnemyTagEvent>(OnPointerEnterEnemyTagEvent);
             Global.Event.UnListen<OnPointerExitEnemyTagEvent>(OnPointerExitEnemyTagEvent);
+            Global.Event.UnListen<OnEnemyIntentPointerEnterEvent>(OnPointerEnterEnemyIntentEvent);
+            Global.Event.UnListen<OnEnemyIntentPointerExitEvent>(OnPointerExitEnemyIntentEvent);
+        }
+
+        private void OnPointerExitEnemyIntentEvent(in OnEnemyIntentPointerExitEvent args)
+        {
+            descText.text = string.Empty;
+            _canvasGroup.alpha = 0;
+            gameObject.SetActive(false);
+            _bounceEffectCts?.Cancel();
+        }
+
+        private void OnPointerEnterEnemyIntentEvent(in OnEnemyIntentPointerEnterEvent args)
+        {
+            descText.text = $"意图:{args.intent.ToString()}";
+
+            gameObject.SetActive(true);
+            _canvasGroup.alpha = 1;
+            _bounceEffectCts?.Cancel();
+            _bounceEffectCts = new CancellationTokenSource();
+            _charBounceEffect.PlayWaveEffect(_bounceEffectCts.Token).Forget();
         }
 
 
@@ -220,7 +243,8 @@ namespace GGJ2026.GamePlay
             foreach (var buff in buffs)
             {
                 var buffConfig = Global.tables.BuffTable.Get(buff.buffEnum);
-                desc += $"- {buffConfig.Id}: {buffConfig.Desc}\n";
+                string parameters = buff.parameters != null ? buff.parameters.ToString() : "";
+                desc += $"- {buffConfig.Id}-{parameters}: {buffConfig.Desc}\n";
             }
 
             descText.text = desc;

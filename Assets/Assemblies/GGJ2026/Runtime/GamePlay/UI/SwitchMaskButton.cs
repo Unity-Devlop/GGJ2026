@@ -1,4 +1,3 @@
-using System;
 using cfg;
 using TMPro;
 using UnityEngine;
@@ -8,7 +7,7 @@ using UnityEngine.UI;
 namespace GGJ2026.GamePlay
 {
     [RequireComponent(typeof(Button))]
-    public class SwitchMaskButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
+    public class SwitchMaskButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [Sirenix.OdinInspector.ReadOnly, Sirenix.OdinInspector.ShowInInspector]
         private MaskEnum id;
@@ -16,6 +15,7 @@ namespace GGJ2026.GamePlay
         private Button button;
 
         [field: SerializeField] public TextMeshProUGUI nameText;
+        [field: SerializeField] public Image maskIcon;
 
         private void Awake()
         {
@@ -33,10 +33,14 @@ namespace GGJ2026.GamePlay
                 {
                     GamingMgr.Singleton.PushPlayerOperation(new SwitchMaskOperation(id, true));
                 }
-
-                Debug.LogWarning("Already in this mask: " + id);
                 return;
             }
+
+            if (!player.TryGetMask(out var mask2) && id == MaskEnum.本我)
+            {
+                return;
+            }
+            
 
             GamingMgr.Singleton.PushPlayerOperation(new SwitchMaskOperation(id, true));
         }
@@ -45,6 +49,17 @@ namespace GGJ2026.GamePlay
         {
             this.id = id;
             nameText.text = id.ToString();
+            if (id == MaskEnum.无常面具)
+            {
+                int index  = Random.Range(0, maskIcon.transform.childCount);
+                maskIcon.sprite = Global.refHolder.spriteConfig.mask黑白无常Icon[index];
+            }
+            else if (Global.refHolder.spriteConfig.maskSprites.TryGetValue(id, out var sprite))
+            {
+                maskIcon.sprite = sprite;
+            }            
+
+           
         }
 
         public void OnPointerEnter(PointerEventData eventData)

@@ -352,5 +352,30 @@ namespace GGJ2026.GamePlay
         {
             return playerController;
         }
+
+        public GameObject damagePopupPrefab;
+
+        public void OnEntityTakeDamage(Vector3 position, int amount)
+        {
+            // 实例化 Prefab
+            GameObject go = Instantiate(damagePopupPrefab, position, Quaternion.identity);
+            DamagePopup popup = go.GetComponent<DamagePopup>();
+
+            
+            bool isCritical = amount > 50;
+            // 异步执行播放，不需要等待它结束才走后面的逻辑，所以用 Forget()
+            popup.Play(amount, isCritical).Forget();
+
+            if (isCritical)
+            {
+                CameraShake.Instance.Shake(1);
+            }
+            else
+            {
+                CameraShake.Instance.Shake();
+            }
+            
+            
+        }
     }
 }
