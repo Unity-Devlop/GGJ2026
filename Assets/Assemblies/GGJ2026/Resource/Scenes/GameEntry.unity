@@ -440,6 +440,76 @@ MonoBehaviour:
       Data3: -958354042
       Data4: 575391626
     Path: "event:/\u9ED1\u767D\u65E0\u5E38\u7B11"
+  dead:
+    Guid:
+      Data1: 1825231308
+      Data2: 1105935716
+      Data3: -1621977696
+      Data4: 827330693
+    Path: "event:/\u9B3C\u9B42\u6B7B\u4EA1"
+  "\u960E\u7F57":
+    Guid:
+      Data1: -426267412
+      Data2: 1236879850
+      Data3: -1686717788
+      Data4: 518800693
+    Path: "event:/\u960E\u7F57"
+  "\u960E\u738B\u51FA\u573A":
+    Guid:
+      Data1: -1633001603
+      Data2: 1144193420
+      Data3: 1883937446
+      Data4: -1150404328
+    Path: "event:/\u960E\u738B\u51FA\u573A"
+  "\u6B7B\u671F\u5DF2\u5230":
+    Guid:
+      Data1: 1735333883
+      Data2: 1329154767
+      Data3: -1192038730
+      Data4: 826860790
+    Path: "event:/\u6B7B\u671F\u5DF2\u5230"
+  "\u5B5F\u5A46":
+    Guid:
+      Data1: -1082673380
+      Data2: 1112133888
+      Data3: -1971712336
+      Data4: -724489966
+    Path: "event:/\u5B5F\u5A46"
+  "\u53D7\u51FB":
+    Guid:
+      Data1: -1457729355
+      Data2: 1293019948
+      Data3: -161022332
+      Data4: 923624876
+    Path: "event:/\u53D7\u51FB"
+  "\u4E8C\u90CE\u795E":
+    Guid:
+      Data1: -1158810812
+      Data2: 1169761557
+      Data3: 1431499442
+      Data4: -325517216
+    Path: "event:/\u4E8C\u90CE\u795E"
+  uiClick:
+    Guid:
+      Data1: -1350649541
+      Data2: 1328517670
+      Data3: -409134940
+      Data4: 1201741377
+    Path: "event:/ui\u70B9\u51FB"
+  roundStart:
+    Guid:
+      Data1: 1803583552
+      Data2: 1241588068
+      Data3: -1476816224
+      Data4: -568117185
+    Path: "event:/\u56DE\u5408\u5F00\u59CB"
+  roundEnd:
+    Guid:
+      Data1: 1179108586
+      Data2: 1317748571
+      Data3: -1633166704
+      Data4: -602695000
+    Path: "event:/\u56DE\u5408\u7ED3\u675F"
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

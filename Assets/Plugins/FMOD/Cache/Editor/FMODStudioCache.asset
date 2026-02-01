@@ -150,7 +150,7 @@ MonoBehaviour:
   Path: Assets/Editor Default Resources/FMOD/Desktop/Master.bank
   Name: Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 639055529394107069
+  lastModified: 639055544944743896
   FileSizes: []
   Exists: 1
 --- !u!114 &-5971131554241154809
@@ -198,6 +198,60 @@ MonoBehaviour:
     Data2: 1329154767
     Data3: -1192038730
     Data4: 826860790
+  Banks:
+  - {fileID: -6370377294290428723}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4907160097500457979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u56DE\u5408\u5F00\u59CB"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/\u56DE\u5408\u5F00\u59CB"
+  Guid:
+    Data1: 1803583552
+    Data2: 1241588068
+    Data3: -1476816224
+    Data4: -568117185
+  Banks:
+  - {fileID: -6370377294290428723}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4185492828368286172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/\u56DE\u5408\u7ED3\u675F"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/\u56DE\u5408\u7ED3\u675F"
+  Guid:
+    Data1: 1179108586
+    Data2: 1317748571
+    Data3: -1633166704
+    Data4: -602695000
   Banks:
   - {fileID: -6370377294290428723}
   IsStream: 0
@@ -303,10 +357,10 @@ MonoBehaviour:
   Path: Assets/Editor Default Resources/FMOD/Desktop/Master.strings.bank
   Name: esktop/Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639055529394156562
+  lastModified: 639055544944757975
   FileSizes:
   - Name: 
-    Value: 1420
+    Value: 1512
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -340,12 +394,14 @@ MonoBehaviour:
   - {fileID: 3790187535545319591}
   - {fileID: -6521273826453611415}
   - {fileID: -5584034515111228052}
+  - {fileID: -4907160097500457979}
+  - {fileID: -4185492828368286172}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6370377294290428723}
   StringsBanks:
   - {fileID: -1587822220388102131}
-  cacheTime: 639055529394156562
+  cacheTime: 639055544944757975
   cacheVersion: 131632
 --- !u!114 &2551194125914133122
 MonoBehaviour:

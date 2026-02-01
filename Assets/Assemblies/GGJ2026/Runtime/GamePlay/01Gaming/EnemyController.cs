@@ -212,6 +212,7 @@ namespace GGJ2026.GamePlay
             BuffEffects.ProcessTakeDamageIgnoreShieldBuffs(sender, this, ref ignoreShield);
 
             RuntimeManager.PlayOneShot(Global.refHolder.attack);
+            RuntimeManager.PlayOneShot(Global.refHolder.受击);
 
             if (data.property.shield > 0 && !ignoreShield)
             {
@@ -230,6 +231,11 @@ namespace GGJ2026.GamePlay
                 data.property.health.Value -= damageValue;
             }
 
+            if (data.property.health.Value <= 0)
+            {
+                RuntimeManager.PlayOneShot(Global.refHolder.dead);
+            }
+
             // DOTween
             await _doTweenHitEffect.PlayHitEffect();
         }
@@ -238,6 +244,8 @@ namespace GGJ2026.GamePlay
         {
             GamingMgr.Singleton.OnEntityTakeDamage(transform.position, 9999);
             data.property.health.Value = 0;
+            RuntimeManager.PlayOneShot(Global.refHolder.dead);
+
             return UniTask.CompletedTask;
         }
 

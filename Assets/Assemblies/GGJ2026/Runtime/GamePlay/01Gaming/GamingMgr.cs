@@ -283,7 +283,7 @@ namespace GGJ2026.GamePlay
         }
 
 
-        public bool PushPlayerOperation(IOperation operation)
+        public async UniTask<bool> PushPlayerOperation(IOperation operation)
         {
             if (playerOperationQueue.Contains(operation))
             {
@@ -301,6 +301,7 @@ namespace GGJ2026.GamePlay
                 }
             }
 
+            await UniTask.Delay(TimeSpan.FromSeconds(0.2f));
             playerOperationQueue.Enqueue(operation);
             return currentGamingState == GamingState.PlayerRound;
         }

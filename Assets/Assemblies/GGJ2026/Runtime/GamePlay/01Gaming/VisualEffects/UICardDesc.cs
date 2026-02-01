@@ -213,11 +213,12 @@ namespace GGJ2026.GamePlay
         private void OnPointerEnterEnemyTagEvent(in OnPointerEnterEnemyTagEvent args)
         {
             args.entityController.GetBuffs(out var buffs);
-            string desc = $"这是{args.entityController.GetName()}";
+            string desc = $"这是{args.entityController.GetName()}\n";
             foreach (var buff in buffs)
             {
                 var buffConfig = Global.tables.BuffTable.Get(buff.buffEnum);
-                desc += $"- {buffConfig.Id}: {buffConfig.Desc}\n";
+                string parameters = buff.parameters != null ? buff.parameters.ToString() : "";
+                desc += $"{buffConfig.Id}-{parameters}: {buffConfig.Desc}\n";
             }
 
             descText.text = desc;
@@ -239,12 +240,12 @@ namespace GGJ2026.GamePlay
         private void OnPointerEnterPlayerTagEvent(in OnPointerEnterPlayerTagEvent args)
         {
             args.entityController.GetBuffs(out var buffs);
-            string desc = $"这是{args.entityController.GetName()}";
+            string desc = $"这是{args.entityController.GetName()}\n";
             foreach (var buff in buffs)
             {
                 var buffConfig = Global.tables.BuffTable.Get(buff.buffEnum);
                 string parameters = buff.parameters != null ? buff.parameters.ToString() : "";
-                desc += $"- {buffConfig.Id}-{parameters}: {buffConfig.Desc}\n";
+                desc += $"{buffConfig.Id}-{parameters}: {buffConfig.Desc}\n";
             }
 
             descText.text = desc;
