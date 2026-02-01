@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 1593875507639637002}
   - component: {fileID: 491148840116345114}
   - component: {fileID: 8082916953387826735}
+  - component: {fileID: 3163946221181517080}
   m_Layer: 0
   m_Name: shieldText
   m_TagString: Untagged
@@ -374,6 +375,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3163946221181517080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2647966876625981082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df543690e40421ab50d020cfb2af79d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.ShieldTrigger
 --- !u!1 &3057299001690251749
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +399,7 @@ GameObject:
   - component: {fileID: 3367684399872659301}
   - component: {fileID: 6604224923620938322}
   - component: {fileID: 8009328906461424}
+  - component: {fileID: 6196698471824698325}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -476,6 +490,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
+--- !u!114 &6196698471824698325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057299001690251749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaeb7552fc4043d8bd44da77ae411886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.Billboard
+  billboardType: 1
+  useMainCamera: 1
+  targetCamera: {fileID: 0}
+  flip: 0
 --- !u!1 &3358309452714698544
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +517,7 @@ GameObject:
   - component: {fileID: 2512032735517689111}
   - component: {fileID: 5055019556865981074}
   - component: {fileID: 6773306809377816573}
+  - component: {fileID: 8023460851854970081}
   m_Layer: 0
   m_Name: healthText
   m_TagString: Untagged
@@ -614,6 +645,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8023460851854970081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3358309452714698544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a10bf7b2b85432684f538cd4c97987a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.HealthTrigger
 --- !u!1 &4028639954756926085
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +849,7 @@ GameObject:
   - component: {fileID: 791384047653695244}
   - component: {fileID: 4567584629439355853}
   - component: {fileID: 6995671300394645914}
+  - component: {fileID: 7091145087711251835}
   m_Layer: 0
   m_Name: BuffTip
   m_TagString: Untagged
@@ -822,15 +866,15 @@ RectTransform:
   m_GameObject: {fileID: 4803530427256473861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1750287586517336546}
+  m_Father: {fileID: 6796782302260372004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2.5}
-  m_SizeDelta: {x: 2, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4567584629439355853
 MeshRenderer:
@@ -976,6 +1020,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4567584629439355853}
   m_maskType: 0
+--- !u!114 &7091145087711251835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4803530427256473861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b2e31ac70944b294b7213d46835060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.BuffTrigger
 --- !u!1 &6398893358098366802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +1064,7 @@ RectTransform:
   m_Children:
   - {fileID: 1593875507639637002}
   - {fileID: 2512032735517689111}
+  - {fileID: 791384047653695244}
   m_Father: {fileID: 5940103985913390914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1337,6 +1394,8 @@ GameObject:
   - component: {fileID: 5757064960853743650}
   - component: {fileID: 3324635055274530432}
   - component: {fileID: 3697699036136246254}
+  - component: {fileID: 8120556078147406828}
+  - component: {fileID: 7436219889439239090}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -1359,7 +1418,6 @@ Transform:
   m_Children:
   - {fileID: 5940103985913390914}
   - {fileID: 4597744851652640144}
-  - {fileID: 791384047653695244}
   - {fileID: 6090117086457947162}
   - {fileID: 1573676227518858744}
   m_Father: {fileID: 0}
@@ -1418,6 +1476,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.BuffShower
   buffText: {fileID: 6995671300394645914}
+--- !u!65 &8120556078147406828
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8456758976515809960}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7436219889439239090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8456758976515809960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e555f7df0ea4d49ba4f57f1cf702587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: GGJ2026::GGJ2026.GamePlay.PlayerTag
 --- !u!1001 &85974168463711975
 PrefabInstance:
   m_ObjectHideFlags: 0
