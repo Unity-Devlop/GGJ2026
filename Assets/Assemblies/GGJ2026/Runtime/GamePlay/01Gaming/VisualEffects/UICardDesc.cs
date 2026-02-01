@@ -220,7 +220,8 @@ namespace GGJ2026.GamePlay
             foreach (var buff in buffs)
             {
                 var buffConfig = Global.tables.BuffTable.Get(buff.buffEnum);
-                desc += $"- {buffConfig.Id}: {buffConfig.Desc}\n";
+                string parameters = buff.parameters != null ? buff.parameters.ToString() : "";
+                desc += $"- {buffConfig.Id}-{parameters}: {buffConfig.Desc}\n";
             }
 
             descText.text = desc;
