@@ -1,6 +1,7 @@
 using cfg;
 using Cysharp.Threading.Tasks;
 using GGJ2026.GamePlay;
+using GGJ2026.Home;
 using UnityEngine.AddressableAssets;
 using UnityToolkit;
 
@@ -10,6 +11,8 @@ namespace GGJ2026
     {
         private bool loading;
 
+        public bool loaded => !loading;
+        
         public void OnInit(GameFlow owner, IStateMachine<GameFlow> stateMachine)
         {
             // throw new System.NotImplementedException();

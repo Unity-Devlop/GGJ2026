@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using GGJ2026.Home;
 using UnityEngine.AddressableAssets;
 using UnityToolkit;
@@ -27,8 +28,18 @@ namespace GGJ2026
             // throw new System.NotImplementedException();
         }
 
-        public void OnExit(GameFlow owner, IStateMachine<GameFlow> stateMachine)
+        public async void OnExit(GameFlow owner, IStateMachine<GameFlow> stateMachine)
         {
+            await UniTask.WaitUntil(() =>
+            {
+                if (stateMachine.currentState is GamePlayState playState)
+                {
+                    return playState.loaded;
+                }
+
+                return false;
+            });
+
             UIRoot.Singleton.Dispose<HomePanel>();
         }
     }
