@@ -54,6 +54,11 @@ namespace GGJ2026.GamePlay
             data.property.health.Register(OnHealthChanged);
         }
 
+        private void OnHealthChanged(Property<int> obj)
+        {
+            throw new NotImplementedException();
+        }
+
         public UniTask OnceKill()
         {
             data.property.health.Value = 0;

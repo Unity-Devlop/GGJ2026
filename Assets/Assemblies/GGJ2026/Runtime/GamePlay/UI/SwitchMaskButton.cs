@@ -1,4 +1,3 @@
-using System;
 using cfg;
 using TMPro;
 using UnityEngine;
@@ -16,6 +15,7 @@ namespace GGJ2026.GamePlay
         private Button button;
 
         [field: SerializeField] public TextMeshProUGUI nameText;
+        [field: SerializeField] public Image maskIcon;
 
         private void Awake()
         {
@@ -50,6 +50,17 @@ namespace GGJ2026.GamePlay
         {
             this.id = id;
             nameText.text = id.ToString();
+            if (id == MaskEnum.无常面具)
+            {
+                int index  = Random.Range(0, maskIcon.transform.childCount);
+                maskIcon.sprite = Global.refHolder.spriteConfig.mask黑白无常Icon[index];
+            }
+            else if (Global.refHolder.spriteConfig.maskSprites.TryGetValue(id, out var sprite))
+            {
+                maskIcon.sprite = sprite;
+            }            
+
+           
         }
 
         public void OnPointerEnter(PointerEventData eventData)

@@ -201,6 +201,7 @@ MonoBehaviour:
   playerController: {fileID: 2008996154}
   enemyController: {fileID: 114005679}
   isGameWin: 0
+  damagePopupPrefab: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
