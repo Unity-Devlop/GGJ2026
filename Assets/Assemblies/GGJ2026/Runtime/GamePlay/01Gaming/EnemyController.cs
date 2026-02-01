@@ -135,6 +135,17 @@ namespace GGJ2026.GamePlay
             return UniTask.CompletedTask;
         }
 
+        public string GetName()
+        {
+            if (data == null)
+            {
+                return "这是敌人";
+            }
+
+            var cfg = Global.tables.GhostTable.Get(data.id);
+            return cfg.Id.ToString();
+        }
+
 
         public async UniTask StartThinking()
         {
@@ -168,7 +179,7 @@ namespace GGJ2026.GamePlay
             if (data.candidateCards.Count > 0)
             {
                 var nextCard = data.candidateCards[currentOperationIndex % data.candidateCards.Count];
-                _enemyIntent.SetIntent(nextCard.config.Intent);
+                _enemyIntent.SetIntent(nextCard.config.Type);
             }
         }
 

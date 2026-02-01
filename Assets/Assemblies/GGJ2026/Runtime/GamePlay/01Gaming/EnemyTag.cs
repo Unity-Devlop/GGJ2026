@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace GGJ2026.GamePlay
@@ -10,5 +11,6 @@ namespace GGJ2026.GamePlay
         {
             entityController = GetComponentInParent<IEntityController>();
         }
+        
     }
 }

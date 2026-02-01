@@ -57,37 +57,6 @@ namespace GGJ2026.GamePlay
 
         private GamePlayPanel gamePlayPanel;
 
-        public PlayerTag playerTag { get; private set; }
-        public EnemyTag enemyTag { get; private set; }
-
-        private void Update()
-        {
-            // 将鼠标屏幕坐标转为世界坐标
-            var world = Global.cameraSystem.mainCamera.ScreenToWorldPoint(Pointer.current.position.value);
-
-            // 发射一条长度极短的射线（或者直接点检测）
-
-            playerTag = null;
-            enemyTag = null;
-            Debug.DrawLine(Global.cameraSystem.mainCamera.transform.position,
-                world, Color.red, 10);
-            Debug.Log("发射射线检测PlayerTag和EnemyTag");
-            if (Physics.Raycast(Global.cameraSystem.mainCamera.transform.position,
-                    world - Global.cameraSystem.mainCamera.transform.position, out var hit, 100f))
-            {
-                if (hit.collider.TryGetComponent<PlayerTag>(out var sr))
-                {
-                    Debug.Log("找到PlayerTag");
-                    playerTag = sr;
-                }
-                else if (hit.collider.TryGetComponent<EnemyTag>(out var er))
-                {
-                    Debug.Log("找到EnemyTag");
-                    enemyTag = er;
-                }
-            }
-        }
-
         private async UniTask GameFlow()
         {
             isGameOver = false;
@@ -242,6 +211,75 @@ namespace GGJ2026.GamePlay
             playerController.UnBind();
             enemyController.UnBind();
             UIRoot.Singleton.Dispose<GamePlayPanel>();
+        }
+
+
+        private PlayerTag playerTag;
+        private EnemyTag enemyTag;
+
+        private void Update()
+        {
+            // 1. 获取 New Input System 的指针屏幕位置
+            Vector3 pointerScreenPos = UnityEngine.InputSystem.Pointer.current.position.value;
+
+            // 2. 将屏幕位置转换为射线
+            Ray ray = Global.cameraSystem.mainCamera.ScreenPointToRay(pointerScreenPos);
+
+            PlayerTag currentPlayerTag = null;
+            EnemyTag currentEnemyTag = null;
+
+            // 3. 射线检测
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                if (hit.collider.TryGetComponent(out PlayerTag tag))
+                {
+                    currentPlayerTag = tag;
+                }
+                else if (hit.collider.TryGetComponent(out EnemyTag enemyTag))
+                {
+                    currentEnemyTag = enemyTag;
+                }
+            }
+
+            if (playerTag != currentPlayerTag)
+            {
+                if (playerTag != null)
+                {
+                    Global.Event.Invoke<OnPointerExitPlayerTagEvent>(new OnPointerExitPlayerTagEvent
+                    {
+                        entityController = playerTag.entityController
+                    });
+                }
+
+                playerTag = currentPlayerTag;
+                if (playerTag != null)
+                {
+                    Global.Event.Invoke<OnPointerEnterPlayerTagEvent>(new OnPointerEnterPlayerTagEvent
+                    {
+                        entityController = playerTag.entityController
+                    });
+                }
+            }
+
+            if (enemyTag != currentEnemyTag)
+            {
+                if (enemyTag != null)
+                {
+                    Global.Event.Invoke<OnPointerExitEnemyTagEvent>(new OnPointerExitEnemyTagEvent
+                    {
+                        entityController = enemyTag.entityController
+                    });
+                }
+
+                enemyTag = currentEnemyTag;
+                if (enemyTag != null)
+                {
+                    Global.Event.Invoke<OnPointerEnterEnemyTagEvent>(new OnPointerEnterEnemyTagEvent
+                    {
+                        entityController = enemyTag.entityController
+                    });
+                }
+            }
         }
 
 

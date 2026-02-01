@@ -15,6 +15,11 @@ namespace GGJ2026.GamePlay
               return await CardEffects.ExecuteCardEffects(new CardData(newCardEffectId), atk, tar);
           }
 
+            await atk.UseCard(cardData);
+            await tar.TakeCard(cardData);
+            await tar.TakeDamage(atk, cardData.config.Value[0]);
+            await atk.OnApplyDamageTo(tar, cardData.config.Value[0]);
+            await atk.GainShield(cardData.config.Value[1]);
             return false;
         }
     }
