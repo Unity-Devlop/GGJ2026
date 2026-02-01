@@ -6,27 +6,27 @@
   },
   {
     "id": 1,
-    "desc": "戴上时施加死期",
+    "desc": "阎王将会宣判死期",
     "can_wear_any_time": true
   },
   {
     "id": 2,
-    "desc": "黑白无常",
+    "desc": "一人勾魂，一人索命",
     "can_wear_any_time": true
   },
   {
     "id": 3,
-    "desc": "XXX",
+    "desc": "十殿阎罗颁布律令！",
     "can_wear_any_time": false
   },
   {
     "id": 4,
-    "desc": "XXX",
+    "desc": "喝了这碗汤，该上路了……",
     "can_wear_any_time": false
   },
   {
     "id": 5,
-    "desc": "拜托了 二郎神大人",
+    "desc": "哮天犬？",
     "can_wear_any_time": false
   }
 ]
